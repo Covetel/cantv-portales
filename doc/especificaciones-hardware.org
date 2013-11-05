@@ -1,0 +1,55 @@
+#+TITLE: Especificaciones de Hardware Portales CANTV
+#+AUTHOR:    Cooperativa Venezolana de Tecnologías Libres R.S. COVETEL
+#+EMAIL:     info@covetel.com.ve
+#+DATE:      
+#+DESCRIPTION: Documento de especificaciones de requerimientos de hardware para el proyecto portales de CANTV
+#+KEYWORDS: covetel cantv portales
+#+LaTeX_CLASS: covetel
+#+LaTeX_CLASS_OPTIONS: [11pt,letterpaper,oneside,spanish]
+#+LANGUAGE:  es
+#+OPTIONS:   H:3 num:t toc:3 \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME:
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \input{titulo-especificaciones-hardware.tex}
+
+* Introducción
+
+** Alcance
+** Definiciones y Acrónimos
+** Referencias
+
+* Descripción General
+
+** Descripción de la Plataforma
+
+* Requerimientos Específicos
+
+** Capa de Servidores Web
+
+#+CAPTION: Recomendaciones de Hardware Capa Servidores Web
+#+LABEL: tbl:tabla_webserver
+#+ATTR_LaTeX: longtable align=|l|l|
+
+|--------------+------------------------|
+| *Componente* | *Requerimiento Mínimo* |
+|--------------+------------------------|
+| Procesador   |                        |
+|--------------+------------------------|
+| RAM          |                        |
+|--------------+------------------------|
+| Disco Duro   |                        |
+|--------------+------------------------|
+
+
+** Capa de Cache
+
+** Capa de Balanceadores
+
+** Capa de /ZOE Clients/ 
+
+** Capa de /ZOE Server & ZODB/
+
