@@ -25,6 +25,8 @@
 * Descripción General
 
 ** Descripción de la Plataforma
+descripción y antecedentes de Plone en referencia con el hardware
+
 
 * Requerimientos Específicos
 
@@ -81,7 +83,7 @@ logra representar el diseño que tenga en mente el administrador.
 
 *** Hardware recomendado
 
-#+CAPTION: Recomendaciones de Hardware Capa Balanceador
+#+CAPTION: Recomendaciones de Hardware Capa Cache
 #+LABEL: tbl:tabla_cache
 #+ATTR_LaTeX: longtable align=|l|l|
 
@@ -91,11 +93,11 @@ logra representar el diseño que tenga en mente el administrador.
 |--------------+-------------------------------------------|
 | Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 Ghz |
 |--------------+-------------------------------------------|
-| RAM          | 8 GB                                      |
+| RAM          | 2 GB                                      |
 |--------------+-------------------------------------------|
 | Disco Duro   | 4 GB                                      |
 |--------------+-------------------------------------------|
-| Servidores   | 4                                         |
+| Servidores   | 6                                         |
 |--------------+-------------------------------------------|
 
 
@@ -131,7 +133,7 @@ Es una alternativa muy útil a la hora de agregar la característica de
 |--------------+-------------------------------------------|
 | *Componente* | *Requerimiento Recomendado*               |
 |--------------+-------------------------------------------|
-| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 Ghz |
+| Procesador   | *CPU Cores:* 1, *CPU Clock Freq:* 2.3 Ghz |
 |--------------+-------------------------------------------|
 | RAM          | 2 GB                                      |
 |--------------+-------------------------------------------|
