@@ -81,7 +81,7 @@ logra representar el diseño que tenga en mente el administrador.
 
 *** Hardware recomendado
 
-#+CAPTION: Recomendaciones de Hardware Capa Cache
+#+CAPTION: Recomendaciones de Hardware Capa Balanceador
 #+LABEL: tbl:tabla_cache
 #+ATTR_LaTeX: longtable align=|l|l|
 
@@ -114,13 +114,17 @@ tráfico por hardware de CANTV.
 orientada a eventos que le permite manejar grandes cantidades de
 conexiones concurrentes a muy alta velocidad.
 
-Con una máquina de 64 bits, con 1 GB de RAM es capaz de manejar tanto como 
+Con una máquina de 64 bits, 1 GB de RAM y una configuración especial
+de Kernel, es capaz de manejar tanto como 200.000 conexiones
+concurrentes
 
+Es una alternativa muy útil a la hora de agregar la característica de
+"Alta Disponbilidad" a una plataforma de servicios.
 
 *** Hardware recomendado
 
-#+CAPTION: Recomendaciones de Hardware Capa Cache
-#+LABEL: tbl:tabla_cache
+#+CAPTION: Recomendaciones de Hardware Capa Balanceador
+#+LABEL: tbl:tabla_balanceador
 #+ATTR_LaTeX: longtable align=|l|l|
 
 
