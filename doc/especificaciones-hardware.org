@@ -19,8 +19,15 @@
 * Introducción
 
 ** Alcance
+
+Este documento contiene las recomendaciones de /Hardware/ para la plataforma
+de portales de CANTV y el portal de autogestión.
+
 ** Definiciones y Acrónimos
+
 ** Referencias
+
+
 
 
 * Descripción General
@@ -28,10 +35,35 @@
 ** Descripción de la Plataforma
 descripción y antecedentes de Plone en referencia con el hardware
 
+** Capas
+
+La plataforma esta diseñada en función de cinco (5): 
+
+ 1. *Servidores Web:* Esta capa atiende las conexiones bajo el
+    protocolo /HTTP/ que provienen de los clientes de la plataforma. Es
+    también responsable de manejar las conexiones /HTTPS/ usando certificados
+    /x.509/ proveidos por CANTV.
+
+ 2. *Aceleración Web:* Esta capa esta compuesta por servidores ejecutando un
+    componente conocido actualmente como /Web Application Accelerator/ o
+    acelerador de aplicaciones web, también conocidos como caché de proxy
+    /HTTP/ inversa. El objetivo de esta capa es aumentar el rendimiento de
+    Plone y mejorar la experiencia del usuario.
+
+ 3. 
+
+capas como se muestra en
+la figura a continuación:
+
+#+CAPTION: Capas de la Arquitectura
+#+NAME: fig:capas
+
+[[./images/layers.png]]
+
 
 * Requerimientos Específicos
 
-** Capa de Servidores Web
+** Servidores Web
 
 *** Software a implementar
 
@@ -67,7 +99,7 @@ en vez de ofrecer una amplia gama de características.
 |--------------+-------------------------------------------|
 
 
-** Capa de /Cache/
+** /Caché/
 
 *** Software a implementar
 
@@ -102,7 +134,7 @@ logra representar el diseño que tenga en mente el administrador.
 |--------------+-------------------------------------------|
 
 
-** Capa de Balanceadores
+** Balanceadores
 
 Esta es una capa que permite conectar las capas web de la plataforma
 con el servidor de aplicaciones de Plone, brindando alta
@@ -145,7 +177,7 @@ Es una alternativa muy útil a la hora de agregar la característica de
 
 
 
-** Capa de /ZEO Clients/ 
+** /ZEO Clients/ 
 
 *** Software a implementar
 
@@ -180,7 +212,7 @@ que está almacenado en nuestro /servidor Zeo - ZODB/
 |--------------+-------------------------------------------|
 
 
-** Capa de /ZEO Server & ZODB/
+** /ZEO Server & ZODB/
 
 
 *** Hardware recomendado
@@ -202,7 +234,7 @@ que está almacenado en nuestro /servidor Zeo - ZODB/
 | Servidores   | 2 (alta disponibilidad activo-pasivo)          |
 |--------------+------------------------------------------------|
 
-** Capa de Blob Storage
+** /Blob Storage/
 
 *** Hardware recomendado
 
@@ -216,4 +248,4 @@ que está almacenado en nuestro /servidor Zeo - ZODB/
 |----------------+--------------------------------------------|
 | Almacenamiento | 100 GB (espacio compartido por NFS en red) |
 |----------------+--------------------------------------------|
-
+    
