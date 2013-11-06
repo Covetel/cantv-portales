@@ -190,14 +190,30 @@ que está almacenado en nuestro /servidor Zeo - ZODB/
 #+ATTR_LaTeX: longtable align=|l|l|
 
 
-|--------------+--------------------------------------------|
-| *Componente* | *Requerimiento Recomendado*                |
-|--------------+--------------------------------------------|
-| Procesador   | *CPU Cores:* 20, *CPU Clock Freq:* 1.7 GHz |
-|--------------+--------------------------------------------|
-| RAM          | 64 GB                                      |
-|--------------+--------------------------------------------|
-| Disco Duro   | 30 GB (almacenamiento de alta velocidad)   |
-|--------------+--------------------------------------------|
-| Servidores   | 1                                          |
-|--------------+--------------------------------------------|
+|--------------+------------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*                    |
+|--------------+------------------------------------------------|
+| Procesador   | *CPU Cores:* 20, *CPU Clock Freq:* 1.7 GHz     |
+|--------------+------------------------------------------------|
+| RAM          | 64 GB                                          |
+|--------------+------------------------------------------------|
+| Disco Duro   | 30 GB (almacenamiento local de alta velocidad) |
+|--------------+------------------------------------------------|
+| Servidores   | 2 (alta disponibilidad activo-pasivo)          |
+|--------------+------------------------------------------------|
+
+** Capa de Blob Storage
+
+*** Hardware recomendado
+
+#+CAPTION: Recomendaciones de Hardware para Capa Blob Storage
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|----------------+--------------------------------------------|
+| *Componente*   | *Requerimiento Recomendado*                |
+|----------------+--------------------------------------------|
+| Almacenamiento | 100 GB (espacio compartido por NFS en red) |
+|----------------+--------------------------------------------|
+
