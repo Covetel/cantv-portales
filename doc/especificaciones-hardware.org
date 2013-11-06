@@ -30,12 +30,21 @@
 
 ** Capa de Servidores Web
 
+*** Software a implementar
+
+El componente nginx es el servidor web elegido para la tarea de servir
+el contenido en la modalidad de proxy reverso, de cara a los
+navegadores web en los computadores de los usuarios que visiten cada
+portal.
+
+*** Hardware recomendado
+
 #+CAPTION: Recomendaciones de Hardware Capa Servidores Web
 #+LABEL: tbl:tabla_webserver
 #+ATTR_LaTeX: longtable align=|l|l|
 
 |--------------+-------------------------------------------|
-| *Componente* | *Requerimiento Mínimo*                    |
+| *Componente* | *Requerimiento Recomendado*               |
 |--------------+-------------------------------------------|
 | Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 Ghz |
 |--------------+-------------------------------------------|
@@ -48,6 +57,25 @@
 
 
 ** Capa de Cache
+
+#+CAPTION: Recomendaciones de Hardware Capa Cache
+#+LABEL: tbl:tabla_cache
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 Ghz |
+|--------------+-------------------------------------------|
+| RAM          | 2 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 8                                         |
+|--------------+-------------------------------------------|
+
+
 
 ** Capa de Balanceadores
 
