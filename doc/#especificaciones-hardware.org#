@@ -1,0 +1,184 @@
+#+TITLE: Especificaciones de Hardware Portales CANTV
+#+AUTHOR:    Cooperativa Venezolana de Tecnologías Libres R.S. COVETEL
+#+EMAIL:     info@covetel.com.ve
+#+DATE:      
+#+DESCRIPTION: Documento de especificaciones de requerimientos de hardware para el proyecto portales de CANTV
+#+KEYWORDS: covetel cantv portales
+#+LaTeX_CLASS: covetel
+#+LaTeX_CLASS_OPTIONS: [11pt,letterpaper,oneside,spanish]
+#+LANGUAGE:  es
+#+OPTIONS:   H:3 num:t toc:3 \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME:
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \input{titulo-especificaciones-hardware.tex}
+
+* Introducción
+
+** Alcance
+** Definiciones y Acrónimos
+** Referencias
+
+
+* Descripción General
+
+** Descripción de la Plataforma
+descripción y antecedentes de Plone en referencia con el hardware
+
+
+* Requerimientos Específicos
+
+** Capa de Servidores Web
+
+*** Software a implementar
+
+El componente nginx es el servidor web elegido para la tarea de servir
+el contenido en la modalidad de proxy reverso, de cara a los
+navegadores web en los computadores de los usuarios que visiten cada
+portal.
+
+Se prefiere nginx por encima de Apache Web Server, por su ligereza y
+alto nivel de optimización en las operaciones más frecuentes al servir
+contenido web en forma de HTML, Javascript, imágenes y video.
+
+El software nginx ha sido diseñado y escrito con una cantidad limitada
+de funcionalidades en mente, tomando en consideración la optimización,
+en vez de ofrecer una amplia gama de características.
+
+*** Hardware recomendado
+
+#+CAPTION: Recomendaciones de Hardware Capa Servidores Web
+#+LABEL: tbl:tabla_webserver
+#+ATTR_LaTeX: longtable align=|l|l|
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 Ghz |
+|--------------+-------------------------------------------|
+| RAM          | 2 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 6                                         |
+|--------------+-------------------------------------------|
+
+
+** Capa de /Cache/
+
+*** Software a implementar
+
+Varnish es el software para /caching/ elegido para acelerar la entrega
+de contenido habitual en la arquitectura de portales propuesta.
+
+Varnish es una herramienta flexible, que permite almacenar contenido
+en estructuras de tipo clave/valor en donde usualmente las URLs son la
+clave.
+
+Su versatilidad esta fundamentada en que posee un lenguaje de
+configuración, llamado /Varnish Configuration Language/ con el cual se
+logra representar el diseño que tenga en mente el administrador.
+
+*** Hardware recomendado
+
+#+CAPTION: Recomendaciones de Hardware Capa Cache
+#+LABEL: tbl:tabla_cache
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 Ghz |
+|--------------+-------------------------------------------|
+| RAM          | 2 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 6                                         |
+|--------------+-------------------------------------------|
+
+
+** Capa de Balanceadores
+
+Esta es una capa que permite conectar las capas web de la plataforma
+con el servidor de aplicaciones de Plone, brindando alta
+disponibilidad a la arquitectura. La propuesta inicial, presenta un
+balanceador de carga implementado por software, como plan alternativo
+en caso de que no sea posible usar la plataforma de balanceo de
+tráfico por hardware de CANTV.
+
+*** Software a implementar
+
+/HAProxy/ es un programa diseñado bajo la filosofía de programación
+orientada a eventos que le permite manejar grandes cantidades de
+conexiones concurrentes a muy alta velocidad.
+
+Con una máquina de 64 bits, 1 GB de RAM y una configuración especial
+de Kernel, es capaz de manejar tanto como 200.000 conexiones
+concurrentes
+
+Es una alternativa muy útil a la hora de agregar la característica de
+"Alta Disponbilidad" a una plataforma de servicios.
+
+*** Hardware recomendado
+
+#+CAPTION: Recomendaciones de Hardware Capa Balanceador
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 1, *CPU Clock Freq:* 2.3 Ghz |
+|--------------+-------------------------------------------|
+| RAM          | 2 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 1                                         |
+|--------------+-------------------------------------------|
+
+
+
+** Capa de /ZEO Clients/ 
+
+*** Software a implementar
+
+Los clientes /ZEO/ (Zope Enterprise Objects) son la primera línea de
+servicios en una solución de alta disponibilidad para portales web con
+Plone.
+
+Los clientes /ZEO/ asumen el rol de ejecutar servicios HTTP, scripts,
+ejecución de código y /renderización/ de plantillas.
+
+Son además los que se encargan de conectarse con el servidor ZEO para
+extraer información de las diferentes instancias Zope (cada Portal)
+que está almacenado en nuestro /servidor Zeo - ZODB/
+
+*** Hardware recomendado
+
+#+CAPTION: Recomendaciones de Hardware para Capa Zeo
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 8, *CPU Clock Freq:* 2.3 Ghz |
+|--------------+-------------------------------------------|
+| RAM          | 16 GB                                     |
+|--------------+-------------------------------------------|
+| Disco Duro   |  GB                                       |
+|--------------+-------------------------------------------|
+| Servidores   | 6                                         |
+|--------------+-------------------------------------------|
+
+
+** Capa de /ZEO Server & ZODB/
+
