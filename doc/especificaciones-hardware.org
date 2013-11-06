@@ -99,10 +99,48 @@ logra representar el diseño que tenga en mente el administrador.
 |--------------+-------------------------------------------|
 
 
-
 ** Capa de Balanceadores
 
-** Capa de /ZOE Clients/ 
+Esta es una capa que permite conectar las capas web de la plataforma
+con el servidor de aplicaciones de Plone, brindando alta
+disponibilidad a la arquitectura. La propuesta inicial, presenta un
+balanceador de carga implementado por software, como plan alternativo
+en caso de que no sea posible usar la plataforma de balanceo de
+tráfico por hardware de CANTV.
 
-** Capa de /ZOE Server & ZODB/
+*** Software a implementar
+
+/HAProxy/ es un programa diseñado bajo la filosofía de programación
+orientada a eventos que le permite manejar grandes cantidades de
+conexiones concurrentes a muy alta velocidad.
+
+Con una máquina de 64 bits, con 1 GB de RAM es capaz de manejar tanto como 
+
+
+*** Hardware recomendado
+
+#+CAPTION: Recomendaciones de Hardware Capa Cache
+#+LABEL: tbl:tabla_cache
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 Ghz |
+|--------------+-------------------------------------------|
+| RAM          | 2 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 1                                         |
+|--------------+-------------------------------------------|
+
+
+
+
+
+** Capa de /ZEO Clients/ 
+
+** Capa de /ZEO Server & ZODB/
 
