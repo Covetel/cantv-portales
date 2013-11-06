@@ -57,7 +57,7 @@ en vez de ofrecer una amplia gama de características.
 |--------------+-------------------------------------------|
 | *Componente* | *Requerimiento Recomendado*               |
 |--------------+-------------------------------------------|
-| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 Ghz |
+| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 GHz |
 |--------------+-------------------------------------------|
 | RAM          | 2 GB                                      |
 |--------------+-------------------------------------------|
@@ -92,7 +92,7 @@ logra representar el diseño que tenga en mente el administrador.
 |--------------+-------------------------------------------|
 | *Componente* | *Requerimiento Recomendado*               |
 |--------------+-------------------------------------------|
-| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 Ghz |
+| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 GHz |
 |--------------+-------------------------------------------|
 | RAM          | 2 GB                                      |
 |--------------+-------------------------------------------|
@@ -134,7 +134,7 @@ Es una alternativa muy útil a la hora de agregar la característica de
 |--------------+-------------------------------------------|
 | *Componente* | *Requerimiento Recomendado*               |
 |--------------+-------------------------------------------|
-| Procesador   | *CPU Cores:* 1, *CPU Clock Freq:* 2.3 Ghz |
+| Procesador   | *CPU Cores:* 1, *CPU Clock Freq:* 2.3 GHz |
 |--------------+-------------------------------------------|
 | RAM          | 2 GB                                      |
 |--------------+-------------------------------------------|
@@ -147,6 +147,8 @@ Es una alternativa muy útil a la hora de agregar la característica de
 
 ** Capa de /ZEO Clients/ 
 
+*** Software a implementar
+
 Los clientes /ZEO/ (Zope Enterprise Objects) son la primera línea de
 servicios en una solución de alta disponibilidad para portales web con
 Plone.
@@ -158,5 +160,44 @@ Son además los que se encargan de conectarse con el servidor ZEO para
 extraer información de las diferentes instancias Zope (cada Portal)
 que está almacenado en nuestro /servidor Zeo - ZODB/
 
+*** Hardware recomendado
+
+#+CAPTION: Recomendaciones de Hardware para Capa Cliente Zeo 
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 8, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 16 GB                                     |
+|--------------+-------------------------------------------|
+| Disco Duro   | 20 GB                                     |
+|--------------+-------------------------------------------|
+| Servidores   | 6                                         |
+|--------------+-------------------------------------------|
+
+
 ** Capa de /ZEO Server & ZODB/
 
+
+*** Hardware recomendado
+
+#+CAPTION: Recomendaciones de Hardware para Capa Zeo Server
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+--------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*                |
+|--------------+--------------------------------------------|
+| Procesador   | *CPU Cores:* 20, *CPU Clock Freq:* 1.7 GHz |
+|--------------+--------------------------------------------|
+| RAM          | 64 GB                                      |
+|--------------+--------------------------------------------|
+| Disco Duro   | 30 GB (almacenamiento de alta velocidad)   |
+|--------------+--------------------------------------------|
+| Servidores   | 1                                          |
+|--------------+--------------------------------------------|
