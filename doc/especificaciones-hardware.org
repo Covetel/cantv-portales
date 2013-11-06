@@ -68,11 +68,18 @@ en vez de ofrecer una amplia gama de características.
 
 *** Software a implementar
 
-Varnish es el software para /caching/ elegido para la solución en
-cuestión
+Varnish es el software para /caching/ elegido para acelerar la entrega
+de contenido habitual en la arquitectura de portales propuesta.
+
+Varnish es una herramienta flexible, que permite almacenar contenido
+en estructuras de tipo clave/valor en donde usualmente las URLs son la
+clave.
+
+Su versatilidad esta fundamentada en que posee un lenguaje de
+configuración, llamado /Varnish Configuration Language/ con el cual se
+logra representar el diseño que tenga en mente el administrador.
 
 *** Hardware recomendado
-
 
 #+CAPTION: Recomendaciones de Hardware Capa Cache
 #+LABEL: tbl:tabla_cache
