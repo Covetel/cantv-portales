@@ -37,6 +37,14 @@ el contenido en la modalidad de proxy reverso, de cara a los
 navegadores web en los computadores de los usuarios que visiten cada
 portal.
 
+Se prefiere nginx por encima de Apache Web Server, por su ligereza y
+alto nivel de optimización en las operaciones más frecuentes al servir
+contenido web en forma de HTML, Javascript, imágenes y video.
+
+El software nginx ha sido diseñado y escrito con una cantidad limitada
+de funcionalidades en mente, tomando en consideración la optimización,
+en vez de ofrecer una amplia gama de características.
+
 *** Hardware recomendado
 
 #+CAPTION: Recomendaciones de Hardware Capa Servidores Web
@@ -52,11 +60,19 @@ portal.
 |--------------+-------------------------------------------|
 | Disco Duro   | 4 GB                                      |
 |--------------+-------------------------------------------|
-| Servidores   | 8                                         |
+| Servidores   | 6                                         |
 |--------------+-------------------------------------------|
 
 
-** Capa de Cache
+** Capa de /Cache/
+
+*** Software a implementar
+
+Varnish es el software para /caching/ elegido para la solución en
+cuestión
+
+*** Hardware recomendado
+
 
 #+CAPTION: Recomendaciones de Hardware Capa Cache
 #+LABEL: tbl:tabla_cache
@@ -68,11 +84,11 @@ portal.
 |--------------+-------------------------------------------|
 | Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 Ghz |
 |--------------+-------------------------------------------|
-| RAM          | 2 GB                                      |
+| RAM          | 8 GB                                      |
 |--------------+-------------------------------------------|
 | Disco Duro   | 4 GB                                      |
 |--------------+-------------------------------------------|
-| Servidores   | 8                                         |
+| Servidores   | 4                                         |
 |--------------+-------------------------------------------|
 
 
