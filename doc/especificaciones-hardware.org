@@ -32,8 +32,7 @@ de portales de CANTV y el portal de autogestión.
 
 * Descripción General
 
-** Descripción de la Plataforma
-descripción y antecedentes de Plone en referencia con el hardware
+#** Descripción de la Plataforma
 
 ** Capas
 
@@ -79,6 +78,10 @@ contenido web en forma de HTML, Javascript, imágenes y video.
 El software nginx ha sido diseñado y escrito con una cantidad limitada
 de funcionalidades en mente, tomando en consideración la optimización,
 en vez de ofrecer una amplia gama de características.
+
+Esta capa es la encargada de ofercer la capacidad de que los usuarios
+se conecten al portal usando cifrado SSL para confidencialidad y
+protección de sus datos personales.
 
 *** Hardware recomendado
 
@@ -177,7 +180,7 @@ Es una alternativa muy útil a la hora de agregar la característica de
 
 
 
-** /ZEO Clients/ 
+** /Clientes ZEO/ 
 
 *** Software a implementar
 
@@ -190,7 +193,7 @@ ejecución de código y /renderización/ de plantillas.
 
 Son además los que se encargan de conectarse con el servidor ZEO para
 extraer información de las diferentes instancias Zope (cada Portal)
-que está almacenado en nuestro /servidor Zeo - ZODB/
+que está almacenado en nuestro /servidor ZEO - ZODB/
 
 *** Hardware recomendado
 
@@ -212,8 +215,27 @@ que está almacenado en nuestro /servidor Zeo - ZODB/
 |--------------+-------------------------------------------|
 
 
-** /ZEO Server & ZODB/
+** /Servidor ZEO y ZODB/
 
+*** Software recomendado
+
+El Servidor ZEO es el núcleo central de la solución en términos de
+almacenamiento de datos para la solución de Portales. Por esta razón
+se recomienda que todos el contenido usado por este servidor, se
+encuentra almacenado en un dispositivo local de alta velocidad, como
+un disco SSD.
+
+Cada sitio portal de Plone es creado como un objeto que vive dentro de
+una instancia Zope cuyo contenido es entregado a los /clientes ZEO/
+por demanda, dependiendo de las peticiones de los usuarios que llegan
+a través de las capas de /Servidores Web/ y /Caché/.
+
+Considerando que este podría ser un punto de acumulación de falla
+(single point of failure), nuestra recomendación es que se implementen
+el servidor por duplicado en un esquema activo/pasivo y que cada una
+de esas instancias virtuales se aprovisionen en nodos UCS distintos,
+para garantizar el funcionamiento adecuado de la propuesta de alta
+disponibilidad.
 
 *** Hardware recomendado
 
@@ -234,7 +256,19 @@ que está almacenado en nuestro /servidor Zeo - ZODB/
 | Servidores   | 2 (alta disponibilidad activo-pasivo)          |
 |--------------+------------------------------------------------|
 
+
 ** /Blob Storage/
+
+*** Software recomendado
+
+Esta capa no es una capa de procesamiento, es solo una capa de
+almacenamiento. En términos del protocolo recomendado para usar, NFS
+sería la tecnología a implementar.
+
+NFS cumple los requerimientos mínimos de seguridad necesarios para
+compartir los volúmenes necesarios para almacenar y compartir los
+contenidos de /media/(documentos, imágenes, podcasts, video) que se
+van publicar en el Portal.
 
 *** Hardware recomendado
 
