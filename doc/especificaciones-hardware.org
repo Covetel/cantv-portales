@@ -147,5 +147,16 @@ Es una alternativa muy útil a la hora de agregar la característica de
 
 ** Capa de /ZEO Clients/ 
 
+Los clientes /ZEO/ (Zope Enterprise Objects) son la primera línea de
+servicios en una solución de alta disponibilidad para portales web con
+Plone.
+
+Los clientes /ZEO/ asumen el rol de ejecutar servicios HTTP, scripts,
+ejecución de código y /renderización/ de plantillas.
+
+Son además los que se encargan de conectarse con el servidor ZEO para
+extraer información de las diferentes instancias Zope (cada Portal)
+que está almacenado en nuestro /servidor Zeo - ZODB/
+
 ** Capa de /ZEO Server & ZODB/
 
