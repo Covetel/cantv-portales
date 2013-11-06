@@ -48,7 +48,7 @@ La plataforma esta diseñada en función de cinco (5):
     componente conocido actualmente como /Web Application Accelerator/ o
     acelerador de aplicaciones web, también conocidos como caché de proxy
     /HTTP/ inversa. El objetivo de esta capa es aumentar el rendimiento de
-    Plone y mejorar la experiencia del usuario.
+    Plone y mejorar la experiencia del usuario en términos de tiempo de respuesta.
 
  3. 
 
@@ -99,7 +99,7 @@ en vez de ofrecer una amplia gama de características.
 |--------------+-------------------------------------------|
 
 
-** /Caché/
+** Servidores /Caché/
 
 *** Software a implementar
 
