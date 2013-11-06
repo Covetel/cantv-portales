@@ -23,9 +23,9 @@
 Este documento contiene las recomendaciones de /Hardware/ para la plataforma
 de portales de CANTV y el portal de autogestión.
 
-** Definiciones y Acrónimos
+## ** Definiciones y Acrónimos
 
-** Referencias
+## ** Referencias
 
 
 
