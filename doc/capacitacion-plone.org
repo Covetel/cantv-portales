@@ -37,19 +37,25 @@ El plan de capacitación esta compuesto por dos cursos:
    2. Configuración Técnica
    3. Desarrollo
 
-2. *¿Metodología Utilizada?* 
+2. *¿Cuanto tiempo dura este curso?*
+
+   Este curso tiene una duración de 20 horas teórico prácticas.
+
+3. *¿Metodología Utilizada?* 
 
    Utilizando la modalidad presencial, el instructor hará uso de láminas cómo
    material de apoyo digital para las sesiones teórico-prácticas.
 
-3. *¿Quién va a dictar el curso?*
+   Es de vital importancia que los estudiantes realicen las actividades asignadas.
+
+4. *¿Quién va a dictar el curso?*
 
    Este curso va a ser dictado por:
 
    1. *Nombre:* Carlos Guerrero
    2. *Correo Electrónico:* /cguerrero@covetel.com.ve/
 
-4. *¿Cuales son los conocimientos previos que estudiante debe poseer?*
+5. *¿Cuales son los conocimientos previos que estudiante debe poseer?*
 
    El estudiante debe poseer conocimientos en: 
    1. Uso del sistema operativo /Debian GNU/Linux/
@@ -155,22 +161,29 @@ El plan de capacitación esta compuesto por dos cursos:
    1. Administración de Contenidos
    2. Gestión
 
-2. *¿Metodología Utilizada?* 
+2. *¿Cuanto tiempo dura este curso?*
 
-   Utilizando la modalidad presencial, el instructor hará uso de láminas cómo
-   material de apoyo digital para las sesiones teórico-prácticas.
+   Este curso tiene una duración de 20 horas teórico prácticas.
 
-3. *¿Quién va a dictar el curso?*
+3. *¿Metodología Utilizada?* 
+
+    Utilizando la modalidad presencial, el instructor hará uso de láminas cómo material de apoyo digital para las sesiones teórico-prácticas. Es de vital importancia que los estudiantes realicen las actividades asignadas.
+
+4. *¿Quién va a dictar el curso?*
 
    Este curso va a ser dictado por:
 
    1. *Nombre:* Carlos Maldonado
    2. *Correo Electrónico:* /cmaldonado@covetel.com.ve/
 
-4. *¿Cuales son los conocimientos previos que estudiante debe poseer?*
+5. *¿Cuales son los conocimientos previos que estudiante debe poseer?*
 
    El estudiante debe poseer conocimientos en: 
-   
+   1. /XHTML, HTML/
+   2. /CSS/
+   3. /JavaScript/
+   4. /Firebug/ (Extensión de /Firefox/ para depurar)
+   5. Componente de /Google Chrome/ para depurar.
 
 *** Contenido 
 
