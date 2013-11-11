@@ -1,0 +1,210 @@
+#+TITLE:  Plone CMS - Plan de Capacitación
+#+AUTHOR:    Cooperativa Venezolana de Tecnologías Libres R.S. COVETEL
+#+EMAIL:     info@covetel.com.ve
+#+DATE:      
+#+DESCRIPTION: Plan de Capacitación Plone CMS
+#+KEYWORDS: covetel cantv portales plone
+#+LaTeX_CLASS: covetel
+#+LaTeX_CLASS_OPTIONS: [11pt,letterpaper,oneside,spanish]
+#+LANGUAGE:  es
+#+OPTIONS:   H:3 num:t toc:3 \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME:
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \input{titulo-capacitacion-plone.tex}
+
+* Plan de Capacitación
+
+** Introducción
+
+El plan de capacitación esta compuesto por dos cursos: 
+
+ 1. Curso Técnico de Plone - Nivel Básico.
+ 2. Curso Funcional de Plone - Nivel Básico. 
+
+** Curso Técnico de Plone - Nivel Básico. 
+
+*** Respuestas a Preguntas Frecuentes
+
+1. *¿A quién va dirigido el curso?* 
+
+   El curso está dirigido al personal técnico involucrado con Plone en las
+   siguientes tareas:
+   1. Mantenimiento
+   2. Configuración Técnica
+   3. Desarrollo
+
+2. *¿Metodología Utilizada?* 
+
+   Utilizando la modalidad presencial, el instructor hará uso de láminas cómo
+   material de apoyo digital para las sesiones teórico-prácticas.
+
+3. *¿Quién va a dictar el curso?*
+
+   Este curso va a ser dictado por:
+
+   1. *Nombre:* Carlos Guerrero
+   2. *Correo Electrónico:* /cguerrero@covetel.com.ve/
+
+4. *¿Cuales son los conocimientos previos que estudiante debe poseer?*
+
+   El estudiante debe poseer conocimientos en: 
+   1. Uso del sistema operativo /Debian GNU/Linux/
+      1. Uso del interprete de comandos /Bash/
+	 1. Operaciones básicas con archivos (crear, copiar, mover, borrar).
+	 2. Navegar entre directorios (entrar, salir, ruta relativa, ruta absoluta)
+      2. Uso de un editor de textos como /Vim/Emacs/
+      3. Uso del manejador de paquetes /Aptitude/ (instalar, actualizar, eliminar paquetes)
+
+*** Contenido 
+
+1. *Módulo 1:* Primeros pasos con /Python/
+    1. Instalación de Python
+    1. La consola interactiva de python
+    1. Declaración de funciones
+    1. Documentación de funciones
+    1. Todo es un objeto
+    1. Indentación
+    1. Probando Módulos
+    1. Introducción a los diccionarios
+    1. Introducción a los diccionarios
+    1. Introducción a las tuplas
+    1. Formato de cadenas de caracteres
+    1. Unión y separación de listas
+    1. Uso de funciones "Built-in"
+    1. La naturaleza peculiar de "and" y "or"
+    1. Importación de Módulos
+    1. Definición de Clases
+    1. Atributos de Clases
+    1. Funciones privadas
+    1. Manejo de Excepciones
+    1. Manejo de Archivos
+    1. Ciclos de Iteración
+    1. Trabajando con directorios
+    1. Procesamiento de HTML
+    1. Procesamiento de XML
+    1. Scripts y flujos 
+    1. Servicios web HTTP
+    1. Pruebas Unitarias
+    
+
+1. *Módulo 2:* 
+   1. Que es un manejador de contenidos
+   2. Empaquetamiento
+   3. Internacionalización 
+   4. Usabilidad
+   5. Tematización (Theming)
+   6. Registro y Personalización
+   7. Flujo de trabajo y la seguridad
+   8. Extensibilidad
+   9. Personalización de contenido
+    
+2. *Módulo 3:*
+    
+   1. Instalación de Plone
+   2. Árbol de directorios del Buildout
+   3. Gestión del Buildout
+    
+3. *Módulo 4:*
+
+   1. Configuraciones persistentes y /ZODB/.
+   2. Transporte de la configuración con /GenericSetup/
+   3. /Acquisition/ y /Skin Layers/
+   4. Reescritura de componentes de arquitectura /Zope/
+   5. Mejores prácticas para personalización.
+
+4. *Módulo 5:*
+   1. Creando un /policy package/.
+   2. Actualizar el /buildout/
+   3. /Extension Profile/.
+   4. Activar el /policy package/.
+   5. /Rebuildout, Restart, Reapply?/
+
+5. *Módulo 6:*
+   1. Uso de /Add-ons/
+   2. Installar /Add-ons/
+   3. Modificaciones en el /policy package/.
+   4. Pruebas
+
+6. *Módulo 7:*
+   1. Creando un tema personalizado.
+   2. Sobre /Diazo/
+   3. Creando un tema /Diazo/
+   4. Reescritura de elementos visuales.
+
+7. *Módulo 8:*
+   1. Usuarios y Permisos
+   2. Definiendo políticas de membresia.
+   3. Espacios de trabajo colaborativos
+   4. /The Pluggable Authentication Service/
+
+
+\clearpage
+
+** Curso Funcional de Plone. 
+
+*** Respuestas a Preguntas Frecuentes
+
+1. *¿A quién va dirigido el curso?* 
+
+   El curso está dirigido al personal funcional involucrado con Plone en las
+   siguientes tareas:
+   1. Administración de Contenidos
+   2. Gestión
+
+2. *¿Metodología Utilizada?* 
+
+   Utilizando la modalidad presencial, el instructor hará uso de láminas cómo
+   material de apoyo digital para las sesiones teórico-prácticas.
+
+3. *¿Quién va a dictar el curso?*
+
+   Este curso va a ser dictado por:
+
+   1. *Nombre:* Carlos Maldonado
+   2. *Correo Electrónico:* /cmaldonado@covetel.com.ve/
+
+4. *¿Cuales son los conocimientos previos que estudiante debe poseer?*
+
+   El estudiante debe poseer conocimientos en: 
+   
+
+*** Contenido 
+
+1. *Módulo 1:*
+     
+    1. Manejo de Contenidos con Plone
+    1. Acceso como nuevo usuario
+    1. Primera vista a la interfaz de Plone
+    1. Organizando el sitio web
+    1. Configurando el tablero
+    1. Configurando las preferencias
+    1. Añadiendo y editando Paginas
+    1. Añadiendo y editando Imágenes
+    1. Añadiendo y editando Archivos
+    1. Añadiendo y editando Eventos
+    1. Añadiendo y editando Enlaces
+    1. Añadiendo y editando Noticias
+    1. Bloqueo automático de Ítem
+    1. Gestionar y compartir contenido
+    1. Publicación de Documentos
+    1. Restringir tipos de contenido a en una carpeta
+    1. Gestión de Colecciones
+    1. Búsquedas Avanzadas
+    
+1. *Módulo 2:*
+    
+    1. Administración del Sitio
+    1. Gestión de idiomas
+    1. Gestión de seguridad
+    1. Gestión de personalización
+    1. Gestión de correo
+    1. Uso del log de errores
+    1. Adición y eliminación de productos
+    1. Gestión de Calendarios
+    1. Configuración del editor WYSIWYG
+    1. Gestión de Usuarios y Permisos
+    

@@ -49,10 +49,11 @@ La plataforma esta diseñada en función de cinco (5):
     /HTTP/ inversa. El objetivo de esta capa es aumentar el rendimiento de
     Plone y mejorar la experiencia del usuario en términos de tiempo de respuesta.
 
- 3. 
+ 3. *Balanceadores:* Esta capa es responsable de distribuir la carga de
+    trabajo a través de los servidores /ZEO Clients/
 
-capas como se muestra en
-la figura a continuación:
+ 4. *Clientes ZEO:* /ZEO/ Es la tecnología de balanceo de carga usada con
+    /Zope/.
 
 #+CAPTION: Capas de la Arquitectura
 #+NAME: fig:capas
