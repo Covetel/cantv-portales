@@ -1,0 +1,112 @@
+#+TITLE: Informe Maqueta de Plone
+#+AUTHOR:    Cooperativa Venezolana de Tecnologías Libres R.S. COVETEL
+#+EMAIL:     info@covetel.com.ve
+#+DATE:      
+#+DESCRIPTION: Informe maqueta de Plone
+#+KEYWORDS: covetel cantv portales
+#+LaTeX_CLASS: covetel
+#+LaTeX_CLASS_OPTIONS: [11pt,letterpaper,oneside,spanish]
+#+LANGUAGE:  es
+#+OPTIONS:   H:3 num:t toc:3 \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME:
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \input{t-informe-maqueta-plone.tex}
+
+* Maqueta de Plone
+
+** Componentes de la maqueta
+
+La maqueta de /Plone/ para CANTV esta compuesta por 6 maquinas virtuales:
+
+| *Nombre*             |    *Dirección* | *Descripción* |
+|----------------------+----------------+---------------|
+| zs.cantv.com.ve      | 192.168.113.90 | ZEO Server    |
+| zc1.cantv.com.ve     | 192.168.113.91 | ZEO Client    |
+| zc2.cantv.com.ve     | 192.168.113.92 | ZEO Client    |
+| haproxy.cantv.com.ve | 192.168.113.93 | HA Proxy      |
+| varnish.cantv.com.ve | 192.168.113.94 | Varnish       |
+| nginx.cantv.com.ve   | 192.168.113.95 | Nginx         |
+
+** Imágenes de las máquinas virtuales
+
+Se hace entrega de seis (6) imágenes de maquinas virtuales en formato /VMA/.
+
+| *ID* | *Nombre*             | *Archivo*                                    |
+|------+----------------------+----------------------------------------------|
+| 107  | nginx.cantv.com.ve   | =vzdump-qemu-107-2013_12_02-23_17_02.vma.gz= |
+| 108  | varnish.cantv.com.ve | =vzdump-qemu-108-2013_12_02-23_25_01.vma.gz= |
+| 109  | haproxy.cantv.com.ve | =vzdump-qemu-109-2013_12_02-23_27_00.vma.gz= |
+| 110  | zc1.cantv.com.ve     | =vzdump-qemu-110-2013_12_02-23_29_00.vma.gz= |
+| 111  | zs.cantv.com.ve      | =vzdump-qemu-111-2013_12_02-23_31_38.vma.gz= |
+| 114  | zc2.cantv.com.ve     | =vzdump-qemu-114-2013_12_02-23_33_21.vma.gz= |
+
+
+\clearpage 
+
+** Diagrama de la maqueta
+
+[[./images/maqueta.png]]
+
+
+** Procedimiento para aprovisionar la maqueta
+
+El procedimiento para restaurar la maqueta esta compuesto por los siguientes
+pasos:
+
+ 1. Copiar las maquinas virtuales a un servidor con /Proxmox/ configurado con
+    una interfaz =bridge= utilizando la dirección ip =192.168.113.252=.
+ 2. Restaurar las maquinas virtuales utilizando la siguiente instrucción.
+    #+BEGIN_EXAMPLE
+root@proxmox1:~# qmrestore <archivo> <id>
+    #+END_EXAMPLE 
+    1. Ejemplo: Restaurar la maquina *nginx.cantv.com.ve*
+       #+BEGIN_EXAMPLE
+qmrestore vzdump-qemu-107-2013_12_02-23_17_02.vma.gz 107
+       #+END_EXAMPLE
+ 3. Verificar que las maquinas se hayan restaurado.
+    #+BEGIN_EXAMPLE
+root@proxmox1:~# qm list 
+      VMID NAME                 STATUS     MEM(MB)    BOOTDISK(GB) PID       
+       107 nginx.cantv.com.ve   stopped    512                5.00 0         
+       108 varnish.cantv.com.ve stopped    512                5.00 25617     
+       109 haproxy.cantv.com.ve stopped    512                5.00 25843     
+       110 zc1.cantv.com.ve     stopped    512                5.00 26075     
+       111 zs.cantv.com.ve      stopped    512               10.00 26731     
+       114 zc2.cantv.com.ve     stopped    512                5.00 26936 
+       #+END_EXAMPLE
+ 4. Ejecutar la instrucción anterior por cada una de las imágenes.
+ 5. Encender las máquinas virtuales.
+    #+BEGIN_EXAMPLE
+    root@proxmox1:~# qm start 107
+    root@proxmox1:~# qm start 108
+    root@proxmox1:~# qm start 109
+    root@proxmox1:~# qm start 110
+    root@proxmox1:~# qm start 111
+    root@proxmox1:~# qm start 114
+#+END_EXAMPLE
+
+
+** Probar la maqueta 
+
+Para probar la maqueta, debe configurar la estación de trabajo del usuario que
+quiera probar la maqueta de la siguiente manera.
+
+ 1. Acondicionar la estación de trabajo desde donde se va a conectar el
+    usuario para probar la maqueta.
+    1. Agregar las siguientes lineas al archivo =/etc/hosts=
+       #+BEGIN_EXAMPLE
+# Maqueta CANTV
+192.168.113.90 zs.cantv.com.ve zs
+192.168.113.91 zc1.cantv.com.ve zc1
+192.168.113.92 zc2.cantv.com.ve zc2
+192.168.113.93 haproxy.cantv.com.ve haproxy
+192.168.113.94 varnish.cantv.com.ve varnish
+192.168.113.95 nginx.cantv.com.ve nginx
+       #+END_EXAMPLE
+
+
+Luego abrir un navegador, ir a la dirección =http://varnish.cantv.com.ve/Plone=.
