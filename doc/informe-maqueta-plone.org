@@ -16,7 +16,7 @@
 #+LATEX_HEADER: \usepackage{array}
 #+LATEX_HEADER: \input{t-informe-maqueta-plone.tex}
 
-* Maqueta de Plone 4.3.2
+* Maqueta de Plone =4.3.2=
 
 ** Componentes de la maqueta
 
