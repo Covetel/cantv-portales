@@ -1,0 +1,112 @@
+#+TITLE: Informe de Pruebas de Stress sobre Maqueta de Plone 4.3.2
+#+AUTHOR:    Cooperativa Venezolana de Tecnologías Libres R.S. COVETEL
+#+EMAIL:     info@covetel.com.ve
+#+DATE:      
+#+DESCRIPTION: Informe pruebas de stress sobre maqueta de Plone 4.3.2
+#+KEYWORDS: covetel cantv portales
+#+LaTeX_CLASS: covetel
+#+LaTeX_CLASS_OPTIONS: [11pt,letterpaper,oneside,spanish]
+#+LANGUAGE:  es
+#+OPTIONS:   H:3 num:t toc:3 \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME:
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \input{t-informe-stress-maqueta-plone}
+
+
+* Metodología de pruebas
+
+** Tsung
+
+Implementando una herramienta escrita en Erlang y bajo la licencia GPL,
+logramos grabar una sesión de interacción de usuario con la maqueta del Portal
+Plone con contenido extraído desde el portal de cantv.com.ve
+
+** Simulación de carga
+
+La sesión capturada que dura en promedio 2 minutos y 11 segundos, recorre
+varias noticias del Portal. Se simularon 271 usuarios con dicha conducta y fue
+posible manejar 225 usuarios conectados de manera efectiva.
+
+La prueba se realizó durante 6 minutos.
+
+** Comportamiento de la simulación
+
+Los primeros 20 segundos tuvieron un crecimiento de un (1) usuario por segundo
+y luego ocho (8) usuarios por segundo, en la caída la cantidad de usuarios
+nuevos por segundo también fue de uno (1) por segundo. Como se aprecia en la
+Figura 1.1 después de superar los 200 usuarios conectados, se comenzaron 
+
+#+CAPTION: Usuarios simulados y usuarios conectados (rojo/verde)
+#+NAME: Simulados vs. Conectados  
+[[./images/graphes-Users-simultaneous-stress-test.png]]
+
+
+* Arquitectura de componentes
+
+#+CAPTION: Maqueta de Plone 4.3.2
+#+NAME: Plataforma sobre las cuales se ejecutaron las pruebas de stress 
+#+ATTR_LaTeX: width=9.5cm
+
+[[./images/maqueta.png]]
+
+** Listado de servidores
+
+Todos los nodos de la maqueta tienen 512 MB RAM, un (1) procesador de 2.4GHz y
+5GB de espacio en disco; excepto por el servidor ZODB que tiene 10GB de
+espacio en disco.
+
+#+BEGIN_EXAMPLE
+root@proxmox1:~# qm list 
+      VMID NAME                 STATUS     MEM(MB)    BOOTDISK(GB) PID       
+       107 nginx.cantv.com.ve   stopped    512                5.00 0         
+       108 varnish.cantv.com.ve stopped    512                5.00 25617     
+       109 haproxy.cantv.com.ve stopped    512                5.00 25843     
+       110 zc1.cantv.com.ve     stopped    512                5.00 26075     
+       111 zs.cantv.com.ve      stopped    512               10.00 26731     
+       114 zc2.cantv.com.ve     stopped    512                5.00 26936 
+#+END_EXAMPLE
+
+
+* Resultados y estimaciones
+
+** Servidores ZEO Client y uso de procesador
+
+En la Figura 3.1 podemos apreciar un dato interesante, los servidores ZEO
+Client son los que consumen una mayor proporción de CPU. Se puede apreciar en
+la línea azul /cyan/ y verde oscuro
+
+
+#+CAPTION: Carga de CPU promedio 
+#+NAME: Plataforma sobre las cuales se ejecutaron las pruebas de stress 
+#+ATTR_LaTeX: width=12cm
+[[./images/graphes-load-mean-stress-test.png]]
+
+Dicho resultado nos permite llegar a las conclusiones enunciadas en la
+siguiente sección.
+
+** Estimaciones y recomendaciones
+
+1. Aprovechar las capacidades *multi-hilo* de Zope para lograr obtener la
+   mayor cantidad de rendimiento por nodo /ZEO Client/, asignando más de un
+   procesador a los servidores de dicha capa.
+2. Optimizar el uso de memoria RAM de ZEO Client para que usando una mayor
+   cantidad de RAM por nodo, se pueda atender una mayor cantidad de clientes
+   de navegación por nodo.
+3. Una capa ZEO con un par de nodos /ZEO cliente/ con 512MB de RAM pueden
+   atender al menos 225 usuarios concurentes por segundo que hagan consultas a
+   la página cada 2 a 5 segundos.
+4. El uso de procesador de la capa /nginx/ (en modo /proxy/ reverse) no es
+   significativo.
+5. Se recomienda obtener un juego de datos más amplio proveniente de la
+   plataforma de cantv.com.ve para poder disponer de una mayor cantidad de
+   enlaces que se puedan usar en la simulación y aproximar un poco más las
+   pruebas al escenario real.
+6. Dimensionar la plataforma de hardware con nodos que tengan la capacidad de
+   aumentar su cantidad de núcleos y RAM asignados, de manera que sea posible
+   el crecimiento horizontal de la plataforma con operaciones que no implican
+   la puesta en marcha de nuevos nodos u operaciones que comprometan la
+   continuidad de servicio.
