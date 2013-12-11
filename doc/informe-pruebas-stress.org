@@ -29,7 +29,8 @@ Plone con contenido extraído desde el portal de cantv.com.ve
 
 La sesión capturada que dura en promedio 2 minutos y 11 segundos, recorre
 varias noticias del Portal. Se simularon 271 usuarios con dicha conducta y fue
-posible manejar 225 usuarios conectados de manera efectiva.
+posible manejar hasta 225 usuarios por segundo conectados de manera
+concurrente a la plataforma durante seis (6).
 
 La prueba se realizó durante 6 minutos.
 
@@ -38,7 +39,9 @@ La prueba se realizó durante 6 minutos.
 Los primeros 20 segundos tuvieron un crecimiento de un (1) usuario por segundo
 y luego ocho (8) usuarios por segundo, en la caída la cantidad de usuarios
 nuevos por segundo también fue de uno (1) por segundo. Como se aprecia en la
-Figura 1.1 después de superar los 200 usuarios conectados, se comenzaron 
+Figura 1.1 después de superar los 200 usuarios conectados, que fue en promedio
+el pico más alto aceptado por la plataforma, la cantidad de usuarios
+conectados comenzó a disminuir.
 
 #+CAPTION: Usuarios simulados y usuarios conectados (rojo/verde)
 #+NAME: Simulados vs. Conectados  
@@ -73,12 +76,73 @@ root@proxmox1:~# qm list
 
 * Resultados y estimaciones
 
+** Datos Estadisticos - =Tsung=
+
+*** /Main Statistics/ 
+
+    | *Name*  | *highest 10sec mean* | *lowest 10sec mean* | *Highest Rate* | *Mean*     | *Count* |
+    |---------+----------------------+---------------------+----------------+------------+---------|
+    | connect | 1.08 msec            | 0.475 msec          | 15.8 / sec     | 0.911 msec |    1534 |
+    | page    | 4.83 sec             | 69.16 msec          | 32.5 / sec     | 2.43 sec   |    4065 |
+    | request | 2.98 sec             | 25.30 msec          | 54.7 / sec     | 1.30 sec   |    7588 |
+    | session | 5mn 1sec             | 1mn 13sec           | 4 / sec        | 2mn 11sec  |     271 |
+
+*** /Network Throughput/
+
+| *Name*    | *Highest Rate*  | *Total*   |
+|-----------+-----------------+-----------|
+| size\_rcv | 6.53 Mbits/sec  | 113.38 MB |
+| size\_sent | 99.40 Kbits/sec | 1.65 MB   |
+
+
+*** /Counters Statistics/
+
+| *Name*             | *Max* |
+|--------------------+-------|
+| connected          |   225 |
+| finish\_users\_count |   271 |
+| newphase           |     2 |
+| users              |   271 |
+| users\_count       |   271 |
+
+*** /Server Monitoring/
+
+| *Name*                              | *highest 10sec mean* | *lowest 10sec mean* |
+|-------------------------------------+----------------------+---------------------|
+| cpu:os\_mon@haproxy.cantv.com.ve     | 37.70 %              | 0.80 %              |
+| cpu:os\_mon@nginx.cantv.com.ve       | 34.30 %              | 0.80 %              |
+| cpu:os\_mon@varnish.cantv.com.ve     | 47.30 %              | 1.10 %              |
+| cpu:os\_mon@zc1.cantv.com.ve         | 220.70 %             | 1.00 %              |
+| cpu:os\_mon@zc2.cantv.com.ve         | 219.60 %             | 0.80 %              |
+| cpu:os\_mon@zs.cantv.com.ve          | 37.30 %              | 0.90 %              |
+| freemem:os\_mon@haproxy.cantv.com.ve | 449.74 MB            | 447.05 MB           |
+| freemem:os\_mon@nginx.cantv.com.ve   | 447.38 MB            | 447.16 MB           |
+| freemem:os\_mon@varnish.cantv.com.ve | 445.20 MB            | 432.68 MB           |
+| freemem:os\_mon@zc1.cantv.com.ve     | 244.79 MB            | 243.17 MB           |
+| freemem:os\_mon@zc2.cantv.com.ve     | 244.81 MB            | 243.12 MB           |
+| freemem:os\_mon@zs.cantv.com.ve      | 434.42 MB            | 434.16 MB           |
+| load:os\_mon@haproxy.cantv.com.ve    | 0.12                 | 0.03                |
+| load:os\_mon@nginx.cantv.com.ve      | 0.03                 | 0.01                |
+| load:os\_mon@varnish.cantv.com.ve    | 0.10                 | 0.01                |
+| load:os\_mon@zc1.cantv.com.ve        | 0.66                 | 0.02                |
+| load:os\_mon@zc2.cantv.com.ve        | 0.66                 | 0.03                |
+| load:os\_mon@zs.cantv.com.ve         | 0.03                 | 0.01                |
+   
+
+*** /HTTP return code/ 
+
+| *Code* | *Highest Rate* | *Total number* |
+|--------+----------------+----------------|
+|    200 | 54.7 / sec     |           7588 |
+
+
+\clearpage
+
 ** Servidores ZEO Client y uso de procesador
 
 En la Figura 3.1 podemos apreciar un dato interesante, los servidores ZEO
 Client son los que consumen una mayor proporción de CPU. Se puede apreciar en
 la línea azul /cyan/ y verde oscuro
-
 
 #+CAPTION: Carga de CPU promedio 
 #+NAME: Plataforma sobre las cuales se ejecutaron las pruebas de stress 
@@ -110,3 +174,37 @@ siguiente sección.
    el crecimiento horizontal de la plataforma con operaciones que no implican
    la puesta en marcha de nuevos nodos u operaciones que comprometan la
    continuidad de servicio.
+
+
+** Gráficas
+
+*** Tiempos de Respuesta
+
+#+CAPTION: Transacciones
+#+NAME: Transacciones
+#+ATTR_LaTeX: width=10cm
+[[./images/graphes-Transactions-mean.png]]
+ 
+#+CAPTION: Peticiones y conecciones
+#+NAME: Peticiones y conecciones
+#+ATTR_LaTeX: width=10cm
+[[./images/graphes-Perfs-mean.png]]
+
+
+*** Throughput
+
+#+CAPTION: Tasa de Transacciones
+#+NAME: Transacciones
+#+ATTR_LaTeX: width=10cm
+[[./images/graphes-Transactions-rate.png]]
+
+#+CAPTION: Peticiones
+#+NAME: Peticiones
+#+ATTR_LaTeX: width=10cm
+[[./images/graphes-Perfs-rate.png]]
+
+
+
+
+
+
