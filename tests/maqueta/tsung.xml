@@ -1,0 +1,115 @@
+<?xml version="1.0"?><tsung loglevel="notice" version="1.0">
+
+  <clients>
+    <client host="localhost" use_controller_vm="true"/>
+  </clients>
+  
+  <servers>
+  <server host="varnish.cantv.com.ve" port="80" type="tcp"/>
+</servers>
+
+<monitoring>
+  <monitor host="zs" type="munin"><munin port="4949"/></monitor>
+  <monitor host="zc1" type="munin"><munin port="4949"/></monitor>
+  <monitor host="zc2" type="munin"><munin port="4949"/></monitor>
+  <monitor host="haproxy" type="munin"><munin port="4949"/></monitor>
+  <monitor host="varnish" type="munin"><munin port="4949"/></monitor>
+  <monitor host="nginx" type="munin"><munin port="4949"/></monitor>
+</monitoring>
+
+    <load>
+      <arrivalphase phase="1" duration="20" unit="second">
+        <users interarrival="1" unit="second"/>
+      </arrivalphase>
+      <arrivalphase phase="2" duration="30" unit="second">
+        <users interarrival="0.125" unit="second"/>
+      </arrivalphase>
+      <arrivalphase phase="3" duration="20" unit="second">
+        <users interarrival="1" unit="second"/>
+      </arrivalphase>
+    </load>
+
+  <options>
+   <option type="ts_http" name="user_agent">
+    <user_agent probability="80">Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.8) Gecko/20050513 Galeon/1.3.21</user_agent>
+    <user_agent probability="20">Mozilla/5.0 (Windows; U; Windows NT 5.2; fr-FR; rv:1.7.8) Gecko/20050511 Firefox/1.0.4</user_agent>
+   </option>
+  </options>
+
+ <sessions>
+
+<session name="rec20131203-0434" probability="100" type="ts_http">
+<request><http url="http://varnish.cantv.com.ve/Plone" version="1.1" method="GET"/></request>
+
+<thinktime random="true" value="5"/>
+
+<request><http url="/Plone/news/dulces-navidenos-dulce-de-higos" version="1.1" method="GET"/></request>
+
+<thinktime random="true" value="5"/>
+
+<request><http url="/Plone/news/desempleo-bajo-a-7-6-en-octubre" version="1.1" method="GET"/></request>
+<request><http url="/Plone/news/desempleo-bajo-a-7-6-en-octubre/image_mini" version="1.1" method="GET"/></request>
+
+<thinktime random="true" value="3"/>
+
+<request><http url="/Plone/news/como-se-beneficiaran-eeuu-y-europa-del-acuerdo-nuclear-con-iran" version="1.1" method="GET"/></request>
+<request><http url="/Plone/news/como-se-beneficiaran-eeuu-y-europa-del-acuerdo-nuclear-con-iran/image_mini" version="1.1" method="GET"/></request>
+
+<thinktime random="true" value="2"/>
+
+<request><http url="/Plone/news" version="1.1" method="GET"/></request>
+<request><http url="/Plone/news/venezuela-presente-en-feria-de-quito/@@images/30c503af-120f-47dc-ab78-30f7da9e611c.jpeg" version="1.1" if_modified_since="Tue, 03 Dec 2013 03:39:48 GMT" method="GET"/></request>
+<request><http url="/Plone/news/futbol-femenino-criollo-gana-medalla-de-plata-en-bolivarianos-2013/@@images/fbb55f08-8ec6-40fd-ab18-4467ab23942a.jpeg" version="1.1" if_modified_since="Tue, 03 Dec 2013 03:39:48 GMT" method="GET"/></request>
+
+<thinktime random="true" value="1"/>
+
+<request><http url="/Plone/news/como-se-beneficiaran-eeuu-y-europa-del-acuerdo-nuclear-con-iran/@@images/60d1c9d6-1ad4-4220-90f1-cfd23a8148b6.jpeg" version="1.1" if_modified_since="Tue, 03 Dec 2013 03:39:47 GMT" method="GET"/></request>
+
+<thinktime random="true" value="2"/>
+
+<request><http url="/Plone/news/desempleo-bajo-a-7-6-en-octubre" version="1.1" method="GET"/></request>
+
+<thinktime random="true" value="2"/>
+
+<request><http url="/Plone/news/canada-aprueba-la-produccion-de-salmon-transgenico-a-gran-escala/@@images/a37358ac-896a-4f44-b23e-18c06ae9c3a9.jpeg" version="1.1" if_modified_since="Tue, 03 Dec 2013 03:39:48 GMT" method="GET"/></request>
+<request><http url="/Plone/news/desempleo-bajo-a-7-6-en-octubre/@@images/54dfee0f-b99f-43d3-ab0e-211046106212.jpeg" version="1.1" if_modified_since="Tue, 03 Dec 2013 03:39:47 GMT" method="GET"/></request>
+
+<thinktime random="true" value="15"/>
+
+<request><http url="/Plone/news/como-se-beneficiaran-eeuu-y-europa-del-acuerdo-nuclear-con-iran" version="1.1" method="GET"/></request>
+
+<thinktime random="true" value="12"/>
+
+<request><http url="/Plone/news/dulces-navidenos-dulce-de-higos" version="1.1" method="GET"/></request>
+
+<thinktime random="true" value="4"/>
+
+<request><http url="/Plone/news/futbol-femenino-criollo-gana-medalla-de-plata-en-bolivarianos-2013" version="1.1" method="GET"/></request>
+<request><http url="/Plone/news/futbol-femenino-criollo-gana-medalla-de-plata-en-bolivarianos-2013/image_mini" version="1.1" method="GET"/></request>
+
+<thinktime random="true" value="3"/>
+
+<request><http url="/Plone/news/venezuela-presente-en-feria-de-quito" version="1.1" method="GET"/></request>
+<request><http url="/Plone/news/venezuela-presente-en-feria-de-quito/image_mini" version="1.1" method="GET"/></request>
+
+<thinktime random="true" value="35"/>
+
+<request><http url="/Plone/news/futbol-femenino-criollo-gana-medalla-de-plata-en-bolivarianos-2013" version="1.1" method="GET"/></request>
+
+<thinktime random="true" value="6"/>
+
+<request><http url="/Plone/news" version="1.1" method="GET"/></request>
+<request><http url="/Plone/news/venezuela-presente-en-feria-de-quito/@@images/30c503af-120f-47dc-ab78-30f7da9e611c.jpeg" version="1.1" if_modified_since="Tue, 03 Dec 2013 04:35:04 GMT" method="GET"/></request>
+<request><http url="/Plone/news/futbol-femenino-criollo-gana-medalla-de-plata-en-bolivarianos-2013/@@images/fbb55f08-8ec6-40fd-ab18-4467ab23942a.jpeg" version="1.1" if_modified_since="Tue, 03 Dec 2013 04:35:05 GMT" method="GET"/></request>
+<request><http url="/Plone/news/como-se-beneficiaran-eeuu-y-europa-del-acuerdo-nuclear-con-iran/@@images/60d1c9d6-1ad4-4220-90f1-cfd23a8148b6.jpeg" version="1.1" method="GET"/></request>
+<request><http url="/Plone/news/canada-aprueba-la-produccion-de-salmon-transgenico-a-gran-escala/@@images/a37358ac-896a-4f44-b23e-18c06ae9c3a9.jpeg" version="1.1" method="GET"/></request>
+<request><http url="/Plone/news/desempleo-bajo-a-7-6-en-octubre/@@images/54dfee0f-b99f-43d3-ab0e-211046106212.jpeg" version="1.1" method="GET"/></request>
+
+<thinktime random="true" value="5"/>
+
+<request><http url="/Plone/news/canada-aprueba-la-produccion-de-salmon-transgenico-a-gran-escala" version="1.1" method="GET"/></request>
+<request><http url="/Plone/news/canada-aprueba-la-produccion-de-salmon-transgenico-a-gran-escala/image_mini" version="1.1" method="GET"/></request>
+</session>
+
+ </sessions>
+</tsung>

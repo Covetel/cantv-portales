@@ -1,0 +1,1025 @@
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+    ts_config_server:(5:<0.51.0>) Config server started, logdir is "/root/.tsung/log/20131203-0556"
+ 
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+              ts_mon:(5:<0.50.0>) starting monitor, global 
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+              ts_mon:(5:<0.52.0>) Init, log dir is "/root/.tsung/log/20131203-0556"
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+              ts_mon:(5:<0.52.0>) starting monitor
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+        ts_stats_mon:(5:<0.50.0>) starting stats server, global 
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+        ts_stats_mon:(5:<0.54.0>) starting ts_stats_mon stats server
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+        ts_stats_mon:(5:<0.50.0>) starting request stats server, global 
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+        ts_stats_mon:(5:<0.55.0>) starting dedicated stats server for request 
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+        ts_stats_mon:(5:<0.50.0>) starting page stats server, global 
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+        ts_stats_mon:(5:<0.56.0>) starting dedicated stats server for page 
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+        ts_stats_mon:(5:<0.50.0>) starting connect stats server, global 
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+        ts_stats_mon:(5:<0.57.0>) starting dedicated stats server for connect 
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+        ts_stats_mon:(5:<0.50.0>) starting transaction stats server, global 
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+        ts_stats_mon:(5:<0.58.0>) starting transaction stats server
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+     ts_match_logger:(5:<0.50.0>) starting match logger, global 
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+     ts_match_logger:(5:<0.59.0>) starting match logger
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+     ts_match_logger:(5:<0.59.0>) starting match logger
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+           ts_config:(5:<0.51.0>) Reading config file: tsung.xml
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+      ts_config_http:(4:<0.51.0>) Get user agent: 80 "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.8) Gecko/20050513 Galeon/1.3.21" 
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+      ts_config_http:(4:<0.51.0>) Get user agent: 20 "Mozilla/5.0 (Windows; U; Windows NT 5.2; fr-FR; rv:1.7.8) Gecko/20050511 Firefox/1.0.4" 
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+           ts_config:(5:<0.51.0>) Session name for id 1 is "rec20131203-0434"
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+           ts_config:(5:<0.51.0>) Session type: persistent=true, bidi=false
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+    ts_config_server:(5:<0.51.0>) SYSINFO:Tsung version: 1.4.2
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+    ts_config_server:(5:<0.51.0>) SYSINFO:Erlang version: Erlang R15B01 (erts-5.9.1) [source] [64-bit] [smp:4:1] [async-threads:16] [kernel-poll:true]
+
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+    ts_config_server:(5:<0.51.0>) SYSINFO:System architecture x86_64-pc-linux-gnu
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+    ts_config_server:(5:<0.51.0>) SYSINFO:Current path: /usr/lib/erlang/lib/tsung-1.4.2/ebin/tsung.beam
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+       ts_job_notify:(5:<0.63.0>) No listen port defined, can't open listening socket 
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zs",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zc1",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zc2",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"haproxy",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"varnish",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"nginx",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+              ts_mon:(5:<0.52.0>) Activate clients with text backend
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+    ts_config_server:(5:<0.51.0>) Start a launcher on the controller beam localhost
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+  ts_launcher_static:(5:<0.92.0>) Launch msg receive ("localhost")
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+         ts_launcher:(5:<0.93.0>) Launch msg receive ("localhost")
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+              ts_mon:(5:<0.52.0>) A launcher has started
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+    ts_config_server:(5:<0.51.0>) All remote beams started, sync 
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+    ts_config_server:(5:<0.51.0>) New arrival phase 1 for client "localhost" (last ? true): will start 20 users
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+    ts_config_server:(5:<0.51.0>) New arrival phase 2 for client "localhost" (last ? true): will start 240 users
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+    ts_config_server:(5:<0.51.0>) New arrival phase 3 for client "localhost" (last ? true): will start 20 users
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+         ts_launcher:(5:<0.93.0>) Expected duration of first phase: 20.0 sec (20 users) 
+
+=INFO REPORT==== 3-Dec-2013::05:56:11 ===
+         ts_launcher:(5:<0.93.0>) Activate launcher (20 users) in 10534 msec 
+
+=INFO REPORT==== 3-Dec-2013::05:56:45 ===
+         ts_launcher:(5:<0.93.0>) Phase duration exceeded, but not all users were launched (2 users, 10.0% of phase)
+
+=INFO REPORT==== 3-Dec-2013::05:56:45 ===
+         ts_launcher:(5:<0.93.0>) Start a new arrival phase (240 users, 0.008); expected duration=30.0 sec
+
+=ERROR REPORT==== 3-Dec-2013::05:57:13 ===
+** Generic server <0.78.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.3334>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.792>,4949,"nginx.cantv.com.ve",
+                               {192,168,113,95},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.792>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:57:13 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"nginx",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::05:57:13 ===
+** Generic server <0.71.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.3347>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.788>,4949,"zs.cantv.com.ve",
+                               {192,168,113,90},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.788>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:57:13 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zs",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::05:57:13 ===
+** Generic server <0.77.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.3363>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.793>,4949,"varnish.cantv.com.ve",
+                               {192,168,113,94},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.793>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:57:13 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"varnish",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::05:57:13 ===
+** Generic server <0.76.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.3365>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.789>,4949,"haproxy.cantv.com.ve",
+                               {192,168,113,93},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.789>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:57:13 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"haproxy",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::05:57:14 ===
+** Generic server <0.74.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.3391>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.791>,4949,"zc1.cantv.com.ve",
+                               {192,168,113,91},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.791>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:57:14 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zc1",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::05:57:14 ===
+** Generic server <0.75.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.3396>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.790>,4949,"zc2.cantv.com.ve",
+                               {192,168,113,92},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.790>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:57:14 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zc2",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=INFO REPORT==== 3-Dec-2013::05:57:15 ===
+         ts_launcher:(5:<0.93.0>) Phase duration exceeded, but not all users were launched (7 users, 2.9% of phase)
+
+=INFO REPORT==== 3-Dec-2013::05:57:15 ===
+         ts_launcher:(5:<0.93.0>) Start a new arrival phase (20 users, 0.001); expected duration=20.0 sec
+
+=INFO REPORT==== 3-Dec-2013::05:57:36 ===
+         ts_launcher:(5:<0.93.0>) This was the last phase, wait for connected users to finish their session
+
+=INFO REPORT==== 3-Dec-2013::05:57:36 ===
+     ts_launcher_mgr:(5:<0.88.0>) Still 271 active client(s)
+
+=ERROR REPORT==== 3-Dec-2013::05:58:15 ===
+** Generic server <0.335.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.12250>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.1191>,4949,"nginx.cantv.com.ve",
+                               {192,168,113,95},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.1191>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:58:15 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"nginx",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::05:58:15 ===
+** Generic server <0.336.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.12264>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.1194>,4949,"zs.cantv.com.ve",
+                               {192,168,113,90},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.1194>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:58:15 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zs",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::05:58:16 ===
+** Generic server <0.339.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.12302>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.1196>,4949,
+                               "haproxy.cantv.com.ve",
+                               {192,168,113,93},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.1196>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:58:16 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"haproxy",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::05:58:16 ===
+** Generic server <0.338.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.12312>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.1195>,4949,
+                               "varnish.cantv.com.ve",
+                               {192,168,113,94},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.1195>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:58:16 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"varnish",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::05:58:17 ===
+** Generic server <0.341.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.12416>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.1199>,4949,"zc1.cantv.com.ve",
+                               {192,168,113,91},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.1199>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:58:17 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zc1",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::05:58:17 ===
+** Generic server <0.342.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.12425>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.1202>,4949,"zc2.cantv.com.ve",
+                               {192,168,113,92},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.1202>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:58:17 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zc2",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=INFO REPORT==== 3-Dec-2013::05:58:36 ===
+     ts_launcher_mgr:(5:<0.88.0>) Still 242 active client(s)
+
+=ERROR REPORT==== 3-Dec-2013::05:59:17 ===
+** Generic server <0.384.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.19066>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.1677>,4949,"nginx.cantv.com.ve",
+                               {192,168,113,95},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.1677>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:59:17 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"nginx",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::05:59:18 ===
+** Generic server <0.385.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.19076>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.1680>,4949,"zs.cantv.com.ve",
+                               {192,168,113,90},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.1680>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:59:18 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zs",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::05:59:18 ===
+** Generic server <0.386.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.19083>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.1681>,4949,
+                               "haproxy.cantv.com.ve",
+                               {192,168,113,93},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.1681>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:59:18 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"haproxy",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::05:59:18 ===
+** Generic server <0.387.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.19086>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.1682>,4949,
+                               "varnish.cantv.com.ve",
+                               {192,168,113,94},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.1682>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:59:18 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"varnish",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::05:59:20 ===
+** Generic server <0.388.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.19191>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.1696>,4949,"zc1.cantv.com.ve",
+                               {192,168,113,91},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.1696>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:59:20 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zc1",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::05:59:20 ===
+** Generic server <0.389.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.19196>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.1697>,4949,"zc2.cantv.com.ve",
+                               {192,168,113,92},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.1697>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::05:59:20 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zc2",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=INFO REPORT==== 3-Dec-2013::05:59:36 ===
+     ts_launcher_mgr:(5:<0.88.0>) Still 62 active client(s)
+
+=ERROR REPORT==== 3-Dec-2013::06:00:19 ===
+** Generic server <0.396.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.21042>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2213>,4949,"nginx.cantv.com.ve",
+                               {192,168,113,95},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2213>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:00:19 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"nginx",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::06:00:19 ===
+** Generic server <0.397.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.21044>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2214>,4949,"zs.cantv.com.ve",
+                               {192,168,113,90},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2214>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:00:19 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zs",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::06:00:20 ===
+** Generic server <0.398.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.21052>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2215>,4949,
+                               "haproxy.cantv.com.ve",
+                               {192,168,113,93},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2215>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:00:20 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"haproxy",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::06:00:20 ===
+** Generic server <0.399.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.21054>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2216>,4949,
+                               "varnish.cantv.com.ve",
+                               {192,168,113,94},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2216>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:00:20 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"varnish",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::06:00:22 ===
+** Generic server <0.400.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.21097>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2229>,4949,"zc1.cantv.com.ve",
+                               {192,168,113,91},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2229>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:00:22 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zc1",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::06:00:22 ===
+** Generic server <0.401.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.21100>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2230>,4949,"zc2.cantv.com.ve",
+                               {192,168,113,92},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2230>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:00:22 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zc2",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=INFO REPORT==== 3-Dec-2013::06:00:36 ===
+     ts_launcher_mgr:(5:<0.88.0>) Still 10 active client(s)
+
+=ERROR REPORT==== 3-Dec-2013::06:01:21 ===
+** Generic server <0.408.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.21825>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2342>,4949,"nginx.cantv.com.ve",
+                               {192,168,113,95},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2342>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:01:21 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"nginx",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::06:01:21 ===
+** Generic server <0.409.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.21827>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2343>,4949,"zs.cantv.com.ve",
+                               {192,168,113,90},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2343>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:01:21 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zs",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::06:01:22 ===
+** Generic server <0.410.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.21829>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2344>,4949,
+                               "haproxy.cantv.com.ve",
+                               {192,168,113,93},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2344>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:01:22 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"haproxy",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::06:01:22 ===
+** Generic server <0.411.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.21832>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2345>,4949,
+                               "varnish.cantv.com.ve",
+                               {192,168,113,94},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2345>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:01:22 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"varnish",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::06:01:24 ===
+** Generic server <0.413.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.21837>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2347>,4949,"zc1.cantv.com.ve",
+                               {192,168,113,91},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2347>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:01:24 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zc1",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::06:01:24 ===
+** Generic server <0.414.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.21840>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2348>,4949,"zc2.cantv.com.ve",
+                               {192,168,113,92},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2348>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:01:24 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zc2",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=INFO REPORT==== 3-Dec-2013::06:01:36 ===
+     ts_launcher_mgr:(5:<0.88.0>) Still 2 active client(s)
+
+=ERROR REPORT==== 3-Dec-2013::06:02:23 ===
+** Generic server <0.421.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.22321>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2374>,4949,"nginx.cantv.com.ve",
+                               {192,168,113,95},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2374>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:02:23 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"nginx",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::06:02:23 ===
+** Generic server <0.422.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.22323>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2375>,4949,"zs.cantv.com.ve",
+                               {192,168,113,90},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2375>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:02:23 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zs",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::06:02:24 ===
+** Generic server <0.423.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.22326>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2376>,4949,
+                               "haproxy.cantv.com.ve",
+                               {192,168,113,93},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2376>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:02:24 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"haproxy",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::06:02:24 ===
+** Generic server <0.424.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.22328>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2377>,4949,
+                               "varnish.cantv.com.ve",
+                               {192,168,113,94},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2377>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:02:24 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"varnish",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::06:02:26 ===
+** Generic server <0.425.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.22345>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2378>,4949,"zc1.cantv.com.ve",
+                               {192,168,113,91},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2378>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:02:26 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zc1",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=ERROR REPORT==== 3-Dec-2013::06:02:26 ===
+** Generic server <0.426.0> terminating 
+** Last message in was {timeout,#Ref<0.0.0.22348>,send_request}
+** When Server state == {state,{global,ts_mon},
+                               10000,#Port<0.2379>,4949,"zc2.cantv.com.ve",
+                               {192,168,113,92},
+                               1.0}
+** Reason for termination == 
+** {function_clause,[{ts_os_mon_munin,read_munin_data,
+                                      [#Port<0.2379>,{error,closed},[]],
+                                      []},
+                     {ts_os_mon_munin,handle_info,2,[]},
+                     {gen_server,handle_msg,5,
+                                 [{file,"gen_server.erl"},{line,607}]},
+                     {proc_lib,init_p_do_apply,3,
+                               [{file,"proc_lib.erl"},{line,227}]}]}
+
+=INFO REPORT==== 3-Dec-2013::06:02:26 ===
+     ts_os_mon_munin:(5:<0.67.0>) starting os_mon_munin with args {"zc2",
+                                                                   {4949},
+                                                                   10000,
+                                                                   {global,
+                                                                    ts_mon}}
+=INFO REPORT==== 3-Dec-2013::06:02:36 ===
+     ts_launcher_mgr:(5:<0.88.0>) No more active users tsung_controller@tsung "8982"
+
+=INFO REPORT==== 3-Dec-2013::06:02:36 ===
+              ts_mon:(5:<0.52.0>) stopping monitor (normal)

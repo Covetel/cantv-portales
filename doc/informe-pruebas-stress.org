@@ -14,6 +14,7 @@
 #+LINK_UP:   
 #+LINK_HOME:
 #+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \usepackage{float}
 #+LATEX_HEADER: \input{t-informe-stress-maqueta-plone}
 
 
@@ -29,16 +30,25 @@ Plone con contenido extraído desde el portal de cantv.com.ve
 
 La sesión capturada que dura en promedio 2 minutos y 11 segundos, recorre
 varias noticias del Portal. Se simularon 271 usuarios con dicha conducta y fue
-posible manejar 225 usuarios conectados de manera efectiva.
+posible manejar hasta 225 usuarios por segundo conectados de manera
+concurrente a la plataforma durante seis (6) minutos.
 
-La prueba se realizó durante 6 minutos.
+Durante esos 6 minutos se realizaron 7588 peticiones de contenido (HTML,
+imágenes, elementos CSS y JS) cuya tiempo de respuesta promedio fue de 1,3
+segundos. En ambos extremos de la estadística, el promedio de tiempo de
+respuesta más bajo durante 10 segundos fue de 25,3 milisegundos (mejor de los
+casos) y el más alto durante 10 segundos fue de 2,98 segundos (peor de los
+casos). Ver la tabla "Estadísticas principales" en la sección 3.1.1 para
+mayores detalles.
 
 ** Comportamiento de la simulación
 
 Los primeros 20 segundos tuvieron un crecimiento de un (1) usuario por segundo
 y luego ocho (8) usuarios por segundo, en la caída la cantidad de usuarios
 nuevos por segundo también fue de uno (1) por segundo. Como se aprecia en la
-Figura 1.1 después de superar los 200 usuarios conectados, se comenzaron 
+Figura 1.1 después de superar los 200 usuarios conectados, que fue en promedio
+el pico más alto aceptado por la plataforma, la cantidad de usuarios
+conectados comenzó a disminuir.
 
 #+CAPTION: Usuarios simulados y usuarios conectados (rojo/verde)
 #+NAME: Simulados vs. Conectados  
@@ -71,7 +81,66 @@ root@proxmox1:~# qm list
 #+END_EXAMPLE
 
 
-* Resultados y estimaciones
+* Resultados y conclusiones
+
+** Datos Estadisticos - =Tsung=
+
+*** /Estadísticas principales/ 
+
+|                     | *media más alta* | *media más baja* |                 |            |          |
+| *Nombre*            | *por 10s*        | *por 10s*        | *Tasa más alta* | *Media*    | *Cuenta* |
+|---------------------+------------------+------------------+-----------------+------------+----------|
+| conexión inicial    | 1.08 msec        | 0.475 msec       | 15.8 / sec      | 0.911 msec |     1534 |
+| peticiones en grupo | 4.83 sec         | 69.16 msec       | 32.5 / sec      | 2.43 sec   |     4065 |
+| petición            | 2.98 sec         | 25.30 msec       | 54.7 / sec      | 1.30 sec   |     7588 |
+| sesión              | 5mn 1sec         | 1mn 13sec        | 4 / sec         | 2mn 11sec  |      271 |
+
+*** /Tráfico total de red/
+
+| *Nombre*                  | *Tasa más alta* | *Total*   |
+|---------------------------+-----------------+-----------|
+| datos recibidos por tsung | 6.53 Mbits/s    | 113.38 MB |
+| datos enviados por tsung  | 99.40 Kbits/s   | 1.65 MB   |
+
+*** /Contadores de usuario/
+
+| *Name*                        | *Max* |
+|-------------------------------+-------|
+| conectados de manera efectiva |   225 |
+| cantidad de usuarios creados  |   271 |
+
+*** /Monitoreo de servidores/
+
+| *Nombre*                             | *media más alta* | *media más baja* |
+|                                      | *por 10s*        | *por 10s.*       |
+|--------------------------------------+------------------+------------------|
+| cpu:os\_mon@haproxy.cantv.com.ve     | 37.70 %          | 0.80 %           |
+| cpu:os\_mon@nginx.cantv.com.ve       | 34.30 %          | 0.80 %           |
+| cpu:os\_mon@varnish.cantv.com.ve     | 47.30 %          | 1.10 %           |
+| cpu:os\_mon@zc1.cantv.com.ve         | 220.70 %         | 1.00 %           |
+| cpu:os\_mon@zc2.cantv.com.ve         | 219.60 %         | 0.80 %           |
+| cpu:os\_mon@zs.cantv.com.ve          | 37.30 %          | 0.90 %           |
+| freemem:os\_mon@haproxy.cantv.com.ve | 449.74 MB        | 447.05 MB        |
+| freemem:os\_mon@nginx.cantv.com.ve   | 447.38 MB        | 447.16 MB        |
+| freemem:os\_mon@varnish.cantv.com.ve | 445.20 MB        | 432.68 MB        |
+| freemem:os\_mon@zc1.cantv.com.ve     | 244.79 MB        | 243.17 MB        |
+| freemem:os\_mon@zc2.cantv.com.ve     | 244.81 MB        | 243.12 MB        |
+| freemem:os\_mon@zs.cantv.com.ve      | 434.42 MB        | 434.16 MB        |
+| load:os\_mon@haproxy.cantv.com.ve    | 0.12             | 0.03             |
+| load:os\_mon@nginx.cantv.com.ve      | 0.03             | 0.01             |
+| load:os\_mon@varnish.cantv.com.ve    | 0.10             | 0.01             |
+| load:os\_mon@zc1.cantv.com.ve        | 0.66             | 0.02             |
+| load:os\_mon@zc2.cantv.com.ve        | 0.66             | 0.03             |
+| load:os\_mon@zs.cantv.com.ve         | 0.03             | 0.01             |
+   
+*** /Códigos HTTP retornados/ 
+
+| *Código* | *Tasa más alta del código* | *Número total* |
+|----------+----------------------------+----------------|
+|      200 | 54.7 / sec                 |           7588 |
+
+
+\clearpage
 
 ** Servidores ZEO Client y uso de procesador
 
@@ -79,16 +148,26 @@ En la Figura 3.1 podemos apreciar un dato interesante, los servidores ZEO
 Client son los que consumen una mayor proporción de CPU. Se puede apreciar en
 la línea azul /cyan/ y verde oscuro
 
-
 #+CAPTION: Carga de CPU promedio 
 #+NAME: Plataforma sobre las cuales se ejecutaron las pruebas de stress 
 #+ATTR_LaTeX: width=12cm
 [[./images/graphes-load-mean-stress-test.png]]
 
+En relación a la terminología contenida en la gráfica:
+
+- mean: promedio, se refiere a que todos los valores de referencia en la
+  gráfica son el promedio aritmético de la carga de CPU a lo largo de una
+  cantidad de tiempo descrita en el eje X
+
+- load: carga, se considera a la cantidad de procesos acumulados en la cola de
+  ejecución, en espera a que el Kernel del sistema operativo les asigne tiempo
+  de CPU para ejecutarse. Una carga de 1,0 es lo ideal para aprovechar el
+  poder del CPU sin generar cuellos de botella en sistemas mono-núcleo.
+
 Dicho resultado nos permite llegar a las conclusiones enunciadas en la
 siguiente sección.
 
-** Estimaciones y recomendaciones
+** Estimaciones y conclusiones
 
 1. Aprovechar las capacidades *multi-hilo* de Zope para lograr obtener la
    mayor cantidad de rendimiento por nodo /ZEO Client/, asignando más de un
@@ -97,16 +176,79 @@ siguiente sección.
    cantidad de RAM por nodo, se pueda atender una mayor cantidad de clientes
    de navegación por nodo.
 3. Una capa ZEO con un par de nodos /ZEO cliente/ con 512MB de RAM pueden
-   atender al menos 225 usuarios concurentes por segundo que hagan consultas a
+   atender un máximo 225 usuarios concurentes por segundo que hagan consultas a
    la página cada 2 a 5 segundos.
 4. El uso de procesador de la capa /nginx/ (en modo /proxy/ reverse) no es
    significativo.
-5. Se recomienda obtener un juego de datos más amplio proveniente de la
-   plataforma de cantv.com.ve para poder disponer de una mayor cantidad de
-   enlaces que se puedan usar en la simulación y aproximar un poco más las
-   pruebas al escenario real.
+5. Se recomienda obtener acceso solo lectura a la base de datos de la
+   plataforma del portal actual de cantv.com.ve para poder disponer de una
+   mayor cantidad de enlaces y artículos que se puedan usar en la simulación y
+   aproximar un poco más las pruebas al escenario real.
 6. Dimensionar la plataforma de hardware con nodos que tengan la capacidad de
    aumentar su cantidad de núcleos y RAM asignados, de manera que sea posible
    el crecimiento horizontal de la plataforma con operaciones que no implican
    la puesta en marcha de nuevos nodos u operaciones que comprometan la
    continuidad de servicio.
+7. Entendiendo el concepto de /page/ como un conjunto de peticiones que están
+   separadas por un /thinktime/ (de la misma sesión o sesiones distintas)
+   podemos observar que el máximo de transacciones que se llegaron a agrupar
+   fueron 33 de ellas en el segundo número 100 (ver
+   [[graphes-Transactions-rate]]) en ese mismo punto en el tiempo, dichas
+   peticiones agrupadas fueron resueltas en poco menos de 4,5 segundos como
+   muestra la gráfica [[graphes-Transactions-mean]].
+8. La gráfica [[graphes-Perfs-mean]] nos permite visualizar que el máximo tiempo
+   de espera para resolver una petición fue de 3 segundos y desde el segundo
+   50 hasta el segundo 130 de la simulación hubo tiempos de espera (en
+   promedio) de más de un segundo.
+
+\clearpage
+
+** Gráficas adicionales
+
+#+CAPTION: Transacciones
+#+NAME: graphes-Transactions-mean
+#+LABEL: graphes-Transactions-mean
+#+ATTR_LATEX: placement=[ht] scale=0.4
+[[./images/graphes-Transactions-mean.png]]
+
+
+#+CAPTION: Tasa de Transacciones
+#+NAME: graphes-Transactions-rate
+#+LABEL: graphes-Transactions-rate
+#+ATTR_LATEX: placement=[ht] scale=0.4
+[[./images/graphes-Transactions-rate.png]]
+
+
+#+Caption: Peticiones
+#+NAME: graphes-Perfs-mean
+#+LABEL: graphes-Perfs-mean
+#+ATTR_LATEX: placement=[ht] scale=0.4
+[[./images/graphes-Perfs-mean.png]]
+
+
+
+
+
+\clearpage
+** Archivo de configuración de la prueba
+
+Por razones de formato y legibilidad, se evita añadir el archivo XML con el
+que se configuró la prueba dentro de este documento, pero se añade como un
+adjunto en la entrega de este documento para su minuciosa revisión.
+
+Las etiquetas resaltantes de dicho archivo son:
+
+- *request*: indica una petición simulada por tsung, dentro de esta etiqueta de
+  se define de el protocolo de la petición y la URL respectiva
+- *http url*: para nuestro caso particular, aquí se define la URL que fue
+  visitada por la simulación y el tipo de método HTTP implementado (GET / HEAD
+  / POST / PUT / DELETE )
+- *thinktime*: define si es posible o no que exista un intervalo de tiempo para
+  simular que el usuario está pensando en cuál es el siguiente enlace a
+  visitar y en caso de ser 'true' la cantidad de tiempo que toma pasar al
+  siguiente /request/
+
+Para mayor información sobre el funcionamiento de /tsung/ es posible dirigirse
+al manual de operación ubicado en
+http://tsung.erlang-projects.org/user_manual/index.html
+
