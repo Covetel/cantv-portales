@@ -14,6 +14,7 @@
 #+LINK_UP:   
 #+LINK_HOME:
 #+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \usepackage{float}
 #+LATEX_HEADER: \input{t-informe-stress-maqueta-plone}
 
 
@@ -176,31 +177,44 @@ siguiente sección.
    continuidad de servicio.
 
 
+\clearpage
+
 ** Gráficas
 
 *** Tiempos de Respuesta
 
+- Descripción
 #+CAPTION: Transacciones
-#+NAME: Transacciones
-#+ATTR_LaTeX: width=10cm
+#+NAME: fig:graphes-Transactions-mean
+#+LABEL: fig:graphes-Transactions-mean
+#+ATTR_LATEX: placement=[hb]
 [[./images/graphes-Transactions-mean.png]]
  
+- Descripción
+
 #+CAPTION: Peticiones y conecciones
 #+NAME: Peticiones y conecciones
-#+ATTR_LaTeX: width=10cm
+#+ATTR_LATEX: placement=[hb]
 [[./images/graphes-Perfs-mean.png]]
 
+texto
 
 *** Throughput
 
+texto
+
+
 #+CAPTION: Tasa de Transacciones
 #+NAME: Transacciones
-#+ATTR_LaTeX: width=10cm
+#+ATTR_LATEX: placement=[hb]
 [[./images/graphes-Transactions-rate.png]]
+
+texto 
+
 
 #+CAPTION: Peticiones
 #+NAME: Peticiones
-#+ATTR_LaTeX: width=10cm
+#+ATTR_LATEX: placement=[hb]
 [[./images/graphes-Perfs-rate.png]]
 
 
