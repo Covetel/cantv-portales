@@ -174,46 +174,38 @@ siguiente sección.
    el crecimiento horizontal de la plataforma con operaciones que no implican
    la puesta en marcha de nuevos nodos u operaciones que comprometan la
    continuidad de servicio.
+7. Como se indica en la figura [[graphes-Transactions-mean]]  puede observar
+   blah blah blah
 
 
 \clearpage
 
+
 ** Gráficas
 
-*** Tiempos de Respuesta
-
-- Descripción
 #+CAPTION: Transacciones
-#+NAME: fig:graphes-Transactions-mean
-#+LABEL: fig:graphes-Transactions-mean
-#+ATTR_LATEX: placement=[hb]
+#+NAME: graphes-Transactions-mean
+#+LABEL: graphes-Transactions-mean
+#+ATTR_LATEX: placement=[ht] scale=0.4
 [[./images/graphes-Transactions-mean.png]]
- 
-- Descripción
 
-#+CAPTION: Peticiones y conecciones
-#+NAME: Peticiones y conecciones
-#+ATTR_LATEX: placement=[hb]
+
+#+CAPTION: Peticiones y conexiones
+#+NAME: graphes-Perfs-mean
+#+LABEL: graphes-Perfs-mean
+#+ATTR_LATEX: placement=[ht] scale=0.4
 [[./images/graphes-Perfs-mean.png]]
 
-texto
-
-*** Throughput
-
-texto
-
-
 #+CAPTION: Tasa de Transacciones
-#+NAME: Transacciones
-#+ATTR_LATEX: placement=[hb]
+#+NAME: graphes-Transactions-rate
+#+LABEL: graphes-Transactions-rate
+#+ATTR_LATEX: placement=[ht] scale=0.4
 [[./images/graphes-Transactions-rate.png]]
 
-texto 
-
-
-#+CAPTION: Peticiones
-#+NAME: Peticiones
-#+ATTR_LATEX: placement=[hb]
+#+Caption: Peticiones
+#+NAME: graphes-Perfs-rate
+#+LABEL: graphes-Perfs-rate
+#+ATTR_LATEX: placement=[ht] scale=0.4
 [[./images/graphes-Perfs-rate.png]]
 
 
