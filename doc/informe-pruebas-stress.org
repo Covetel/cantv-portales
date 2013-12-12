@@ -31,11 +31,15 @@ Plone con contenido extraído desde el portal de cantv.com.ve
 La sesión capturada que dura en promedio 2 minutos y 11 segundos, recorre
 varias noticias del Portal. Se simularon 271 usuarios con dicha conducta y fue
 posible manejar hasta 225 usuarios por segundo conectados de manera
-concurrente a la plataforma durante seis (6).
+concurrente a la plataforma durante seis (6) minutos.
 
-La prueba se realizó durante 6 minutos.
-
-Durante esos 6 minutos 
+Durante esos 6 minutos se realizaron 7588 peticiones de contenido (HTML,
+imágenes, elementos CSS y JS) cuya tiempo de respuesta promedio fue de 1,3
+segundos. En ambos extremos de la estadística, el promedio de tiempo de
+respuesta más bajo durante 10 segundos fue de 25,3 milisegundos (mejor de los
+casos) y el más alto durante 10 segundos fue de 2,98 segundos (peor de los
+casos). Ver la tabla "Estadísticas principales" en la sección 3.1.1 para
+mayores detalles.
 
 ** Comportamiento de la simulación
 
@@ -86,7 +90,7 @@ root@proxmox1:~# qm list
 |                     | *media más alta* | *media más baja* |                 |            |          |
 | *Nombre*            | *por 10s*        | *por 10s*        | *Tasa más alta* | *Media*    | *Cuenta* |
 |---------------------+------------------+------------------+-----------------+------------+----------|
-| conectar            | 1.08 msec        | 0.475 msec       | 15.8 / sec      | 0.911 msec |     1534 |
+| conexión inicial    | 1.08 msec        | 0.475 msec       | 15.8 / sec      | 0.911 msec |     1534 |
 | peticiones en grupo | 4.83 sec         | 69.16 msec       | 32.5 / sec      | 2.43 sec   |     4065 |
 | petición            | 2.98 sec         | 25.30 msec       | 54.7 / sec      | 1.30 sec   |     7588 |
 | sesión              | 5mn 1sec         | 1mn 13sec        | 4 / sec         | 2mn 11sec  |      271 |
@@ -97,7 +101,6 @@ root@proxmox1:~# qm list
 |---------------------------+-----------------+-----------|
 | datos recibidos por tsung | 6.53 Mbits/s    | 113.38 MB |
 | datos enviados por tsung  | 99.40 Kbits/s   | 1.65 MB   |
-
 
 *** /Contadores de usuario/
 
@@ -130,7 +133,6 @@ root@proxmox1:~# qm list
 | load:os\_mon@zc2.cantv.com.ve        | 0.66             | 0.03             |
 | load:os\_mon@zs.cantv.com.ve         | 0.03             | 0.01             |
    
-
 *** /Códigos HTTP retornados/ 
 
 | *Código* | *Tasa más alta del código* | *Número total* |
@@ -151,10 +153,21 @@ la línea azul /cyan/ y verde oscuro
 #+ATTR_LaTeX: width=12cm
 [[./images/graphes-load-mean-stress-test.png]]
 
+En relación a la terminología contenida en la gráfica:
+
+- mean: promedio, se refiere a que todos los valores de referencia en la
+  gráfica son el promedio aritmético de la carga de CPU a lo largo de una
+  cantidad de tiempo descrita en el eje X
+
+- load: carga, se considera a la cantidad de procesos acumulados en la cola de
+  ejecución, en espera a que el Kernel del sistema operativo les asigne tiempo
+  de CPU para ejecutarse. Una carga de 1,0 es lo ideal para aprovechar el
+  poder del CPU sin generar cuellos de botella en sistemas mono-núcleo.
+
 Dicho resultado nos permite llegar a las conclusiones enunciadas en la
 siguiente sección.
 
-** Estimaciones y recomendaciones
+** Estimaciones y conclusiones
 
 1. Aprovechar las capacidades *multi-hilo* de Zope para lograr obtener la
    mayor cantidad de rendimiento por nodo /ZEO Client/, asignando más de un
@@ -206,4 +219,26 @@ siguiente sección.
 
 
 
+
+\clearpage
+** Archivo de configuración de la prueba
+
+Por razones de formato y legibilidad, se evita añadir el archivo XML con el
+que se configuró la prueba, pero se añade como un adjunto en la entrega de
+este documento para su minuciosa revisión.
+
+Los puntos resaltantes de dicho archivo son
+
+- *request*: indica una petición simulada por tsung, dentro de esta etiqueta de
+  se define de el protocolo de la petición y la URL respectiva
+- *http url*: para nuestro caso particular, aquí se define la URL que fue
+  visitada por la simulación y el tipo de método HTTP implementado (GET / HEAD
+  / POST / PUT / DELETE )
+- *thinktime*: define si es posible o no que exista un intervalo de tiempo para
+  simular que el usuario está pensando en cuál es el siguiente enlace a
+  visitar y en caso de ser 'true' la cantidad de tiempo que toma pasar al
+  siguiente /request/
+
+Para mayor información es posible dirigirse al manual de operación ubicado en
+http://tsung.erlang-projects.org/user_manual/index.html
 
