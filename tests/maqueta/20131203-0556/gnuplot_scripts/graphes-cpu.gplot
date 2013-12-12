@@ -1,0 +1,68 @@
+set style data  linespoint
+set terminal png  size 1024,768
+set grid
+set output "images/graphes-cpu-rate.png"
+set title " rate"
+set xlabel "unit = sec "
+set ylabel "cpu"
+show title
+set key left top
+plot  "data/cpu:os_mon@zc2.cantv.com.ve.txt" using  1:2 title "cpu@zc2.cantv.com.ve", "data/cpu:os_mon@varnish.cantv.com.ve.txt" using  1:2 title "cpu@varnish.cantv.com.ve", "data/cpu:os_mon@haproxy.cantv.com.ve.txt" using  1:2 title "cpu@haproxy.cantv.com.ve", "data/cpu:os_mon@zs.cantv.com.ve.txt" using  1:2 title "cpu@zs.cantv.com.ve", "data/cpu:os_mon@nginx.cantv.com.ve.txt" using  1:2 title "cpu@nginx.cantv.com.ve", "data/cpu:os_mon@zc1.cantv.com.ve.txt" using  1:2 title "cpu@zc1.cantv.com.ve"
+set output "images/graphes-cpu-mean.png"
+set title " mean"
+set xlabel "unit = sec "
+show title
+set key left top
+plot  "data/cpu:os_mon@zc2.cantv.com.ve.txt" using  1:3 title "cpu@zc2.cantv.com.ve", "data/cpu:os_mon@varnish.cantv.com.ve.txt" using  1:3 title "cpu@varnish.cantv.com.ve", "data/cpu:os_mon@haproxy.cantv.com.ve.txt" using  1:3 title "cpu@haproxy.cantv.com.ve", "data/cpu:os_mon@zs.cantv.com.ve.txt" using  1:3 title "cpu@zs.cantv.com.ve", "data/cpu:os_mon@nginx.cantv.com.ve.txt" using  1:3 title "cpu@nginx.cantv.com.ve", "data/cpu:os_mon@zc1.cantv.com.ve.txt" using  1:3 title "cpu@zc1.cantv.com.ve"
+set output "images/graphes-cpu-stdvar.png"
+set title " stdvar"
+set xlabel "unit = sec "
+show title
+set key left top
+plot  "data/cpu:os_mon@zc2.cantv.com.ve.txt" using  1:4 title "cpu@zc2.cantv.com.ve", "data/cpu:os_mon@varnish.cantv.com.ve.txt" using  1:4 title "cpu@varnish.cantv.com.ve", "data/cpu:os_mon@haproxy.cantv.com.ve.txt" using  1:4 title "cpu@haproxy.cantv.com.ve", "data/cpu:os_mon@zs.cantv.com.ve.txt" using  1:4 title "cpu@zs.cantv.com.ve", "data/cpu:os_mon@nginx.cantv.com.ve.txt" using  1:4 title "cpu@nginx.cantv.com.ve", "data/cpu:os_mon@zc1.cantv.com.ve.txt" using  1:4 title "cpu@zc1.cantv.com.ve"
+set output "images/graphes-cpu-max_sample.png"
+set title " max_sample"
+set xlabel "unit = sec "
+show title
+set key left top
+plot  "data/cpu:os_mon@zc2.cantv.com.ve.txt" using  1:5 title "cpu@zc2.cantv.com.ve", "data/cpu:os_mon@varnish.cantv.com.ve.txt" using  1:5 title "cpu@varnish.cantv.com.ve", "data/cpu:os_mon@haproxy.cantv.com.ve.txt" using  1:5 title "cpu@haproxy.cantv.com.ve", "data/cpu:os_mon@zs.cantv.com.ve.txt" using  1:5 title "cpu@zs.cantv.com.ve", "data/cpu:os_mon@nginx.cantv.com.ve.txt" using  1:5 title "cpu@nginx.cantv.com.ve", "data/cpu:os_mon@zc1.cantv.com.ve.txt" using  1:5 title "cpu@zc1.cantv.com.ve"
+set output "images/graphes-cpu-min_sample.png"
+set title " min_sample"
+set xlabel "unit = sec "
+show title
+set key left top
+plot  "data/cpu:os_mon@zc2.cantv.com.ve.txt" using  1:6 title "cpu@zc2.cantv.com.ve", "data/cpu:os_mon@varnish.cantv.com.ve.txt" using  1:6 title "cpu@varnish.cantv.com.ve", "data/cpu:os_mon@haproxy.cantv.com.ve.txt" using  1:6 title "cpu@haproxy.cantv.com.ve", "data/cpu:os_mon@zs.cantv.com.ve.txt" using  1:6 title "cpu@zs.cantv.com.ve", "data/cpu:os_mon@nginx.cantv.com.ve.txt" using  1:6 title "cpu@nginx.cantv.com.ve", "data/cpu:os_mon@zc1.cantv.com.ve.txt" using  1:6 title "cpu@zc1.cantv.com.ve"
+set style data  linespoint
+set terminal png tiny size 320,240
+set grid
+set output "images/graphes-cpu-rate_tn.png"
+set title " rate"
+set xlabel "unit = sec "
+set ylabel "cpu"
+show title
+set key left top
+plot  "data/cpu:os_mon@zc2.cantv.com.ve.txt" using  1:2 title "cpu@zc2.cantv.com.ve", "data/cpu:os_mon@varnish.cantv.com.ve.txt" using  1:2 title "cpu@varnish.cantv.com.ve", "data/cpu:os_mon@haproxy.cantv.com.ve.txt" using  1:2 title "cpu@haproxy.cantv.com.ve", "data/cpu:os_mon@zs.cantv.com.ve.txt" using  1:2 title "cpu@zs.cantv.com.ve", "data/cpu:os_mon@nginx.cantv.com.ve.txt" using  1:2 title "cpu@nginx.cantv.com.ve", "data/cpu:os_mon@zc1.cantv.com.ve.txt" using  1:2 title "cpu@zc1.cantv.com.ve"
+set output "images/graphes-cpu-mean_tn.png"
+set title " mean"
+set xlabel "unit = sec "
+show title
+set key left top
+plot  "data/cpu:os_mon@zc2.cantv.com.ve.txt" using  1:3 title "cpu@zc2.cantv.com.ve", "data/cpu:os_mon@varnish.cantv.com.ve.txt" using  1:3 title "cpu@varnish.cantv.com.ve", "data/cpu:os_mon@haproxy.cantv.com.ve.txt" using  1:3 title "cpu@haproxy.cantv.com.ve", "data/cpu:os_mon@zs.cantv.com.ve.txt" using  1:3 title "cpu@zs.cantv.com.ve", "data/cpu:os_mon@nginx.cantv.com.ve.txt" using  1:3 title "cpu@nginx.cantv.com.ve", "data/cpu:os_mon@zc1.cantv.com.ve.txt" using  1:3 title "cpu@zc1.cantv.com.ve"
+set output "images/graphes-cpu-stdvar_tn.png"
+set title " stdvar"
+set xlabel "unit = sec "
+show title
+set key left top
+plot  "data/cpu:os_mon@zc2.cantv.com.ve.txt" using  1:4 title "cpu@zc2.cantv.com.ve", "data/cpu:os_mon@varnish.cantv.com.ve.txt" using  1:4 title "cpu@varnish.cantv.com.ve", "data/cpu:os_mon@haproxy.cantv.com.ve.txt" using  1:4 title "cpu@haproxy.cantv.com.ve", "data/cpu:os_mon@zs.cantv.com.ve.txt" using  1:4 title "cpu@zs.cantv.com.ve", "data/cpu:os_mon@nginx.cantv.com.ve.txt" using  1:4 title "cpu@nginx.cantv.com.ve", "data/cpu:os_mon@zc1.cantv.com.ve.txt" using  1:4 title "cpu@zc1.cantv.com.ve"
+set output "images/graphes-cpu-max_sample_tn.png"
+set title " max_sample"
+set xlabel "unit = sec "
+show title
+set key left top
+plot  "data/cpu:os_mon@zc2.cantv.com.ve.txt" using  1:5 title "cpu@zc2.cantv.com.ve", "data/cpu:os_mon@varnish.cantv.com.ve.txt" using  1:5 title "cpu@varnish.cantv.com.ve", "data/cpu:os_mon@haproxy.cantv.com.ve.txt" using  1:5 title "cpu@haproxy.cantv.com.ve", "data/cpu:os_mon@zs.cantv.com.ve.txt" using  1:5 title "cpu@zs.cantv.com.ve", "data/cpu:os_mon@nginx.cantv.com.ve.txt" using  1:5 title "cpu@nginx.cantv.com.ve", "data/cpu:os_mon@zc1.cantv.com.ve.txt" using  1:5 title "cpu@zc1.cantv.com.ve"
+set output "images/graphes-cpu-min_sample_tn.png"
+set title " min_sample"
+set xlabel "unit = sec "
+show title
+set key left top
+plot  "data/cpu:os_mon@zc2.cantv.com.ve.txt" using  1:6 title "cpu@zc2.cantv.com.ve", "data/cpu:os_mon@varnish.cantv.com.ve.txt" using  1:6 title "cpu@varnish.cantv.com.ve", "data/cpu:os_mon@haproxy.cantv.com.ve.txt" using  1:6 title "cpu@haproxy.cantv.com.ve", "data/cpu:os_mon@zs.cantv.com.ve.txt" using  1:6 title "cpu@zs.cantv.com.ve", "data/cpu:os_mon@nginx.cantv.com.ve.txt" using  1:6 title "cpu@nginx.cantv.com.ve", "data/cpu:os_mon@zc1.cantv.com.ve.txt" using  1:6 title "cpu@zc1.cantv.com.ve"
