@@ -179,7 +179,6 @@ siguiente sección.
 7. Como se indica en la figura [[graphes-Transactions-mean]]  puede observar
    blah blah blah
 
-
 \clearpage
 
 ** Gráficas adicionales
