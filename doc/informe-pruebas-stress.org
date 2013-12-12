@@ -81,18 +81,19 @@ root@proxmox1:~# qm list
 
 ** Datos Estadisticos - =Tsung=
 
-*** /Main Statistics/ 
+*** /Estadísticas principales/ 
 
-    | *Nombre* | *media más alta - más de 10s* | *media más baja durante 10s* | *Tasa más alta* | *Media*    | *Cuenta* |
-    |----------+-------------------------------+------------------------------+-----------------+------------+----------|
-    | conectar | 1.08 msec                     | 0.475 msec                   | 15.8 / sec      | 0.911 msec |     1534 |
-    | paginar  | 4.83 sec                      | 69.16 msec                   | 32.5 / sec      | 2.43 sec   |     4065 |
-    | petición | 2.98 sec                      | 25.30 msec                   | 54.7 / sec      | 1.30 sec   |     7588 |
-    | sesión   | 5mn 1sec                      | 1mn 13sec                    | 4 / sec         | 2mn 11sec  |      271 |
+|                     | *media más alta* | *media más baja* |                 |            |          |
+| *Nombre*            | *por 10s*        | *por 10s*        | *Tasa más alta* | *Media*    | *Cuenta* |
+|---------------------+------------------+------------------+-----------------+------------+----------|
+| conectar            | 1.08 msec        | 0.475 msec       | 15.8 / sec      | 0.911 msec |     1534 |
+| peticiones en grupo | 4.83 sec         | 69.16 msec       | 32.5 / sec      | 2.43 sec   |     4065 |
+| petición            | 2.98 sec         | 25.30 msec       | 54.7 / sec      | 1.30 sec   |     7588 |
+| sesión              | 5mn 1sec         | 1mn 13sec        | 4 / sec         | 2mn 11sec  |      271 |
 
 *** /Tráfico total de red/
 
-| *Nombre*               | *Tasa más alta* | *Total*   |
+| *Nombre*                  | *Tasa más alta* | *Total*   |
 |---------------------------+-----------------+-----------|
 | datos recibidos por tsung | 6.53 Mbits/s    | 113.38 MB |
 | datos enviados por tsung  | 99.40 Kbits/s   | 1.65 MB   |
@@ -107,29 +108,30 @@ root@proxmox1:~# qm list
 
 *** /Monitoreo de servidores/
 
-| *Nombre*                             | *media más alta durante 10 s.* | *media más baja durante 10 s.* |
-|--------------------------------------+--------------------------------+--------------------------------|
-| cpu:os\_mon@haproxy.cantv.com.ve     | 37.70 %                        | 0.80 %                         |
-| cpu:os\_mon@nginx.cantv.com.ve       | 34.30 %                        | 0.80 %                         |
-| cpu:os\_mon@varnish.cantv.com.ve     | 47.30 %                        | 1.10 %                         |
-| cpu:os\_mon@zc1.cantv.com.ve         | 220.70 %                       | 1.00 %                         |
-| cpu:os\_mon@zc2.cantv.com.ve         | 219.60 %                       | 0.80 %                         |
-| cpu:os\_mon@zs.cantv.com.ve          | 37.30 %                        | 0.90 %                         |
-| freemem:os\_mon@haproxy.cantv.com.ve | 449.74 MB                      | 447.05 MB                      |
-| freemem:os\_mon@nginx.cantv.com.ve   | 447.38 MB                      | 447.16 MB                      |
-| freemem:os\_mon@varnish.cantv.com.ve | 445.20 MB                      | 432.68 MB                      |
-| freemem:os\_mon@zc1.cantv.com.ve     | 244.79 MB                      | 243.17 MB                      |
-| freemem:os\_mon@zc2.cantv.com.ve     | 244.81 MB                      | 243.12 MB                      |
-| freemem:os\_mon@zs.cantv.com.ve      | 434.42 MB                      | 434.16 MB                      |
-| load:os\_mon@haproxy.cantv.com.ve    | 0.12                           | 0.03                           |
-| load:os\_mon@nginx.cantv.com.ve      | 0.03                           | 0.01                           |
-| load:os\_mon@varnish.cantv.com.ve    | 0.10                           | 0.01                           |
-| load:os\_mon@zc1.cantv.com.ve        | 0.66                           | 0.02                           |
-| load:os\_mon@zc2.cantv.com.ve        | 0.66                           | 0.03                           |
-| load:os\_mon@zs.cantv.com.ve         | 0.03                           | 0.01                           |
+| *Nombre*                             | *media más alta* | *media más baja* |
+|                                      | *por 10s*        | *por 10s.*       |
+|--------------------------------------+------------------+------------------|
+| cpu:os\_mon@haproxy.cantv.com.ve     | 37.70 %          | 0.80 %           |
+| cpu:os\_mon@nginx.cantv.com.ve       | 34.30 %          | 0.80 %           |
+| cpu:os\_mon@varnish.cantv.com.ve     | 47.30 %          | 1.10 %           |
+| cpu:os\_mon@zc1.cantv.com.ve         | 220.70 %         | 1.00 %           |
+| cpu:os\_mon@zc2.cantv.com.ve         | 219.60 %         | 0.80 %           |
+| cpu:os\_mon@zs.cantv.com.ve          | 37.30 %          | 0.90 %           |
+| freemem:os\_mon@haproxy.cantv.com.ve | 449.74 MB        | 447.05 MB        |
+| freemem:os\_mon@nginx.cantv.com.ve   | 447.38 MB        | 447.16 MB        |
+| freemem:os\_mon@varnish.cantv.com.ve | 445.20 MB        | 432.68 MB        |
+| freemem:os\_mon@zc1.cantv.com.ve     | 244.79 MB        | 243.17 MB        |
+| freemem:os\_mon@zc2.cantv.com.ve     | 244.81 MB        | 243.12 MB        |
+| freemem:os\_mon@zs.cantv.com.ve      | 434.42 MB        | 434.16 MB        |
+| load:os\_mon@haproxy.cantv.com.ve    | 0.12             | 0.03             |
+| load:os\_mon@nginx.cantv.com.ve      | 0.03             | 0.01             |
+| load:os\_mon@varnish.cantv.com.ve    | 0.10             | 0.01             |
+| load:os\_mon@zc1.cantv.com.ve        | 0.66             | 0.02             |
+| load:os\_mon@zc2.cantv.com.ve        | 0.66             | 0.03             |
+| load:os\_mon@zs.cantv.com.ve         | 0.03             | 0.01             |
    
 
-*** /códigos HTTP retornados/ 
+*** /Códigos HTTP retornados/ 
 
 | *Código* | *Tasa más alta del código* | *Número total* |
 |----------+----------------------------+----------------|
@@ -178,38 +180,18 @@ siguiente sección.
 
 \clearpage
 
-** Gráficas
+** Gráficas adicionales
 
-*** Tiempos de Respuesta
-
-- Descripción
 #+CAPTION: Transacciones
 #+NAME: fig:graphes-Transactions-mean
 #+LABEL: fig:graphes-Transactions-mean
 #+ATTR_LATEX: placement=[hb]
 [[./images/graphes-Transactions-mean.png]]
  
-- Descripción
-
-#+CAPTION: Peticiones y conecciones
-#+NAME: Peticiones y conecciones
-#+ATTR_LATEX: placement=[hb]
-[[./images/graphes-Perfs-mean.png]]
-
-texto
-
-*** Throughput
-
-texto
-
-
 #+CAPTION: Tasa de Transacciones
 #+NAME: Transacciones
 #+ATTR_LATEX: placement=[hb]
 [[./images/graphes-Transactions-rate.png]]
-
-texto 
-
 
 #+CAPTION: Peticiones
 #+NAME: Peticiones
