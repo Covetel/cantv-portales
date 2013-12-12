@@ -176,21 +176,30 @@ siguiente sección.
    cantidad de RAM por nodo, se pueda atender una mayor cantidad de clientes
    de navegación por nodo.
 3. Una capa ZEO con un par de nodos /ZEO cliente/ con 512MB de RAM pueden
-   atender al menos 225 usuarios concurentes por segundo que hagan consultas a
+   atender un máximo 225 usuarios concurentes por segundo que hagan consultas a
    la página cada 2 a 5 segundos.
 4. El uso de procesador de la capa /nginx/ (en modo /proxy/ reverse) no es
    significativo.
-5. Se recomienda obtener un juego de datos más amplio proveniente de la
-   plataforma de cantv.com.ve para poder disponer de una mayor cantidad de
-   enlaces que se puedan usar en la simulación y aproximar un poco más las
-   pruebas al escenario real.
+5. Se recomienda obtener acceso solo lectura a la base de datos de la
+   plataforma del portal actual de cantv.com.ve para poder disponer de una
+   mayor cantidad de enlaces y artículos que se puedan usar en la simulación y
+   aproximar un poco más las pruebas al escenario real.
 6. Dimensionar la plataforma de hardware con nodos que tengan la capacidad de
    aumentar su cantidad de núcleos y RAM asignados, de manera que sea posible
    el crecimiento horizontal de la plataforma con operaciones que no implican
    la puesta en marcha de nuevos nodos u operaciones que comprometan la
    continuidad de servicio.
-7. Como se indica en la figura [[graphes-Transactions-mean]]  puede observar
-   blah blah blah
+7. Entendiendo el concepto de /page/ como un conjunto de peticiones que están
+   separadas por un /thinktime/ (de la misma sesión o sesiones distintas)
+   podemos observar que el máximo de transacciones que se llegaron a agrupar
+   fueron 33 de ellas en el segundo número 100 (ver
+   [[graphes-Transactions-rate]]) en ese mismo punto en el tiempo, dichas
+   peticiones agrupadas fueron resueltas en poco menos de 4,5 segundos como
+   muestra la gráfica [[graphes-Transactions-mean]].
+8. La gráfica [[graphes-Perfs-mean]] nos permite visualizar que el máximo tiempo
+   de espera para resolver una petición fue de 3 segundos y desde el segundo
+   50 hasta el segundo 130 de la simulación hubo tiempos de espera (en
+   promedio) de más de un segundo.
 
 \clearpage
 
@@ -211,10 +220,10 @@ siguiente sección.
 
 
 #+Caption: Peticiones
-#+NAME: graphes-Perfs-rate
-#+LABEL: graphes-Perfs-rate
+#+NAME: graphes-Perfs-mean
+#+LABEL: graphes-Perfs-mean
 #+ATTR_LATEX: placement=[ht] scale=0.4
-[[./images/graphes-Perfs-rate.png]]
+[[./images/graphes-Perfs-mean.png]]
 
 
 
@@ -224,10 +233,10 @@ siguiente sección.
 ** Archivo de configuración de la prueba
 
 Por razones de formato y legibilidad, se evita añadir el archivo XML con el
-que se configuró la prueba, pero se añade como un adjunto en la entrega de
-este documento para su minuciosa revisión.
+que se configuró la prueba dentro de este documento, pero se añade como un
+adjunto en la entrega de este documento para su minuciosa revisión.
 
-Los puntos resaltantes de dicho archivo son
+Las etiquetas resaltantes de dicho archivo son:
 
 - *request*: indica una petición simulada por tsung, dentro de esta etiqueta de
   se define de el protocolo de la petición y la URL respectiva
@@ -239,6 +248,7 @@ Los puntos resaltantes de dicho archivo son
   visitar y en caso de ser 'true' la cantidad de tiempo que toma pasar al
   siguiente /request/
 
-Para mayor información es posible dirigirse al manual de operación ubicado en
+Para mayor información sobre el funcionamiento de /tsung/ es posible dirigirse
+al manual de operación ubicado en
 http://tsung.erlang-projects.org/user_manual/index.html
 
