@@ -68,4 +68,30 @@
 
 * Análisis técnico de los procesos TI requeridos
 
-** 
+** Tecnología de Intercambio en línea y en lote de los productos en donde debe ocurrir el intercambio
+
+** Tecnología de Ejecución de Procesos en Lote
+
+** Tecnología de Ejecución de Reportes, Indicadores y Alertas
+
+** Tecnología de Supervisión de Procesos
+
+** Tecnología de Ejecución y Analisis de Trazas.
+
+** Diagnóstico de la necesidad de entornos operativos para la construcción de los servicios, procesos en lote y reportes requeridos como parte de la solución
+
+* Arquitectura Técnica TI
+
+** Estrategia de Acceso (Autenticación, Autorización y Auditoria)
+** Estrategia de Entornos Operativos
+** Dimensionamiento de la Plataforma Tecnológica 
+** Definición de Estrategia de Transposición entre los Entornos Operativos
+** Definición de Estrategia de Incorporación de Nuevas Funcionalidades. (desarrollos)
+** Definición de Estrategia de Manejo de Trazas, Reportes, Indicadores y Alertas
+
+* Definición Estrategias de Configuración Técnica de la Plataforma TI
+
+** Estrategia Adecuación Técnica de Entornos Operativos
+** Estrategia Administración Técnica de Entornos Operativos
+** Estrategia Certificación Técnica de la Plataforma
+** Estrategia de Servicio y Soporte
