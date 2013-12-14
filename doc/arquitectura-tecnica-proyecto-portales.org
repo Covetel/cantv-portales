@@ -1,0 +1,71 @@
+#+TITLE: Arquitectura Técnica del Proyecto de Portal cantv.com.ve en TIL
+#+AUTHOR:    Cooperativa Venezolana de Tecnologías Libres R.S.
+#+EMAIL:     info@covetel.com.ve
+#+DATE:
+#+DESCRIPTION: Documentación corporativa de la arquitectura técnica del proyecto de portales web en Plone para el sitio cantv.com.ve,
+#+KEYWORDS: covetel cantv portal
+#+LaTeX_CLASS: covetel
+#+LaTeX_CLASS_OPTIONS: [letterpaper,oneside,spanish]
+#+LANGUAGE:  es
+#+OPTIONS:   H:3 num:t toc:3 \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \input{titulo-arq-tecnica-proyecto-portales}
+
+* Introducción
+
+* Objeto y campo de aplicación
+
+* Requerimientos técnicos de Arquitectura
+
+** Análisis técnico del modelo funcional de la solución propuesta
+
+*** Alcance de la solución
+
+*** Necesidad de sustituir sistemas existentes
+
+*** Necesidad de migración de datos desde la plataforma actual hacia la nueva implementación 
+
+*** Necesidad de instalación de nuevos productos de Tecnologías de Información
+
+*** Necesidad de implementar nuevas interfaces en los sistemas corporativos existentes para intercambiar información con la solución propuesta
+
+*** Necesidad de intercambio de información síncrona y asíncrona entre la solución propuesta y los sistemas corporativos existentes
+
+*** Necesidad de ejecutar procesos por lotes en los sistemas corporativos existentes que sirvan de insumo a la solución propuesta y viceversa
+
+*** Necesidad de emitir reportes directamente desde la solución propuesta
+
+** Sistemas corporativos involucrados
+
+*** Sistemas a sustituir
+
+*** Sistemas a incorporar
+
+*** Sistemas impactados
+
+*** Sistemas relacionados
+
+*** Diagnóstico de la necesidad de entornos operativos de los sistemas corporativos involucrados en la construcción de la solución propuesta
+
+*** Diagnóstico de la necesidad de autorizaciones en los sistemas corporativos involucrados en la construcción de la solución propuesta
+
+** Conceptualización de acceso al servicio desde el usuario final
+
+* Requerimientos de configuración de los nuevos productos propuestos para la implementación
+
+** Nuevos productos a implementar en la solución
+
+** Protocolo de autenticación y autorización de los productos a los que se conectarán los usuarios finales
+
+** Factibilidad de transposición de objetos programáticos
+
+** Factibilidad de registros de trazas de operación en la aplicación
+
+* Análisis técnico de los procesos TI requeridos
+
+** 
