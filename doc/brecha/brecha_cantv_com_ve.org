@@ -1,0 +1,1220 @@
+#+TITLE:     Análisis de brecha Portal cantv.com.ve
+#+AUTHOR:    Carlos Paredes
+#+EMAIL:     cparedes@covete.com.ve
+#+DATE:      2014-1-16
+#+DESCRIPTION: Análisis de brecha Portal cantv.com.ve
+#+KEYWORDS:
+#+LANGUAGE:  es
+#+OPTIONS:   H:3 num:t toc:t:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+#+XSLT:
+#+LATEX_CLASS: cantv
+#+LATEX_CLASS_OPTIONS: [11pt, letterpaper, oneside, spanish]
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \input{titulo-brecha-cantv-com-ve}
+
+* Versiones del Documento
+#+BEGIN_DITAA images/versiones_brecha_cantv_com_ve.png -r -S
+/-------------------------------------------------+-----------\
+| cBLU                  Autor                     |  Versión  |
++-------------------------------------------------+-----------+
+|                 Carlos Paredes                  |     1     |
++-------------------------------------------------+-----------+
+|                 Carlos Paredes                  |     2     |
++-------------------------------------------------+-----------+
+|                                                 |           |
+\-------------------------------------------------+-----------/
+#+END_DITAA
+
+* cantv.com.ve Requerimientos Funcionales
+
+** Funcionalidades:
+
+*** General / Guía de Navegación
++ Nombre: Breadcrumbs o guía de navegación aplicado en todo el portal
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** General / Archivos
++ Nombre: El sistema debe permitir la carga de archivos de cualquier tipo,
+  tales como documentos en formatos de Libre Office, Microsoft Office, PDF
+  etc.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** General / Mapa de Sitio
++ Nombre: Mapa de sitio
++ Descripción: Mapa de sitio
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** General / Noticias
++ Nombre: Noticias.
++ Descripción: Noticias, permite la carga de notas de prensa y posee los
+  siguientes campos:
+  - Antetítulo
+  - Titulo
+  - Sumario
+  - Contenido
+  - Permite la carga de Imagen(es) interna(s)
+  - Campos para la carga y enlace hacia archivos, vídeos
+  - Botón de conversión a formato PDF
+  - Botón imprimir contenido
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** General / Documentos
++ Nombre: Documentos: permite cargar documentos en formatos de Libre Office,
+  Microsoft Office, PDF etc.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** General / Programación de contenido
++ Nombre: Se debe programar el contenido
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Administración de Contenido
++ Nombre: Permisología para las UPS
++ Descripción: Las UPS solo podrán realizar la carga, actualización de
+  contenido y solicitud de cambio de plantilla del minisitio, de los productos
+  y servicios que estén asociados a su rol y área de competencia. La revisión
+  y aprobación de los contenidos cargados por las UPS corresponde a la GGCAP.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** RSS / Atom
++ Nombre: RSS/Atom
++ Descripción: Permitir la creación de varios RSS según la taxonomía del
+  portal, los minisitios, o la taxonomía definida en Sala prensa. Al hacer
+  clic en el logo de RSS este ultimo deberá enlazar a una sección en donde se
+  muestre el listado los RSS previamente definidos por los administradores del
+  sitio.
+  - Sindicación de contenidos mediante el uso de RSS/Atom
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Administración de Contenido
++ Nombre: La administración, carga de contenido, aplicación de la plantilla y
+  publicación del portal cantv.com.ve corresponde a la Gerencia General de
+  Comunicaciones y Asuntos Públicos (GGCAP).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** General / Encuesta
++ Nombre: El portal debe poseer un módulo con la capacidad de generar una
+  encuesta breve, que permita o no la visualización de los resultados a los
+  usuarios participantes según el criterio de los administradores. Para
+  usuarios del portal , pueden ser anónimas.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Plone Survey
+
+*** General / Imágenes
++ Nombre: Imagen
++ Descripción: Permite cargar una imagen en un espacio determinado y además
+  posee la funcionalidad de asignarle un enlace a la imagen cargada, entre los
+  formatos soportados se encuentran jpg, jpeg, gif, png, svg, webp
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Administración de Contenido
++ Nombre: Flujo de Trabajo (Workflow)
++ Descripción: El Portal debe permitir la administración de flujo de trabajo,
+  asimismo la revisión y aprobación de los contenidos cargados por los
+  editores de contenido. Corresponderá a los usuarios con el rol de
+  aprobadores.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Administración / Módulo de Cabezal Bolivariano
++ Nombre: Módulo de Cabezal Bolivariano permite la carga y el cambio de la
+  imagen del cabezal bolivariano del portal
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Administración / Módulo de gestión de banner
++ Nombre: Módulo de gestión de banner, módulo que permita la publicación de
+  banner y la integración con un adserver
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Multiplataforma
++ Nombre: Compatibilidad con sistemas operativos móviles.
++ Descripción: Debe incluir aplicaciones para los sistemas operativos móviles
+  más usados (Android, Iphone, Blackberry) que incorporen funcionalidades de
+  autogestión en línea, promoción de productos y servicios e información
+  relevante que desee mostrar la empresa. Es decir se debe adaptar la
+  visualización del portal en diversas plataformas móviles (Smartphones,
+  Tablets). Que los menú funcionen en tablets
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Gestión de Roles y Perfiles
++ Nombre: Gestión de roles y perfiles.
++ Descripción: El CMS debe poseer la funcionalidad de definir diversos
+  perfiles y roles para la administración del sitio y su contenido
+  - Los roles administrativos funcionales y roles técnicos deberán estar bien
+    diferenciados entre si.
+  - Para cada minisitio se pueden definir la estructura de roles y permisos de
+    acuerdo a su ámbito
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** General / Cabezal temático
++ Nombre: Cabezal temático, módulo tipo carrusel que permite la carga de una o
+  varias imágenes asociadas a los minisitios previamente creados.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: collective.easyslider
+
+*** General / Calendario de eventos
++ Nombre: Calendario de eventos
++ Descripción: Módulo que permite configurar su visualización por mes, semana,
+  según el criterio de los administradores
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: collective.portlet.calendar
+
+*** General / URL Semánticas
++ Nombre: URL semánticas o amigables configurables a través del CMS
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Redes Sociales
++ Nombre: Integración con redes Sociales
++ Descripción: La integración del portal con las redes sociales deberá hacerse
+  aplicando las mejores practicas y aprovechando las recomendaciones, las
+  herramientas y API disponibles según la social media a integrar. Entre las
+  opciones de integración deseadas destacan:
+  - Botón de "Follow¨ o "seguir¡¨ twitter para la(s) cuenta(s) previamente
+    definida(s) por los administradores.
+  - Mostrar el timeline de twitter de una o varias cuentas previamente
+    definidas por los administradores.
+  - Botones para compartir el contenido previamente definido por los
+    administradores del sitio en las redes sociales, ejemplo: G+, facebook,
+    twitter, google currents, instagram, pinterest.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: sc.social.like
+
+*** Funcionalidad General CMS
++ Nombre: Contenido del Portal:
++ Descripción: El Portal debe permitir mostrar:
+  - Contenido
+  - Catálogo
+  - Catalogo Promoción
+  - Compras
+  - Noticias
+  - HTML
+  - HTML S/F (sin formato)
+  - Marquesina
+  - Banner
+  - Buscador
+  - Buzón
+  - Listado telefónico
+  - Contacto
+  - Documentos
+  - Ejecución (archivos con código embebido)
+  - Encuestas
+  - Eventos
+  - Enlaces
+  - Noticias titulares
+  - Highlight
+  - Imagen
+  - Multimedia
+  - Noticias anteriores
+  - Preguntas frecuentes
+  - Registro
+  - Noticias destacadas
+  - Noticias principal
+  - Thumbnail
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Catálogo de Productos y Servicios
++ Nombre: Módulo de Catalogo
++ Descripción: El portal debe poseer un módulo de catalogo donde:
+  - Catálogo de productos y servicios, muestra el catálogo de productos y
+    servicios de acuerdo al segmento de usuarios/clientes Cantv
+  - Comparador de productos y servicios, funcionalidad que permite comparar
+    entre dos o más productos y servicios publicados en el catalogo del sitio.
+  - Posee un enlace que permite agregar el servicio o producto al carrito de
+    compras del sitio
+  - Posee un formato predefinido para comparar los productos y servicios con
+    características similares.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Commerce
+
+*** General / Galería de imágenes
++ Nombre: Galerías de imágenes, podcast, videos.
++ Descripción: El Portal debe permitir mostrar Galerías de imágenes, podcast,
+  videos.
+  - Galería de imágenes, módulo para la creación de foto galerías en los
+    minisitios o secciones definidas por los administradores.
+  - Las galerías deberán poseer una imagen que se presente como portada del
+    modulo en caso de la que misma sea mostrada en el home del portal o un
+    minisitio.
+  - En la vista genérica de galería esta deberá visualizar un conjunto
+    limitado de imágenes contacto a configurar en el modulo según criterio de
+    los administradores.
+  - Cada imagen deberá poseer un campo descriptivo (foto leyenda), texto
+    alternativo (alt),
+  - La galería podrá asociarse a uno o varios términos elementos de la
+    taxonomía.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: collective.plonetruegallery
+
+*** Taxonomía
++ Nombre: Modulo de Taxonomía
++ Descripción: Funcionalidad que permita crear la taxonomía de forma robusta y
+  flexible para asociar el contenido del portal a la estructura definida por
+  lo administradores. El CMS debe permitir la creación uno o varios términos
+  (palabras claves) a los administradores (Comunicaciones y Mercadeo
+  Corporativo) y asociar el mismo al contenido ya cargado.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: collective.taxonomysupport
+
+*** Temas y Plantillas
++ Nombre: Gestión de diversos temas y/o plantillas para el home y la página
+  principal de los minisitios
++ Descripción: Gestión de diversos temas y/o plantillas para el home y la
+  página principal de los minisitios inicialmente propuestos: (Información
+  Institucional, unidades de prestación de Servicios, Jubilados,
+  Oportunidades, Empleados, Sala de Prensa; Poder popular y Soberanía
+  Tecnológica)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Tienda Virtual
++ Nombre: Tienda virtual para venta de productos y adquisición de servicios.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Commerce
+
+*** Características de la página de inicio para usuarios sin autenti
++ Nombre: Estructura pagina de inicio
++ Descripción: La página de inicio estará estructurada en 3 grandes áreas o
+  regiones:
+  - Cabecera del sitio
+  - Cuerpo Central
+  - Pie de pagina
+  - Elementos obligatorios:
+    - Visibles en la Barra de Navegación del usuario:
+      - URL semántica o amigable
+      - Favicon de Cantv
+  - Cabecera Sitio
+    - Cabezal Bolivariano
+    - Imagen de cabecera, fija (configurable de forma rotativa)
+    - Logo                       
+    - Buscador del portal con capacidad de búsqueda en paginas blancas,
+      búsquedas web o búsqueda avanzada según el tipo de contenido en el sitio
+    - Logo RSS/Atom que enlaza a la sección de sindicación de noticias
+    - Botones de redes sociales (región superior)
+   - Estructura de Menús (Por Validar)
+     - El menú superior (institucional, corporativo) será desplegable y posee
+       los enlaces: Somos Cantv, Contrataciones, Jubilados, Sala de prensa,
+       Oportunidades.
+     - El menú principal tendrá los siguientes enlaces a los minisitios de:
+       Voz, Móvil, Internet, Televisión, Operadores de Telecomunicaciones.
+     - Menú secundario, será organizado por segmento de mercado y enlazará a
+       los minisitios de: Hogares, Telecomunicaciones publicas, Instituciones
+       públicas, Empresas Privadas, Operadores de Telecomunicaciones.
+   - Pie de página
+     - Mapa del sitio
+     - Botones de redes sociales (región inferior)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Características del Home
++ Nombre: Contenido región
++ Descripción: La región central deberá concentrar información que responda a
+  las necesidades de información de los productos y servicios ofrecidos a los
+  usuarios, así como de los logros y gestión de la empresa.  Enlace destacado
+  para la sección de autogestión. El portal de Cantv deberá organizar su
+  estructura de contenido o taxonomía en base a la información institucional,
+  los segmentos de mercado y servicios masivos prestados por Cantv
+
+  Estructura pagina de inicio. La página de inicio debe estar estructurada en
+  las secciones de acuerdo con los criterios de los administradores de
+  contenido del portal.
+
+  Un carrusel para promover los productos y servicios de la Empresa.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Pie de página sitio
++ Nombre: Pie de página
++ Descripción: El nivel de profundidad del árbol de contenido, se debe
+  reflejar las siguientes secciones:
+  - Mostrar Mapa del sitio
+  - Enlace a la sección de Contacto Corporativo “Contáctenos“
+  - Botones de redes sociales (región inferior)
+  - Botón para la descarga de aplicaciones de Cantv.com.ve para móviles según
+    el sistema móvil a usar.
+
+  El nivel de profundidad del árbol de contenido, las secciones a listar, los
+  botones u accesos directos a las cuentas de social media de interés de Cantv
+  u otros elementos, enlace a descarga de aplicaciones móviles, etc.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Minisitio / Somos Cantv / Estructura de contenido
++ Nombre: Minisitio / Somos Cantv
++ Descripción: El objetivo principal de este minisitio es ofrecer información
+  institucional sobre Cantv:
+  - Empresa, información vinculada a historia, misión y valores de la empresa.
+  - Información referente a los accionistas de la Empresa.
+  - Enlace a Sala de Prensa.
+  - Enlace a Jubilados.
+  - Enlace a sección Poder Popular. Por validar
+  - Enlace a sección de Soberanía Tecnológica. Por validar
+  - Enlace a sección de oportunidades. Por validar
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Minisitio / Jubilados / Estructura de contenido
++ Nombre: Minisitio / Jubilados
++ Descripción: El objetivo principal de este minisitio es ofrecer información
+  de interés para el personal jubilado de Cantv tales como:
+  - Noticias, carrusel de noticias y listado de titulares de noticias
+    recientemente publicadas.
+  - Cartelera de eventos, Calendario
+  - Cartelera de eventos en donde se muestren actividades, jornadas de interés
+    general para el personal jubilado Cantv
+  - Contacto jubilado, pagina con los números de contacto para los jubilados,
+    teléfonos de interés (emergencia, salud, atención al jubilado)
+  - Autenticación Jubilado, modulo con campos de usuario y clave para el
+    inicio de sesión y autenticación de jubilados para la sección destinada a
+    mostrar información de beneficios y servicios de interés de cara al
+    jubilado.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Minisitio / Oportunidades / Estructura de contenido
++ Nombre: Minisitio / Oportunidades
++ Descripción: Sección dedicada a la carga de Síntesis Curriculares de los
+  aspirantes a algún puesto en Cantv, por medio del uso un usuario previamente
+  creado u existente en el sistema de carga CV.  Este espacio también ofrece
+  una pequeña cartelera u espacio en donde se muestra la oferta de vacantes en
+  Cantv y filiales.  Posee un carrusel que muestra imágenes y una nota
+  audiovisual (vídeo) especialmente diseñada para esta sección.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Minisitio / Contrataciones Públicas / Estructura de contenido
++ Nombre: Minisitio / Contrataciones Públicas
++ Descripción: Sección en donde Cantv publica sus llamados de contrataciones
+  públicas según lo exigido por la Ley de contrataciones. El minisitio posee
+  un submenú que está ubicado en la región izquierda y su estructura actual es
+  la que sigue:
+  - Contrataciones Anunciadas Internacionalmente
+  - Avisos de Cantv BS del año en curso
+  - Avisos de Cantv OB del año en curso
+  - Avisos de Movilnet BS del año en curso
+  - Avisos de Movilnet OB del año en curso
+  - Caveguías BS u OB
+  - Caveguías OB
+  - Históricos de los años anteriores
+  Los llamados a contrataciones se publican en Formato de imagen.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Minisitio / Aliados Sociales / Estructura de contenido
++ Nombre: Minisitio / Aliados Sociales
++ Descripción: En el año 2002 Cantv emprende un plan estratégico de inversión
+  social, cuyo eje principal está orientado a la incorporación de artesanos y
+  organizaciones sociales en proyectos rentables, donde realicen actividades
+  económicamente productivas, con el firme propósito de mejorar su calidad de
+  vida y lograr un desarrollo sostenible. Parte fundamental de este plan se
+  sustenta en la orientación de los regalos corporativos y material
+  promocional, realizados por diferentes artesanos del país, lo cual ameritó
+  brindar a las organizaciones y comunidades involucradas toda la asistencia
+  técnica y capacitación por ellas requeridas. La sección de Aliados Sociales
+  poseerá los siguientes elementos:
+  - Catalogo digital dinámico
+  - Testimonios y reseñas, en múltiples formatos, videos, fotos, infografías, etc.
+  - Agenda Interactiva de eventos, actividades y encuentros nacionales
+  - Registro de Aliados Sociales
+  - Integración con redes sociales
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Minisitio / Contáctenos / Estructura de contenido
++ Nombre: Minisitio / Contáctenos / Estructura de contenido
++ Descripción: Espacio destinado para publicar la información de Contacto
+  institucional o algunos de los canales de atención de las unidades de
+  prestación de servicios. El minisitio Contacto tendrá el modulo de Chat
+  incorporado en el mismo como una vía alterna de obtener soporte en línea o
+  Contactar a un agente de atención en línea.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Minisitio / Operadores de Telecomunicaciones / Estructura de contenido
++ Nombre: Minisitio / Operadores de Telecomunicaciones / Estructura de contenido
++ Descripción: El Portal debe poseer el Minisitio (Operadores de
+  telecomunicaciones), este deberá tener una estructura de menú propia con las
+  siguientes secciones:
+
+  - Voz
+    - Centrex IP
+    - CPA y CPA Flexible
+    - Linea  Telefónica
+    - PBX
+    - 0800 avanzado
+    - Numero Universal 500/501
+    - Servicio 900
+  - Móvil
+    - Voz  móvil
+    - Datos móviles
+    - Aba móvil
+    - Otros productos
+  - Internet
+    - Internet total
+    - Internet sobre banda ancha
+    - Internet LAN
+  - Redes  Satélitales
+    - Acceso satelital corporativo
+    - Acceso satelital corporativo con VoIP
+  - Transporte
+    - Circuitos dedicados
+    - Metroethernet
+    - Servicio satelital
+  - Intercambio de tráfico
+    - Hubbing
+    - Terminación
+    - Reoriginación
+  - Otros
+    - Facturación por cuenta y orden (FCO)
+    - Centro de soporte integral
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Minisitio / Empresas e Instituciones Privadas / Estructura de contenido
++ Nombre: Minisitio / Empresas e Instituciones Privadas
++ Descripción: El minisitio de Empresas e instituciones privadas tendrá la
+  siguiente estructura:
+  - Voz fija
+    - Servicios Básicos
+      - Telefonía fija inalámbrica
+      - Telefonía fija inalámbrica
+      - CPA ¿?
+      - Líneas fijas alambricas encadenadas
+    - Planes
+      - Llamadas locales
+      - Local no residencial
+      - Telefónicos empresarial
+      - Larga distancia Nacional
+      - Tarifa plana empresarial
+      - Larga distancia Nacional
+      - Plan Nacional 3000
+      - Llamadas fijo móvil
+      - Techo consumo
+    - Servicios complementarios (desarrollar iconografía)
+      - Identificador de llamadas
+      - Buzón de mensajes Empresas
+      - Teleamigo
+      - Bloqueo Rígido para Empresas
+   - Servicios No geográficos
+     - Servicio 0800 Avanzado
+     - Servicio 0800 Avanzado Internacional
+     - Servicio 0501
+     - Servicio 0500
+  - Telefonia móvil – (Movilnet)
+    - Voz móvil – (Movilnet)
+
+  - INTERNET
+    - Aba
+      - Acerca de Aba
+      - Planes y precios
+      - Beneficios
+      - Requisitos para instalar Aba (¿icono - animación?)
+      - Dónde adquirirlo
+      - Estado solicitud*
+    - Servicios adicionales
+      - Botón turbo
+        - Descripción del producto
+        - Características beneficios precios
+    - Soporte
+      - Mide tu velocidad
+      - Preguntas frecuentes (FAQ)
+    - Términos y condiciones
+      - Anexo
+      - Contrato
+    - Internet Equipado
+      - ¿Que te ofrece?
+      - Modelo de computadoras
+      - A quien va dirigido
+      - ¿Como solicitarlo?
+      - Requisitos y validaciones
+      - Retiro de equipos oficinas DHL
+    - Soporte
+      - Recomendaciones
+      - Garantía y soporte
+    - Hospedaje web (minisitio)
+      - Hospedaje web
+      - Hospedaje DB
+      - Hospedaje compartido (¿término ingles?)
+      - Hospedaje dedicado
+      - Disco duro virtual
+      - Respaldo servidores
+      - Mensajería
+      - Administración servicios
+      - Almacenamiento baja demanda
+      - Archiving
+    - Internet Básico Empresarial
+      - Definición
+      - Tarifas
+    - Internet Plan Empresario
+      - Definición
+      - Tarifas
+    - Internet Total
+      - Definición
+      - Atributos
+      - Planes
+      - Cargos recurrentes
+      - Cómo  contáctarnos
+      - Requisitos
+    - Medidas control correos no deseados
+  - Aplicaciones (Autogestión en línea)
+  - Datos
+    - Cableado estructurado
+      - Descripción,
+      - Ventajas y beneficios
+      - Contáctenos
+      - Características,
+      - Dónde solicitarlo
+    - Enlaces digitales dedicados
+    - Equipos terminales en instalaciones del cliente
+    - Frame relay
+    - Protocolo X.25
+    - Radio Enlace
+    - Respaldo telefónico
+    - Servicio ATM
+    - Servicio de gestión y monitoreo de la red
+    - Servicios POS/LAN
+    - Servicio satelital
+    - Servicio Scada
+    - Teletrabajo
+    - Televigilancia
+    - Videoconferencia
+  - Servicios TI
+    - Centros de Datos
+    - Servicios de administración y gestión de LAN/WAN
+    - Centro de contacto
+    - Administración de centrales telefónicas - Administración integral de
+      contacto
+  - Botón turbo
+    - Descripción del producto
+    - Características beneficios precios
+  - Atención al cliente
+    - Factura en línea
+    - Comprobante de retención
+    - Preguntas frecuentes
+    - Buzón de mensajes
+    - Oficinas y taquilla
+  - Canales (club Cantv)
+    - Mide tu velocidad
+    - FAQ
+  - Varias
+    - Centros de Datos
+    - Servicios de administración y gestión de LAN/WAN
+      - Renta básica mensual,
+      - Otros cargos,
+      - Modalidades de pago,
+      - Información importante
+    - Centro de contacto
+      - Requisitos técnicos,
+      - Requisitos legales,
+      - Condiciones Generales
+    - Administración de centrales telefónicas - Administración integral de
+      contacto
+    - Atención al cliente
+      - Factura en línea
+      - Comprobante de retención
+      - Preguntas frecuentes
+      - Buzón de mensajes
+      - Oficinas y taquilla
+  - Canales
+    - Canales integradores
+    - CIE
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Minisitio / Sala de prensa / Estructura de contenido
++ Nombre: Minisitio / Sala de prensa
++ Descripción: Tiene una estructura de menú propia con las siguientes
+  secciones:
+  - Sala prensa, noticias anuncios
+  - De interés, información institucional relevante
+  - Atención al periodista, enlaza a la sección del mismo nombre y muestra el
+    contenido previa autenticación del periodista.
+  - Archivo, enlaza a la sección de archivos cargados en el minisitio de sala
+    prensa ordenado por la fecha y los meses de carga del contenido.
+  - Descargas, para imagenes logos etc.
+  - Conectados (enlace con redes sociales),
+  - Contacto, página o sección en donde se encuentra los contactos con la
+    Gerencia General de Comunicaciones y Asuntos Públicos.
+  - Sala prensa tendrá disponible al menos dos diseños de plantillas que serán
+    cambiadas a criterio de los administradores.
+  - Los módulos o funcionalidades a cargar en el home del minisitio deberán
+    poseer dimensiones similares para cumplir con la correcta diagramación del
+    sitio.
+  - Algunos módulos presentes en el home de Sala de prensa son:
+  - Botonería redes sociales botones compartir los contenidos tipo noticias,
+    vídeo, galería de imágenes, podcats etc.
+  - Carrusel de noticias, Muestra una imagen asociada a la nota de prensa
+    adaptada a las dimensiones del carrusel, con soporte de un máximo de cinco
+    notas.
+  - Timeline de twitter, a cuentas previamente configuradas según el criterio
+    de los administradores
+  - Buscador de contenido
+  - Registro de periodista, permite crear un registro de periodistas mediante
+    la introducción de los siguientes campos:
+    - Nombre
+    - Apellido
+    - Nombre del medio
+    - Tipo de medio
+    - Ciudad
+    - Cargo
+    - Fuente: Cultura, Tecnología, Telecomunicaciones, Medios Alternativos
+      Comunitario, Gobierno, Educación, Institucional, Economía.
+    - Correo electrónico
+    - Teléfono de contacto
+    - Supervisor
+    - Correo secundario
+  - Autenticación para periodistas, permite el inicio de sesión para la
+    sección “Atención al periodista” posee dos campos, usuario y clave.
+  - Atención al periodista, sección en donde además de tener acceso a las
+    notas de prensa, podrán bajar imágenes y otros insumos previamente
+    establecidos por los administradores del sitio, previa autenticación del
+    periodista.
+  - Nube de contenido Noticias recientes, modulo que muestra las noticias
+    recién publicadas en la sección.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Minisitio / Instituciones Públicas / Estructura de contenido
++ Nombre: Minisitio / Instituciones Públicas
++ Descripción: El minisitio de Instiuciones Públicas tendrá la siguente estructura de contenido: 
+  - Telefonia fija
+    - Servicios Básicos 
+      - Telefonía Fija Inalámbrica 
+      - Telefonía Fija Alámbrica 
+      - Servicio Central Privada Automática 
+      - Líneas Fijas Alámbricas Encadenadas 
+    - Servicios Complementarios 
+      - Identificador de Llamadas 
+      - Buzón de Mensajes 
+      - Teleamigo 
+      - Bloqueo Rígido 
+      - Central Telefónica Virtual 
+    - Servicios No Geográficos 
+      - Servicio 0800- Avanzado 
+      - Servicio 0800-Avanzado Internacional 
+      - Servicio 0501 
+      - Servicio 0500 
+    - Planes 
+      - Llamadas Locales 
+      - Plan Local No Residencial 
+      - Llamadas Larga Distancia Nacional 
+      - Plan Nacional 3000 
+      - Llamadas Larga Distancia Internacional 
+      - Llamadas Fijo Móvil 
+      - Techo Consumo 
+ 
+    - Promociones
+
+  - Móvil 
+    - (Portal Movilnet) 
+
+  - Servicios de Internet 
+    - Servicios 
+      - ABA Alámbrico 
+      - ABA Satélital 
+      - Internet Total 
+      - Internet LAN 
+    - Servicios Complementarios 
+      - Planes 
+      - Promociones
+
+- Servicios de Datos
+  - Conexión Metro Ethernet 
+  - Datos Estándar 
+  - Datos Transaccionales 
+    - Servicios POS LAN 
+    - Servicios ATM 
+    - Servicios Scada 
+  - Datos Satelitales 
+    - Última Milla SCPC 
+    - Última Milla ESCPC 
+    - POS / ATM / SCADA 
+    - Televisión Satelital 
+    - Planes 
+    - Promociones
+
+  - Servicios TI
+    - Servicios
+      - Centro de Datos 
+      - Hospedaje 
+        - Hospedaje WEB 
+        - Hospedaje Base de Datos 
+        - Hospedaje Dedicado 
+        - Hospedaje Compartido 
+      - Almacenamiento 
+        - Almacenamiento Bajo de Demanda 
+        - Disco Duro Virtual 
+        - Respaldo y Recuperación de Servidores 
+      - Contenido y Colaboración 
+      - Mensajería 
+      - Streaming de Audio y Video 
+      - Respaldo y Recuperación de Servidores 
+      - Centro de Contacto 
+      - Portal de Voz 
+      - Centro de Llamadas 
+    - Administración y Gestión de Redes 
+      - Monitoreo Proactivo 
+      - Administración Delegada de Redes 
+      - Diagnostico de Redes 
+    - Planes 
+    - Promociones
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Geolocalización
++ Nombre: Geolocalización
+Los elementos georeferenciados deberán poseer una ficha resumen que se
++ Descripción: El sistema debe poseer: Geolocalización (Mapas), módulo que
+  muestra el contenido georeferenciado tales como, OAC, CDC, Teléfonos
+  públicos, PGC, Aliados Comerciales, sedes de Cantv, etc. Los elementos
+  georeferenciados deberán poseer una ficha resumen que será mostrada de forma
+  de tooltip al hacerle clic, mostrado información como ubicación, dirección,
+  teléfono, servicios que presta, imagen referencial (miniatura).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: collective.geolocationbehavior
+
+*** General / Búsqueda
++ Nombre: Buscador
++ Descripción: El portal debe poseer un buscador que muestre: 
+  - Capacidad de realizar búsquedas en el CMS según la taxonomía del sitio,
+    palabras claves o tipo de contenido cargado.
+  - Buscador Paginas Blancas: Integración con el buscador con paginas Blancas
+    y Amarillas de Caveguías.
+  - Buscador Internet: posibilidad de realizar búsquedas del sitio en Google u
+    otro buscador definido por
+  - Tipo de contenido
+  - Vídeos, el resultado de la búsqueda de videos deberá visualizarse como una
+    galería de video.
+  - Galerías de Imágenes, las galerías de imágenes se visualizaran en forma de
+    galerías, mostrando el titulo de la de la misma y la imagen de portada. El
+    orden deberá jerarquizarse desde la ultima publicación.
+  - Podcast, deberá mostrar el resultado de la búsqueda como un listado de los
+    podcast organizados por el mes de publicación.
+  - Documentos, muestra el listado de las secciones con los documentos creados
+    cargados según taxonomía (secciones – minisitios).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: LiveSearch
+
+*** Autenticación
++ Nombre: Autenticación de usuarios del portal
++ Descripción: Autenticación de usuarios del portal, permitirá a los
+  jubilados, periodistas, empleados iniciar sesión en las secciones/minisitios
+  que requieran dar acceso a aquellos perfiles que lo requieran para mostrar
+  la información y los servicios orientados según su perfil.  Asimismo los
+  usuarios podrán entrar a la sección autogestión en línea y mostrar los
+  servicios asociados según su perfil. El sistema deberá realizar la
+  autenticación sobre un LDAP que se definirá en el documento ERS de Registro
+  y autenticación.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión
+
+*** Minisitio / Telecomunicaciones Públicas / Estructura de contenido
++ Nombre :Minisitio / Telecomunicaciones Públicas / Estructura de contenido
++ Descripción: 
+  - Teléfonos Públicos 
+  - Centro de Comunicaciones Comunales 
+  - Centro de Comunicaciones 
+  - Teléfonos tarificadores 
+  - Tarjetas de llamadas 
+  - Autogestión 
+    - Aliados Comerciales 
+    - DTE 
+    - Consulta tu saldo (prepago) 
+  - Cantv en la comunidad (minisitio Poder Popular)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Minisitio
++ Nombre: Minisitio
++ Descripción: Los minisitios son espacios que tendrán una lógica de
+  presentación adaptada a las necesidades de los administradores del portal,
+  la diagramación entre minisitios así como la funcionalidades incluidas en
+  los mismos podrá ser diferente entre ellos (de acuerdo a las pre-plantillas
+  definidas), y deberán regirse por los lineamientos de Cantv definidos en el
+  manual de estilo para el portal cantv.com.ve.  Los minisitios deberán tener
+  la estructura de las tres (3) áreas o regiones obligatoria para cualquier
+  página o minisitio de cantv.com.ve:
+  - Cabecera del sitio
+  - Cuerpo Central
+  - Pie de pagina
+  
+  Cada minisitio deberá estructurar su contenido de forma modular para que los
+  administradores del portal puedan distribuir la diversas funcionalidades
+  (módulos) en cualquier bloque previamente definido en el sitio siempre y
+  cuando el espacio y el modulo coincidan en sus dimensiones.  Los minisitios
+  deberán poseer al menos dos (2) plantillas prediseñadas de forma que se
+  puedan dar la sensación de refrescamiento y cambio visual sin requerir de un
+  mayor esfuerzo de desarrollo para el sitio. Entre los minisitios
+  predefinidos en la propuesta inicial del nuevo portal cantv.com.ve están:
+  - Voz
+  - Móvil
+  - Internet
+  - Televisión
+  - Hogares
+  - Instituciones Públicas
+  - Telecomunicaciones Públicas
+  - Empresas Privadas
+  - Operadores de Telecomunicaciones
+  - Somos Cantv
+  - Sala de Prensa Cantv
+  - Jubilados
+  - La plataforma de Autogestión en línea
+  - Aliados Sociales
+  - Poder popular
+  - Proyectos / Soberanía Tecnológica
+  - Contacto
+  - Contrataciones Publicas
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** General / Mensajes emergentes
++ Nombre: Modulo mensajes emergentes
++ Descripción: Modulo que permitirá mostrar mensajes emergentes en el home,
+  minisitios o secciones requeridas según el criterio de los administradores.
+  Funcionalidad para mostrar mensaje emergentes-alertas cuando se desee
+  promover contenido especial como “Cantv Informa”, ejemplo: llamado público a
+  contrataciones.  Heredada hacia los minisitios de las UPS. Importante
+  validar con el “Diseñador gráfico” nuevas tendencias
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: plone.app.jquerytools
+
+*** Reportes
++ Nombre: Capacidad para medir y generar reportes de las secciones, artículos
+  y tipo de contenido más visitados por los usuarios.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Reports
+
+*** Minisitio / Hogares / Estructura de contenido
++ Nombre: Minisitio / Hogares
++ Descripción: El minisitio de hogares tendrá las siguientes secciones:
+  - Telefonía
+    - Línea
+      - Habla Ya
+      - Línea Fija
+    - Planes
+      - Local
+      - Larga distancia Nacional (LDN)
+      - Larga distancia internacional (LDI)
+    - Servicios
+      - Tienda virtual**
+    - Equipos **
+  - Internet
+    - Aba*
+      - Información/Planes
+      - Solicita tu Aba**
+    - Plan Internet Equipado (PIE)*
+      - Información/Beneficios
+      - Financiamiento Banco de Venezuela
+      - Solicita tu PIE**
+    - Aplicaciones
+      - Solicita tu Aba**
+      - Solicita tu PIE**
+      - Consulta tu solicitud**
+      - Estados con disponibilidad
+  - Televisión
+    - Planes/Canales
+    - Instalación
+    - Soporte Técnico
+    - Solicitud de TDH**
+    - Solicitud de TDA**
+  - Pagos y Facturación**
+    - Promociones
+    - Compras y atención**
+      - Aba [Boss]
+      - PIE [SIVA]
+      - TDH (***NE)
+      - TDA (***NE)
+      - TIENDA VIRTUAL
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** General / Pagina de mantenimiento
++ Nombre: Debe tener una página de mantenimiento con posibilidad de montar una página ligera
++ Descripción: Debe tener una página de mantenimiento con posibilidad de montar una página ligera
++ Prioridad: Prioritario
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya parametrización
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** General / Boletín Informativo (Newsletter)
++ Nombre: Boletín Informativo (Newsletter)
++ Descripción: Permite que a los administradores del portal crear listas de
+  distribución o newsletter
+  - Los usuarios se inscribirán o darse de alta a las listas de distribución
+    de noticias, notificación de promociones u otro tipo definido previamente
+    por los administradores.
++ Prioridad: Prioritario
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: Products.EasyNewsletter
+
+*** General / Envío SMS
++ Nombre: El portal permitirá realizar el Envío de SMS, la modalidad de envió
+  de SMS puede estar orientada solo a aquellos usuarios o clientes de Cantv
+  que lo requieran pero autenticando y dejando un registro de la cantidad de
+  usuarios.
++ Prioridad: Prioritario
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: SMS
+
+*** Sugerencias y valoración de información
++ Nombre: Sugerencias y valoración de información no publico
++ Descripción: Sugerencias y valoración de información no publico
++ Prioridad: Deseable
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Características del Home
++ Nombre: Espacio para el acceso directo a consulta de saldo, envío de sms de
+  los servicios de “Autogestión en línea Cantv”.
++ Descripción: Área que muestre las etiquetas relacionadas con las secciones
+  más visitadas y de mayor interés de los usuarios.
++ Prioridad: Deseable
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** General / Contenido por perfiles
++ Nombre: Posibilidad de mostrar contenidos y secciones especiales según el
+  perfil del usuario
++ Prioridad: Deseable
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Geolocalización
++ Nombre: Geolocalizar las imágenes de las cabeceras de las UPS según la
+  región desde donde se ingrese al portal.
++ Prioridad: Deseable
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: collective.geolocationbehavior
+
+*** General / Publicaciones Recientes
++ Nombre: Publicaciones recientes
++ Descripción: Módulo que muestra de forma de un carrusel el contenido
+  publicado recientemente en el portal
+  - El módulo de publicaciones recientes, mostrará una imagen miniatura y el
+    titulo del contenido recientemente programado.
++ Prioridad: Deseable
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Products.Carousel 
+
+*** General / Podcast
++ Nombre: Podcast
++ Descripción: Módulo para la publicación de podcast, deberá contener un
+  reproductor para la carga del sonido en línea además de la funcionalidad de
+  descargar el audio requerido.
+  - El formato de los podcast deberán ser los mas populares y con soporte a
+    formatos abiertos.
++ Prioridad: Deseable
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Podcast
+
+*** Subdominios
++ Nombre: Creación de subdominios para los servicios de Telefonía fija,
+  Telefonía Móvil, Internet, Televisión, Datos, Servicios TI
++ Prioridad: No Necesario
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** General / Nube de término
++ Nombre: Nube de término(tag cloud)
++ Descripción: Módulo que permite la visualización de términos populares,
+  secciones más visitadas, según el tráfico del portal.
++ Prioridad: No Necesario
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: collective.vaporisation
+
+*** General / Comentarios y Valoración
++ Nombre: Comentarios y Valoración
+La valoración de contenido de contenido mediante e
++ Descripción: El Portal permitirá, comentar y Valorar contenido, y también
+  permite comentar el contenido tipo noticia utilizando la autenticación del
+  sitio o el “single sign on” ofrecido por Twitter, Facebook o Google. La
+  valoración de contenido de contenido mediante el uso de estrellas (hasta 5)
+  ó usando el pulgar arriba o pulgar abajo.
++ Prioridad: No Necesario
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: sc.social.like
+
+* Resultado de Análisis:
+** Funcionalidades:
+
+#+BEGIN_DITAA images/brecha_cantv_com_ve.png -r -S
++-----------------------------------------------+-----------+
+|cBLU              Característica               | Cantdidad |
++-----------------------------------------------+-----------+
+|  Requieren conf y/o parametrización < 1 hora  |      6    |
++-----------------------------------------------+-----------+
+|  Requieren conf y/o parametrización < 2 horas |      9    |
++-----------------------------------------------+-----------+
+|        Requieren desarrollo < 4 horas         |     12    |
++-----------------------------------------------+-----------+
+|        Requieren desarrollo < 8 horas         |     16    |
++-----------------------------------------------+-----------+
+|        Requieren desarrollo > 32 horas        |     16    |
++-----------------------------------------------+-----------+
+|                No contempladas                |      0    |
++-----------------------------------------------+-----------+
+#+END_DITAA
+
+
+#+CAPTION: Análisis de brecha portal cantv.com.ve
+#+NAME: Funcionalidades
+    [[./images/graph_brecha_cantv_com_ve.png]]
+\clearpage
+
+** Cantidad de funcionalidades cubiertas por características de Plone
+
+#+BEGIN_DITAA images/gap_plone_features_cantv_com_ve.png -r -S
++-----------------------------------------------+-----------+
+|cBLU              Característica               | Cantdidad |
++-----------------------------------------------+-----------+
+|                 Plone Commerce                |      2    |
++-----------------------------------------------+-----------+
+|             Plone sc.social.like              |      2    |
++-----------------------------------------------+-----------+
+|      Plone collective.geolocationbehavior     |      2    |
++-----------------------------------------------+-----------+
+|                 Plone Roles                   |      5    |
++-----------------------------------------------+-----------+
+|                 Plone Survey                  |      1    |
++-----------------------------------------------+-----------+
+|         Plone collective.vaporisation         |      1    |
++-----------------------------------------------+-----------+
+|          Plone plone.app.jquerytools          |      1    |
++-----------------------------------------------+-----------+
+|                  Plone SMS                    |      1    |
++-----------------------------------------------+-----------+
+|               Plone built-in                  |     34    |
++-----------------------------------------------+-----------+
+|          Plone collective.easyslider          |      1    |
++-----------------------------------------------+-----------+
+|         Plone Products.EasyNewsletter         |      1    |
++-----------------------------------------------+-----------+
+|              Plone Autogestión                |      1    |
++-----------------------------------------------+-----------+
+|              Plone LiveSearch                 |      1    |
++-----------------------------------------------+-----------+
+|                Plone Reports                  |      1    |
++-----------------------------------------------+-----------+
+|       Plone collective.taxonomysupport        |      1    |
++-----------------------------------------------+-----------+
+|            Plone Products.Carousel            |      1    |
++-----------------------------------------------+-----------+
+|                 Plone Podcast                 |      1    |
++-----------------------------------------------+-----------+
+|       Plone collective.portlet.calendar       |      1    |
++-----------------------------------------------+-----------+
+|       Plone collective.plonetruegallery       |      1    |
++-----------------------------------------------+-----------+
+#+END_DITAA
