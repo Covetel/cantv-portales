@@ -39,7 +39,7 @@
 + Nombre: Breadcrumbs o guía de navegación aplicado en todo el portal
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad existente en Plone
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** General / Archivos
 + Nombre: El sistema debe permitir la carga de archivos de cualquier tipo,
@@ -47,14 +47,14 @@
   etc.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad existente en Plone
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** General / Mapa de Sitio
 + Nombre: Mapa de sitio
 + Descripción: Mapa de sitio
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad existente en Plone
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** General / Noticias
 + Nombre: Noticias.
@@ -70,20 +70,20 @@
   - Botón imprimir contenido
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad existente en Plone
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** General / Documentos
 + Nombre: Documentos: permite cargar documentos en formatos de Libre Office,
   Microsoft Office, PDF etc.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad existente en Plone
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** General / Programación de contenido
 + Nombre: Se debe programar el contenido
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad existente en Plone
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Administración de Contenido
 + Nombre: Permisología para las UPS
@@ -107,7 +107,7 @@
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
   parametrización
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Administración de Contenido
 + Nombre: La administración, carga de contenido, aplicación de la plantilla y
@@ -136,7 +136,7 @@
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
   parametrización
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Administración de Contenido
 + Nombre: Flujo de Trabajo (Workflow)
@@ -155,7 +155,7 @@
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
   horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Administración / Módulo de gestión de banner
 + Nombre: Módulo de gestión de banner, módulo que permita la publicación de
@@ -163,7 +163,7 @@
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
   horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Multiplataforma
 + Nombre: Compatibilidad con sistemas operativos móviles.
@@ -176,7 +176,7 @@
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
   horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Gestión de Roles y Perfiles
 + Nombre: Gestión de roles y perfiles.
@@ -213,7 +213,7 @@
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
   horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Redes Sociales
 + Nombre: Integración con redes Sociales
@@ -267,7 +267,7 @@
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
   10 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Catálogo de Productos y Servicios
 + Nombre: Módulo de Catalogo
@@ -328,7 +328,7 @@
   Tecnológica)
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Tienda Virtual
 + Nombre: Tienda virtual para venta de productos y adquisición de servicios.
@@ -371,7 +371,7 @@
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
   10 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Características del Home
 + Nombre: Contenido región
@@ -390,7 +390,7 @@
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
   10 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Pie de página sitio
 + Nombre: Pie de página
@@ -407,7 +407,7 @@
   u otros elementos, enlace a descarga de aplicaciones móviles, etc.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Minisitio / Somos Cantv / Estructura de contenido
 + Nombre: Minisitio / Somos Cantv
@@ -422,7 +422,7 @@
   - Enlace a sección de oportunidades. Por validar
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Minisitio / Jubilados / Estructura de contenido
 + Nombre: Minisitio / Jubilados
@@ -441,7 +441,7 @@
     jubilado.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Minisitio / Oportunidades / Estructura de contenido
 + Nombre: Minisitio / Oportunidades
@@ -453,7 +453,7 @@
   audiovisual (vídeo) especialmente diseñada para esta sección.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Minisitio / Contrataciones Públicas / Estructura de contenido
 + Nombre: Minisitio / Contrataciones Públicas
@@ -473,7 +473,7 @@
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
   10 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Minisitio / Aliados Sociales / Estructura de contenido
 + Nombre: Minisitio / Aliados Sociales
@@ -495,7 +495,7 @@
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
   10 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Minisitio / Contáctenos / Estructura de contenido
 + Nombre: Minisitio / Contáctenos / Estructura de contenido
@@ -506,7 +506,7 @@
   Contactar a un agente de atención en línea.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Minisitio / Operadores de Telecomunicaciones / Estructura de contenido
 + Nombre: Minisitio / Operadores de Telecomunicaciones / Estructura de contenido
@@ -548,7 +548,7 @@
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Minisitio / Empresas e Instituciones Privadas / Estructura de contenido
 + Nombre: Minisitio / Empresas e Instituciones Privadas
@@ -701,7 +701,7 @@
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Minisitio / Sala de prensa / Estructura de contenido
 + Nombre: Minisitio / Sala de prensa
@@ -756,7 +756,7 @@
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Minisitio / Instituciones Públicas / Estructura de contenido
 + Nombre: Minisitio / Instituciones Públicas
@@ -845,7 +845,7 @@
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Geolocalización
 + Nombre: Geolocalización
@@ -916,7 +916,7 @@ Los elementos georeferenciados deberán poseer una ficha resumen que se
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Minisitio
 + Nombre: Minisitio
@@ -961,7 +961,7 @@ Los elementos georeferenciados deberán poseer una ficha resumen que se
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** General / Mensajes emergentes
 + Nombre: Modulo mensajes emergentes
@@ -1028,14 +1028,14 @@ Los elementos georeferenciados deberán poseer una ficha resumen que se
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** General / Pagina de mantenimiento
 + Nombre: Debe tener una página de mantenimiento con posibilidad de montar una página ligera
 + Descripción: Debe tener una página de mantenimiento con posibilidad de montar una página ligera
 + Prioridad: Prioritario
 + Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya parametrización
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** General / Boletín Informativo (Newsletter)
 + Nombre: Boletín Informativo (Newsletter)
@@ -1065,7 +1065,7 @@ Los elementos georeferenciados deberán poseer una ficha resumen que se
 + Prioridad: Deseable
 + Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
   parametrización
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Características del Home
 + Nombre: Espacio para el acceso directo a consulta de saldo, envío de sms de
@@ -1075,7 +1075,7 @@ Los elementos georeferenciados deberán poseer una ficha resumen que se
 + Prioridad: Deseable
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
   horas
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** General / Contenido por perfiles
 + Nombre: Posibilidad de mostrar contenidos y secciones especiales según el
@@ -1122,7 +1122,7 @@ Los elementos georeferenciados deberán poseer una ficha resumen que se
 + Prioridad: No Necesario
 + Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
   parametrización
-+ Aplicación que cubrirá la funcionalidad:  built-in
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** General / Nube de término
 + Nombre: Nube de término(tag cloud)
