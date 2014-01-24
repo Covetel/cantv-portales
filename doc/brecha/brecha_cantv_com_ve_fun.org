@@ -327,7 +327,7 @@
   Oportunidades, Empleados, Sala de Prensa; Poder popular y Soberanía
   Tecnológica)
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Tienda Virtual
@@ -406,7 +406,7 @@
   botones u accesos directos a las cuentas de social media de interés de Cantv
   u otros elementos, enlace a descarga de aplicaciones móviles, etc.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Minisitio / Somos Cantv / Estructura de contenido
@@ -421,7 +421,7 @@
   - Enlace a sección de Soberanía Tecnológica. Por validar
   - Enlace a sección de oportunidades. Por validar
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Minisitio / Jubilados / Estructura de contenido
@@ -440,7 +440,7 @@
     mostrar información de beneficios y servicios de interés de cara al
     jubilado.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Minisitio / Oportunidades / Estructura de contenido
@@ -452,7 +452,7 @@
   Cantv y filiales.  Posee un carrusel que muestra imágenes y una nota
   audiovisual (vídeo) especialmente diseñada para esta sección.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Minisitio / Contrataciones Públicas / Estructura de contenido
@@ -505,7 +505,7 @@
   incorporado en el mismo como una vía alterna de obtener soporte en línea o
   Contactar a un agente de atención en línea.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a 10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Minisitio / Operadores de Telecomunicaciones / Estructura de contenido

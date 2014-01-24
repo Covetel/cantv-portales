@@ -153,16 +153,16 @@
 + Nombre: El sistema permite desconectar a un usuario remotamente, mediante la
   interfaz de administración.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Interfaces / funciones automáticas / procesos masivos
 + Nombre: Cada sistema que requiera un servicio de la aplicación, deberá
   contar con un usuario de interfaz, para ejecutar dicho servicio.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
   Virtualización
 
@@ -171,15 +171,15 @@
   gestión de autorizaciones y usuarios debe estar centralizado en un solo
   módulo, no uno por aplicación.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Transferencia de Datos
 + Nombre: Utilización de Encriptación fuerte (>512bits) y cifrado de datos.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
   Virtualización
 
@@ -187,8 +187,8 @@
 + Nombre: Uso de GPG, OpenSSL o similar para cifrar y firmar los archivos a
   transmitir.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
   Virtualización
 
@@ -207,8 +207,8 @@
 + Nombre: El sistema muestra el path o ruta de navegación del punto donde el
   usuario se encuentra en un momento determinado de todo el sitio. (breadcumb)
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Transportes de Configuración y de Seguridad
@@ -217,8 +217,8 @@
   paquete, con el fin de garantizar y delimitar las responsabilidades dentro
   de dicho proceso.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración / CFengine
 
 *** Operación
@@ -227,8 +227,8 @@
   crear dependencias con el mismo, ya que estos son únicos y exclusivamente de
   uso del administrador del Sistema Operativo
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
   Virtualización
 
@@ -236,8 +236,8 @@
 + Nombre: La transferencia de datos de login entre el cliente y el servidor se
   ejecuta de manera encriptada usando protocolos seguros.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Encriptación / SSL
 
 *** Interfaces / funciones automáticas / procesos masivos
@@ -245,8 +245,8 @@
   asociados a la ejecución del servicio referido dentro de la plata forma,y
   que no opere directamente en el modulo de datos del negocio
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
   Virtualización
 
@@ -254,8 +254,8 @@
 + Nombre: Las Interfaces deben pasar por túneles seguros entre el sistema
   origen, el mediador y el sistema destino.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
   Virtualización
 
@@ -263,8 +263,8 @@
 + Nombre: Deben Poseer procesos alternativos manuales, que puedan ser
   probados.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
   Virtualización
 
@@ -273,8 +273,8 @@
   centralizado, las etiquetas, mensajes y textos predefinidos deben estar
   guardados en archivos de propiedades (bundle files)
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Operación
@@ -282,8 +282,8 @@
   y restringido sólo al ser alcanzado por el aplicación; así como está
   protegido de cualquier vía que permita obtenerlo.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
   Virtualización
 
@@ -775,8 +775,8 @@
   encuentran desactivados en ambiente de producción, y se tiene establecido el
   mecanismo necesario para activación en caso de contingencias
 + Prioridad: No Necesario
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Auditoria / Trazabilidad
@@ -789,8 +789,8 @@
   Estándar y pueden ser enviadas de forma automática vía mecanismo de
   transferencia de archivos.
 + Prioridad: No Necesario
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Auditoria / Trazabilidad
@@ -805,16 +805,16 @@
   válida para una (1) sesión, de modo que pida cambio inmediato por una nueva
   contraseña
 + Prioridad: No Necesario
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Autenticación
 + Nombre: Utilizar parámetros para configurar contraseñas de los usuarios, a
   fin de mantener una configuración segura del sistema
 + Prioridad: No Necesario
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Autenticación
@@ -825,16 +825,16 @@
   administración de Usuarios del resto de las funcionalidades de la misma, a
   fin de permitir la creación, modificación y eliminación de usuarios
 + Prioridad: No Necesario
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Autorización / Roles
 + Nombre: El sistema debe ofrecer un módulo para la arquitectura, diseño y
   construcción de roles dentro del sistema.
 + Prioridad: No Necesario
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Roles
 
 *** Autorización / Roles
@@ -843,16 +843,16 @@
   acerca de los objetos de autorización a usarse y la valorización que debe
   otorgarse.
 + Prioridad: No Necesario
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Roles
 
 *** Autorización / Roles
 + Nombre: El sistema permite hacer copia de roles.
 + Descripción: El sistema permite hacer copia de roles.
 + Prioridad: No Necesario
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Roles
 
 *** Autorización / Roles
@@ -860,8 +860,8 @@
   habilitada por cada rol del sistema como: portlet, paginas, carpetas,
   bloques, transacciones, etc.
 + Prioridad: No Necesario
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Roles
 
 *** Autorización / Roles
@@ -869,8 +869,8 @@
   autorizaciones para restringir el acceso a tablas, vistas, carpetas y/o
   ejecución de páginas, funciones o programas, bloques, transacciones, etc.
 + Prioridad: No Necesario
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Roles
 
 *** Autorización / Roles
@@ -878,16 +878,16 @@
   asignación de componentes críticos o que manejan data sensible (funciones,
   paginas, bloques, programas, transacciones, etc)
 + Prioridad: No Necesario
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Roles
 
 *** Autorización / Roles
 + Nombre: Se deben tener definidas las reglas de asignación de roles entre las
   diversas plataformas que intervienen en la implementación de la solución.
 + Prioridad: No Necesario
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Roles
 
 *** Autorización / Roles
@@ -898,24 +898,24 @@
   de usuarios deben tener la permisología requerida según su competencia
   dentro del sistema a través de los roles asignados.
 + Prioridad: No Necesario
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Roles
 
 *** Autenticación
 + Nombre: Se almacena las contraseñas en forma encriptada (punto 5 del
   documento referencial).
 + Prioridad: No Necesario
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Auditoria / Trazabilidad
 + Nombre: El sistema debe proveer mecanismos para determinar las conexiones
   concurrentes en un momento dado.
 + Prioridad: No Necesario
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Logs del Sistema
 
 *** Autorización / Roles

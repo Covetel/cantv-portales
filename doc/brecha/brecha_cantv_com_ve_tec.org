@@ -276,8 +276,8 @@
   redundantes de alimentación y procesos redundantes o módulos de memoria sin
   desconectar un subsistema entero.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
   Virtualización
 
@@ -285,8 +285,8 @@
 + Nombre: Debe proveer herramientas para realizar reinicialización de los
   módulos que conforman la solución.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Sitemaps
@@ -295,24 +295,24 @@
   con sitemaps para optimizar el posicionamiento del portal en buscadores de
   Internet.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Administración del sistema
 + Nombre: Debe proveer la habilidad de crear, borrar, modificar, y ver cuentas
   de usuario en el sistema.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Logs
 + Nombre: Poseer una plataforma propia para la gestión de logs y análisis del
   trafico Web
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Logs del Sistema
 
 *** Capa lógica de negocio
@@ -320,7 +320,7 @@
   podría ser Glassfish, Zope, Jboss, o Apache Tomcat.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
   Virtualización
 
@@ -330,16 +330,16 @@
   los administradores la posibilidad de solicitar y recuperar los archivos
   especificados dentro del día de trabajo.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: ZODB Server
 
 *** Disponibilidad y redundancia
 + Nombre: Debe soportar el manejo de errores para interfaces que involucran
   tiempo de indisponibilidad de red y de interfaces.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Logs del Sistema
 
 *** Archiving
@@ -348,24 +348,24 @@
   que pueda ser borrado. Un archivo de datos exitoso es uno que puede ser
   recuperado y usado por el sistema.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Archiving
 + Nombre: Debe permitir ejecutar el proceso de archivo automáticamente sin
   requerir intervención manual.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Disponibilidad y redundancia
 + Nombre: Debe poder reiniciarse point-in-time debido a fallas de hardware o
   software.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Administración del Servicio
 
 *** Disponibilidad y redundancia
@@ -373,8 +373,8 @@
   la consistencia de los datos debe ser ejecutada de manera regular para
   prevenir corrupción.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: ZODB Server
 
 *** Archiving
@@ -392,15 +392,15 @@
     no. Por ejemplo, el usuario puede especificar 18 meses por lo tanto esos
     archivos no se actualizarán dentro de los últimos 18 meses.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Disponibilidad y redundancia
 + Nombre: Debe soportar la replicación de transacciones en tiempo real.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
   Virtualización
 
@@ -412,15 +412,15 @@
   portal en los principales motores de búsqueda y aplicación de estrategias
   SEO
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** General
 + Nombre: Posibilidad de integrar el CMS con Google Analytics y similares
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: collective.googleanalytics
 
 *** Interface de usuario general / común
@@ -430,23 +430,23 @@
   castellano. Las eventuales excepciones deberán estar explícitamente
   autorizadas por CANTV, por ejemplo, funcionalidades para el administrador.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Monitoreo
 + Nombre: Debe poder generar un mensaje de error de datos para cada condición
   de error que ocurra dentro de la aplicación.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Logs del Sistema
 
 *** General
 + Nombre: Diseño de una arquitectura de roles y perfiles de forma robusta
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Roles
 
 *** Disponibilidad y redundancia
@@ -455,16 +455,16 @@
   servidores se agrupan de manera de distribuir la carga y eliminar puntos
   aislados de falla dentro de un sistema crítico para el negocio.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: ZEO Clients
 
 *** Disponibilidad y redundancia
 + Nombre: Debe permitir la desconexión de un sistema redundante sin impacto
   adverso en la red o la solución misma.
 + Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
   Virtualización
 
@@ -1224,8 +1224,8 @@
 + Nombre: Módulo de ejecución de código embebido, con soporte HTML o el (los)
   lenguaje(s) script(s) soportado(s) por el CMS
 + Prioridad: Prioritario
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
-  10 horas
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 * Resultado de Análisis:
