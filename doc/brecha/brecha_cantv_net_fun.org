@@ -533,7 +533,11 @@ navegación según la tendencia.
     deportivos.
   - Módulo que muestre las etiquetas relacionadas con las secciones más
     visitadas y de mayor interés de los usuarios.
-  - Botones de redes sociales (región superior)                                                                                                                     .  Funcionalidad para mostrar cintillo o marquesina que promocionen los contenidos especiales, noticiosos y/o institucionales                                                                                                                                                                       .  Módulo para la autenticación de usuarios para entrar al sistema de autogestión en línea de cantv.com.ve (A discutir)             
+  - Botones de redes sociales (región superior)
+  - Funcionalidad para mostrar cintillo o marquesina que promocionen los 
+    contenidos especiales, noticiosos y/o institucionales
+  - Módulo para la autenticación de usuarios para entrar al sistema de 
+    autogestión en línea de cantv.com.ve (A discutir)             
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
