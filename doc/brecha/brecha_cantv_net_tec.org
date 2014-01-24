@@ -31,7 +31,7 @@
 \-------------------------------------------------+-----------/
 #+END_DITAA
 
-* cantv.net Requerimientos Tecnicos
+* cantv.net Requerimientos Técnicos
 
 ** Funcionalidades:
 
