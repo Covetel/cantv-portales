@@ -1,0 +1,1304 @@
+#+TITLE:     Análisis de brecha Portal cantv.com.ve
+#+AUTHOR:    Carlos Paredes
+#+EMAIL:     cparedes@covete.com.ve
+#+DATE:      2014-1-16
+#+DESCRIPTION: Análisis de brecha Portal cantv.com.ve
+#+KEYWORDS:
+#+LANGUAGE:  es
+#+OPTIONS:   H:3 num:t toc:t:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+#+XSLT:
+#+LATEX_CLASS: cantv
+#+LATEX_CLASS_OPTIONS: [11pt, letterpaper, oneside, spanish]
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \input{titulo-brecha-cantv-com-ve}
+
+* Versiones del Documento
+#+BEGIN_DITAA images/versiones_brecha_cantv_com_ve.png -r -S
+/-------------------------------------------------+-----------\
+| cBLU                  Autor                     |  Versión  |
++-------------------------------------------------+-----------+
+|                 Carlos Paredes                  |     1     |
++-------------------------------------------------+-----------+
+|                 Carlos Paredes                  |     2     |
++-------------------------------------------------+-----------+
+|                                                 |           |
+\-------------------------------------------------+-----------/
+#+END_DITAA
+
+* cantv.com.ve Requerimientos Tecnicos
+
+** Funcionalidades:
+
+*** Capa de presentación
++ Nombre: La herramienta que se debe utilizar para la generación de reportes
+  debe ser Pentaho.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado
+
+*** Orquestación de servicios
++ Nombre: La Herramientas para la orquestación de servicios que se debe
+  utilizar es Intalio.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado
+
+*** Archiving
++ Nombre: Generar un archivo index.
++ Descripción: Debe generar un archivo index.  El index es una lista de
+  archivos que han sido guardados. El index brinda la siguiente información
+  para cada archivo guardado: nombre del archivo; ubicación donde fue
+  guardado; tamaño; fecha de ultima actualización; fecha de archivado.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado
+
+*** Base de datos
++ Nombre: La base de datos que debe utilizar la aplicación es PosgreSQL
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado
+
+*** Monitoreo
++ Nombre: Debe poder ser auditable mediante una aplicación Desktop Cliente.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado
+
+*** Salidas para las consultas
++ Nombre: Deberá ser posible exportar los resultados de las consultas en
+  formato txt, xls, pdf y doc.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado
+
+*** Archiving
++ Nombre: Debe proveer herramientas para que el administrador archive datos
+  del sistema.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado
+
+*** Capa de presentación
++ Nombre: La herramienta que se debe utilizar para la capa de presentación
+  debe ser Apache.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado
+
+*** Capa lógica de negocio
++ Nombre: La Herramientas de inteligencia de negocio que se debe utilizar es
+  Pentaho.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado
+
+*** Monitoreo
++ Nombre: Debe poder ser auditable mediante una aplicación Web.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado
+
+*** Capa de presentación
++ Nombre: La herramienta que se debe utilizar para manejar contenido podría
+  ser Joomla, Drupal, WebGUI o Plone.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Lenguajes de programación
++ Nombre: Las herramientas de desarrollo del sistema que se pueden utilizar
+  son: ANSI C++, Perl, Ruby o Python
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta / Virtualización
+
+*** Editor
++ Nombre: Editor WYSIWYG.
++ Descripción: Editor WYSIWYG, editor de texto avanzado para la carga de
+  contenido en el CMS, permite incorporar elementos multimedia, texto HTML,
+  vídeos, enlaces, Elementos de diagramación o contenedores de datos como
+  tablas, etc.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Interface de usuario general / común
++ Nombre: El sistema debe ser desarrollado para que funcione completamente en
+  ambiente web.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Cumplimiento con las normas y validadores de la W3C 
++ Descripción:
+  - HTML 
+  - CSS 
+  - Accesibilidad  
+  - Soporte:  
+    - Soporte HTML 5 
+    - Soporte CSS3 
+    - Soporte JSON
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Disponibilidad y redundancia
++ Nombre: Debe poder correr en una infraestructura de red que incluye
+  múltiples ubicaciones en el país.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: La vista del CMS debe definirse de forma independiente de la capa de
+  controlador y funcionalidades.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: CMS compatible con los navegadores de uso extendido.
++ Descripción: CMS compatible con los navegadores de uso extendido (incluye
+  navegadores libres) y optimizar la presentación del mismo en sistema
+  operativos móviles
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Salidas para las consultas
++ Nombre: Para todas las consultas deberá ser posible obtenerlas por pantalla,
+  impresora o similar.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Interface de usuario general / común
++ Nombre: Mensajes de error del sistema en Español.
++ Descripción: Debe mostrar los mensajes de error del sistema en Español.
+  Información más detallada del error debe ser guardada en otro lugar (por
+  ejemplo un log de error) y ser accesible por los administrados del sistema,
+  éste debe poder acceder al mensaje de error mostrado y a la información
+  detallada en un formato combinado.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Archiving
++ Nombre: Debe generar un log del proceso de archivado.
++ Descripción: Debe generar un log del proceso de archivado.  El log sumariza
+  los resultados de una sesión de archivado. Especifica la hora de comienzo
+  cuando la sesión empieza, hora de finalización cuando la sesión es
+  completada, y un indicador si la sesión ha sido completada exitosamente o
+  abortada.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Logs del Sistema
+
+*** Archiving
++ Nombre: Debe permitir realizar el archivado automático de datos en un
+  dispositivo automático de almacenamiento.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Interface de usuario general / común
++ Nombre: Interfaces de usuario gráficas.
++ Descripción: Deber contar con interfaces de usuario gráficas con manejo de
+  botones, iconos, ratón, menúes “pull down”, multi-ventanas, “drag and drop”,
+  etc.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Sistema Operativo
++ Nombre: El sistema debe correr sobre Sistema Operativo Debian Linux
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Interface de usuario general / común
++ Nombre: Debe ser uniforme a lo largo de todo el sistema el diseño de
+  pantallas y el uso de teclas de función. Por ejemplo, las fuentes, los
+  colores, los botones, utilizados en todas las pantallas deben ser iguales,
+  con el mismo significado.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Administración del sistema
++ Nombre: Debe soportar el Principio de Menos Privilegio, donde se define que
+  a cada usuario se le permite acceder solo a aquellos programas, información,
+  y sistemas que son necesarios para realizar sus trabajos, en base a la
+  configuración y asignación de roles.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Disponibilidad y redundancia
++ Nombre: Debe proveer información de benchmarks sobre las distintas
+  plataformas soportadas.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Sincronización
++ Nombre: Sincronización automática de archivos y contenido entre la
+  plataforma los servidores en donde se encuentra ubicado el gestor de
+  contenido (CMS) de cara a Internet.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Disponibilidad y redundancia
++ Nombre: Debe soportar el reemplazo de módulos periféricos, módulos
+  redundantes de alimentación y procesos redundantes o módulos de memoria sin
+  desconectar un subsistema entero.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Administración del sistema
++ Nombre: Debe proveer herramientas para realizar reinicialización de los
+  módulos que conforman la solución.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Sitemaps
++ Nombre: Sitemaps.
++ Descripción: Sitemaps, modulo para la generación de estructura compatible
+  con sitemaps para optimizar el posicionamiento del portal en buscadores de
+  Internet.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Administración del sistema
++ Nombre: Debe proveer la habilidad de crear, borrar, modificar, y ver cuentas
+  de usuario en el sistema.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Logs
++ Nombre: Poseer una plataforma propia para la gestión de logs y análisis del
+  trafico Web
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Logs del Sistema
+
+*** Capa lógica de negocio
++ Nombre: La herramienta que se debe utilizar para el servidor de aplicaciones
+  podría ser Glassfish, Zope, Jboss, o Apache Tomcat.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Archiving
++ Nombre: Debe poder recuperar archivos de datos guardados.  Cuando se
+  requiera recuperar uno o mas archivos de datos, el sistema deberá brindar a
+  los administradores la posibilidad de solicitar y recuperar los archivos
+  especificados dentro del día de trabajo.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: ZODB Server
+
+*** Disponibilidad y redundancia
++ Nombre: Debe soportar el manejo de errores para interfaces que involucran
+  tiempo de indisponibilidad de red y de interfaces.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Logs del Sistema
+
+*** Archiving
++ Nombre: Debe eliminar los archivos de datos luego de ser archivados.  El
+  sistema validará que el archivo haya sido archivado exitosamente antes de
+  que pueda ser borrado. Un archivo de datos exitoso es uno que puede ser
+  recuperado y usado por el sistema.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Archiving
++ Nombre: Debe permitir ejecutar el proceso de archivo automáticamente sin
+  requerir intervención manual.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Disponibilidad y redundancia
++ Nombre: Debe poder reiniciarse point-in-time debido a fallas de hardware o
+  software.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Administración del Servicio
+
+*** Disponibilidad y redundancia
++ Nombre: Debe mantener los datos apropiadamente.  El chequeo y cleansing de
+  la consistencia de los datos debe ser ejecutada de manera regular para
+  prevenir corrupción.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: ZODB Server
+
+*** Archiving
++ Nombre: Proveer capacidad de especificar dinámicamente parámetros para
+  almacenar archivos de datos.
++ Descripción: Debe proveer al administrador la capacidad de especificar
+  dinámicamente parámetros para almacenar archivos de datos. El sistema
+  permitirá al usuario especificar lo siguiente: 
+  - Cuando (mes, día, hora) el sistema comenzará a correr automáticamente el
+    proceso de almacenamiento.
+  - Con que frecuencia (diario, mensual, semanal, etc.) el sistema deberá
+    correr automáticamente el proceso de almacenamiento.
+  - La ubicación donde los archivos de datos serán almacenados.
+  - El criterio de tiempo a usar para decidir si almacenar un archivo o
+    no. Por ejemplo, el usuario puede especificar 18 meses por lo tanto esos
+    archivos no se actualizarán dentro de los últimos 18 meses.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Disponibilidad y redundancia
++ Nombre: Debe soportar la replicación de transacciones en tiempo real.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Etiqueta META
++ Nombre: Optimizar el CMS para el uso de la etiqueta META.
++ Descripción: Optimizar el CMS para el uso de la etiqueta META, palabras
+  claves para describir el contenido, e incorporar módulos para la generación
+  de mapas de sitio en formato XML para optimizar el posicionamiento del
+  portal en los principales motores de búsqueda y aplicación de estrategias
+  SEO
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Posibilidad de integrar el CMS con Google Analytics y similares
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: collective.googleanalytics
+
+*** Interface de usuario general / común
++ Nombre: Ayuda disponible para usuarios finales.
++ Descripción: Debe contar con la totalidad de los textos de pantallas,
+  listados y ayuda disponibles para usuarios finales, deben estar en idioma
+  castellano. Las eventuales excepciones deberán estar explícitamente
+  autorizadas por CANTV, por ejemplo, funcionalidades para el administrador.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Monitoreo
++ Nombre: Debe poder generar un mensaje de error de datos para cada condición
+  de error que ocurra dentro de la aplicación.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Logs del Sistema
+
+*** General
++ Nombre: Diseño de una arquitectura de roles y perfiles de forma robusta
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Disponibilidad y redundancia
++ Nombre: Debe soportar todas las formas de tecnología de clustering.
++ Descripción: Clustering se refiere a un número formas en que un grupo de
+  servidores se agrupan de manera de distribuir la carga y eliminar puntos
+  aislados de falla dentro de un sistema crítico para el negocio.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: ZEO Clients
+
+*** Disponibilidad y redundancia
++ Nombre: Debe permitir la desconexión de un sistema redundante sin impacto
+  adverso en la red o la solución misma.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Monitoreo
++ Nombre: Debe poder notificar a los operadores de errores críticos que
+  impactan la operación normal del sistema.  El sistema notificará a los
+  operadores a través de alarmas/mensajes definidos, que se enviarán a la
+  consola central de datos.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Monitoreo
++ Nombre: Debe realizar tracking de usuarios.  El sistema deberá identificar,
+  al requerirlo, todos los usuarios que estén en ese momento activos en la
+  aplicación.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: collective.usertrack
+
+*** Monitoreo
++ Nombre: Debe soportar herramientas de monitoreo automáticas.
++ Descripción: El sistema deberá incorporar scripts que puedan ser invocados a
+  voluntad para verificar el funcionamiento de la aplicación y el estado de
+  los procesos/componentes de todas las aplicaciones.  Fallas de cualquier
+  componente durante este script serán enviados a la consola operacional y
+  logs apropiados.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Adaptación y configuración de sistemas
++ Nombre: Se deben tener un Sistemas Operativos con versiones estables y
+  actuales
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Adaptación y configuración de sistemas
++ Nombre: Debe existir el compromiso de Justificacion de Puertos, Cierres de
+  Puertos, no utilizados, Y Vulnerabilidades. Antes de la Puesta de pase a
+  Producción.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta / Virtualización
+
+*** Salidas para las consultas
++ Nombre: La herramienta de generación de reportes deberá adherir a los
+  estándares de intercambio de información con bases de datos (ODBC, JDBC,
+  XML, etc.).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: SmartPrintNG
+
+*** Monitoreo
++ Nombre: Debe contar con un log histórico de las conexiones de los usuarios
+  al sistema que permita realizar una auditoria de uso y de seguridad del
+  mismo.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Logs del Sistema
+
+*** Monitoreo
++ Nombre: Debe poder enviar mensajes de falla a los operadores del sistema
+  para todos los niveles de severidad.  Por ejemplo, mensajes de fallas
+  menores, mayores y criticas y se enviarán a la consola central de datos para
+  su análisis y resolución.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Monitoreo
++ Nombre: Debe poder enviar un mensaje "heartbeat" a los operadores.  Este
+  mensaje notificará al administrador del sistema que el sistema esta operando
+  normalmente, en intervalos regulares.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Monitoreo
++ Nombre: Debe incluir capacidades de "self-healing".
++ Descripción: El sistema debe incluir "out of the box" la recuperación
+  automática con acciones de "self healing" que corrijan problemas o
+  fallas. Mensajes identificando los problemas y deberán haber acciones en
+  progreso en logs y consolas operacionales.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Adaptación y configuración de sistemas
++ Nombre: Identificación de Puertos TCP/UDP requeridos para el funcionamiento
+  del sistema
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Documento de Arquitectura de
+  Software
+
+*** Multimedia
++ Nombre: Gestión e integración de archivos multimedia en diversos formatos
+  (con énfasis en formatos basados en estándares abiertos y de uso común (ogg,
+  webm)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: RedTurtle
+
+*** Monitoreo
++ Nombre: Debe facilitar la auditoría de campos relevantes dentro del sistema,
+  que permita conocer el valor anterior, la fecha de modificación, el usuario
+  responsable del cambio, etc.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Logs del Sistema
+
+*** Disponibilidad y redundancia
++ Nombre: La solución debe ser capaz de manejar usuarios activos simultáneos
+  (o concurrentes).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: ZEO Clients
+
+*** Disponibilidad y redundancia
++ Nombre: Debe permitir mecanismos que permitan el crecimiento de usuarios
+  concurrentes.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: ZEO Clients
+
+*** Disponibilidad y redundancia
++ Nombre: Debe brindar medios para balancear la carga de usuarios conectados.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Balanceadores de Carga
+
+*** Disponibilidad y redundancia
++ Nombre: La aplicación deberá permitir escalabilidad tanto de HW como de SW
+  permitiendo un crecimiento en cantidades de usuarios, elementos gestionados,
+  interfaces con otros sistemas, según las necesidades de CANTV, manteniendo
+  su performance y funcionalidad.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: ZEO Clients
+
+*** Disponibilidad y redundancia
++ Nombre: Debe contar con mecanismos definidos y probados para el crecimiento.
++ Descripción: Debe contar con mecanismos definidos y probados para este
+  crecimiento (agregación de nuevos servidores, memoria en los servidores,
+  discos duros, etc.) con la capacidad máxima que se puede lograr con estos
+  mecanismos en términos de cantidades de usuarios, y objetos gestionados.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Disponibilidad y redundancia
++ Nombre: Debe ser redundante y soportar un ambiente y configuración de
+  recuperación de desastre.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Disponibilidad y redundancia
++ Nombre: Debe manejar las fallas de hardware.  En esas instancias, la
+  solución debe mantener requerimientos de disponibilidad y falla hacia un
+  equipo de hardware redundante.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Disponibilidad y redundancia
++ Nombre: Debe soportar la recuperación automática luego de un evento de falla.
++ Descripción: El tiempo de reinicio de la solución luego de una caída del
+  sistema, rebuteo del software, o acción del usuario (por ejemplo init-sys)
+  no deberá interrumpir el servicio por más de 2 minutos.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Capacidad y escalabilidad
++ Nombre: La aplicación deberá permitir escalabilidad de software, permitiendo
+  un crecimiento en cantidades de usuarios concurrentes, interfaces con otros
+  sistemas, según las necesidades de CANTV, manteniendo su rendimiento y
+  funcionalidad.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Capacidad y escalabilidad
++ Nombre: La plataforma propuesta debe estar dimensionada para soportar 10000
+  usuarios concurrentes.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Instalación y actualizaciones de aplicaciones
++ Nombre: Para el caso de aplicaciones cliente/servidor, se debe proveer un
+  Kit de instalación automática de las aplicaciones de la solución.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Instalación y actualizaciones de aplicaciones
++ Nombre: Debe permitir la descarga de las actualizaciones de las aplicaciones
+  vía internet.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Instalación y actualizaciones de aplicaciones
++ Nombre: Las aplicaciones que forman parte de la solución deben contar con
+  herramientas y/o procedimientos técnicos operativos que faciliten la
+  ejecución de tareas de mantenimiento en línea.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Instalación y actualizaciones de aplicaciones
++ Nombre: la aplicación de los clientes debe contemplar la opción de
+  actualización masiva para el despliegue de cambios en su configuración a
+  todos los usuarios de la plataforma.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Instalación y actualizaciones de aplicaciones
++ Nombre: Las actualizaciones de los desarrollos de la solución propuesta
+  deben permitir de manera desacoplada, la incorporación de cualquier nuevo
+  elemento de la solución sin afectar el resto de los módulos ya operativos
+  (sin tener que reiniciar el servicio).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Instalación y actualizaciones de aplicaciones
++ Nombre: Debe permitir instalar múltiples instancia de las diferentes
+  aplicaciones que conforman la solución en un mismo servidor.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Instalación y actualizaciones de aplicaciones
++ Nombre: Debe especificar los recursos técnicos mínimos necesarios (cpu,
+  memoria, almacenamiento) para configurar una instancia/dominio dla
+  aplicación.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Documento de Arquitectura de
+  Hardware
+
+*** Instalación y actualizaciones de aplicaciones
++ Nombre: El sistema debe estar certificado para operar en servidores
+  virtualizados.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Documento de Arquitectura de
+  Software
+
+*** Instalación y actualizaciones de aplicaciones
++ Nombre: Debe especificar por aplicación los puertos o rangos de puertos
+  requeridos para su configuración.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Documento de Arquitectura de
+  Software
+
+*** Instalación y actualizaciones de aplicaciones
++ Nombre: De requerirse la configuración de algún password en los archivos de
+  configuración los mismos deben estar encriptados.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Administración del sistema
++ Nombre: El sistema debe contar con herramientas, procedimientos y
+  documentación donde se especifiquen las funciones de administración
+  regulares para su mantenimiento.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Manual de Administración y
+  Operación
+
+*** Administración del sistema
++ Nombre: El sistema debe especificar las tareas de mantenimiento requeridas
+  sobre los diferentes elementos de las aplicaciones para la operación
+  sostenible de la misma y nombrar la herramienta utilizada para su ejecución
+  en caso de que aplique.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Manual de Administración y
+  Operación
+
+*** Administración del sistema
++ Nombre: El funcionamiento de los componentes de la solución debe ser
+  monitoreado a través del protocolo SNMP, se debe especificar si se cuenta
+  con el utilitario requerido para su configuración.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Administración del sistema
++ Nombre: La solución debe permitir realizar transportes de desarrollos y
+  configuraciones de cada aplicación de manera desacoplada entre los ambientes
+  definidos.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Rendimiento
++ Nombre: El rendimiento del sistema no se debe ver afectado por usuarios
+  corriendo reportes operativos y de uso diario, así como por actualizaciones
+  que se estén realizando en la base de datos.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Rendimiento
++ Nombre: El sistema deberá estar dimensionado de manera que su performance
+  esté acorde a la cantidad de usuarios concurrentes que deban trabajar en el
+  sistema.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Rendimiento
++ Nombre: Se requiere que todas las pantallas respondan dentro de tiempos
+  límites universales del sistema.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Rendimiento
++ Nombre: La performance del sistema no será afectada por el mantenimiento del
+  mismo durante horas pico del día.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Interface de usuario general / común
++ Nombre: Estándares y normas técnicas a soportar
++ Descripción:
+  - Manual de aplicación y uso del cabezal bolivariano y campaña de gobierno
+    en línea vigente.
+  - Manual de identidad de marca de Cantv.
+  - Manuales de presencia en redes sociales de Cantv
+  - Soporte de la guía de accesibilidad para sitios Web (wcag) según la w3c
+  - Manual de estilo para el portal web Cantv.com.ve
+  - Norma Diseño y actualización de Tecnología de Información (TI)
+  - (GCSI-LC-0001) Lineamientos de Seguridad de la Información para Sistemas y
+    Aplicaciones de la Gerencia General de Seguridad Integral | Gerencia de
+    Seguridad de la Información
+  - Guía de accesibilidad para sitios Web (WCAG) de la W3C
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Manual de Administración y
+  Operación
+
+*** Respaldo y recuperación
++ Nombre: Debe permitir la ejecución de respaldos en tiempo real, tanto del
+  las aplicaciones como de las bases de datos, sin interrumpir el servicio.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Respaldo y recuperación
++ Nombre: Debe permitir realizar backups automáticos y facilitar al
+  administrador la capacidad de controlar el schedule de backups, y garantizar
+  la ejecución de los mismos al menos 1 vez cada 24 horas.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Respaldo y recuperación
++ Nombre: Debe permitir realizar backups manuales en un dispositivo de
+  almacenamiento de datos.  Cuando se realice back up manual de archivos, el
+  sistema proveerá a los usuarios la funcionalidad de elegir a que archivos se
+  les hará backup.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: ZODB Server
+
+*** Respaldo y recuperación
++ Nombre: Debe ser capaz de recuperar la aplicación en un tiempo específico dentro de las 24 horas.
++ Descripción: El sistema deberá permitirle al administrador recuperar los
+  componentes de aplicación y/o bases de datos en el sistema primario en un
+  momento específico dentro de 24 horas.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Respaldo y recuperación
++ Nombre: Debe soportar el failover automático. La configuración del sistema
+  incluirá failover automático de datos, operaciones, y la aplicación entre
+  los ambientes primarios y secundarios en caso que el sistema falle.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Respaldo y recuperación
++ Nombre: Debe soportar el failover manual. El sistema permitirá al
+  administrador realizar manualmente las operaciones hacia el segundo ambiente
+  en caso de falla del sistema.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Almacenamiento de Datos
++ Nombre: Debe permitir el almacenamiento de datos externos utilizando la SAN
+  o NAS definida por CANTV.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Ambientes
++ Nombre: La solución tecnológica requerida debe contemplar el manejo de 3
+  ambientes: desarrollo, calidad y producción (este último con alta
+  disponibilidad). El ambiente de desarrollo y pruebas debe ser independiente
+  al de producción.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Consultas a otras  aplicaciones de CANTV
++ Nombre: Consultas desde la nueva plataforma a cualquier aplicación de CANTV.
++ Descripción: Todas las consultas que se deban realizar desde la nueva
+  plataforma a cualquier aplicación de CANTV se deben realizar a través de PIC
+  (Plataforma de Integración Corporativa de CANTV).  La comunicación debe ser
+  por arquitectura SOA (arquitectura orientada a servicios) por html, xml
+  (SOAP).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración Plone - PIC
+
+*** Consultas a otras  aplicaciones de CANTV
++ Nombre: Debe contar con interfaces Asíncronas y Síncronas hacia y desde
+  otros sistemas.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración con Otros Servicios
+  CANTV
+
+*** Consultas a otras  aplicaciones de CANTV
++ Nombre: Debe contar con interfaces hacia y desde otros sistemas usando
+  métodos basados en Mensajería.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración con Otros Servicios
+  CANTV
+
+*** Monitoreo
++ Nombre: Logging y monitoreo.
++ Descripción: El sistema deberá generar un log diario.  El sistema deberá
+  crear un log con su actividad y darle la capacidad al administrador del
+  sistema de monitorear la operación del sistema desde este log.  El log
+  deberá incluir información sobre la fecha, hora y estado de actividades como
+  acceso al sistema, acceso a la base de datos, e interfaces con otros
+  sistemas, mensajes de error, y otros eventos del sistema.  Esta información
+  debe ser guardada en un log a un nivel de detalle de manera que pueda ser
+  utilizada para determinación de problema y análisis de causa de cualquier
+  falla del sistema o sus componentes relacionados.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Logs del Sistema
+
+*** Monitoreo
++ Nombre: Debe registrar en un log la actividad del usuario.  El sistema
+  deberá tener la funcionalidad de identificar individuos específicos y sus
+  actividades a través del uso de logs y comandos enviados por los operadores
+  del sistema.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Adaptación y configuración de sistemas
++ Nombre: Debe especificar los recursos técnicos mínimos necesarios (cpu,
+  memoria, almacenamiento) para configurar una instancia/dominio del sistema.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Documento de Arquitectura de
+  Hardware
+
+*** Adaptación y configuración de sistemas
++ Nombre: Instalación del antivirus corporativo
++ Descripción: Debe permitir la instalación del antivirus corporativo, agentes
+  de seguridad de información, mecanismos de Respaldo y otros programas de
+  seguridad, bajo los estandares de la Empresa
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Multimedia
++ Nombre: Vídeos
++ Descripción: La carga y publicación de videos deberá soportar los formatos
+  populares más usados, así como los formatos basados en software libre que
+  sean debidamente soportados por la mayoría de los navegadores web, como OGG,
+  MP4, MOV, FLV
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: RedTurtle
+
+*** Migración de Aplicaciones embebidas en el Portal
++ Nombre: Aplicaciones a migrar
++ Descripción: Aplicaciones a migrar:
+  - Buzón: Aplicación que recibe las quejas de los clientes residenciales de
+    CANTV, envía correos a los clientes con el status de sus quejas.
+  - 0800: Pone a la disposición de los Teleoperadores un conjunto de páginas
+    con información actualizada tal como Procesos de negocio, Productos y
+    Servicios, Promociones, Precios entre otras que permita apoyarlos en su
+    gestión de ventas
+  - Canales: Son páginas informativas que contiene el listado y direcciones de
+    los CDC y OACs.
+  - Sms_Fijos: Envía mensajes de textos a operadora Movilnet y teléfonos fijos
+    CANTV.
+  - Noticias: Modulo de publicación de noticias, dicho modulo permite publicar
+    una nota de prensa teniendo como campos antetitulo, titulo sumario, cuerpo
+    del texto o contenido, fecha, imagen interna, fotoleyenda imagen interna,
+    imagen externa, adicionarle una galeria de imagenes a la nota, vigencia de
+    la publicacion, opcion de publicado.
+  - Clientes CDC: Listado de Centros de Comunicaciones Nacionales.
+  - Tu Mejor Plan: Página informativa con los planes y tarifas de los
+    servicios de telefonía fija. Las tarifas son modificadas
+    manualmente. (Opción de mejora hacerlo dinámico)
+  - Buscador_LDI_122: Página informativa con los códigos de los países para
+    hacer llamadas internacionles.
+  - Buscador_tarif_dest_LDI: Página informativa con las tarifas para hacer
+    llamadas internacionles. (Opción de mejora: unir con la funcionalidad
+    anterior)
+  - Periodistas: Formulario para realizar registros de periodistas que cubren
+    la fuente de telecomunicaciones en la prensa nacional
+  - Jubilados: Páginas informativas con noticias de interés para los
+    jubilados, marco legal y listado de pagos. Sólo texto, imágenes y pdf.
+  - Única Web: La aplicación Un1ca en la Web tiene como finalidad permitirle a
+    los usuarios que utilicen el servicio de Un1ca como Calling Card consultar
+    el detalle de sus consumos y/o llamadas telefónicas, a través de la página
+    Web de Cantv (estado de cuenta del consumo de la tarjeta).
+  - Contribuyentes especiales o Comprobantes de Retención: Aplicación para que
+    los clientes realicen su auto liquidación de la retención de impuesto
+    aplicados en facturas CANTV hasta un año de antigüedad. Esta aplicación
+    utiliza cuatros servicios Web que van contra RMC y se maneja una base de
+    datos de nuestro lado en SQL Server.
+  - Toolbar: Aplicación que contiene una barra Corporativa que se descargara
+    desde el portal cantv.com.ve para ser instalado en los equipos de los
+    usuarios que se desdcargará automaticamente en el navegador Internet
+    Explorer
+  - Distribuidor de Tarjetas Prepagadas: Aplicación web utilizada por los
+    proveedores que venden las tarjetas unicas. Allí pueden consultar el
+    inventario de lo que han comprado.
+  - Paginas Amarillas: Sección con información general de paginas amarillas y
+    formas de contactarlos.
+  - (Asociado de negocio) Programa Aliados: Este Aplicativo tiene como
+    objetivo principal modificar, actualizar y adicionar planillas de
+    solicitudes de servicios, así como también potenciar con nuevas
+    funcionalidades el portal web de Asociados de Negocios. Lo anterior es
+    para facilitar a los Asociados de Negocios la tramitación de algunos
+    productos y servicios de telefonía de Cantv y de su filial Movilnet.
+  - Envie mensajes a teléfonos moviles o fijos: Aplicación que permite enviar
+    mensajes de texto a cantv fijos y movilnet
+  - 113digital: GAd-Sub-sistema de consulta en línea del sistema de Páginas
+    Blancas y Amarillas de Caveguias
+  - Postales: Aplicativo que Permite a los clientes de CANTV desde el portal
+    crear y enviar Tarjetas Postales a traves del porta coorporativo. La base
+    de datos de encuentra en el Servidor PRDINSTSQL02\PRDINSTSQL02 Y la base
+    de datos se llama db_tarjetaportal
+  - Tarjetas Postales: Aplicativo que Permite a los clientes de CANTV desde el
+    portal crear y enviar Tarjetas Postales de Navidad a traves del porta
+    corporativo.
+  - Elecciones: Link que se conecta a la base de datos con nombre
+    ELECCIONES2000 y permite a los accionistas clase C de CANTV ver el centro
+    y mesa de votación de las Elecciónes de Directores y Representantes de los
+    accionistas clase "C" ante la Junta directiva de CANTV
+  - Planes: Aplicación que ayuda a los clientes Internet ABA determinar el
+    plan  que mejor se ajusta a sus necesidades, el cliente indica el numero 
+    de horas aproximadas  que navegas mensualmente y le sugiere el plan
+  - Taquillas de Paso: Aplicación que muestra a los clientes CANTV cuales son
+    las taquillas o puntos de pago de las facturas CANTV ubicadas en los
+    Centros Comerciales, en los automercados, etc.
+  - (FIJA) Consulta de Saldo: Muestra la información del saldo a través del
+    WEB SERVICE (PIC). La información con la que se solicita el saldo, es el
+    código de área y el número de servicio, la interfaz devuelve los campos
+    Cdigo área, Tléfono, Saldo Actual, fecha última facturación, Fecha de
+    corte, Fecha de vencimiento, Saldo vencido, Monto del último pago
+    realizado.
+  - Bancos: Listado de Bancos donde los clientes CANTV pueden cancelar sus
+    facturas, aplicación en código duro. Aplicativo usado por Gestión al
+    Cliente que guarda y muestra información de los aliados comerciales como
+    los CDCs
+  - Telefonía Fija: Link que permite a los clientes conocer los usos y
+    caracteristicas de la Telefonía Fija ofrecida por CANTV. Codigo Duro
+  - Oficinas y Taquillas: Funcionalidad que mediante una lista despliega las
+    diferentes oficinas de atención al cliente tales como: Oficina de Atención
+    Comercial; Taquilla de Paso; Centro de comunicaciones; agente autorizado
+    Movilnet; Agentes Empresariales. La información la muestra de una base de
+    datos DB_PORTALCANTV.
+  - Atención al Cliente: Funcionalidad que ofrece a los clientes opciones de
+    consulta tales como: FACTURA EN LINEA; COMPROBANTE DE RETENCIÓN; BUZON Y
+    OFICINAS Y TAQUILLAS.
+  - Factura en Línea: Es un link que redirecciona a PAF y muesta el estado de
+    cuenta del cliente
+  - Consulta el saldo de tu cuenta de internet
+  - BOSS
+    http://oficina.cantv.net/oficina/prepagoext/2_acceso_pers_prepago_cool_saldo.asp
+  - Páginas Amarillas: Referencia hacia el sitio web de caveguias pac.com.ve
+  - Contáctenos:
+    - Ofrece al usuario una vía de comunicación. Se muestras las opciones:
+      - Atención al cliente en línea
+        - Atención al Cliente Cantv
+        - Atención al Cliente Movilnet
+        - Atención al Cliente Cantv.net
+      - Servicios Misceláneos
+        - Cambio de firma
+        - Consulta de saldo por SMS
+        - Actualización de datos
+        - Servicio mudanza de línea
+        - Servicios cambio de número
+        - Servicios Guía telefónica
+        - Servicio reconexión de teléfono principal
+      - Preguntas frecuentes
+        - Telefonía Fija
+          - Internet
+      - Reglamento prestación de servicios
+        - http://www.cantv.com.ve/Portales/Cantv/data/reglamento.pdf
+
+  - Somos CANTV: Link que ofrece otras opciones a los clientes CANTV, tales
+    como: Información de CANTV; Inversionitas; Accionistas; Jubilados;
+    Contrataciones Públicas; Sala de Prensa
+  - Saldo Movilnet: Link que redrecciona a consult saldo movilnet
+  - Denuncia En Línea: Aplicativo que permite a las empresas realizar
+    denuncias de robo de cable a traves del Portal Coorporativo.
+  - Centro de Comunicaciones: Link que permite a los clientes ver por región
+    el listado de los Centros de Comunicaciones autorizados por CANTV. Codigo
+    Duro
+  - Teléfonos Públicos: Link que permite a los clientes ver las tarifas y uso
+    de los Telefonos Publicos. - Codigo Duro.
+  - Teléfonos Tarificadores: Link que permite a los clientes ver las tarifas y
+    uso de los Telefonos Tarificadores. - Codigo Duro.
+  - Proveedores: Link que permite a los proveedores y aliados comerciales
+    estrategicos mantener una comunicación más directa con la Gerencia
+    Corporativa de Recaudacion y Pagos ofrece sus servicios a través de sus
+    unidades: Coordinación Certificación de Proveedores - Coordinación de
+    Pagos a Proveedores
+  - Promociones: Link que permite a los clientes ver las promociones de
+    producto y servicios de Telefonía Fija y ABA - Codigo Duro
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Migración de Servicios Existentes
+
+*** Salidas para las consultas
++ Nombre: La aplicación dispondrá de una herramienta de generación de reportes
+  de manera flexible y amigable.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: SmartPrintNG
+
+*** Disponibilidad y redundancia
++ Nombre: Debe soportar la recuperación automática luego de un evento de
+  falla.
++ Descripción: El tiempo de reinicio de la solución luego de una caída del
+  sistema, reboot del software o acción del usuario (por ejemplo init-sys) no
+  deberá interrumpir el servicio por más de 5 minutos (una vez que el sistema
+  operativo y la base de datos estén arriba).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Módulo de ejecución de código embebido
++ Nombre: Módulo de ejecución de código embebido, con soporte HTML o el (los)
+  lenguaje(s) script(s) soportado(s) por el CMS
++ Prioridad: Prioritario
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo mayor a
+  10 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+* Resultado de Análisis:
+** Funcionalidades:
+
+#+BEGIN_DITAA images/brecha_cantv_com_ve.png -r -S
++-----------------------------------------------+-----------+
+|cBLU              Característica               | Cantdidad |
++-----------------------------------------------+-----------+
+| Requieren conf y/o parametrización < 1 hora   |      6    |
++-----------------------------------------------+-----------+
+| Requieren conf y/o parametrización < 2 horas  |      6    |
++-----------------------------------------------+-----------+
+| Requieren desarrollo < 4 horas                |      6    |
++-----------------------------------------------+-----------+
+| Requieren desarrollo < 8 horas                |     22    |
++-----------------------------------------------+-----------+
+| Requieren desarrollo > 32 horas               |     61    |
++-----------------------------------------------+-----------+
+| No contempladas                               |     10    |
++-----------------------------------------------+-----------+
+#+END_DITAA
+
+
+#+CAPTION: Análisis de brecha portal cantv.com.ve
+#+NAME: Funcionalidades
+    [[./images/graph_brecha_cantv_com_ve_req_tec.png]]
+\clearpage
+
+** Cantidad de funcionalidades cubiertas por características de Plone
+
+#+BEGIN_DITAA images/gap_plone_features_cantv_com_ve.png -r -S
++-----------------------------------------------+-----------+
+|cBLU              Característica               | Cantdidad |
++-----------------------------------------------+-----------+
+|                 No Contemplado                |     10    |
++-----------------------------------------------+-----------+
+|       Manual de Administración y Operación    |      3    |
++-----------------------------------------------+-----------+
+|                 Plone RedTurtle               |      2    |
++-----------------------------------------------+-----------+
+|                   Plone Roles                 |      2    |
++-----------------------------------------------+-----------+
+|         Plone collective.googleanalytics      |      1    |
++-----------------------------------------------+-----------+
+|        Administración del Servicio Plone      |      1    |
++-----------------------------------------------+-----------+
+|      Integración con Otros Servicios CANTV    |      2    |
++-----------------------------------------------+-----------+
+|   Infraestructura Propuesta / Virtualización  |     21    |
++-----------------------------------------------+-----------+
+|                 Logs del Sistema              |      7    |
++-----------------------------------------------+-----------+
+|             Integración Plone - PIC           |      1    |
++-----------------------------------------------+-----------+
+|                Plone built-in                 |     24    |
++-----------------------------------------------+-----------+
+|             Balanceadores de Carga            |      1    |
++-----------------------------------------------+-----------+
+|                   ZEO Clients                 |      4    |
++-----------------------------------------------+-----------+
+| Sistema de Gestión de Configuración / CFengine|     20    |
++-----------------------------------------------+-----------+
+|                   ZODB Server                 |      3    |
++-----------------------------------------------+-----------+
+|           Plone collective.usertrack          |      1    |
++-----------------------------------------------+-----------+
+|     Documento de Arquitectura de Hardware     |      2    |
++-----------------------------------------------+-----------+
+|        Migración de Servicios Existentes      |      1    |
++-----------------------------------------------+-----------+
+|                Plone SmartPrintNG             |      2    |
++-----------------------------------------------+-----------+
+|      Documento de Arquitectura de Software    |      3    |
++-----------------------------------------------+-----------+
+#+END_DITAA
