@@ -16,7 +16,7 @@
 #+LATEX_CLASS: cantv
 #+LATEX_CLASS_OPTIONS: [11pt, letterpaper, oneside, spanish]
 #+LATEX_HEADER: \usepackage{array}
-#+LATEX_HEADER: \input{titulo-brecha-cantv-com-ve}
+#+LATEX_HEADER: \input{titulo-brecha-autogestion}
 
 * Versiones del Documento
 #+BEGIN_DITAA images/versiones_brecha_cantv_com_ve.png -r -S
