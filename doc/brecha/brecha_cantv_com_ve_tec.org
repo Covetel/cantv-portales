@@ -13,7 +13,7 @@
 #+LINK_UP:
 #+LINK_HOME:
 #+XSLT:
-#+LATEX_CLASS: cantv
+#+LATEX_CLASS: covetel
 #+LATEX_CLASS_OPTIONS: [11pt, letterpaper, oneside, spanish]
 #+LATEX_HEADER: \usepackage{array}
 #+LATEX_HEADER: \input{titulo-brecha-cantv-com-ve}
