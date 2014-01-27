@@ -1,0 +1,427 @@
+#+TITLE:     Análisis de brecha Portal autogestión
+#+AUTHOR:    Carlos Paredes
+#+EMAIL:     cparedes@covete.com.ve
+#+DATE:      2014-1-16
+#+DESCRIPTION: Análisis de brecha Portal autogestión
+#+KEYWORDS:
+#+LANGUAGE:  es
+#+OPTIONS:   H:3 num:t toc:t:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+#+XSLT:
+#+LATEX_CLASS: cantv
+#+LATEX_CLASS_OPTIONS: [11pt, letterpaper, oneside, spanish]
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \input{titulo-brecha-cantv-com-ve}
+
+* Versiones del Documento
+#+BEGIN_DITAA images/versiones_brecha_cantv_com_ve.png -r -S
+/-------------------------------------------------+-----------\
+| cBLU                  Autor                     |  Versión  |
++-------------------------------------------------+-----------+
+|                 Carlos Paredes                  |     1     |
++-------------------------------------------------+-----------+
+|                                                 |           |
+\-------------------------------------------------+-----------/
+#+END_DITAA
+
+* Autogestión Requerimientos Funcionales de Registro
+
+** Funcionalidades:
+
+*** Autenticación
++ Nombre: El sistema debe permitir configurar distintos bases de datos de
+  usuarios para autenticarse. Ej. BD de clientes y BD de potenciales
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Arquitectura de
+  Servicios Propuesta
+
+*** Usuarios
++ Nombre: Se debe mantener en una Base de datos secundaria para los usuarios
+  potenciales (anónimos). Estos al convertirse en clientes pasaran a la base
+  de datos principal de usuarios.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Arquitectura de
+  Servicios Propuesta
+
+*** Usuarios
++ Nombre: Permitir que un administrador externo pueda crear usuarios y
+  asignarles privilegios
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Usuarios
++ Nombre: Permitir que un administrador interno pueda crear usuarios y
+  asignarle autorizaciones
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** General
++ Nombre: El sistema debe cumplir con las normas básicas de seguridad en la
+  Web.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Administración
++ Nombre: Debe existir un modulo de manejo de autorizaciones, que permita
+  configurar roles basado en privilegios de cada funcionalidad.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Usuarios
++ Nombre: El sistema debe cumplir con los lineamientos de seguridad de
+  CANTV. (lista de diagnostico de GPSTI)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Administración
++ Nombre: El modulo de administración debe permitir configurar el tiempo de
+  vencimiento de las contraseñas de los usuarios
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: plone.products.privacy-pack
+
+*** Autenticación
++ Nombre: Los usuarios pueden autenticarse utilizando su nombre de usuario o
+  correo electrónico
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Autenticación
+
+*** General
++ Nombre: Todas las operaciones realizadas por los usuarios quedan registradas
+  en el log de trazabilidad (Fecha/hora (dd/mm/yyyy) HH:MM:SS--- 24h/am/pm ,
+  Usuario ID, IP cliente, Detalles de Transacción:Sel,Ins,Del,Udp).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Logs del Sistema
+
+*** General
++ Nombre: Cada funcionalidad de los módulos debe poder asociase a roles.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Usuarios
++ Nombre: Debe existir un modulo de recuperación/reset de contraseñas.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Usuarios
++ Nombre: El modulo de recuperación de contraseñas debe solicitar al menos 3
+  preguntas de seguridad aleatorias.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: plone.products.privacy-pack
+
+*** Usuarios
++ Nombre: Los usuarios poseen un modulo que les permite administrar su cuenta
+  de usuario, notificaciones, etc.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Usuarios
++ Nombre: Los usuarios administrativos para externos de Cantv, pueden crear
+  cuentas de usuario asociadas a cuentas, productos o servicios de la misma
+  institución
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Usuarios
++ Nombre: Los usuarios administrativos para externos de Cantv, puede agrupar
+  las cuentas contrato por sedes o dependencias y asociar los perfiles a tales
+  instancias.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Usuarios
++ Nombre: Se requieren definir una contraseña segura
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: plone.products.privacy-pack
+
+*** Usuarios
++ Nombre: Es requerida información de contacto
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Auto-registro
+
+*** Usuarios
++ Nombre: El sistema debe manejar indicadores de monitoreo tanto del servicio
+  como de la plataforma.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Debe cubrir todas las vulnerabilidades conocidas de seguridad
+  (OWASP)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta / Virtualización
+
+*** Auto-registro
++ Nombre: Debe existir un modulo de auto-registro de usuarios.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Auto-registro
+
+*** Usuarios
++ Nombre: Es requerido un correo electrónico, el mismo debe ser validado para
+  poder activar la cuenta
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Auto-registro
+
+*** Usuarios
++ Nombre: El modulo de recuperación de contraseñas debe permitir al usuario
+  configurar mínimo 5 preguntas de seguridad.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: plone.products.privacy-pack
+
+*** Usuarios
++ Nombre: El sistema debe permitir hacer transporte de paquetes de: datos,
+  configuración, funcionalidad (desarrollo) y roles.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Administración
++ Nombre: Debe existir un modulo de administración interno de la configuración
+  de todo lo referente a auto-registro, autenticación, recuperación de
+  contraseñas y autorizaciones.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión
+
+*** Administración
++ Nombre: El modulo de administración debe permitir configurar las
+  notificaciones.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión
+
+*** Administración
++ Nombre: El modulo de administración debe permitir configurar las preguntas
+  de validación del modulo de auto-registro.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: plone.products.privacy-pack
+
+*** Usuarios
++ Nombre: Los usuarios administrativos para externos de Cantv, estan asociados
+  a una institución pública o privada mediante un RIF o Grupos de RIF.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión
+
+*** Usuarios
++ Nombre: Los usuarios creados por un administrador externo deben solicitar la
+  gestión de la clave a un usuario administrador.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Autenticación
+
+*** Usuarios
++ Nombre: Usuarios administrativos para externos de Cantv
++ Descripción: Los usuarios administrativos para externos de Cantv, puede
+  administrar la asignación de las cuentas contrato y servicios para
+  visualización y solicitud de requerimientos así como la permisología que
+  tendrán sobre tales servicios (Consulta, Modificaciones y Nuevas
+  Solicitudes)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Auto-registro
++ Nombre: El modulo de auto-registro debe validar si un usuario es cliente
+  actual de Cantv
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Auto-registro
+
+*** Auto-registro
++ Nombre: Si un usuario no es cliente actual de Cantv, debe permitirle
+  auto-registrarse como cliente potencial
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Auto-registro
+
+*** Auto-registro
++ Nombre: El modulo de auto-registro debe permitir restringir el auto-registro
+  de clientes de acuerdo a criterios específicos configurables
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Auto-registro
++ Nombre: Entre las posibles validaciones del auto-registro están:
++ Descripción:   
+  - A través de factura, con los datos cuenta cliente, número de última
+    factura, teléfono.
+  - A través de pagos, con los datos número teléfono, fecha último pago, monto
+    último Pago
+  - A través de PIN OTP enviado a la linea telefónica fija mediante
+    texto-a-voz.
+  - A través de PIN OTP enviado a la linea telefónica móvil de su lista de
+    contactos de CRM mediante texto-a-voz.
+  - A través de la tarjeta / serial del decodificador de TDH o TDA
+  - Preguntas de seguridad como: Datos de contacto en CRM, Preguntas sobre su
+    facturación, Preguntas sobre medios de pago.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Auto-registro
+
+*** Auto-registro
++ Nombre: El auto-registro debe restringir a un usuario crear varios perfiles
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Creación de usuarios
++ Nombre: Debe existir un modulo interno de creación, modificación,
+  eliminación, bloqueo/desbloqueo, activación/desactivación de usuarios.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: plone.products.privacy-pack
+
+*** Creación de usuarios
++ Nombre: Debe existir un modulo externo de creación, modificación,
+  eliminación, bloqueo/desbloqueo, activación/desactivación de usuarios.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: plone.products.privacy-pack
+
+*** General
++ Nombre: Existen 5 tipos de usuario: usuario auto-registrado, usuario
+  administrador interno, administrador externo, usuario potencial (anonimo) y
+  usuario creado por un administrador.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Usuarios
++ Nombre: El sistema debe permitir configuración y generación de reportes,
+  indicadores y alertas de: usuarios, roles, registros, auditoría.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Reports
+
+*** Administración
++ Nombre: El modulo de administración debe permitir configurar las preguntas
+  de seguridad del modulo de recuperación de contraseñas.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: plone.products.privacy-pack
+
+* Resultado de Análisis:
+** Funcionalidades:
+
+#+BEGIN_DITAA images/brecha_cantv_com_ve.png -r -S
++-----------------------------------------------+-----------+
+|cBLU              Característica               |  Cantidad |
++-----------------------------------------------+-----------+
+|  Requieren conf y/o parametrización < 1 hora  |      0    |
++-----------------------------------------------+-----------+
+|  Requieren conf y/o parametrización < 2 horas |      2    |
++-----------------------------------------------+-----------+
+|         Requieren desarrollo < 4 horas        |      2    |
++-----------------------------------------------+-----------+
+|         Requieren desarrollo < 8 horas        |     13    |
++-----------------------------------------------+-----------+
+|         Requieren desarrollo > 32 horas       |     21    |
++-----------------------------------------------+-----------+
+|                No contempladas                |      2    |
++-----------------------------------------------+-----------+
+#+END_DITAA
+
+
+#+CAPTION: Análisis de brecha portal cantv.com.ve
+#+NAME: Funcionalidades
+    [[./images/graph_brecha_autogestion_req_fun_reg.png]]
+\clearpage
+
+** Cantidad de funcionalidades cubiertas por características de Plone
+
+#+BEGIN_DITAA images/gap_plone_features_cantv_com_ve.png -r -S
++-----------------------------------------------+-----------+
+|cBLU              Característica               | Cantidad  |
++-----------------------------------------------+-----------+
+|                  No Contemplado               |     2     |
++-----------------------------------------------+-----------+
+|                  Plone Roles                  |     9     |
++-----------------------------------------------+-----------+
+|   Infraestructura Propuesta / Virtualización  |     2     |
++-----------------------------------------------+-----------+
+|                  Plone built-in               |     5     |
++-----------------------------------------------+-----------+
+|            Reports (Por Desarrollar)          |     1     |
++-----------------------------------------------+-----------+
+| Autogestión / Auto-registro (Por Desarrollar) |     6     |
++-----------------------------------------------+-----------+
+|          Autogestión (Por Desarrollar)        |     3     |
++-----------------------------------------------+-----------+
+|                  Logs del Sistema             |     1     |
++-----------------------------------------------+-----------+
+|        Plone plone.products.privacy-pack      |     8     |
++-----------------------------------------------+-----------+
+| Sistema de Gestión de Configuración / CFengine|     1     |
++-----------------------------------------------+-----------+
+| Autogestión / Autenticación (Por Desarrollar) |     2     |
++-----------------------------------------------+-----------+
+#+END_DITAA
