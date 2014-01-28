@@ -1,0 +1,700 @@
+#+TITLE:     Análisis de brecha Portal autogestión
+#+AUTHOR:    Carlos Paredes
+#+EMAIL:     cparedes@covete.com.ve
+#+DATE:      2014-1-16
+#+DESCRIPTION: Análisis de brecha Portal autogestión
+#+KEYWORDS:
+#+LANGUAGE:  es
+#+OPTIONS:   H:3 num:t toc:t:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+#+XSLT:
+#+LATEX_CLASS: covetel
+#+LATEX_CLASS_OPTIONS: [11pt, letterpaper, oneside, spanish]
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \input{titulo-brecha-autogestion}
+
+* Versiones del Documento
+#+BEGIN_DITAA images/versiones_brecha_cantv_com_ve.png -r -S
+/-------------------------------------------------+-----------\
+| cBLU                  Autor                     |  Versión  |
++-------------------------------------------------+-----------+
+|                 Carlos Paredes                  |     1     |
++-------------------------------------------------+-----------+
+|                                                 |           |
+\-------------------------------------------------+-----------/
+#+END_DITAA
+
+* Autogestión Requerimientos Funcionales
+
+** Funcionalidades:
+
+*** Administración / Solicitud de equipos y reposición de inventario
++ Nombre: Debe existir una sección dedicada al desarrollo del negocio de los
+  aliados. Contempla la posibilidad de realizar las solicitudes de los
+  productos de su inventario a través de la página web.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Arquitectura de
+  Servicios Propuesta
+
+*** Consultas / Operadores de Telecomunicaciones
++ Nombre: El sistema deberá tener una entrada especial para OT, es decir, que
+  nuestros clientes no tengan que entrar por la pestaña que dice "Empresas"
+  como lo hace hoy en día sino que tenga su propia entrada.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Solicitudes / Compras de Productos & Servicios / Visita de un Consultor
++ Nombre: Hacer la validación según el perfil del cliente y el producto
+  seleccionado.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Aplicación Móvil
++ Nombre: Cantv para móviles
++ Descripción: Con Cantv para móviles se pretende ofrecer a los usuarios un
+  aplicativo desarrollado para teléfonos móviles inteligentes (smartphones) y
+  tabletas (Tablets) un acceso simplificado a la plataforma de autogestión en
+  línea con énfasis a los servicios más demandados por los usuarios de
+  Cantv. El desarrollo de “Cantv móvil” deberá realizarse según el sistema
+  operativo de los dispositivos más usados como Android, Iphone, Blackberry
+  . El aplicativo “Cantv móvil” deberá tener como funcionalidad principal, ver
+  los titulares de las noticias destacadas, promociones de productos y/o
+  servicios, oficinas de pago, taquillas de paso, Oficinas de Atención al
+  cliente, Centro de Comunicación Comunal, Sedes de Cantv, puntos de gestión
+  Comunal de forma Geolocalizadas.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Movil
+
+*** Mis Datos / registro del usuario
++ Nombre: Datos básicos del cliente, Deberá cargar los datos básicos del
+  cliente contenidos en CRM, el parámetro de búsqueda será por CI o RIF.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración con Otros Servicios CANTV
+
+*** Mis Datos / actualización de datos
++ Nombre: Actualización de datos básicos, Debe permitir la actualización de
+  datos básicos del cliente. El formulario que generará un correo para que un
+  backoffice gestione el requerimiento. Volcados a CRM y en los legados que
+  correspondan.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración con Otros Servicios
+  CANTV
+
+*** Mis Datos / Productos instalados
++ Nombre: Productos instalados.
++ Descripción: Debe permitir la visualización de todos los productos
+  instalados, el parámetro de búsqueda será por CI o RIF. La información será
+  extraída desde Asap y Boss. Asap: Servicio, Nro. Telefónico, Estatus de la
+  línea; Boss: Producto, Nombre del Servicio/Plan, Nro. Telefónico, Estatus.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración con Otros Servicios
+  CANTV
+
+*** Información / Ayuda
++ Nombre: Debe aparecer un modulo Información para el aprendizaje e inducción
+  en línea para uso de Autogestión. Deberá mostrar los procedimientos de
+  solicitudes que no pueden ser autogestionados por el módulo. Información de
+  procesos o gestiones.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Ayuda
+
+*** Información / Ayuda / Devuélveme la llamada
++ Nombre: Devuélveme la llamada, modulo compuesto por unos campos de texto en
+  donde los usuarios o clientes dejaran sus datos básicos para luego ser
+  contactado por un agente de servicios al cliente.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Contacto
+
+*** Información / Ayuda / Devuélveme la llamada
++ Nombre: Registrar los números telefónicos de los usuarios que deseen ser
+  contactados por un representante o agente de Cantv
++ Descripción: Debe permitir registrar los números telefónicos de los usuarios
+  que deseen ser contactados por un representante o agente de Cantv por
+  cualquier duda o interés que tengan por cualquiera de nuestros productos o
+  servicios que son ofrecidos por la Empresa. La lista de números con los
+  detalles del tipo de requerimiento debe ser exportable a un archivo texto
+  con una estructura bien definida que facilite la carga a la plataforma de
+  contactos de MPSANP.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Contacto
+
+*** Información / Ayuda / Chat
++ Nombre: Chat, servicio de destinado a la atención de los usuarios y clientes
+  en línea.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: collective.chat.xmpp
+
+*** Información / Ayuda / Chat
++ Nombre: Chat de Soporte
++ Descripción: En caso de que los usuarios tengan dudas con cualquier
+  funcionalidad del modulo de autogestión se deberá tener disponible la
+  posibilidad de chat. Este chat será invocado por el portal y será
+  administrado por la plataforma MPSANP, quien tendrá la información de los
+  operadores disponibles de acuerdo a cada tipo de requerimiento.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: collective.chat.xmpp
+
+*** Información / Ayuda / Información general de Internet
++ Nombre: Debe proveer Información general de Internet (antivirus, oficina
+  virtual, botón turbo, spam, configuración de manejadores de correo, juegos
+  en línea). El formulario debe generar un correo para que un backoffice
+  gestione el requerimiento.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Soporte
+
+*** Información / Ayuda / Información TV
++ Nombre: Debe proveer Información general de soporte técnico de TV por
+  suscripción
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Soporte
+
+*** Información / Ayuda / Cambiar Clave
++ Nombre: El sistema deberá permitir el cambio de clave. El formulario debe
+  generar un correo para que un backoffice gestione el requerimiento
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión
+
+*** Consultas / Productos y Servicios
++ Nombre: El sistema deberá permitir la consulta de productos a través de un
+  módulo u opción que describa brevemente las características, beneficios,
+  bondades, requisitos, condiciones, tarifas de toda la línea de productos.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Commerce
+
+*** Consultas / Factura en línea
++ Nombre: Consulta de todos los soporte de factura
++ Descripción: El sistema deberá permitir la consulta de todos los soporte de
+  factura. El ingreso a consulta de facturas debe ser único. Debe haber un
+  reporte detallado de la factura, que también pueda mostrar la factura
+  sumaria de los Aliados, de modo que el cliente pueda ver sus consumos.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración con Otros Servicios
+  CANTV
+
+*** Consultas / Visualización consolidada
++ Nombre: El sistema deberá tener una visualización consolidada de la
+  Facturación y Deuda en línea, poder desplegar la información por linea de
+  productos y sedes.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración con Otros Servicios
+  CANTV
+
+*** Consultas / Notificación de solicitudes
++ Nombre: El sistema deberá permitir notificaciones automáticas de las
+  transacciones de autogestión. Notificación de solicitudes y cambios
+  autogestionados de los servicios, vía correo electrónico y SMS.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración con Otros Servicios
+  CANTV
+
+*** Pagos e Impuestos / Pago en Línea
++ Nombre: Pagos con Tarjeta de Crédito o débito desde la página.
++ Descripción: Debe permitir el pago de las facturas desde la página de
+  autoservicio a través de una interfaz con los bancos. El sistema debe
+  permitir los pagos y recarga para servicios
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración con Otros Servicios
+  CANTV
+
+*** Pagos e Impuestos / Autogestión de las retenciones IVA para los Contribuyentes Espec
++ Nombre: El sistema debe tener las mismas funciones de la actual herramienta
+  "Portal de Contribuyentes Especiales".
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración con Otros Servicios
+  CANTV
+
+*** Solicitudes / Compras de Productos & Servicios / Nuevos Servicios
++ Nombre: Deberá permitir la solicitud de todas las líneas de productos y
+  servicios (Telefonía Fija, Móvil, Aba, Internet Equipado, LNR, CPA; PBX, IP
+  CENTREX, Datos; Servicios TI, etc)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración con Otros Servicios
+  CANTV
+
+*** Solicitudes / Compras de Productos & Servicios / Retiro de servicio
++ Nombre: Retiro de servicio para todas las líneas de producto.
++ Descripción: La posibilidad del retiro de servicio debe ser considerada como
+  una autogestión en varias etapas que permita la evaluación por parte de
+  Cantv, a través de sus canales de atención, lo que nos permitirá intermediar
+  para evitar el retiro.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración con Otros Servicios
+  CANTV
+
+*** Solicitudes / Compras de Productos & Servicios / Cambios de plan
++ Nombre: Debe permitir el cambio de plan de Telefonía Fija, Móvil, Aba,
+  Datos, Servicios TI, Televisión.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración con Otros Servicios
+  CANTV
+
+*** Solicitudes / Compras de Productos & Servicios / Cambios de Firma
++ Nombre: Debe permitir el cambio de firma para todas las líneas de productos
+  y servicios.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Perfil de Usuario
+
+*** Solicitudes / Compras de Productos & Servicios / Cambios de Medio de Pago
++ Nombre: Debe permitir el cambio de medio de pago por el cual el cliente
+  efectúa los pagos de productos y servicios.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Perfil de Usuario
+
+*** Solicitudes / Compras de Productos & Servicios / Compra de Productos & Servicios
++ Nombre: Debe permitir la compra de productos y servicios Cantv.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Commerce
+
+*** Solicitudes / Compras de Productos & Servicios / Mudanza de Servicio
++ Nombre: Debe permitir la mudanza para todas las líneas de producto que
+  exista la transacción.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión
+
+*** Solicitudes / Compras de Productos & Servicios / Activación y desactivación
++ Nombre: Debe permitir la activación y desactivación de servicios verticales
+  para Telefonía Fija, Móvil, Aba, Datos, Servicios TI, Televisión.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración con Otros Servicios CANTV
+
+*** Solicitudes / Compras de Productos & Servicios / Suspensión temporal del servicio
++ Nombre: Debe permitir la Suspensión temporal del servicio para Telefonía
+  Fija, móvil y Aba.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración con Otros Servicios
+  CANTV
+
+*** Solicitudes / Compras de Productos & Servicios / Línea telefónica
++ Nombre: Actualización de datos de líneas telefónicas
++ Descripción: Cambio de firma, cambio de dirección de cobro, cambio de datos,
+  cambio de planes, Mudanzas y/o retiros de líneas telefónicas. El formulario
+  debe generar un correo para que un backoffice gestione el requerimiento.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Solicitudes
+
+*** Solicitudes / Compras de Productos & Servicios / Internet
++ Nombre: El sistema debe permitir la solicitud de ABA y la actualización de
+  datos de Internet: cambio de plan, cambio de contraseña, cambio de medio de
+  pago. El formulario debe generar un correo para que un backoffice gestione
+  el requerimiento.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Solicitudes
+
+*** Solicitudes / Compras de Productos & Servicios / Soporte Técnico TV
++ Nombre: El sistema debe permitir la solicitud de soporte técnico de TV.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Solicitudes
+
+*** Solicitudes / Compras de Productos & Servicios / Soporte de Correo
++ Nombre: El sistema debe permitir la solicitud de soporte de correo
+  cantv.net.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Solicitudes
+
+*** Solicitudes / Compras de Productos & Servicios / Estatus de Solicitudes
++ Nombre: Deberá permitir la consulta del estatus de todas las solicitudes
+  (solicitudes hechas o no en el módulo de autogestión), el parámetro de
+  búsqueda será por CI o RIF. La información será: Número de la O/S, Servicio,
+  Nro. telefónico (si aplica), Estatus.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Consultas
+
+*** Solicitudes / Compras de Productos & Servicios / Encadenamiento de Servicios
++ Nombre: Deberá permitir la realización del encadenamiento de Servicios
+  (PBX).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Solicitudes
+
+*** Cuentas (PrepagoPostpago) / Consulta de saldo
++ Nombre: Deberá permitir la consulta de saldo, presentando los siguientes
+  datos: Saldo, Fecha última facturación, Fecha de corte, Fecha de
+  vencimiento, Saldo vencido, Monto del último pago.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Consultas
+
+*** Cuentas (PrepagoPostpago) / Postpago
++ Nombre: El sistema permitirá la suscripción a Factura en Línea y cambio de
+  contraseña, en éste caso el formulario debe generar un correo para que un
+  backoffice gestione el requerimiento. Acceso a PAF.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Solicitudes
+
+*** Cuentas (PrepagoPostpago) / Prepago
++ Nombre: Visualización de Saldos, cupo disponible por consumir y detalle de
+  llamadas por cuenta.
++ Descripción: El parámetro de búsqueda será por Número Telefónico. El sistema
+  deberá permitir la recarga de servicios prepagados, mediante tarjeta
+  UN1CA. Actualmente recargan el Aba a través de Oficina Virtual Cantv.Net.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Consultas
+
+*** Cuentas (PrepagoPostpago) / Techo Consumo
++ Nombre: El sistema permitirá la visualización del límite y monto
+  disponible. El parámetro de búsqueda será por Número Telefónico.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Consultas
+
+*** Buzón de Sugerencias
++ Nombre: El sistema deberá tener una sección de sugerencias con posibilidad
+  de segmentación según el tipo de sugerencia.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Consultas
+
+*** Buzón de Mensajes
++ Nombre: El sistema deberá tener un buzón de mensajes, indicado con un botón.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Notificaciones
+
+*** Reclamos / Fallas o Averías / Reclamos en línea
++ Nombre: Permitir la posibilidad de realizar reclamos en línea y consultar el
+  estatus del mismo. Deberán estar sincronizados con los reclamos realizados
+  vía telefónica.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Consultas
+
+*** Reclamos / Fallas o Averías / Averías
++ Nombre: Debe permitir la solicitudes de requerimientos de averías y
+  consultar el estatus del mismo.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Solicitudes
+
+*** Reclamos / Fallas o Averías / Reportes
++ Nombre: Permitir el reporte de los reclamos de todos los productos y
+  servicios, Telefonía Fija, Móvil, Internet, Datos, Servicios TI, Televisión
+  Satelital.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Consultas
+
+*** Reclamos / Fallas o Averías / Reporte de quejas de atención
++ Nombre: Realizar reporte de quejas de atención respecto a canales Cantv,
+  Movilnet, Integradores, Agentes Empresariales y 0800-EMPRESA
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Consultas
+
+*** Reclamos / Fallas o Averías / Reclamos de Facturación / Pagos
++ Nombre: Todas las facturaciones (Kenan, BOSS, FAMA) incluyendo móviles.
++ Descripción:
+  - El sistema debe permitir realizar reclamo de Llamadas locales, a celulares
+    y larga distancia nacional e internacional, así como reclamos por pagos y
+    doble facturación mediante un formulario que generará un correo para que
+    un backoffice gestione el requerimiento.
+  - Deberá permitir la consulta del estatus de reclamo de facturación, donde
+    el parámetro de búsqueda será por CI o RIF. Los datos a presentar serán:
+    Nro. Telefónico, Nro. del Reclamo, Tipo de Reclamo, Fecha de registro,
+    Estatus (En investigación, Cerrado Procedente, Cerrado Improcedente,
+    Cerrado Parcialmente Procedente), Monto del reclamo. Se mostrarán solo los
+    reclamos menores a 6 meses.
+  - Deberá permitir la consulta del estatus de reclamos de pagos, donde el
+    parámetro de búsqueda será por CI o RIF. Los datos a presentar serán:
+    Nro. Telefónico, Nro. del Reclamo, Tipo de Reclamo, Fecha de registro,
+    Estatus (En investigación, Cerrado Procedente, Cerrado Improcedente,
+    Cerrado Parcialmente Procedente), Monto del reclamo. Se mostrarán solo los
+    reclamos menores a 6 meses.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Reporte de Fallas
+
+*** Reclamos / Fallas o Averías / Reporte Fallas o Averías
++ Nombre: Reporte de falla o avería
++ Descripción:
+  - El sistema debe permitir realizar reporte de falla o avería de telefonía
+    fija donde el parámetro de búsqueda será por nro. Telefónico. Los datos a
+    presentar serán los acordados para el Proyecto Averías en Línea el cual
+    saldrá a producción antes que el Proyecto Portales.
+  - El sistema debe permitir realizar reporte de falla o avería de telefonía
+    inalámbrica (habla ya). Mediante un formulario que generará un correo para
+    que un backoffice gestione el requerimiento.
+  - El sistema debe permitir realizar reporte de falla o avería de
+    Internet. Mediante un formulario que generará un correo para que un
+    backoffice gestione el requerimiento.
+  - El sistema debe permitir realizar reporte de falla o avería de servicios
+    complementarios (teleamigo, prepago un1ca, correo de voz). Mediante un
+    formulario que generará un correo para que un backoffice gestione el
+    requerimiento.
+  - El sistema debe permitir consultar el estatus de falla o averías de
+    Internet, donde el parámetro de búsqueda será por CI o RIF. Los datos a
+    presentar serán: Nro. del reporte, Tipo de falla, Fecha de creación,
+    Estado.
+  - El sistema debe permitir consulta estatus falla o averías de línea
+    telefónica, donde el parámetro de búsqueda será por nro. Telefónico. Los
+    datos a presentar serán los acordados para el Proyecto Averías en Línea el
+    cual saldrá a producción antes que el proyecto Portales. Todo esto
+    mediante un formulario que generará un correo para que un backoffice
+    gestione el requerimiento.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Reporte de Fallas
+
+*** Reclamos / Fallas o Averías / Quejas de infraestructura
++ Nombre: El sistema debe consultar la ubicación de oficinas y sistemas,
+  mediante un formulario que generará un correo para que un backoffice
+  gestione el requerimiento.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Solicitudes
+
+*** Administración / Reporte y estadísticas
++ Nombre: El sistema debe generar un reporte de estadísticas de solicitudes y
+  reclamos, visitas o tipo de consulta.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Consultas
+
+*** Administración / Solicitud de creación o actualización de sumarias / Jerarquía de cuentas
++ Nombre: Permitir que el cliente estructure sus cuentas y las jerarquice para
+  efectos de visualización en la herramienta.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Perfil de Usuario
+
+*** Administración / Consulta de comisiones de Aliado
++ Nombre: Permitir el acceso a los portales existentes de gestión de aliados
+  (Intranet).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad:  built-in
+
+*** Administración / Agregar o quitar cuentas contratos de productos del perfil del u
++ Nombre: Permitir que el usuario pueda visualizar sólo las cuentas que
+  desea. Se pueden habilitar según el registro parcialmente o todas las
+  cuentas asociadas a una combinación RiF, Sede-Dependencia, Estados, etc
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Perfil de Usuario
+
+*** Administración / Administración de usuarios y permisologías
++ Nombre: Desde el perfil administrador, permitir administrar los perfiles de
+  transacciones, consultas de venta y post-venta.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Automatización / Parámetros básicos del análisis de riesgo
++ Nombre: Permitir la creación de ordenes directamente validando parámetros
+  básicos de riesgo como deuda corriente, deuda vencida y ultima solicitud de
+  servicio para saber si los recaudos se encuentran actualizados.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión
+
+*** Automatización / Estándar de pase de órdenes e Información entre Módulo de Autoge
++ Nombre: El estándar permitirá simplificar la consulta autogestionada de
+  estatus de solicitudes y el pase de ordenes del módulo de autogestión a ARC
+  sea para su creación o para su evaluación por análisis de riesgo.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión
+
+*** General / Autogestión
++ Nombre: El portal del Cantv debe estar asociado a una plataforma de Autogestión en línea integrada
++ Descripción: Se requiere que el portal del Cantv este asociado a una
+  plataforma de Autogestión en línea integrada, que permita a los usuarios y
+  clientes de Cantv, crear un usuario, iniciar sesión, recuperar la clave de
+  una cuenta existente que luego de que el usuario sea autenticado por la
+  plataforma el mismo pueda consultar o consumir cualquier servicio
+  relacionado con atención en línea.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión
+
+*** Canales / Consulta desde el Portal Aliados para Canales tercerizados de Ca
++ Nombre: Consulta de Ordenes de Asap a través del portal aliados. Una
+  funcionalidad que existía en otro momento pero que fue deshabilitada.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Integración con Otros Servicios
+  CANTV
+
+*** General / Autogestión
++ Nombre: Modulo de autogestión
++ Descripción: Cuando el usuario ingrese al modulo de autogestión se debe
+  presentar, a través de ventanas emergentes, información, notificaciones,
+  promociones, entre otros que estén asociados a sus servicios activos. Las
+  reglas y los mensajes a presentar deben ser parametrizables y que puedan ser
+  actualizada por los usuarios funcionales del portal.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión / Notificaciones
+
+*** General / Publicación de servicios
++ Nombre: Plataforma de autogestión en línea que permita la publicación de
+  servicios de Autogestión en línea para los usuarios y/o clientes Cantv
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Autogestión
+
+* Resultado de Análisis:
+** Funcionalidades:
+
+#+BEGIN_DITAA images/brecha_cantv_com_ve.png -r -S
++-----------------------------------------------+-----------+
+|cBLU              Característica               | Cantidad  |
++-----------------------------------------------+-----------+
+|  Requieren conf y/o parametrización < 1 hora  |     0     |
++-----------------------------------------------+-----------+
+|  Requieren conf y/o parametrización < 2 horas |     0     |
++-----------------------------------------------+-----------+
+|         Requieren desarrollo < 4 horas        |     0     |
++-----------------------------------------------+-----------+
+|         Requieren desarrollo < 8 horas        |     2     |
++-----------------------------------------------+-----------+
+|         Requieren desarrollo > 32 horas       |    57     |
++-----------------------------------------------+-----------+
+|                 No contempladas               |     1     |
++-----------------------------------------------+-----------+
+#+END_DITAA
+
+
+#+CAPTION: Análisis de brecha portal cantv.com.ve
+#+NAME: Funcionalidades
+    [[./images/graph_brecha_autogestion_req_fun.png]]
+\clearpage
+
+** Cantidad de funcionalidades cubiertas por características de Plone
+
+#+BEGIN_DITAA images/gap_plone_features_cantv_com_ve.png -r -S
++-----------------------------------------------+-----------+
+|cBLU              Característica               | Cantidad  |
++-----------------------------------------------+-----------+
+|           Plone collective.chat.xmpp          |      2    |
++-----------------------------------------------+-----------+
+|                Plone Commerce                 |      2    |
++-----------------------------------------------+-----------+
+|                 No Contemplado                |      1    |
++-----------------------------------------------+-----------+
+|  Autogestión / Solicitudes (Por Desarrollar)  |      8    |
++-----------------------------------------------+-----------+
+|     Autogestión / Soporte (Por Desarrollar)   |      2    |
++-----------------------------------------------+-----------+
+|                   Plone Roles                 |      2    |
++-----------------------------------------------+-----------+
+|       Autogestión / Movil (Por Desarrollar)   |      1    |
++-----------------------------------------------+-----------+
+|         Autogestión / Perfil de Usuario       |      4    |
++-----------------------------------------------+-----------+
+|                  Plone built-in               |      2    |
++-----------------------------------------------+-----------+
+|   Autogestión / Consultas (Por Desarrollar)   |      9    |
++-----------------------------------------------+-----------+
+|      Autogestión / Ayuda (Por Desarrollar)    |      1    |
++-----------------------------------------------+-----------+
+|                   Autogestión                 |      6    |
++-----------------------------------------------+-----------+
+| Autogestión / Notificaciones (Por Desarrollar)|      2    |
++-----------------------------------------------+-----------+
+|    Autogestión / Contacto (Por Desarrollar)   |      2    |
++-----------------------------------------------+-----------+
+|     Integración con Otros Servicios CANTV     |     14    |
++-----------------------------------------------+-----------+
+|        Autogestión / Reporte de Fallas        |      2    |
++-----------------------------------------------+-----------+
+#+END_DITAA

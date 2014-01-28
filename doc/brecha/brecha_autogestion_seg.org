@@ -1,8 +1,8 @@
-#+TITLE:     Análisis de brecha Portal cantv.com.ve
+#+TITLE:     Análisis de brecha Portal autogestión requerimientos de seguridad
 #+AUTHOR:    Carlos Paredes
 #+EMAIL:     cparedes@covete.com.ve
 #+DATE:      2014-1-16
-#+DESCRIPTION: Análisis de brecha Portal cantv.com.ve
+#+DESCRIPTION: Análisis de brecha Portal autogestión requerimientos de seguridad
 #+KEYWORDS:
 #+LANGUAGE:  es
 #+OPTIONS:   H:3 num:t toc:t:nil @:t ::t |:t ^:t -:t f:t *:t <:t
@@ -16,7 +16,7 @@
 #+LATEX_CLASS: covetel
 #+LATEX_CLASS_OPTIONS: [11pt, letterpaper, oneside, spanish]
 #+LATEX_HEADER: \usepackage{array}
-#+LATEX_HEADER: \input{titulo-brecha-cantv-com-ve}
+#+LATEX_HEADER: \input{titulo-brecha-autogestion}
 
 * Versiones del Documento
 #+BEGIN_DITAA images/versiones_brecha_cantv_com_ve.png -r -S
@@ -25,13 +25,11 @@
 +-------------------------------------------------+-----------+
 |                 Carlos Paredes                  |     1     |
 +-------------------------------------------------+-----------+
-|                 Carlos Paredes                  |     2     |
-+-------------------------------------------------+-----------+
 |                                                 |           |
 \-------------------------------------------------+-----------/
 #+END_DITAA
 
-* cantv.net Requerimientos de Seguridad
+* Autogestión Requerimientos de Seguridad
 
 ** Funcionalidades:
 
@@ -42,43 +40,8 @@
   meses, en caso contrario NO Cumple.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no contemplada
-+ Aplicación que cubrirá la funcionalidad: No Contemplado
-
-*** Operación
-+ Nombre: Se debe tener definido un procedimiento normado para la gestión de
-  nuevos requerimientos y acoplado a los acuerdos de niveles de servicios.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no contemplada
-+ Aplicación que cubrirá la funcionalidad: No Contemplado
-
-*** Continuidad Operativa
-+ Nombre: El servicio debe tener Redundancia No Geográfica (Disponibilidad).
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no contemplada
-+ Aplicación que cubrirá la funcionalidad: No Contemplado
-
-*** Operación
-+ Nombre: Se debe tener definido un procedimiento normado para la gestión de
-  incidencias y acoplado a los acuerdos de niveles de servicios.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no contemplada
-+ Aplicación que cubrirá la funcionalidad: No Contemplado
-
-*** Continuidad Operativa
-+ Nombre: Se debe tener establecido los canales y/o procedimientos de soporte
-  para abrir una consulta al proveedor del sistema relacionada con alguna
-  falla del producto.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no contemplada
-+ Aplicación que cubrirá la funcionalidad: No Contemplado
-
-*** Presentación
-+ Nombre: Las tablas de resultados de búsqueda se encuentran identificadas con
-  un titulo significativo, manejan paginación, filtrado y permiten la
-  exportación mínimo a archivos CSV
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no contemplada
-+ Aplicación que cubrirá la funcionalidad: No Contemplado
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Arquitectura de
+  Servicios Propuesta
 
 *** Operación
 + Nombre: El sistema debe tener identificado claramente los
@@ -86,21 +49,8 @@
   posibilidad de ser vulnerados.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no contemplada
-+ Aplicación que cubrirá la funcionalidad: No Contemplado
-
-*** Continuidad Operativa
-+ Nombre: El servicio debe Permitir Respaldo periódico de la información
-  crítica.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no contemplada
-+ Aplicación que cubrirá la funcionalidad: No Contemplado
-
-*** Autenticación
-+ Nombre: Debe manejar un historial de contraseñas que impida la repetición de
-  contraseñas (6) anteriores.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no contemplada
-+ Aplicación que cubrirá la funcionalidad: No Contemplado
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Arquitectura de
+  Servicios Propuesta
 
 *** Continuidad Operativa
 + Nombre: Se deben tener establecido los acuerdos de niveles de servicio para
@@ -109,42 +59,105 @@
   Portales está ubicada en el 3er Nivel.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no contemplada
-+ Aplicación que cubrirá la funcionalidad: No Contemplado
-
-*** Autenticación
-+ Nombre: Se debe tener definido un período de acceso limitado para cuentas
-  transitorias.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no contemplada
-+ Aplicación que cubrirá la funcionalidad: No Contemplado
-
-*** Autorización / Roles
-+ Nombre: En la vista de consulta de un rol en particular, se debe mostrar la
-  fecha, hora, autor de creación y ultima modificación.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no contemplada
-+ Aplicación que cubrirá la funcionalidad: No Contemplado
-
-*** Autenticación
-+ Nombre: Autenticación mediante uso de Protocolo TACACS, el cual solo aplica
-  en equipos de Redes IP.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no contemplada
-+ Aplicación que cubrirá la funcionalidad: No Contemplado
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Contrato de
+  Servicios
 
 *** Continuidad Operativa
-+ Nombre: El servicio debe tener Redundancia Geográfica, en caso de
-  Contingencia.
++ Nombre: El servicio debe Permitir Respaldo periódico de la información
+  crítica.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no contemplada
-+ Aplicación que cubrirá la funcionalidad: No Contemplado
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Contrato de
+  Servicios
+
+*** Presentación
++ Nombre: Las tablas de resultados de búsqueda se encuentran identificadas con
+  un titulo significativo, manejan paginación, filtrado y permiten la
+  exportación mínimo a archivos CSV
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Arquitectura de
+  Servicios Propuesta
 
 *** Continuidad Operativa
 + Nombre: El servicio de soporte del Proveedor debe estar respaldado por un
   contrato legal y vigente al momento del pase a producción.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no contemplada
-+ Aplicación que cubrirá la funcionalidad: No Contemplado
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Contrato de
+  Servicios
+
+*** Operación
++ Nombre: Se debe tener definido un procedimiento normado para la gestión de
+  incidencias y acoplado a los acuerdos de niveles de servicios.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Contrato de
+  Servicios
+
+*** Operación
++ Nombre: Se debe tener definido un procedimiento normado para la gestión de
+  nuevos requerimientos y acoplado a los acuerdos de niveles de servicios.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Contrato de
+  Servicios
+
+*** Autenticación
++ Nombre: Debe manejar un historial de contraseñas que impida la repetición de
+  contraseñas (6) anteriores.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Arquitectura de
+  Servicios Propuesta
+
+*** Continuidad Operativa
++ Nombre: El servicio debe tener Redundancia Geográfica, en caso de
+  Contingencia.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Contrato de
+  Servicios
+
+*** Continuidad Operativa
++ Nombre: Se debe tener establecido los canales y/o procedimientos de soporte
+  para abrir una consulta al proveedor del sistema relacionada con alguna
+  falla del producto.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Contrato de
+  Servicios
+
+*** Autenticación
++ Nombre: Se debe tener definido un período de acceso limitado para cuentas
+  transitorias.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Arquitectura de
+  Servicios Propuesta
+
+*** Autorización / Roles
++ Nombre: En la vista de consulta de un rol en particular, se debe mostrar la
+  fecha, hora, autor de creación y ultima modificación.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Arquitectura de
+  Servicios Propuesta
+
+*** Autenticación
++ Nombre: Autenticación mediante uso de Protocolo TACACS, el cual solo aplica
+  en equipos de Redes IP.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Arquitectura de
+  Servicios Propuesta
+
+*** Continuidad Operativa
++ Nombre: El servicio debe tener Redundancia No Geográfica (Disponibilidad).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no contemplada
++ Aplicación que cubrirá la funcionalidad: No Contemplado en Contrato de
+  Servicios
 
 *** Continuidad Operativa
 + Nombre: Debe permitir la Transportabilidad de la Licencia de Software en
@@ -171,8 +184,8 @@
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Autenticación
-+ Nombre: Cada persona que accede al sistema debe poseer su propia cuenta de
-  usuario, no compartida e intransferible.
++ Nombre: No debe permitir uso contraseñas de usuario vacía ni comunes del
+  tipo 1234, querty, etc
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
   parametrización
@@ -186,20 +199,35 @@
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Autenticación
-+ Nombre: No debe permitir uso contraseñas de usuario vacía ni comunes del
-  tipo 1234, querty, etc
++ Nombre: Cada persona que accede al sistema debe poseer su propia cuenta de
+  usuario, no compartida e intransferible.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
   parametrización
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
-*** Autenticación
-+ Nombre: El sistema debe tener gestión de perfiles de usuarios, a fin de
-  permitir la asignación y revocación de perfiles a usuarios.
+*** Operación
++ Nombre: La sesión se destruye automáticamente al cerrarse el navegador o por
+  un tiempo sin actividad.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
   horas
-+ Aplicación que cubrirá la funcionalidad: Roles
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Autorización / Roles
++ Nombre: El sistema provee un mecanismo que permite inhabilitar un rol.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Autenticación
++ Nombre: El acceso a todos los usuarios del sistema y cualquiera de sus
+  módulos debe utilizar autenticación.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Autenticación
 + Nombre: Debe existir un proceso automatizado que permita a los usuarios
@@ -218,12 +246,12 @@
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Autenticación
-+ Nombre: El acceso a todos los usuarios del sistema y cualquiera de sus
-  módulos debe utilizar autenticación.
++ Nombre: El sistema debe tener gestión de perfiles de usuarios, a fin de
+  permitir la asignación y revocación de perfiles a usuarios.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
   horas
-+ Aplicación que cubrirá la funcionalidad: Plone built-in
++ Aplicación que cubrirá la funcionalidad: Roles
 
 *** Autorización / Roles
 + Nombre: Al modificar un rol o la asignación de usuario a un rol, los
@@ -235,32 +263,16 @@
   horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
-*** Autorización / Roles
-+ Nombre: El sistema provee un mecanismo que permite inhabilitar un rol.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
-  horas
-+ Aplicación que cubrirá la funcionalidad: Plone built-in
-
-*** Operación
-+ Nombre: La sesión se destruye automáticamente al cerrarse el navegador o por
-  un tiempo sin actividad.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
-  horas
-+ Aplicación que cubrirá la funcionalidad: Plone built-in
-
-*** Auditoria / Trazabilidad
-+ Nombre: Registro de eventos de auditoria (logs)
-+ Descripción: El registro de eventos de auditoria (logs) debe identificar los
-  siguientes datos (a título enunciativo y no limitativo): identificador de
-  usuario, dirección IP y/o hostname, fecha, hora, modulo, objeto, tipo de
-  objeto, operación realizada, valor anterior, valor nuevo, resultado de la
-  operación.
+*** Transportes de Configuración y de Seguridad
++ Nombre: El modulo de transporte debe permitir, el proceso debe contemplar a
+  nivel de usuario, quienes tienen acceso a Exportar, Autorizar o Importar  el
+  paquete, con el fin de garantizar y delimitar las responsabilidades dentro
+  de dicho proceso.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
   horas
-+ Aplicación que cubrirá la funcionalidad: Logs del Sistema
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
 
 *** Auditoria / Trazabilidad
 + Nombre: El sistema permite la generación de consultas de roles, usando como
@@ -275,6 +287,18 @@
 *** Auditoria / Trazabilidad
 + Nombre: El sistema debe proveer mecanismos para determinar las conexiones
   concurrentes en un momento dado.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Logs del Sistema
+
+*** Auditoria / Trazabilidad
++ Nombre: Registro de eventos de auditoria (logs).
++ Descripción: El registro de eventos de auditoria (logs) debe identificar los
+  siguientes datos (a título enunciativo y no limitativo): identificador de
+  usuario, dirección IP y/o hostname, fecha, hora, modulo, objeto, tipo de
+  objeto, operación realizada, valor anterior, valor nuevo, resultado de la
+  operación.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
   horas
@@ -314,8 +338,7 @@
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Autenticación
-+ Nombre: Cumplimiento con el procedimiento corporativos para el manejo de
-  contraseñas (GSDI-NP-011)
++ Nombre: Cumplimiento con el procedimiento corporativos para el manejo de contraseñas (GSDI-NP-011).
 + Descripción: Para cumplir con el procedimiento corporativos para el manejo
   de contraseñas (GSDI-NP-011), el sistema debe tener segregado la
   administración de Usuarios del resto de las funcionalidades de la misma, a
@@ -345,7 +368,6 @@
 
 *** Autorización / Roles
 + Nombre: El sistema permite hacer copia de roles.
-+ Descripción: El sistema permite hacer copia de roles.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
   horas
@@ -396,7 +418,7 @@
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Autorización / Roles
-+ Nombre: Generación de consultas de roles
++ Nombre: Rermitir la generación de consultas de roles.
 + Descripción: El sistema debe permitir la generación de consultas de roles,
   usando como criterios de búsqueda: Rango de Fechas, objetos de Seguridad,
   valor o nombre del objeto y Usuario Modificador/Creador del rol, tanto para
@@ -410,7 +432,7 @@
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Autorización / Roles
-+ Nombre: Segregación de permisos
++ Nombre: Segregación de permisos.
 + Descripción: Dado que usuarios deben ser segregados por usuarios finales y
   usuarios técnico/funcionales (Funcional Técnico, Desarrollo, Plataforma,
   Seguridad y Arquitectura de roles, propios de sistema) de modo que los roles
@@ -424,6 +446,99 @@
 *** Continuidad Operativa
 + Nombre: Deben Poseer procesos alternativos manuales, que puedan ser
   probados.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Presentación
++ Nombre: El sistema debe permitir el mantenimiento del “look & feel” de modo
+  centralizado, las etiquetas, mensajes y textos predefinidos deben estar
+  guardados en archivos de propiedades (bundle files)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Transferencia de Datos
++ Nombre: Uso de GPG, OpenSSL o similar para cifrar y firmar los archivos a
+  transmitir.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Interfaces / funciones automáticas / procesos masivos
++ Nombre: Cada sistema que requiera un servicio de la aplicación, deberá
+  contar con un usuario de interfaz, para ejecutar dicho servicio.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Operación
++ Nombre: El URL que permite acceder a la aplicación esta oculto o enmascarado
+  y restringido sólo al ser alcanzado por el aplicación; así como está
+  protegido de cualquier vía que permita obtenerlo.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Operación
++ Nombre: El o los sistemas deben ser instalados y administrados con un
+  usuario que no sean súper usuario por , ejemplo usuario ROOT ,a fin de no
+  crear dependencias con el mismo, ya que estos son únicos y exclusivamente de
+  uso del administrador del Sistema Operativo
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Interfaces / funciones automáticas / procesos masivos
++ Nombre: Cada usuario de Interfaz del sistema debe tener asignados permisos
+  asociados a la ejecución del servicio referido dentro de la plata forma,y
+  que no opere directamente en el modulo de datos del negocio
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Operación
++ Nombre: El sistema permite desconectar a un usuario remotamente, mediante la
+  interfaz de administración.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Operación
++ Nombre: Para sistemas modulares o con aplicaciones separadas, el modulo de
+  gestión de autorizaciones y usuarios debe estar centralizado en un solo
+  módulo, no uno por aplicación.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Presentación
++ Nombre: El sistema muestra el path o ruta de navegación del punto donde el
+  usuario se encuentra en un momento determinado de todo el sitio. (breadcumb)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
+  horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Transferencia de Datos
++ Nombre: Transferencia de datos cifrada mediante mecanismos seguros de
+  transferencia de información tales como SFTP, SSH entre otros. Utilización
+  de Encriptación fuerte (>512bits) y cifrado de datos.  Uso de GPG, OpenSSL o
+  similar para cifrar y firmar los archivos
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
   horas
@@ -447,72 +562,6 @@
   horas
 + Aplicación que cubrirá la funcionalidad: Encriptación / SSL
 
-*** Operación
-+ Nombre: El o los sistemas deben ser instalados y administrados con un
-  usuario que no sean súper usuario por , ejemplo usuario ROOT ,a fin de no
-  crear dependencias con el mismo, ya que estos son únicos y exclusivamente de
-  uso del administrador del Sistema Operativo
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
-  horas
-+ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
-  Virtualización
-
-*** Presentación
-+ Nombre: El sistema muestra el path o ruta de navegación del punto donde el
-  usuario se encuentra en un momento determinado de todo el sitio. (breadcumb)
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
-  horas
-+ Aplicación que cubrirá la funcionalidad: Plone built-in
-
-*** Transferencia de Datos
-+ Nombre: Transferencia de datos cifrada mediante mecanismos seguros de
-  transferencia de información tales como SFTP, SSH entre otros. Utilización
-  de Encriptación fuerte (>512bits) y cifrado de datos.  Uso de GPG, OpenSSL o
-  similar para cifrar y firmar los archivos
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
-  horas
-+ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
-  Virtualización
-
-*** Interfaces / funciones automáticas / procesos masivos
-+ Nombre: Cada sistema que requiera un servicio de la aplicación, deberá
-  contar con un usuario de interfaz, para ejecutar dicho servicio.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
-  horas
-+ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
-  Virtualización
-
-*** Operación
-+ Nombre: El sistema permite desconectar a un usuario remotamente, mediante la
-  interfaz de administración.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
-  horas
-+ Aplicación que cubrirá la funcionalidad: Plone built-in
-
-*** Operación
-+ Nombre: El URL que permite acceder a la aplicación esta oculto o enmascarado
-  y restringido sólo al ser alcanzado por el aplicación; así como está
-  protegido de cualquier vía que permita obtenerlo.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
-  horas
-+ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
-  Virtualización
-
-*** Operación
-+ Nombre: Para sistemas modulares o con aplicaciones separadas, el modulo de
-  gestión de autorizaciones y usuarios debe estar centralizado en un solo
-  módulo, no uno por aplicación.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
-  horas
-+ Aplicación que cubrirá la funcionalidad: Plone built-in
-
 *** Transferencia de Datos
 + Nombre: Utilización de Encriptación fuerte (>512bits) y cifrado de datos.
 + Prioridad: Mandatorio
@@ -521,49 +570,11 @@
 + Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
   Virtualización
 
-*** Transportes de Configuración y de Seguridad
-+ Nombre: El modulo de transporte debe permitir, el proceso debe contemplar a
-  nivel de usuario, quienes tienen acceso a Exportar, Autorizar o Importar  el
-  paquete, con el fin de garantizar y delimitar las responsabilidades dentro
-  de dicho proceso.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
-  horas
-+ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
-  / CFengine
-
-*** Interfaces / funciones automáticas / procesos masivos
-+ Nombre: Cada usuario de Interfaz del sistema debe tener asignados permisos
-  asociados a la ejecución del servicio referido dentro de la plata forma,y
-  que no opere directamente en el modulo de datos del negocio
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
-  horas
-+ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
-  Virtualización
-
-*** Presentación
-+ Nombre: El sistema debe permitir el mantenimiento del “look & feel” de modo
-  centralizado, las etiquetas, mensajes y textos predefinidos deben estar
-  guardados en archivos de propiedades (bundle files)
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
-  horas
-+ Aplicación que cubrirá la funcionalidad: Plone built-in
-
-*** Transferencia de Datos
-+ Nombre: Uso de GPG, OpenSSL o similar para cifrar y firmar los archivos a
-  transmitir.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 8
-  horas
-+ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
-  Virtualización
-
 *** Autenticación
-+ Nombre: Cumplimiento con el procedimiento corporativos para el manejo de contraseñas (GSDI-NP-011)
-+ Descripción: Para cumplir con el procedimiento corporativos para el manejo
-  de contraseñas (GSDI-NP-011), la misma debe tener esta configuración:
++ Nombre: Cumplimiento con el procedimiento corporativos para el manejo de
+  contraseñas (GSDI-NP-011).
++ Descripción: Para cumplir con con el procedimiento corporativos para el
+  manejo de contraseñas (GSDI-NP-011), la misma debe tener esta configuración:
   - Longitud mínima siete (7) caracteres
   - Estar compuesta por combinaciones de letras mayúsculas, minúsculas,
     números y símbolo (caracteres especiales)
@@ -572,18 +583,109 @@
   requiere de un fuerte desarrollo mayor a 32 horas
 + Aplicación que cubrirá la funcionalidad: Plone built-in
 
-*** Arquitectura
-+ Nombre: Modulo de manejo de seguridad independiente de la aplicación principal.
-+ Descripción: El sistema posee un modulo de manejo de seguridad independiente
-  de la aplicación principal. Que permite configurar perfiles de registro,
-  perfiles de validación, mecanismos de seguridad (como preguntas secretas,
-  captcha, contraseñas), perfiles/interfaces de autenticación (ldap, openldap,
-  bases de datos, etc), perfiles de transporte de objetos, perfiles de
-  autorización (roles, funcionalidades y permisos).
+*** Transportes de Configuración y de Seguridad
++ Nombre: Modulo de transporte.
++ Descripción: El modulo de transporte debe permitir la generación de un
+  paquete de transporte que contenga los roles a ser transportados, dicho
+  paquete debe poder ser dejado en cualquiera de las siguientes vías: (a) una
+  ruta dentro de un sistema de archivos en disco (directorio) o un sistema de
+  gestión de paquetes y versiones (svn) o (b) en una cola de paquetes de
+  transporte que maneje el sistema.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: plone.app.ldap
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Interfaces / funciones automáticas / procesos masivos
++ Nombre: Las Interfaces que envíen o reciban información sensible deben
+  encriptar la misma en el sistema origen y des-encriptar en el destino. Los
+  sistemas origen y destino deben manejar los certificados/claves de confianza
+  apropiados.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Operación
++ Nombre: Debe existir un procedimiento de creación y modificación de roles,
+  debidamente normado y enumerado por el equipo de Calidad de CANTV.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Operación
++ Nombre: Se debe permitir la asignación de usuarios a grupos de forma masiva.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Operación
++ Nombre: El sistema debe identificar la apertura de más de una sesión cuando
+  el mismo usuario se autentica en otra instancia del sistema
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Logs del Sistema
+
+*** Operación
++ Nombre: El sistema debe tener segregado la administración de usuarios,
+  gestión de autorizaciones y auditoria.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Presentación
++ Nombre: Aplcs. Cliente/Web
++ Descripción: Aplcs. Cliente/Web: El sistema debe implementar estilos
+  corporativos definidos por la Unidad de Identidad de Marca, para uso del
+  logotipo oficial de CANTV, tipos letra, colores, tamaños de letra, textos,
+  manejo de tablas, menús, ventanas emergentes, entre otros.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Presentación
++ Nombre: Aquellos procesos del sistema que tienen una secuencia de pasos, se
+  encuentran debidamente identificado con numeración y descripción de modo tal
+  el usuario sepa que acciones ha realizado y cuales les faltan por realizar.
+  (Estilo Wizard)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Manual de Administración y
+  Operación
+
+*** Operación
++ Nombre: El sistema debe tener claramente identificado los
+  componentes(permisos, servicios, entre otros) que manejan data sensible.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Reportes
++ Nombre: El sistema debe proveer un reporte donde se puede consultar el
+  histórico de conexiones para un usuario determinado, utilizando como
+  criterios de búsqueda: Rango de fechas, usuario y estatus de conexión.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
+q+ Aplicación que cubrirá la funcionalidad: Reports
+
+*** Reportes
++ Nombre: El sistema debe proveer un reporte que permita auditar un Rol, donde
+  se muestre el historial de modificaciones sobre un rol, mostrando fecha del
+  cambio, autor y detalle del cambio.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Reports
 
 *** Operación
 + Nombre: Se debe disponer de Directorio Activo para las operaciones en los
@@ -594,14 +696,24 @@
 + Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
   Virtualización
 
-*** Arquitectura
-+ Nombre: El sistema posee un modulo de manejo de reportes independiente de la
-  aplicación principal. Que permite ejecutar hacer reportes, indicadores y
-  alertas sin afectar la aplicación principal.
+*** Transportes de Configuración y de Seguridad
++ Nombre: El paquete de transporte debe contener todos los objetos de
+  seguridad (permisos, configuraciones, etc) relacionados con el rol. No debe
+  incluir funcionalidad.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Reports
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
+
+*** Transportes de Configuración y de Seguridad
++ Nombre: El modulo de transporte debe permitir aplicar paquetes de transporte
+  luego de ser importado/cargado.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
 
 *** Auditoria / Trazabilidad
 + Nombre: Cumplimiento con los Lineamientos de Seguridad para sistemas de información y aplicaciones de la corporación CANTV (GCSDI-LC- 0001)
@@ -615,58 +727,6 @@
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
 + Aplicación que cubrirá la funcionalidad: Logs del Sistema
-
-*** Operación
-+ Nombre: Se dispone de mínimo 3 ambientes para la operación: Desarrollo,
-  Calidad y Producción, los cuales se encuentran homologados.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
-  Virtualización
-
-*** Operación
-+ Nombre: Se debe permitir la asignación de usuarios a grupos de forma masiva.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Plone built-in
-
-*** Operación
-+ Nombre: Debe existir un mecanismo que permita realizar el cuadre de maestro
-  de usuarios de forma automática (Ingresos y Egreso, eliminación de usuarios
-  contratados entre otros)
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Plone built-in
-
-*** Operación
-+ Nombre: Debe existir un procedimiento debidamente certificado y normado para
-  la creación de usuarios de interfaz de procesos.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Plone built-in
-
-*** Operación
-+ Nombre: El sistema debe tener segregado la administración de usuarios,
-  gestión de autorizaciones y auditoria.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Roles
-
-*** Presentación
-+ Nombre: Aplcs. Cliente/Web
-+ Descripción: El sistema debe implementar estilos corporativos definidos por
-  la Unidad de Identidad de Marca, para uso del logotipo oficial de CANTV,
-  tipos letra, colores, tamaños de letra, textos, manejo de tablas, menús,
-  ventanas emergentes, entre otros.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Auditoria / Trazabilidad
 + Nombre: Registrar los eventos de auditoria (log)
@@ -693,73 +753,14 @@
   requiere de un fuerte desarrollo mayor a 32 horas
 + Aplicación que cubrirá la funcionalidad: Logs del Sistema
 
-*** Arquitectura
-+ Nombre: El sistema posee un modulo de auditoria/manejo de trazas (eventos de
-  auditoria) independiente de la aplicación principal. Que permite ejecutar
-  búsquedas, filtros, reportes, indicadores y alertas sin afectar la
-  aplicación principal.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Logs del Sistema
-
-*** Procesos Masivos
-+ Nombre: Funciones automáticas o procesos masivos propios o internos del sistema
-+ Descripción: Las funciones automáticas o procesos masivos propios o internos
-  del sistema (batch,triggers,procesos programados,procesos BPM, procesos ETL,
-  etc) se deben manejar en la capa de sistema operativos y base de datos,
-  utilizando los mecanismos de seguridad provisto por ambos.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
-  Virtualización
-
-*** Reportes
-+ Nombre: El sistema debe proveer un reporte donde se puede consultar el
-  histórico de conexiones para un usuario determinado, utilizando como
-  criterios de búsqueda: Rango de fechas, usuario y estatus de conexión.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Reports
-
-*** Reportes
-+ Nombre: El sistema debe proveer un reporte que permite consultar los
-  componentes de seguridad que están asignados a un usuario
-  determinado. Teniendo como criterios de búsqueda: usuario, nombre del
-  componente, permisos asociados.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Reports
-
-*** Presentación
-+ Nombre: Se debe disponer de un manual de administración de “look & feel”.
+*** Auditoria / Trazabilidad
++ Nombre: Se deberá proveer documentación de ayuda para facilitar la lectura e
+  interpretación de los logs.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
 + Aplicación que cubrirá la funcionalidad: Manual de Administración y
   Operación
-
-*** Transportes de Configuración y de Seguridad
-+ Nombre: Cada paquete de transporte generado debe contener un identificador
-  único generado automáticamente por el sistema.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
-  / CFengine
-
-*** Transportes de Configuración y de Seguridad
-+ Nombre: El paquete de transporte debe contener todos los objetos de
-  seguridad (permisos, configuraciones, etc) relacionados con el rol. No debe
-  incluir funcionalidad.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
-  / CFengine
 
 *** Transportes de Configuración y de Seguridad
 + Nombre: Modulo de transporte
@@ -774,59 +775,67 @@
 + Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
   / CFengine
 
-*** Transportes de Configuración y de Seguridad
-+ Nombre: Modulo de transporte
-+ Descripción: El modulo de transporte debe permitir, la visualización y
-  exportación de logs (a Hojas de Calculo preferiblemente) de las actividades
-  ejecutadas en el proceso de Exportación, Autorización e Importación de
-  Paquetes de Transporte; Manejar consultas que permitan saber cuando y quien
-  realizo la exportación, autorización o importación de un paquete de
-  transporte.
+*** Operación
++ Nombre: El sistema debe cumplir con protección ante las amenazas más comunes
+  de seguridad y seguir las recomendaciones de seguridad de la OWASP.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
-  / CFengine
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
 
-*** Auditoria / Trazabilidad
-+ Nombre: Se deberá proveer documentación de ayuda para facilitar la lectura e
-  interpretación de los logs.
+*** Operación
++ Nombre: Se dispone de mínimo 3 ambientes para la operación: Desarrollo,
+  Calidad y Producción, los cuales se encuentran homologados.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Manual de Administración y
-  Operación
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
 
-*** Auditoria / Trazabilidad
-+ Nombre: Registrar los eventos de auditoria (log)
-+ Descripción: El sistema debe registrar los eventos de auditoria (log) del
-  proceso transporte al momento de realizar las operaciones de importación,
-  exportación, aplicación, etc., identificando responsable, fecha de
-  ejecución, nombre y detalles del elemento de transporte en caso que se
-  hiciera mediante paquetes, objetos de base de dato o archivos xml, entre
-  otros.
+*** Arquitectura
++ Nombre: Todos los módulos, aplicaciones, sistemas, etc, que autentiquen con
+  el Directorio Activo Corporativo deben estar en la INTRANET.
++ Descripción: Todos los módulos, aplicaciones, sistemas, etc, que autentiquen
+  con el Directorio Activo Corporativo deben estar en la INTRANET. Los
+  módulos, aplicaciones, sistemas, etc que requieran interactuar con la
+  intranet lo deben hacer mediante una plataforma de servicios segura.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Logs del Sistema
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
 
-*** Auditoria / Trazabilidad
-+ Nombre: Proveer una interfaz gráfica
-+ Descripción: El sistema debe proveer una interfaz gráfica, que permita
-  consultar los distintos registros de eventos de auditoria (logs) utilizando
-  filtros de búsqueda por cada dato (identificador de usuario, modulo, fecha,
-  hora, entre otros)  registrado, siendo las mismas exportables a archivos
-  como: hojas de cálculo (Excel y Calc), archivos de Texto y/o HTML Estándar y
-  pueden ser enviadas de forma automática vía mecanismo de transferencia de
-  archivos.
+*** Operación
++ Nombre: Debe existir un mecanismo que permita realizar el cuadre de maestro
+  de usuarios de forma automática (Ingresos y Egreso, eliminación de usuarios
+  contratados entre otros)
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Plone Logging
++ Aplicación que cubrirá la funcionalidad: Plone built-in
 
-*** Continuidad Operativa
-+ Nombre: Debe Permitir Ejecución de Respaldo en Tiempo Real, sin interrumpir
-  el Servicio.
+*** Arquitectura
++ Nombre: Modulo automatizado de transporte de objetos
++ Descripción: El sistema debe contar con un modulo automatizado de transporte
+  de objetos (de configuración, de datos y de seguridad) entre los diferentes
+  ambientes que soportan la aplicación , refiriéndose esto, a las diferentes
+  plataformas o infraestructuras informáticas (hardware, software) que
+  soportan un mismo sistema, donde el uso del mismo tiene diferentes objetivos
+  tales como: desarrollar, probar, hacer certificaciones de calidad y servir
+  como ambiente productivo. Este modulo debe ser independiente de la
+  aplicación principal.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** Presentación
++ Nombre: Aplcs. Web
++ Descripción: Aplcs. Web: El sistema debe implementar las hojas de estilos
+  corporativos utilizados para el tipo de aplicación definidos por la Unidad
+  de Identidad de Marca.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
@@ -840,113 +849,17 @@
   requiere de un fuerte desarrollo mayor a 32 horas
 + Aplicación que cubrirá la funcionalidad: Contemplado
 
-*** Interfaces / funciones automáticas / procesos masivos
-+ Nombre: Las Interfaces que envíen o reciban información sensible deben
-  encriptar la misma en el sistema origen y des-encriptar en el destino. Los
-  sistemas origen y destino deben manejar los certificados/claves de confianza
-  apropiados.
+*** Procesos Masivos
++ Nombre: Las funciones automáticas o procesos masivos propios o internos del sistema
++ Descripción: Las funciones automáticas o procesos masivos propios o internos
+  del sistema (batch,triggers,procesos programados,procesos BPM, procesos ETL,
+  etc) se deben manejar en la capa de sistema operativos y base de datos,
+  utilizando los mecanismos de seguridad provisto por ambos.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
 + Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
   Virtualización
-
-*** Operación
-+ Nombre: El sistema debe tener claramente identificado los
-  componentes(permisos, servicios, entre otros) que manejan data sensible.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
-  Virtualización
-
-*** Transportes de Configuración y de Seguridad
-+ Nombre: El modulo de transporte debe llevar un control del versionamiento de
-  los paquetes.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
-  / CFengine
-
-*** Reportes
-+ Nombre: El sistema debe proveer un reporte donde se puede consultar los
-  usuarios asignados a un rol, utilizando criterios de búsqueda como: nombre
-  del Rol (Dado un rol que usuarios lo tienen asignado)
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Reports
-
-*** Operación
-+ Nombre: El sistema debe identificar la apertura de más de una sesión cuando
-  el mismo usuario se autentica en otra instancia del sistema
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Logs del Sistema
-
-*** Auditoria / Trazabilidad
-+ Nombre: Proveer una interfaz gráfica que permite consultar y exportar los distintos reportes y logs almacenados
-+ Descripción: El sistema provee una interfaz gráfica que permite consultar y
-  exportar los distintos reportes y logs almacenados utilizando filtros de
-  búsqueda, siendo las mismas exportables a archivos como Hojas de Cálculo,
-  Texto y/o HTML Estándar y pueden ser enviadas de forma automática vía
-  mecanismo de transferencia de archivos.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Plone Logging
-
-*** Reportes
-+ Nombre: El sistema debe proveer un reporte permite consultar los componentes
-  de seguridad que definen a un rol determinado. Teniendo como criterios de
-  búsqueda: Rol, nombre del componente, permisos asociados.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Reports
-
-*** Presentación
-+ Nombre: Aplcs. Web
-+ Descripción: El sistema debe implementar las hojas de estilos corporativos
-  utilizados para el tipo de aplicación definidos por la Unidad de Identidad
-  de Marca.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Plone built-in
-
-*** Presentación
-+ Nombre: Aquellos procesos del sistema que tienen una secuencia de pasos, se
-  encuentran debidamente identificado con numeración y descripción de modo tal
-  el usuario sepa que acciones ha realizado y cuales les faltan por realizar.
-  (Estilo Wizard)
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Manual de Administración y
-  Operación
-
-*** Auditoria / Trazabilidad
-+ Nombre: El sistema registra el log TODAS las acciones(sel,ins,upd,del) de
-  todos los usuarios (finales, administradores, técnicos, de interfaz,
-  funcionales entre otros) identificando dirección IP y/o hostname, fecha,
-  hora y actividades realizadas
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Logs del Sistema
-
-*** Reportes
-+ Nombre: El sistema debe proveer un reporte donde se puede consultar los
-  roles asignados a un usuario, utilizando diversos criterios de búsqueda
-  como: código de usuario, Nombre de usuarios (Dado un usuario que roles tiene
-  asignado)
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Reports
 
 *** Reportes
 + Nombre: El sistema debe proveer un reporte que permita la comparación de
@@ -956,67 +869,8 @@
   requiere de un fuerte desarrollo mayor a 32 horas
 + Aplicación que cubrirá la funcionalidad: Reports
 
-*** Autenticación
-+ Nombre: La(s) contraseña(s) de la(s) cuenta(s) de administración deben estar
-  bajo la responsabilidad del área técnica correspondiente, y deben ser
-  cambiadas con frecuencia.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Plone built-in
-
-*** Autenticación
-+ Nombre: Las contraseñas deben tener definidos períodos de inactividad para
-  su des-activación automática. Se debe permitir definir el período.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: plone.products.privacy-pack
-
 *** Reportes
-+ Nombre: El sistema debe proveer un reporte que permita auditar un Rol, donde
-  se muestre el historial de modificaciones sobre un rol, mostrando fecha del
-  cambio, autor y detalle del cambio.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Reports
-
-*** Autenticación
-+ Nombre: La autenticación se debe integrar con el Directorio Activo
-  Corporativo mediante protocolo Radius o LDAP (se solicitará prueba
-  conceptual).
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: plone.app.ldap
-
-*** Autenticación
-+ Nombre: Si el sistema permite el acceso a usuarios externos (Ej: clientes o
-  proveedores de Cantv):
-+ Descripción:
-  - La autenticación deberá realizarse contra un sistema diferente al
-    Directorio Activo que utilizan los usuarios internos (Trabajadores y
-    Trabajadoras de Cantv)
-  - Deberá utilizar protocolos seguros.
-  - Permitirá auto-registro de estos usuarios externos.
-  - Permitirá la auto-gestión de la clave o contraseña
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: plone.app.ldap 
-
-*** Autenticación
-+ Nombre: El sistema no deberá tener base de datos de usuarios propia, la
-  misma, deberá estar delegada al Directorio Activo (usuarios internos) o a un
-  Directorio de Usuarios (usuarios externos)
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: plone.app.ldap
-
-*** Reportes
-+ Nombre: Proveer una interfaz gráfica
++ Nombre: Interfaz gráfica, que permita la generación de reportes de seguridad
 + Descripción: El sistema debe proveer una interfaz gráfica, que permita la
   generación de reportes de seguridad, por ejemplo: roles, usuarios por roles,
   roles por permisos, usuarios por permisos, permisos por roles, entre
@@ -1030,70 +884,18 @@
   requiere de un fuerte desarrollo mayor a 32 horas
 + Aplicación que cubrirá la funcionalidad: Reports
 
-*** Autenticación
-+ Nombre: Se deben utilizan archivos de diccionarios para validar los cambios
-  de contraseña, a fin de impedir el uso de contraseñas comunes o consideradas
-  vulnerables por ser de fácil detección
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: plone.products.privacy-pack
-
 *** Transportes de Configuración y de Seguridad
-+ Nombre: El Modelo de transporte es bidireccional (importar y exportar en
-  todos los ambientes).
++ Nombre: Cada paquete de transporte generado debe contener un identificador
+  único generado automáticamente por el sistema.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
 + Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
   / CFengine
-
-*** Autenticación
-+ Nombre: Autenticación de Usuarios con el Protocolo Radius RFC 2866
-+ Descripción: Autenticación de Usuarios con el Protocolo Radius RFC 2866,
-  (Parámetros Estándar: [Código de Autenticación: Access-Request; Atributos:
-  User-Name, User-Password, Filter-Id (opcional)], [Código de Respuesta:
-  Access-Accept, Access-Reject; Atributos: Reply-Message, Filter-Id
-  (opcional), y/o a través de la Integración con el Active Directory (LDAP,
-  RFC 3377) (Versión 3.0)Y/o Alternativamente Autenticación de Usuarios con el
-  Protocolo Radius RFC 2866, (Parámetros Estándar: [Código de Autenticación:
-  Access-Request; Atributos: User-Name, User-Password, Filter-Id (opcional)],
-  [Código de Respuesta: Access-Accept, Access-Reject; Atributos:
-  Reply-Message, Filter-Id (opcional),(se solicitará prueba conceptual).
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: plone.app.ldap 
-
-*** Autenticación
-+ Nombre: Las contraseñas deben tener un período de expiración máximo de 60
-  días, obligando a los usuarios a cambiarlas al transcurrir este tiempo.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: plone.products.privacy-pack
-
-*** Autenticación
-+ Nombre: El punto de acceso del sistema (form llogon), debe ser único y
-  deberá cumplir con los lineamientos de “look & feel” de Cantv (suministrado
-  por la unidad Identidad de Marca)
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Plone built-in
 
 *** Transportes de Configuración y de Seguridad
 + Nombre: El modulo de transporte debe permitir la exportar/descargar los
   paquetes de transporte a una carpeta local del usuario.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
-  / CFengine
-
-*** Transportes de Configuración y de Seguridad
-+ Nombre: El modulo de transporte debe permitir aplicar paquetes de transporte
-  luego de ser importado/cargado.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
@@ -1123,6 +925,223 @@
   requiere de un fuerte desarrollo mayor a 32 horas
 + Aplicación que cubrirá la funcionalidad: Roles
 
+*** Auditoria / Trazabilidad
++ Nombre: Registrar los eventos de auditoria (log)
++ Descripción: El sistema debe registrar los eventos de auditoria (log) del
+  proceso transporte al momento de realizar las operaciones de importación,
+  exportación, aplicación, etc., identificando responsable, fecha de
+  ejecución, nombre y detalles del elemento de transporte en caso que se
+  hiciera mediante paquetes, objetos de base de dato o archivos xml, entre
+  otros.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Logs del Sistema
+
+*** Continuidad Operativa
++ Nombre: Debe Permitir Ejecución de Respaldo en Tiempo Real, sin interrumpir
+  el Servicio.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Arquitectura
++ Nombre: El sistema posee un modulo de manejo de reportes independiente de la
+  aplicación principal. Que permite ejecutar hacer reportes, indicadores y
+  alertas sin afectar la aplicación principal.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Reports
+
+*** Auditoria / Trazabilidad
++ Nombre: Interfaz gráfica, que permita consultar los distintos registros de eventos de auditoria (logs)
++ Descripción: El sistema debe proveer una interfaz gráfica, que permita
+  consultar los distintos registros de eventos de auditoria (logs) utilizando
+  filtros de búsqueda por cada dato (identificador de usuario, modulo, fecha,
+  hora, entre otros)  registrado, siendo las mismas exportables a archivos
+  como: hojas de cálculo (Excel y Calc), archivos de Texto y/o HTML Estándar y
+  pueden ser enviadas de forma automática vía mecanismo de transferencia de
+  archivos.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Plone Logging
+
+*** Arquitectura
++ Nombre: El sistema posee un modulo de auditoria/manejo de trazas (eventos de
+  auditoria) independiente de la aplicación principal. Que permite ejecutar
+  búsquedas, filtros, reportes, indicadores y alertas sin afectar la
+  aplicación principal.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Logs del Sistema
+
+*** Auditoria / Trazabilidad
++ Nombre: Interfaz gráfica que permite consultar y exportar los distintos reportes y logs almacenados
++ Descripción: El sistema provee una interfaz gráfica que permite consultar y
+  exportar los distintos reportes y logs almacenados utilizando filtros de
+  búsqueda, siendo las mismas exportables a archivos como Hojas de Cálculo,
+  Texto y/o HTML Estándar y pueden ser enviadas de forma automática vía
+  mecanismo de transferencia de archivos.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Plone Logging
+
+*** Autenticación
++ Nombre: La(s) contraseña(s) de la(s) cuenta(s) de administración deben estar
+  bajo la responsabilidad del área técnica correspondiente, y deben ser
+  cambiadas con frecuencia.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Operación
++ Nombre: Debe existir un procedimiento debidamente certificado y normado para
+  la creación de usuarios de interfaz de procesos.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Autenticación
++ Nombre: La autenticación se debe integrar con el Directorio Activo
+  Corporativo mediante protocolo Radius o LDAP (se solicitará prueba
+  conceptual).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: plone.app.ldap
+
+*** Autenticación
++ Nombre: Si el sistema permite el  acceso a usuarios externos (Ej: clientes o proveedores de Cantv):
++ Descripción:
+  - La autenticación deberá realizarse contra un sistema diferente al
+    Directorio Activo que utilizan los usuarios internos (Trabajadores y
+    Trabajadoras de Cantv)
+  - Deberá utilizar protocolos seguros.
+  - Permitirá auto-registro de estos usuarios externos.
+  - Permitirá la auto-gestión de la clave o contraseña
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: plone.app.ldap
+
+*** Autenticación
++ Nombre: El sistema no deberá tener base de datos de usuarios propia, la
+  misma, deberá estar delegada al Directorio Activo (usuarios internos) o a un
+  Directorio de Usuarios (usuarios externos)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
+q+ Aplicación que cubrirá la funcionalidad: plone.app.ldap 
+
+*** Reportes
++ Nombre: El sistema debe proveer un reporte donde se puede consultar los
+  usuarios asignados a un rol, utilizando criterios de búsqueda como: nombre
+  del Rol (Dado un rol que usuarios lo tienen asignado)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Reports
+
+*** Autenticación
++ Nombre: Las contraseñas deben tener definidos períodos de inactividad para
+  su des-activación automática. Se debe permitir definir el período.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: plone.products.privacy-pack
+
+*** Presentación
++ Nombre: Se debe disponer de un manual de administración de “look & feel”.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
+q+ Aplicación que cubrirá la funcionalidad: Manual de Administración y Operación
+
+*** Autenticación
++ Nombre: Autenticación de Usuarios con el Protocolo Radius RFC 2866
++ Descripción: Autenticación de Usuarios con el Protocolo Radius RFC 2866,
+  (Parámetros Estándar: [Código de Autenticación: Access-Request; Atributos:
+  User-Name, User-Password, Filter-Id (opcional)], [Código de Respuesta:
+  Access-Accept, Access-Reject; Atributos: Reply-Message, Filter-Id
+  (opcional), y/o a través de la Integración con el Active Directory (LDAP,
+  RFC 3377) (Versión 3.0)Y/o Alternativamente Autenticación de Usuarios con el
+  Protocolo Radius RFC 2866, (Parámetros Estándar: [Código de Autenticación:
+  Access-Request; Atributos: User-Name, User-Password, Filter-Id (opcional)],
+  [Código de Respuesta: Access-Accept, Access-Reject; Atributos:
+  Reply-Message, Filter-Id (opcional),(se solicitará prueba conceptual).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: plone.app.ldap
+
+*** Autenticación
++ Nombre: Archivos de diccionarios para validar los cambios de contraseña
++ Descripción: Se deben utilizan archivos de diccionarios para validar los
+  cambios de contraseña, a fin de impedir el uso de contraseñas comunes o
+  consideradas vulnerables por ser de fácil detección
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: plone.products.privacy-pack
+
+*** Autenticación
++ Nombre: El punto de acceso del sistema (form llogon), debe ser único y
+  deberá cumplir con los lineamientos de “look & feel” de Cantv (suministrado
+  por la unidad Identidad de Marca)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Reportes
++ Nombre: El sistema debe proveer un reporte que permite consultar los
+  componentes de seguridad que están asignados a un usuario
+  determinado. Teniendo como criterios de búsqueda: usuario, nombre del
+  componente, permisos asociados.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Reports
+
+*** Reportes
++ Nombre: El sistema debe proveer un reporte donde se puede consultar los
+  roles asignados a un usuario, utilizando diversos criterios de búsqueda
+  como: código de usuario, Nombre de usuarios (Dado un usuario que roles tiene
+  asignado)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Reports
+
+*** Reportes
++ Nombre: El sistema debe proveer un reporte permite consultar los componentes
+  de seguridad que definen a un rol determinado. Teniendo como criterios de
+  búsqueda: Rol, nombre del componente, permisos asociados.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Reports
+
+*** Arquitectura
++ Nombre: El sistema posee un modulo de manejo de seguridad independiente de
+  la aplicación principal.
++ Descripción: Que permite configurar perfiles de registro, perfiles de
+  validación, mecanismos de seguridad (como preguntas secretas, captcha,
+  contraseñas), perfiles/interfaces de autenticación (ldap, openldap, bases de
+  datos, etc), perfiles de transporte de objetos, perfiles de autorización
+  (roles, funcionalidades y permisos).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: plone.app.ldap
+
 *** Autorización / Roles
 + Nombre: Permite utilizar la nomenclatura y convenciones de Cantv para la
   creación de roles, segregado por roles finales y técnico/funcionales.
@@ -1131,73 +1150,60 @@
   requiere de un fuerte desarrollo mayor a 32 horas
 + Aplicación que cubrirá la funcionalidad: Roles
 
-*** Documentación
-+ Nombre: Todos los desarrollos, funcionalidades y configuraciones deben estar
-  documentados
-+ Descripción: Deben poseer un informe de pruebas unitarias con pantallas y
-  datos, deben poseer documentación de código (para desarrollos), manual de
-  uso (HowTo), manual de instalación (HowTo), manual de administración
-  (parametrización e integración) y matriz de fallas conocidas.
+*** Transportes de Configuración y de Seguridad
++ Nombre: El Modelo de transporte es bidireccional (importar y exportar en
+  todos los ambientes).
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Manual de Administración y
-  Operación
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
 
-*** Arquitectura
-+ Nombre: Todos los módulos, aplicaciones, sistemas, etc, que autentiquen con
-  el Directorio Activo Corporativo deben estar en la INTRANET.
-+ Descripción: Todos los módulos, aplicaciones, sistemas, etc, que autentiquen
-  con el Directorio Activo Corporativo deben estar en la INTRANET. Los
-  módulos, aplicaciones, sistemas, etc que requieran interactuar con la
-  intranet lo deben hacer mediante una plataforma de servicios segura.
+*** Transportes de Configuración y de Seguridad
++ Nombre: El modulo de transporte debe llevar un control del versionamiento de
+  los paquetes.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
-  Virtualización
-
-*** Arquitectura
-+ Nombre: Modulo automatizado de transporte de objetos
-+ Descripción: El sistema debe contar con un modulo automatizado de transporte
-  de objetos (de configuración, de datos y de seguridad) entre los diferentes
-  ambientes que soportan la aplicación , refiriéndose esto, a las diferentes
-  plataformas o infraestructuras informáticas (hardware, software) que
-  soportan un mismo sistema, donde el uso del mismo tiene diferentes objetivos
-  tales como: desarrollar, probar, hacer certificaciones de calidad y servir
-  como ambiente productivo. Este modulo debe ser independiente de la
-  aplicación principal.
-+ Prioridad: Mandatorio
-+ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
-  requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
-  Virtualización
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
 
 *** Transportes de Configuración y de Seguridad
 + Nombre: Modulo de transporte
-+ Descripción: El modulo de transporte debe permitir la generación de un
-  paquete de transporte que contenga los roles a ser transportados, dicho
-  paquete debe poder ser dejado en cualquiera de las siguientes vías: 
-  - Una ruta dentro de un sistema de archivos en disco (directorio) o un
-    sistema de gestión de paquetes y versiones (svn)
-  - En una cola de paquetes de transporte que maneje el sistema.
++ Descripción: El modulo de transporte debe permitir, la visualización y
+  exportación de logs (a Hojas de Calculo preferiblemente) de las actividades
+  ejecutadas en el proceso de Exportación, Autorización e Importación de
+  Paquetes de Transporte; Manejar consultas que permitan saber cuando y quien
+  realizo la exportación, autorización o importación de un paquete de
+  transporte.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Plone built-in
++ Aplicación que cubrirá la funcionalidad: Sistema de Gestión de Configuración
+  / CFengine
 
-*** Operación
-+ Nombre: El sistema debe cumplir con protección ante las amenazas más comunes
-  de seguridad y seguir las recomendaciones de seguridad de la OWASP.
+*** Autorización / Roles
++ Nombre: Los datos almacenados en Caché son correctamente manejados y usados
+  únicamente en la valorización especificas del objeto para el cual fueron
+  creados dichos datos.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
-  Virtualización
++ Aplicación que cubrirá la funcionalidad: Cache / Varnish
+
+*** Auditoria / Trazabilidad
++ Nombre: El sistema registra el log TODAS las acciones(sel,ins,upd,del) de
+  todos los usuarios (finales, administradores, técnicos, de interfaz,
+  funcionales entre otros) identificando dirección IP y/o hostname, fecha,
+  hora y actividades realizadas
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Logs del Sistema
 
 *** Autenticación
-+ Nombre: Las contraseñas deben tener un período de expiración mínimo de 30
-  días.
++ Nombre: Las contraseñas deben tener un período de expiración máximo de 60
+  días, obligando a los usuarios a cambiarlas al transcurrir este tiempo.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
@@ -1213,17 +1219,22 @@
   requiere de un fuerte desarrollo mayor a 32 horas
 + Aplicación que cubrirá la funcionalidad: plone.app.ldap
 
-*** Operación
-+ Nombre: Debe existir un procedimiento de creación y modificación de roles,
-  debidamente normado y enumerado por el equipo de Calidad de CANTV.
+*** Documentación
++ Nombre: Todos los desarrollos, funcionalidades y configuraciones deben estar documentados
++ Descripción: Todos los desarrollos, funcionalidades y configuraciones deben
+  estar documentados, deben poseer un informe de pruebas unitarias con
+  pantallas y datos, deben poseer documentación de código (para desarrollos),
+  manual de uso (HowTo), manual de instalación (HowTo), manual de
+  administración (parametrización e integración) y matriz de fallas conocidas.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Roles
++ Aplicación que cubrirá la funcionalidad: Manual de Administración y
+  Operación
 
 *** Autenticación
-+ Nombre: El sistema debe advertir al usuario que luego de 3 intentos fallidos
-  al ingresar la contraseña, se bloqueara su cuenta.
++ Nombre: Las contraseñas deben tener un período de expiración mínimo de 30
+  días.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
@@ -1238,74 +1249,73 @@
   requiere de un fuerte desarrollo mayor a 32 horas
 + Aplicación que cubrirá la funcionalidad: plone.app.ldap
 
-*** Autorización / Roles
-+ Nombre: Los datos almacenados en Caché son correctamente manejados y usados
-  únicamente en la valorización especificas del objeto para el cual fueron
-  creados dichos datos.
+*** Autenticación
++ Nombre: El sistema debe advertir al usuario que luego de 3 intentos fallidos
+  al ingresar la contraseña, se bloqueara su cuenta.
 + Prioridad: Mandatorio
 + Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
   requiere de un fuerte desarrollo mayor a 32 horas
-+ Aplicación que cubrirá la funcionalidad: Cache / Varnish
++ Aplicación que cubrirá la funcionalidad: plone.products.privacy-pack
 
 * Resultado de Análisis:
 ** Funcionalidades:
 
 #+BEGIN_DITAA images/brecha_cantv_com_ve.png -r -S
 +-----------------------------------------------+-----------+
-|cBLU              Característica               | Cantdidad |
+|cBLU              Característica               | Cantidad  |
 +-----------------------------------------------+-----------+
-| Requieren conf y/o parametrización < 1 hora   |      1    |  
+|  Requieren conf y/o parametrización < 1 hora  |      1    |
 +-----------------------------------------------+-----------+
-| Requieren conf y/o parametrización < 2 horas  |      5    |
+|  Requieren conf y/o parametrización < 2 horas |      5    |
 +-----------------------------------------------+-----------+
-|        Requieren desarrollo < 4 horas         |      7    |
+|         Requieren desarrollo < 4 horas        |      7    |
 +-----------------------------------------------+-----------+
-|        Requieren desarrollo < 8 horas         |     33    |
+|         Requieren desarrollo < 8 horas        |     33    |
 +-----------------------------------------------+-----------+
-|        Requieren desarrollo > 32 horas        |     66    |
+|         Requieren desarrollo > 32 horas       |     66    |
 +-----------------------------------------------+-----------+
-|                 No contempladas               |     15    |
+|                No contempladas                |     15    |
 +-----------------------------------------------+-----------+
 #+END_DITAA
 
 
 #+CAPTION: Análisis de brecha portal cantv.com.ve
 #+NAME: Funcionalidades
-    [[./images/graph_brecha_cantv_net_req_seg.png]]
+    [[./images/graph_brecha_autogestion_req_seg.png]]
 \clearpage
 
 ** Cantidad de funcionalidades cubiertas por características de Plone
 
 #+BEGIN_DITAA images/gap_plone_features_cantv_com_ve.png -r -S
 +-----------------------------------------------+-----------+
-|cBLU              Característica               | Cantdidad |
+|cBLU              Característica               | Cantidad  |
 +-----------------------------------------------+-----------+
 |                  No Contemplado               |     15    |
 +-----------------------------------------------+-----------+
-|      Manual de Administración y Operación     |      4    |
+|       Manual de Administración y Operación    |      4    |
 +-----------------------------------------------+-----------+
 |                   Plone Logging               |      2    |
 +-----------------------------------------------+-----------+
 |                   Plone Roles                 |     13    |
 +-----------------------------------------------+-----------+
-|              Plone plone.app.ldap             |      7    |
+|                Plone Contemplado              |      1    |
 +-----------------------------------------------+-----------+
-|   Infraestructura Propuesta / Virtualización  |     18    |
+|  Infraestructura Propuesta / Virtualización   |     18    |
 +-----------------------------------------------+-----------+
-|                  Plone built-in               |     33    |
+|                 Plone built-in                |     33    |
 +-----------------------------------------------+-----------+
-|              Reports (Por Desarrollar)        |      9    |
-+-----------------------------------------------+-----------+
-|                 Plone Contemplado             |      1    |
+|                 Plone Reports                 |      9    |
 +-----------------------------------------------+-----------+
 |                 Logs del Sistema              |      8    |
 +-----------------------------------------------+-----------+
-|        Plone plone.products.privacy-pack      |      5    |
+|       Plone plone.products.privacy-pack       |      5    |
 +-----------------------------------------------+-----------+
 | Sistema de Gestión de Configuración / CFengine|     10    |
 +-----------------------------------------------+-----------+
-|                Encriptación / SSL             |      1    |
+|               Encriptación / SSL              |      1    |
 +-----------------------------------------------+-----------+
-|                 Cache / Varnish               |      1    |
+|               Cache / Varnish                 |      1    |
++-----------------------------------------------+-----------+
+|              Plone plone.app.ldap             |      7    |
 +-----------------------------------------------+-----------+
 #+END_DITAA
