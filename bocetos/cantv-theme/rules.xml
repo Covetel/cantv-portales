@@ -9,9 +9,6 @@
 
         <theme href="index.html" />
 
-        <!-- Replace title with Plone's page title  -->
-        <replace css:theme="html head title" css:content="html head title" />
-
         <!-- Copy base tag from Plone -->
         <before css:theme-children="html head" css:content="html head base" />
 
@@ -28,14 +25,12 @@
         <!-- Insert your own rules here -->
                 
         <!-- Reemplazo la etiqueta menu por la barra de navegación-->
-        <replace css:content="#portal-globalnav" css:theme="#menu" />
-        <!-- Inserto la barra de búsqueda en el div mapa -->
+        <replace css:content="#portal-globalnav" css:theme-children="#menu" />
+        <!-- Inserto el menu de autenticación en el div mapa -->
         <after css:content="#portal-personaltools" css:theme="#menu" />
-
-        <!-- Elimino el texto del breadcrumbs -->
-        <drop css:content="#portal-breadcrumbs #breadcrumbs-you-are-here" />
-        <!-- Reemplazo la etiqueta mapa por el breadcrumbs -->
-        <replace css:content="#portal-breadcrumbs" css:theme-children="#mapa" />
+        
+        <!-- Agregando buscador -->
+        <after css:content="#portal-searchbox" css:theme="#map" />
 
         <!-- Elimino el breadcrumbs del contenido -->
         <drop css:content="#portal-column-content #viewlet-above-content" />
@@ -43,6 +38,13 @@
         <after css:content="#portal-column-one" css:theme-children="#med-top" />
         <after css:content="#portal-column-content" css:theme-children="#med-med" />
         <after css:content="#portal-column-two" css:theme-children="#med-bottom" />
+
+        <!-- Elimino el texto del breadcrumbs -->
+        <drop css:content="#portal-breadcrumbs #breadcrumbs-you-are-here" />
+        <!-- Reemplazo la etiqueta mapa por el breadcrumbs -->
+        <replace css:content="#portal-breadcrumbs" css:theme-children="#bottom" />
+        
+
     </rules>
 
 </rules>
