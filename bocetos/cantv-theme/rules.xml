@@ -23,14 +23,16 @@
         <after css:theme-children="html body" css:content="html head script" />
 
         <!-- Insert your own rules here -->
-                
+
         <!-- Reemplazo la etiqueta menu por la barra de navegación-->
-        <replace css:content="#portal-globalnav" css:theme-children="#menu" />
+        <replace css:content="#portal-globalnav" css:theme-children="#menu-left" />
+
         <!-- Inserto el menu de autenticación en el div mapa -->
-        <after css:content="#portal-personaltools" css:theme="#menu" />
-        
+        <after css:content="#portal-personaltools" css:theme-children="#med" />
+
         <!-- Agregando buscador -->
-        <after css:content="#portal-searchbox" css:theme="#map" />
+        <drop css:content=".LSBox .searchSection" />
+        <after css:content=".LSBox" css:theme-children="#menu" />
 
         <!-- Elimino el breadcrumbs del contenido -->
         <drop css:content="#portal-column-content #viewlet-above-content" />
@@ -43,7 +45,7 @@
         <drop css:content="#portal-breadcrumbs #breadcrumbs-you-are-here" />
         <!-- Reemplazo la etiqueta mapa por el breadcrumbs -->
         <replace css:content="#portal-breadcrumbs" css:theme-children="#bottom" />
-        
+        <replace css:content="#portal-breadcrumbs" css:theme-children="#map" />
 
     </rules>
 

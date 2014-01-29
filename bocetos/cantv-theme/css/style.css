@@ -4,23 +4,20 @@ body {
 }
 
 #top {
-     width:100%;
-     height: 3%;
-     text-align: center;
-     background-image:url('./images/banner.png');
+    width:100%;
+    height: 3%;
+    text-align: center;
+    background-image:url('./images/banner.png');
 }
 
-#menu {
-     width:100%;
-     text-align: left;
-     
+#map {
+    font-size: 24px;
+    background-color: #ede9e3;
 }
 
-#mapa {
-     width:100%;
-     height: 2%;
-     font-size: 24px;
-     background-color: #ede9e3;
+#map #portal-breadcrumbs * {
+    color: black;
+    margin: 0px;
 }
 
 #med {
@@ -30,36 +27,31 @@ body {
 }
 
 #med-top {
-     width: 100%;
-     height: 25%;
-     border-style:solid;
-     border-width:1px;
-     text-align: center; 
+    width: 100%;
+    height: 25%;
+    text-align: center;
 }
 
 #med-med {
-     text-align: center;
+    text-align: center;
 }
 
 #med-bottom {
-     width: 100%;
-     height: 15%;
-     border-style:solid;
-     border-width:1px;
-     text-align: center;
+    width: 100%;
+    height: 15%;
+    text-align: center;
 }
 
 #bottom {
-     width: 100%;
-     clear: both;
-     border-style:solid;
-     border-width:1px;
-     text-align: center;
-     font-size: 24px;
+    width: 100%;
+    clear: both;
+    text-align: center;
+    font-size: 24px;
 }
 
 #menu #portal-globalnav {
     background-color: #c0c0c0;
+    margin: 0px;
 }
 
 #menu #portal-globalnav li a {
@@ -73,4 +65,21 @@ body {
 #menu #portal-globalnav .selected a,
 #menu #portal-globalnav a:hover {
     color: White;
+}
+
+#menu .LSBox {
+    background-color: #ede9e3;
+    float: right;
+}
+
+#med-med #edit-bar,
+#med-med #edit-bar * {
+    background-color: #ede9e3;
+    border-color: #ede9e3;
+    color: #990000;
+}
+
+#med-med #edit-bar #content-views a:hover{
+    color: black;
+    background-color: white;
 }
