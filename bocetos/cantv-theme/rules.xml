@@ -25,14 +25,16 @@
         <!-- Insert your own rules here -->
 
         <!-- Reemplazo la etiqueta menu por la barra de navegación-->
-        <replace css:content="#portal-globalnav" css:theme-children="#menu-left" />
+        <after css:content="#portaltab-news" css:theme-children="#menu-left" />
+        <after css:content="#portaltab-events" css:theme-children="#menu-left" />
+        <after css:content="#portaltab-Members" css:theme-children="#menu-right" />
 
         <!-- Inserto el menu de autenticación en el div mapa -->
-        <after css:content="#portal-personaltools" css:theme-children="#med" />
+        <after css:content="#portal-personaltools" css:theme-children="#menu-right" />
 
         <!-- Agregando buscador -->
         <drop css:content=".LSBox .searchSection" />
-        <after css:content="#portal-searchbox" css:theme-children="#menu" />>
+        <after css:content="#portal-searchbox" css:theme-children="#map" />
 
         <!-- Elimino el breadcrumbs del contenido -->
         <drop css:content="#portal-column-content #viewlet-above-content" />
@@ -44,10 +46,9 @@
         <!-- Elimino el texto del breadcrumbs -->
         <drop css:content="#portal-breadcrumbs #breadcrumbs-you-are-here" />
         <!-- Reemplazo la etiqueta mapa por el breadcrumbs -->
-        <replace css:content="#portal-breadcrumbs" css:theme-children="#map" />
+        <after css:content="#portal-breadcrumbs" css:theme-children="#map" />
 
         <after css:content="#portal-sitemap" css:theme-children="#bottom" />
-
     </rules>
 
 </rules>
