@@ -39,9 +39,9 @@
         <!-- Elimino el breadcrumbs del contenido -->
         <drop css:content="#portal-column-content #viewlet-above-content" />
         <!-- Reemplazo la etiqueta med por el contenido del sitio -->
-        <after css:content="#portal-column-one" css:theme-children="#med-top" />
-        <after css:content="#portal-column-content" css:theme-children="#med-med" />
-        <after css:content="#portal-column-two" css:theme-children="#med-bottom" />
+        <after css:content="#portal-column-one" css:theme-children="#cont-top" />
+        <after css:content="#portal-column-content" css:theme-children="#cont-med" />
+        <after css:content="#portal-column-two" css:theme-children="#cont-bottom" />
 
         <!-- Elimino el texto del breadcrumbs -->
         <drop css:content="#portal-breadcrumbs #breadcrumbs-you-are-here" />
