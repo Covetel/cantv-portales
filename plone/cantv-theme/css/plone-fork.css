@@ -40,3 +40,11 @@ iframe {
     border-width: 0;
     border-style: none;
 }
+
+#content #content-core a,
+#content #viewlet-below-content-title a,
+#content #viewlet-above-content-body a,
+#content #viewlet-above-content-body a,
+#content #viewlet-below-content-body a {
+    color: #990000;
+}
