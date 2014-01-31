@@ -105,36 +105,42 @@ body {
     margin: 0px;
 }
 
-#med {
+#cont {
     width: 100%;
     margin-top: 2px;
     margin-bottom: 2px;
 }
 
-#med-top {
-    width: 100%;
-    text-align: center;
-}
-
-#med-med {
-    text-align: center;
-}
-
-#med-bottom {
-    width: 100%;
-    text-align: center;
-}
-
-#med-med #edit-bar,
-#med-med #edit-bar * {
+#cont #edit-bar,
+#cont #edit-bar * {
     background-color: #ede9e3;
     border-color: #ede9e3;
     color: #990000;
 }
 
-#med-med #edit-bar #content-views a:hover{
+#cont #edit-bar #content-views a:hover{
     color: black;
     background-color: white;
+}
+
+#cont div.managePortletsLink,
+#cont div.managePortletsLink a {
+    background-color: #ede9e3;
+    color: #990000;
+}
+
+#cont-top {
+    width: 100%;
+    text-align: center;
+}
+
+#cont-med {
+    text-align: center;
+}
+
+#cont-bottom {
+    width: 100%;
+    text-align: center;
 }
 
 #bottom {
