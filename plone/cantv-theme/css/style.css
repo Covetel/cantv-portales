@@ -15,54 +15,12 @@ body {
     height: 40px;
 }
 
-#map {
-    background-color: #ede9e3;
-    height: 25px;
-}
-
-#map #portal-breadcrumbs,
-#map #portal-breadcrumbs * {
-    font-size: 18px;
-    color: black;
-    margin: 0px;
-}
-
-#map #portal-searchbox {
-    margin: 0px;
-}
-
-#med {
-    width: 100%;
-    margin-top: 1%;
-    margin-bottom: 1%;
-}
-
-#med-top {
-    width: 100%;
-    text-align: center;
-}
-
-#med-med {
-    text-align: center;
-}
-
-#med-bottom {
-    width: 100%;
-    text-align: center;
-}
-
-#bottom {
-    width: 100%;
-    clear: both;
-    text-align: center;
-    font-size: 24px;
-}
-
 #menu #menu-left {
     background-color: #c0c0c0;
     margin: 0px;
     width: 70%;
     float: left;
+    height: 40px;
 }
 
 #menu #menu-left li a {
@@ -88,6 +46,7 @@ body {
     margin: 0px;
     width: 30%;
     float: right;
+    height: 40px;
 }
 
 #menu #menu-right li a {
@@ -119,6 +78,53 @@ body {
     float: right;
 }
 
+#menu * ul {
+    list-style-type: none;
+    margin: 0px;
+}
+
+#menu * li {
+    list-style-type: none;
+    margin: 0px;
+}
+
+#map {
+    background-color: #ede9e3;
+    height: 25px;
+    margin: 1px;
+}
+
+#map #portal-breadcrumbs,
+#map #portal-breadcrumbs * {
+    font-size: 18px;
+    color: black;
+    margin: 0px;
+}
+
+#map #portal-searchbox {
+    margin: 0px;
+}
+
+#med {
+    width: 100%;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#med-top {
+    width: 100%;
+    text-align: center;
+}
+
+#med-med {
+    text-align: center;
+}
+
+#med-bottom {
+    width: 100%;
+    text-align: center;
+}
+
 #med-med #edit-bar,
 #med-med #edit-bar * {
     background-color: #ede9e3;
@@ -131,3 +137,9 @@ body {
     background-color: white;
 }
 
+#bottom {
+    width: 100%;
+    clear: both;
+    text-align: center;
+    font-size: 24px;
+}
