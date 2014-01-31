@@ -138,6 +138,10 @@ body {
     text-align: center;
 }
 
+#cont-med li {
+    text-align: justify;
+}
+
 #cont-bottom {
     width: 100%;
     text-align: center;
