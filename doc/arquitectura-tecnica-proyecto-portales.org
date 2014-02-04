@@ -83,6 +83,32 @@
 * Arquitectura Técnica TI
 
 ** Estrategia de Acceso (Autenticación, Autorización y Auditoria)
+
+*** Autenticación 
+
+Plone posee una base datos de usuario propia, pero se recomienda utilizar un
+repositorio de usuarios externo, como un servidor compatible con la tecnología
+de LDAP.
+\\
+
+LDAP (Lightweight Directory Access Protocol) es un protocolo estándar para
+acceso y modificación de datos usando servicios de directorio que operan sobre
+el protocolo TCP/IP. 
+\\
+
+Existen varias implementaciones del protocolo LDAP, tales como /Microsoft
+Active Directory/, /Novell/, /Sun One/, /OpenLDAP/.
+\\
+
+Nuestro equipo recomienda el uso de /OpenLDAP/ como /backend/ de
+autenticación de usuarios. /OpenLDAP/ es un proyecto de Software Libre que
+implementa el protocolo /LDAP/.
+\\
+
+Actualmente CANTV posee una plataforma de servicios de directorios basada en
+/OpenLDAP/, en donde ya se encuentran los usuarios corporativos de la empresa,
+recomendamos utilizar esta plataforma.
+
 ** Estrategia de Entornos Operativos
 ** Dimensionamiento de la Plataforma Tecnológica 
 ** Definición de Estrategia de Transposición entre los Entornos Operativos
