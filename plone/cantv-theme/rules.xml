@@ -25,6 +25,7 @@
         <!-- Insert your own rules here -->
 
         <!-- Reemplazo la etiqueta menu por la barra de navegación-->
+        <after css:content="#portaltab-index_html" css:theme-children="#menu-left" />
         <after css:content="#portaltab-news" css:theme-children="#menu-left" />
         <after css:content="#portaltab-events" css:theme-children="#menu-left" />
         <after css:content="#portaltab-Members" css:theme-children="#menu-right" />
