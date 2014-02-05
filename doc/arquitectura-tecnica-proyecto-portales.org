@@ -109,6 +109,33 @@ Actualmente CANTV posee una plataforma de servicios de directorios basada en
 /OpenLDAP/, en donde ya se encuentran los usuarios corporativos de la empresa,
 recomendamos utilizar esta plataforma.
 
+*** =plone.app.ldap=
+
+Existe un componente de Plone llamado =plone.app.ldap=, este componente provee
+un panel de control para manejar los usuarios y grupos que se encuentran en la
+plataforma de directorio /LDAP/ al que este conectado.
+
+Este compomente provee las funcionalidades desarrolladas por el módulo
+=PloneLDAP= [fn:1] y está construido usando las librerías =LDAPMultiPlugins=
+[fn:2] y =LDAPUserFolder= [fn:2].
+
+Este componente integra el /backend/ LDAP a Plone de la siguiente manera: 
+
+ 1. Los usuarios en la base de datos LDAP pueden ser usados como usuarios normales
+    de Plone, se puede buscar entre los usuarios, asignar roles, crear
+    usuarios y eliminar usuarios. [fn:3]
+ 2. Los grupos en la base de datos LDAP pueden ser usados como grupos normales
+    de Plone. se puede verlos, manejar los miembros de un grupo, crear nuevos
+    grupos, remover los grupos. Es importante destacar que los grupos /LDAP/
+    solo pueden tener como miembros a usuarios /LDAP/, los usuarios /LDAP/
+    pueden ser miembros de grupos internos de Plone que no están en /LDAP/.
+ 3. Las propiedades de pertenencia a grupos de los usuarios LDAP no necesitan
+    guardarse completamente en el directorio LDAP, pude combinar propiedades
+    almacenadas en LDAP con propiedades almacenadas en ZODB.
+
+Nota: Si usa Active Directory como backend de este componente, todo el acceso
+es de solo lectura, no podrá escribir o modificar entradas en el directorio.
+
 ** Estrategia de Entornos Operativos
 ** Dimensionamiento de la Plataforma Tecnológica 
 ** Definición de Estrategia de Transposición entre los Entornos Operativos
@@ -121,3 +148,7 @@ recomendamos utilizar esta plataforma.
 ** Estrategia Administración Técnica de Entornos Operativos
 ** Estrategia Certificación Técnica de la Plataforma
 ** Estrategia de Servicio y Soporte
+
+[fn:1] [[http://plone.org/products/ploneldap/][PloneLDAP]]
+[fn:2] [[http://www.dataflake.org/software/ldapmultiplugins/][LDAPMultiPlugins]]
+[fn:3] Se recomienda configurar el componente para que no se puedan crear ni eliminar usuarios, ya que estos son funciones de otras gerencias.
