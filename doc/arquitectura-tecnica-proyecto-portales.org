@@ -82,9 +82,9 @@
 
 * Arquitectura Técnica TI
 
-** Estrategia de Acceso (Autenticación, Autorización y Auditoria)
+** Estrategia de Acceso (Autenticación, Autorización y Auditoría)
 
-*** Autenticación 
+*** Autenticación
 
 Plone posee una base datos de usuario propia, pero se recomienda utilizar un
 repositorio de usuarios externo, como un servidor compatible con la tecnología
@@ -116,8 +116,8 @@ un panel de control para manejar los usuarios y grupos que se encuentran en la
 plataforma de directorio /LDAP/ al que este conectado.
 
 Este compomente provee las funcionalidades desarrolladas por el módulo
-=PloneLDAP= [fn:1] y está construido usando las librerías =LDAPMultiPlugins=
-[fn:2] y =LDAPUserFolder= [fn:2].
+=PloneLDAP= [fn:1] y está construido usando las librerías =LDAPMultiPlugins= y =LDAPUserFolder= [fn:2].
+\\
 
 Este componente integra el /backend/ LDAP a Plone de la siguiente manera: 
 
@@ -135,6 +135,77 @@ Este componente integra el /backend/ LDAP a Plone de la siguiente manera:
 
 Nota: Si usa Active Directory como backend de este componente, todo el acceso
 es de solo lectura, no podrá escribir o modificar entradas en el directorio.
+
+** Auditoría
+
+*** Entidades de Seguridad
+
+Primero lo primero, para entender cómo funciona la seguridad en Plone, hay que
+llamar a cada cosa por su nombre y saber donde viven dentro de
+Plone. Los usuarios, grupos y roles viven dentro del objeto /Plone PAS/, que es un
+reemplazo del concepto conocido como =user folder= en la jerga de /Zope/.
+
+/PAS/ hace más cosas que guardar usuarios en la /ZODB/, PAS se encarga de
+gestionar los grupos, la pertenencia de los usuarios a los grupos (miembros de
+grupo), los roles y su asignación. Pero la característica más importante de
+/PAS/ descansa en la palabra /Pluggable/. Podemos extender la funcionalidad de
+/PAS/ a través de /plugins/ que nos permiten conectarnos a otra base de datos
+de usuarios y grupos.
+
+Ahora, veamos uno de los tópicos más importantes de la seguridad en Plone.
+
+*** Roles 
+
+Los roles en Plone son etiquetas (/tags/) asignadas a nuestros grupos o
+usuarios. Estas etiquetas tienen valor significativo sobre los permisos y
+derechos del usuario o grupo.
+
+Existen siete (7) roles principales en una instalación de Plone: 
+
+#+Caption: Roles de Plone
+#+LABEL: tbl:roles_plone
+#+ATTR_LaTeX: longtable align=m{4cm}p{9cm}
+
+|----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *Rol*                | *Propósito*                                                                                                                                                                                                                                                                                                                     |
+|----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| .                    |                                                                                                                                                                                                                                                                                                                                 |
+| *Member*             | Todos los usuarios tienen ese rol por defecto. Este rol otorga los permisos mínimos que cada usuario debe tener.                                                                                                                                                                                                                |
+| .                    |                                                                                                                                                                                                                                                                                                                                 |
+| *Manager*            | Este rol otorga los privilegios más altos del portal.                                                                                                                                                                                                                                                                           |
+| .                    |                                                                                                                                                                                                                                                                                                                                 |
+| *Site Administrator* | Este rol fue introducido en la versión 4.1 de Plone, nos permite otorgarle a los usuarios el permiso de cambiar las configuraciones del panel de control de Plone, adicionalmente ver y editar casi todo el contenido, sin otorgar acceso a las acciones potencialmente destructivas de la /Interfaz de Gestión de Zope/ (ZMI). |
+| .                    |                                                                                                                                                                                                                                                                                                                                 |
+| *Reviewer*           | Los usuarios con este rol, el cual es otorgado al grupo /Reviewers/, pueden ver y aprobar contenido que ha sido enviado para revisión (/review/).                                                                                                                                                                               |
+| .                    |                                                                                                                                                                                                                                                                                                                                 |
+| *Reader*             | Cuando se asigna el rol /Reader/, el usuario podrá ver un objeto de tipo contenido, incluso cuando usuarios normales (/Members/) no puedan ver este contenido, como por ejemplo con un objeto privado.                                                                                                                          |
+| .                    |                                                                                                                                                                                                                                                                                                                                 |
+| *Editor*             | Este rol es la contraparte del rol /Reader/, este rol se utiliza para otorgar permisos locales de modificación.                                                                                                                                                                                                                 |
+| .                    |                                                                                                                                                                                                                                                                                                                                 |
+| *Contributor*        | Este rol se utiliza para delegar el permiso de agregar elementos de contenido a las carpetas.                                                                                                                                                                                                                                   |
+
+\clearpage 
+
+Adicionalmente /Zope/ define tres (3) roles automáticamente asignables: 
+
+
+#+Caption: Roles de Zope
+#+LABEL: tbl:roles_zope
+#+ATTR_LaTeX: longtable align=m{4cm}p{9cm}
+
+
+|---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *Rol*         | *Propósito*                                                                                                                                                                      |
+|---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| .             |                                                                                                                                                                                  |
+| *Owner*       | Este rol es asignado al dueño del contenido en cuestión. Normalmente es otorgado al usuario que ha creado el elemento.                                                           |
+| .             |                                                                                                                                                                                  |
+| *Authenticated* | Este rol es asignado a todos los usuarios que se han autenticado. Este rol es de más bajo privilegio que el rol /Member/ y no puede ser revocado o otorgado de manera explícita. |
+| .             |                                                                                                                                                                                  |
+| *Anonymous*   | Este rol es asignado a todos los usuarios que no se han autenticado. Existe un usuario especial llamado /Anonymous/ que siempre tiene este rol .                                 |
+
+
+
 
 ** Estrategia de Entornos Operativos
 ** Dimensionamiento de la Plataforma Tecnológica 
