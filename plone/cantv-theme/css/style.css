@@ -23,6 +23,10 @@ body {
     height: 40px;
 }
 
+#menu #menu-left li {
+    border-right: 0.1em solid white;
+}
+
 #menu #menu-left li a {
     background: #c0c0c0;
     color: #990000;
@@ -33,7 +37,6 @@ body {
     padding: 13px;
     min-width: 6em;
     white-space: normal;
-    border-right: 0.1em solid white;
 }
 
 #menu #menu-left .selected a,
