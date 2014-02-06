@@ -49,6 +49,6 @@ iframe {
     color: #990000;
 }
 
-div.portletCarouselWrapper a:link, a:visited{
+div.portletCarouselWrapper a {
         color: #990000;
 }

@@ -12,23 +12,21 @@ body {
 
 #menu {
     width: 100%;
-    height: 40px;
+    height: 50px;
+    background-color: #c0c0c0;
 }
 
 #menu #menu-left {
-    background-color: #c0c0c0;
     margin: 0px;
     width: 70%;
     float: left;
-    height: 40px;
 }
 
-#menu #menu-left li {
+#menu ul#menu-left li {
     border-right: 0.1em solid white;
 }
 
 #menu #menu-left li a {
-    background: #c0c0c0;
     color: #990000;
     text-align: center;
     font-size: 11px;
@@ -37,6 +35,7 @@ body {
     padding: 13px;
     min-width: 6em;
     white-space: normal;
+    width: 12px;
 }
 
 #menu #menu-left .selected a,
@@ -45,23 +44,20 @@ body {
 }
 
 #menu #menu-right {
-    background-color: #c0c0c0;
     margin: 0px;
     width: 30%;
     float: right;
-    height: 40px;
+    text-align: right;
 }
 
 #menu #menu-right li a {
-    background: #c0c0c0;
-    color: #990000;
+    color: black;
     text-align: center;
     font-size: 11px;
-    font-weight:bold;
     display: inline-block;
-    padding: 13px;
-    min-width: 6em;
-    white-space: normal;
+    text-decoration: underline;
+    margin-top: 20px;
+    margin-right: 15px;
 }
 
 #menu #menu-right .selected a,
@@ -69,8 +65,8 @@ body {
     color: White;
 }
 
-#menu-right #portal-personaltools,
-#menu-right #portal-personaltools * {
+#map #portal-personaltools,
+#map #portal-personaltools * {
     background-color: #ede9e3;
     color: #990000;
     text-align: center;
@@ -94,6 +90,14 @@ body {
 #menu ul#menu-left li.selected a {
     background:url('./images/menu_selected.png') no-repeat center bottom;
     height: 30px;
+}
+
+#menu ul#menu-left li#portaltab-empresas-privadas.selected a,
+#menu ul#menu-left li#portaltab-instituciones-publicas.selected a,
+#menu ul#menu-left li#portaltab-telco-publicas.selected a,
+#menu ul#menu-left li#portaltab-operadores-telco.selected a {
+    background:url('./images/menu_selected.png') no-repeat center bottom;
+    height: 43px;
 }
 
 #submenu {
