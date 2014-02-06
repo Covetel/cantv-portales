@@ -124,6 +124,7 @@ body {
 }
 
 #cont div.managePortletsLink,
+#cont a.managePortletsFallback,
 #cont div.managePortletsLink a {
     background-color: #ede9e3;
     color: #990000;
