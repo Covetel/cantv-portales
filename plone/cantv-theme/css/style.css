@@ -88,6 +88,10 @@ body {
     margin: 0px;
 }
 
+#menu ul#menu-left li.selected * {
+    background:url('./images/menu_selected.png') no-repeat center bottom;
+}
+
 #map {
     background-color: #ede9e3;
     height: 25px;
@@ -103,6 +107,13 @@ body {
 
 #map #portal-searchbox {
     margin: 0px;
+}
+
+#search {
+    background: url('./images/search_icon.png') no-repeat;
+    background-size: 18px;
+    width: 245px;
+    float: right;
 }
 
 #cont {

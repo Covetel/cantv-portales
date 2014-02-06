@@ -35,7 +35,7 @@
 
         <!-- Agregando buscador -->
         <drop css:content=".LSBox .searchSection" />
-        <after css:content="#portal-searchbox" css:theme-children="#map" />
+        <after css:content="#portal-searchbox" css:theme-children="#search" />
 
         <!-- Elimino el breadcrumbs del contenido -->
         <drop css:content="#portal-column-content #viewlet-above-content" />
