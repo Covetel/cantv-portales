@@ -48,3 +48,7 @@ iframe {
 #content #viewlet-below-content-body a {
     color: #990000;
 }
+
+div.portletCarouselWrapper a {
+        color: #990000;
+}

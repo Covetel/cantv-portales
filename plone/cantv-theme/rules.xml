@@ -25,16 +25,24 @@
         <!-- Insert your own rules here -->
 
         <!-- Reemplazo la etiqueta menu por la barra de navegación-->
-        <after css:content="#portaltab-news" css:theme-children="#menu-left" />
-        <after css:content="#portaltab-events" css:theme-children="#menu-left" />
+        <after css:content="#portaltab-index_html" css:theme-children="#menu-left" />
+        <after css:content="#portaltab-empresas-privadas" css:theme-children="#menu-left" />
+        <after css:content="#portaltab-instituciones-publicas" css:theme-children="#menu-left" />
+        <after css:content="#portaltab-telco-publicas" css:theme-children="#menu-left" />
+        <after css:content="#portaltab-operadores-telco" css:theme-children="#menu-left" />
+        <after css:content="#portaltab-imagenes" css:theme-children="#menu-right" />
         <after css:content="#portaltab-Members" css:theme-children="#menu-right" />
+        <after css:content="#portaltab-somos-cantv" css:theme-children="#menu-right" />
+        <after css:content="#portaltab-jubilados" css:theme-children="#menu-right" />
+        <after css:content="#portaltab-contactenos" css:theme-children="#menu-right" />
+        <after css:content="#portaltab-oportunidades" css:theme-children="#menu-right" />
 
         <!-- Inserto el menu de autenticación en el div mapa -->
-        <after css:content="#portal-personaltools" css:theme-children="#menu-right" />
+        <after css:content="#portal-personaltools" css:theme-children="#map" />
 
         <!-- Agregando buscador -->
         <drop css:content=".LSBox .searchSection" />
-        <after css:content="#portal-searchbox" css:theme-children="#map" />
+        <after css:content="#portal-searchbox" css:theme-children="#search" />
 
         <!-- Elimino el breadcrumbs del contenido -->
         <drop css:content="#portal-column-content #viewlet-above-content" />
