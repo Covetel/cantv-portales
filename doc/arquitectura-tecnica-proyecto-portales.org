@@ -19,7 +19,7 @@
 * Introducción
 
 * Objeto y campo de aplicación
-
+  
 * Requerimientos técnicos de Arquitectura
 
 ** Análisis técnico del modelo funcional de la solución propuesta
@@ -136,9 +136,9 @@ Este componente integra el /backend/ LDAP a Plone de la siguiente manera:
 Nota: Si usa Active Directory como backend de este componente, todo el acceso
 es de solo lectura, no podrá escribir o modificar entradas en el directorio.
 
-** Auditoría
+*** Auditoría
 
-*** Entidades de Seguridad
+**** Entidades de Seguridad
 
 Primero lo primero, para entender cómo funciona la seguridad en Plone, hay que
 llamar a cada cosa por su nombre y saber donde viven dentro de
@@ -154,7 +154,7 @@ de usuarios y grupos.
 
 Ahora, veamos uno de los tópicos más importantes de la seguridad en Plone.
 
-*** Roles 
+**** Roles 
 
 Los roles en Plone son etiquetas (/tags/) asignadas a nuestros grupos o
 usuarios. Estas etiquetas tienen valor significativo sobre los permisos y
@@ -188,7 +188,6 @@ Existen siete (7) roles principales en una instalación de Plone:
 
 Adicionalmente /Zope/ define tres (3) roles automáticamente asignables: 
 
-
 #+Caption: Roles de Zope
 #+LABEL: tbl:roles_zope
 #+ATTR_LaTeX: longtable align=m{4cm}p{9cm}
@@ -204,10 +203,65 @@ Adicionalmente /Zope/ define tres (3) roles automáticamente asignables:
 | .             |                                                                                                                                                                                  |
 | *Anonymous*   | Este rol es asignado a todos los usuarios que no se han autenticado. Existe un usuario especial llamado /Anonymous/ que siempre tiene este rol .                                 |
 
+**** Auditoría sobre los cambios en entidades de seguridad.
 
-
+Actualmente un cambio sobre las entidades de seguridad de Plone (usuarios,
+grupos, roles) no se registra en el /Log/ de eventos bajo ningún nivel de
+depuración. Es necesario modificar el código fuente de la interfaz desde donde
+se administran las entidades de seguridad de Plone. 
 
 ** Estrategia de Entornos Operativos
+
+*** Arquitectura.
+
+Se recomienda utilizar una arquitectura unificada de 64 Bits en los servidores
+que componen la solución.
+
+*** Sistema Operativo.
+
+El sistema operativo recomendado para los servidores que componen la solución
+es la versión estable para el momento de pase a producción de Debian
+GNU/Linux.
+
+*** Bases de Datos.
+
+Por favor deje de pensar en bases de datos relacionales por un momento, si por
+favor deje de pensar en tablas, tuplas, campos y el lenguaje SQL. Déjenos
+presentarle a /ZODB/.
+\\
+
+/ZODB/ es una base de datos orientada a objetos para almacenar objetos de
+=python= de manera persistente y transparente. Esta incluida como parte del
+proyecto /Zope/ pero puede ser usada de manera independiente fuera de /Zope/. 
+\\
+
+La razón para no usar un sistema de base de datos relacional para este
+proyecto es fácil de entender. Es más natural para un manejador de contenidos
+almacenar datos en objetos que dependen de una capa de abstracción que
+convertir el objeto que esta almacenando a campos en una tabla (o varios
+campos a través de varias tablas) y nuevamente el proceso inverso al traer los
+datos de un objeto que esta en la base de datos relacional. En todos los
+aspectos, es más fácil almacenar el objeto directamente y de manera
+transparente en la base de datos como un objeto.
+\\
+
+Plone almacena el contenido del portal, los componentes, las plantillas y todo
+el código necesario en /ZODB/. El contenido es guardado en la base de datos
+utilizando una estructura en árbol jerárquica desde la raíz del sitio de
+Plone. Cada elemento de contenido es un objeto y la meta-data asociada a este
+objeto como titulo, descripción, cuerpo, entre otros son los atributos del
+objeto. Para aplicaciones como un manejador de contenidos, es más eficiente
+almacenar el contenido en esta forma natural. 
+\\
+
+En la siguiente lista podemos ver las características principales de ZODB:
+
+ - Transacciones
+ - Historial / (undo)
+ - Almacenamiento adaptable a través de módulos. (/pluggable/)
+ - Sistema de cache integrado
+ - Control de concurrencia mediante versiones múltiples (MVCC)
+
 ** Dimensionamiento de la Plataforma Tecnológica 
 ** Definición de Estrategia de Transposición entre los Entornos Operativos
 ** Definición de Estrategia de Incorporación de Nuevas Funcionalidades. (desarrollos)
