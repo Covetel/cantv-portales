@@ -262,6 +262,48 @@ En la siguiente lista podemos ver las características principales de ZODB:
  - Sistema de cache integrado
  - Control de concurrencia mediante versiones múltiples (MVCC)
 
+
+*** Servidor Web.
+
+Es técnicamente posible configurar una instancia de /Zope/ para que escuche en
+el puerto 80 =HTTP=, pero no es lo recomendado. Un servidor web dedicado va a
+hacer un mejor trabajo atendiendo un número mayor de peticiones de conexión,
+manejando los picos de tráfico, las peticiones inválidas y potencialmente
+maliciosas. Además, /Zope/ no tiene soporte /SSL/ nativo (/HTTPS/). Por lo
+tanto, un entorno de producción de Plone emplea un servidor web delante de
+/Zope/ como proxy reveso. 
+
+El servidor web recomendado para utilizar como proxy reverso con Plone es
+/Nginx/. Es muy rápido y fácil de configurar. Se utilizan los módulos de
+=proxy= y =rewrite= para hacer proxy reverso contra /Zope/ y reescrituras para
+el trabajo de /hosting/ virtual. 
+
+**** *¿Porque Nginx?*
+
+Para grandes entornos de producción, en servidores web nos enfrenamos al
+problema de escalabilidad y rendimiento. Para resolver este problema Igor
+Sysoev[fn:4] en el año 2002 comenzó a desarrollar un servidor web escrito en
+el lenguaje de programación C. 
+
+La implementación de /Nginx/ para atender las peticiones es muy diferente a la
+implementación convencional de los servidores web basada en el modelo de
+varios hilos de ejecución, por cada cliente que hace una petición hay un hilo
+de ejecución que esta completamente separado y esta dedicado para atender
+estas peticiones. Esto causa problemas de bloqueo de I/O cuando los procesos
+están esperando por terminar con la petición y liberar los recursos usados
+(memoria, CPU). Adicionalmente la creación de procesos separados consume más
+recursos.
+
+/Nginx/ soluciona este problema utilizando una técnica de programación
+conocida como /event-driven/[fn:5], logrando de esta manera un servidor web
+asíncrono, /non-blocking/, y una arquitectura basada en un solo hilo de
+ejecución trabajando con múltiples procesos asíncronos. Esto hace a /Nginx/ un
+servidor web mucho más rápido y escalable que el conocido /Apache/ para
+entornos de alto desempeño.
+
+*** Entorno 
+
+
 ** Dimensionamiento de la Plataforma Tecnológica 
 ** Definición de Estrategia de Transposición entre los Entornos Operativos
 ** Definición de Estrategia de Incorporación de Nuevas Funcionalidades. (desarrollos)
@@ -277,3 +319,5 @@ En la siguiente lista podemos ver las características principales de ZODB:
 [fn:1] [[http://plone.org/products/ploneldap/][PloneLDAP]]
 [fn:2] [[http://www.dataflake.org/software/ldapmultiplugins/][LDAPMultiPlugins]]
 [fn:3] Se recomienda configurar el componente para que no se puedan crear ni eliminar usuarios, ya que estos son funciones de otras gerencias.
+[fn:4] http://en.wikipedia.org/wiki/Igor_Sysoev
+[fn:5] http://en.wikipedia.org/wiki/Event-driven_programming 
