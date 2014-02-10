@@ -23,12 +23,32 @@
 Este documento contiene las recomendaciones de /Hardware/ para la plataforma
 de portales de CANTV y el portal de autogestión.
 
+*** Recomendación: capa de seguridad
+
+Es importante destacar que defender aplicaciones web es una tarea compleja, se
+requieren grandes cantidades de recursos de computo, personal capacitado en el
+área de seguridad y plataforma para atender un incidente y un conocimiento
+profundo de los componentes involucrados en la aplicación web que se está
+defendiendo.
+
+Por lo expuesto en el párrafo anterior, el equipo considera fuera del alcance
+de este documento la capa de seguridad. Sin embargo recomendamos tomar en
+cuenta los siguientes principios para diseñar una capa de seguridad para este
+proyecto.
+
+ 1. Evaluar las políticas de seguridad de CANTV para diseñar un capa de
+    seguridad que cumpla con las políticas actuales de la organización.
+ 2. Utilizar el componente /ModSecurity/ como /Web Application Firewall/.
+ 3. Implementar un entorno de calidad, en donde se prueben las reglas de
+    seguridad tomando en cuenta amenzas más comunes.
+ 4. Implementar un infraestructura para el análisis efectivo de las bitácoras
+    (/Logs/) de todos los componentes de la plataforma. 
+ 5. Seguir las recomendaciones de la organización /OWASP/ [fn:4]
+
+
 ## ** Definiciones y Acrónimos
 
 ## ** Referencias
-
-
-
 
 * Descripción General
 
@@ -36,7 +56,7 @@ de portales de CANTV y el portal de autogestión.
 
 ** Capas
 
-La plataforma esta diseñada en función de cinco (5): 
+La plataforma esta diseñada en función de cinco (5) capas: 
 
  1. *Servidores Web:* Esta capa atiende las conexiones bajo el
     protocolo /HTTP/ que provienen de los clientes de la plataforma. Es
@@ -55,14 +75,20 @@ La plataforma esta diseñada en función de cinco (5):
  4. *Clientes ZEO:* /ZEO/ Es la tecnología de balanceo de carga usada con
     /Zope/.
 
-#+CAPTION: Capas de la Arquitectura
-#+NAME: fig:capas
+#+CAPTION: Entorno de Producción
+#+NAME: capas
+[[./diagramas/cantv-arq-hardware-plone-prod.png]]
 
-[[./images/layers.png]]
+\clearpage
+
+#+CAPTION: Entorno de Desarrollo y Calidad
+#+NAME: capas
+[[./diagramas/cantv-arq-hardware-plone-dev.png]]
+
 
 
 * Requerimientos Específicos
-
+  
 ** Servidores Web
 
 *** Software a implementar
@@ -84,7 +110,7 @@ Esta capa es la encargada de ofercer la capacidad de que los usuarios
 se conecten al portal usando cifrado SSL para confidencialidad y
 protección de sus datos personales.
 
-*** Hardware recomendado
+*** Hardware recomendado para producción
 
 #+CAPTION: Recomendaciones de Hardware Capa Servidores Web
 #+LABEL: tbl:tabla_webserver
@@ -100,6 +126,42 @@ protección de sus datos personales.
 | Disco Duro   | 4 GB                                      |
 |--------------+-------------------------------------------|
 | Servidores   | 6                                         |
+|--------------+-------------------------------------------|
+
+*** Hardware recomendado para desarrollo
+
+#+CAPTION: Recomendaciones de Hardware Capa Servidores Web
+#+LABEL: tbl:tabla_webserver
+#+ATTR_LaTeX: longtable align=|l|l|
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 1 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 1                                         |
+|--------------+-------------------------------------------|
+
+*** Hardware recomendado para calidad
+
+#+CAPTION: Recomendaciones de Hardware Capa Servidores Web
+#+LABEL: tbl:tabla_webserver
+#+ATTR_LaTeX: longtable align=|l|l|
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 2 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 2                                         |
 |--------------+-------------------------------------------|
 
 
@@ -118,7 +180,7 @@ Su versatilidad esta fundamentada en que posee un lenguaje de
 configuración, llamado /Varnish Configuration Language/ con el cual se
 logra representar el diseño que tenga en mente el administrador.
 
-*** Hardware recomendado
+*** Hardware recomendado para producción
 
 #+CAPTION: Recomendaciones de Hardware Capa Cache
 #+LABEL: tbl:tabla_cache
@@ -135,6 +197,44 @@ logra representar el diseño que tenga en mente el administrador.
 | Disco Duro   | 4 GB                                      |
 |--------------+-------------------------------------------|
 | Servidores   | 6                                         |
+|--------------+-------------------------------------------|
+
+*** Hardware recomendado para desarrollo
+
+#+CAPTION: Recomendaciones de Hardware Capa Cache
+#+LABEL: tbl:tabla_cache
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 1 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 1                                         |
+|--------------+-------------------------------------------|
+
+*** Hardware recomendado para calidad
+
+#+CAPTION: Recomendaciones de Hardware Capa Cache
+#+LABEL: tbl:tabla_cache
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 2 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 2                                         |
 |--------------+-------------------------------------------|
 
 
@@ -160,7 +260,7 @@ concurrentes
 Es una alternativa muy útil a la hora de agregar la característica de
 "Alta Disponbilidad" a una plataforma de servicios.
 
-*** Hardware recomendado
+*** Hardware recomendado para producción
 
 #+CAPTION: Recomendaciones de Hardware Capa Balanceador
 #+LABEL: tbl:tabla_balanceador
@@ -176,10 +276,49 @@ Es una alternativa muy útil a la hora de agregar la característica de
 |--------------+-------------------------------------------|
 | Disco Duro   | 4 GB                                      |
 |--------------+-------------------------------------------|
+| Servidores   | 3                                         |
+|--------------+-------------------------------------------|
+
+    
+*** Hardware recomendado para desarrollo
+
+#+CAPTION: Recomendaciones de Hardware Capa Balanceador
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 1, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 1 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
 | Servidores   | 1                                         |
 |--------------+-------------------------------------------|
 
 
+*** Hardware recomendado para calidad
+
+#+CAPTION: Recomendaciones de Hardware Capa Balanceador
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 1, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 2 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 2                                         |
+|--------------+-------------------------------------------|
+
+    
 
 ** /Clientes ZEO/ 
 
@@ -196,7 +335,7 @@ Son además los que se encargan de conectarse con el servidor ZEO para
 extraer información de las diferentes instancias Zope (cada Portal)
 que está almacenado en nuestro /servidor ZEO - ZODB/
 
-*** Hardware recomendado
+*** Hardware recomendado para producción
 
 #+CAPTION: Recomendaciones de Hardware para Capa Cliente Zeo 
 #+LABEL: tbl:tabla_balanceador
@@ -213,6 +352,44 @@ que está almacenado en nuestro /servidor ZEO - ZODB/
 | Disco Duro   | 20 GB                                     |
 |--------------+-------------------------------------------|
 | Servidores   | 6                                         |
+|--------------+-------------------------------------------|
+
+*** Hardware recomendado para desarrollo
+
+#+CAPTION: Recomendaciones de Hardware para Capa Cliente Zeo 
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 4, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 8 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 10 GB                                     |
+|--------------+-------------------------------------------|
+| Servidores   | 2                                         |
+|--------------+-------------------------------------------|
+
+*** Hardware recomendado para calidad
+
+#+CAPTION: Recomendaciones de Hardware para Capa Cliente Zeo 
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 4, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 8 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 10 GB                                     |
+|--------------+-------------------------------------------|
+| Servidores   | 2                                         |
 |--------------+-------------------------------------------|
 
 
@@ -238,7 +415,7 @@ de esas instancias virtuales se aprovisionen en nodos UCS distintos,
 para garantizar el funcionamiento adecuado de la propuesta de alta
 disponibilidad.
 
-*** Hardware recomendado
+*** Hardware recomendado para producción
 
 #+CAPTION: Recomendaciones de Hardware para Capa Zeo Server
 #+LABEL: tbl:tabla_balanceador
@@ -257,6 +434,44 @@ disponibilidad.
 | Servidores   | 2 (alta disponibilidad activo-pasivo)          |
 |--------------+------------------------------------------------|
 
+*** Hardware recomendado para desarrollo
+
+#+CAPTION: Recomendaciones de Hardware para Capa Zeo Server
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+------------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*                    |
+|--------------+------------------------------------------------|
+| Procesador   | *CPU Cores:* 20, *CPU Clock Freq:* 1.7 GHz     |
+|--------------+------------------------------------------------|
+| RAM          | 16 GB                                          |
+|--------------+------------------------------------------------|
+| Disco Duro   | 15 GB                                          |
+|--------------+------------------------------------------------|
+| Servidores   | 1                                              |
+|--------------+------------------------------------------------|
+
+*** Hardware recomendado para calidad
+
+#+CAPTION: Recomendaciones de Hardware para Capa Zeo Server
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+------------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*                    |
+|--------------+------------------------------------------------|
+| Procesador   | *CPU Cores:* 10, *CPU Clock Freq:* 1.7 GHz     |
+|--------------+------------------------------------------------|
+| RAM          | 32 GB                                          |
+|--------------+------------------------------------------------|
+| Disco Duro   | 15 GB (almacenamiento local de alta velocidad) |
+|--------------+------------------------------------------------|
+| Servidores   | 2 (alta disponibilidad activo-pasivo)          |
+|--------------+------------------------------------------------|
+    
 
 ** /Blob Storage/
 
@@ -284,3 +499,5 @@ van publicar en el Portal.
 | Almacenamiento | 100 GB (espacio compartido por NFS en red) |
 |----------------+--------------------------------------------|
     
+
+[fn:4] [[https://www.owasp.org/index.php/Category:OWASP_Best_Practices:_Use_of_Web_Application_Firewalls]] 
