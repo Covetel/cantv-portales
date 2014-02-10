@@ -18,7 +18,11 @@
 
 * Introducción
 
+En el marco de la ley infogobierno publicada en gaceta ... 
+
 * Objeto y campo de aplicación
+
+Migración de Portales CANTV.NET y CANTV.COM.VE a Software Libre.
 
 * Requerimientos técnicos de Arquitectura
 
@@ -44,11 +48,29 @@
 
 *** Sistemas a sustituir
 
+1. Portal cantv.com.ve 
+2. Portal cantv.net
+
 *** Sistemas a incorporar
+
+1. Portal cantv.com.ve en software libre
+2. Portal cantv.net en software libre
 
 *** Sistemas impactados
 
+1. Portal cantv.com.ve y sus servicios asociados
+2. Portal cantv.net y sus servicios asociados
+
 *** Sistemas relacionados
+
+1. *Buzón*, Aplicación que recibe las quejas de los clientes residenciales de
+   CANTV, envía correos a los clientes con el status de sus quejas.
+2. *0800*, Pone a la disposición de los Teleoperadores un conjunto de páginas
+   con información actualizada tal como Procesos de negocio, Productos y
+   Servicios, Promociones, Precios entre otras que permita apoyarlos en su
+   gestión de ventas.
+3. *Canales*, Páginas informativas que contiene el listado y direcciones de
+   los CDC y OACs.
 
 *** Diagnóstico de la necesidad de entornos operativos de los sistemas corporativos involucrados en la construcción de la solución propuesta
 
