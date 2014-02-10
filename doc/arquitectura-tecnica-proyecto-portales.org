@@ -104,8 +104,228 @@ Migración de Portales CANTV.NET y CANTV.COM.VE a Software Libre.
 
 * Arquitectura Técnica TI
 
-** Estrategia de Acceso (Autenticación, Autorización y Auditoria)
+** Estrategia de Acceso (Autenticación, Autorización y Auditoría)
+
+*** Autenticación
+
+Plone posee una base datos de usuario propia, pero se recomienda utilizar un
+repositorio de usuarios externo, como un servidor compatible con la tecnología
+de LDAP.
+\\
+
+LDAP (Lightweight Directory Access Protocol) es un protocolo estándar para
+acceso y modificación de datos usando servicios de directorio que operan sobre
+el protocolo TCP/IP. 
+\\
+
+Existen varias implementaciones del protocolo LDAP, tales como /Microsoft
+Active Directory/, /Novell/, /Sun One/, /OpenLDAP/.
+\\
+
+Nuestro equipo recomienda el uso de /OpenLDAP/ como /backend/ de
+autenticación de usuarios. /OpenLDAP/ es un proyecto de Software Libre que
+implementa el protocolo /LDAP/.
+\\
+
+Actualmente CANTV posee una plataforma de servicios de directorios basada en
+/OpenLDAP/, en donde ya se encuentran los usuarios corporativos de la empresa,
+recomendamos utilizar esta plataforma.
+
+*** =plone.app.ldap=
+
+Existe un componente de Plone llamado =plone.app.ldap=, este componente provee
+un panel de control para manejar los usuarios y grupos que se encuentran en la
+plataforma de directorio /LDAP/ al que este conectado.
+
+Este compomente provee las funcionalidades desarrolladas por el módulo
+=PloneLDAP= [fn:1] y está construido usando las librerías =LDAPMultiPlugins= y =LDAPUserFolder= [fn:2].
+\\
+
+Este componente integra el /backend/ LDAP a Plone de la siguiente manera: 
+
+ 1. Los usuarios en la base de datos LDAP pueden ser usados como usuarios normales
+    de Plone, se puede buscar entre los usuarios, asignar roles, crear
+    usuarios y eliminar usuarios. [fn:3]
+ 2. Los grupos en la base de datos LDAP pueden ser usados como grupos normales
+    de Plone. se puede verlos, manejar los miembros de un grupo, crear nuevos
+    grupos, remover los grupos. Es importante destacar que los grupos /LDAP/
+    solo pueden tener como miembros a usuarios /LDAP/, los usuarios /LDAP/
+    pueden ser miembros de grupos internos de Plone que no están en /LDAP/.
+ 3. Las propiedades de pertenencia a grupos de los usuarios LDAP no necesitan
+    guardarse completamente en el directorio LDAP, pude combinar propiedades
+    almacenadas en LDAP con propiedades almacenadas en ZODB.
+
+Nota: Si usa Active Directory como backend de este componente, todo el acceso
+es de solo lectura, no podrá escribir o modificar entradas en el directorio.
+
+*** Auditoría
+
+**** Entidades de Seguridad
+
+Primero lo primero, para entender cómo funciona la seguridad en Plone, hay que
+llamar a cada cosa por su nombre y saber donde viven dentro de
+Plone. Los usuarios, grupos y roles viven dentro del objeto /Plone PAS/, que es un
+reemplazo del concepto conocido como =user folder= en la jerga de /Zope/.
+
+/PAS/ hace más cosas que guardar usuarios en la /ZODB/, PAS se encarga de
+gestionar los grupos, la pertenencia de los usuarios a los grupos (miembros de
+grupo), los roles y su asignación. Pero la característica más importante de
+/PAS/ descansa en la palabra /Pluggable/. Podemos extender la funcionalidad de
+/PAS/ a través de /plugins/ que nos permiten conectarnos a otra base de datos
+de usuarios y grupos.
+
+Ahora, veamos uno de los tópicos más importantes de la seguridad en Plone.
+
+**** Roles 
+
+Los roles en Plone son etiquetas (/tags/) asignadas a nuestros grupos o
+usuarios. Estas etiquetas tienen valor significativo sobre los permisos y
+derechos del usuario o grupo.
+
+Existen siete (7) roles principales en una instalación de Plone: 
+
+#+Caption: Roles de Plone
+#+LABEL: tbl:roles_plone
+#+ATTR_LaTeX: longtable align=m{4cm}p{9cm}
+
+|----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *Rol*                | *Propósito*                                                                                                                                                                                                                                                                                                                     |
+|----------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| .                    |                                                                                                                                                                                                                                                                                                                                 |
+| *Member*             | Todos los usuarios tienen ese rol por defecto. Este rol otorga los permisos mínimos que cada usuario debe tener.                                                                                                                                                                                                                |
+| .                    |                                                                                                                                                                                                                                                                                                                                 |
+| *Manager*            | Este rol otorga los privilegios más altos del portal.                                                                                                                                                                                                                                                                           |
+| .                    |                                                                                                                                                                                                                                                                                                                                 |
+| *Site Administrator* | Este rol fue introducido en la versión 4.1 de Plone, nos permite otorgarle a los usuarios el permiso de cambiar las configuraciones del panel de control de Plone, adicionalmente ver y editar casi todo el contenido, sin otorgar acceso a las acciones potencialmente destructivas de la /Interfaz de Gestión de Zope/ (ZMI). |
+| .                    |                                                                                                                                                                                                                                                                                                                                 |
+| *Reviewer*           | Los usuarios con este rol, el cual es otorgado al grupo /Reviewers/, pueden ver y aprobar contenido que ha sido enviado para revisión (/review/).                                                                                                                                                                               |
+| .                    |                                                                                                                                                                                                                                                                                                                                 |
+| *Reader*             | Cuando se asigna el rol /Reader/, el usuario podrá ver un objeto de tipo contenido, incluso cuando usuarios normales (/Members/) no puedan ver este contenido, como por ejemplo con un objeto privado.                                                                                                                          |
+| .                    |                                                                                                                                                                                                                                                                                                                                 |
+| *Editor*             | Este rol es la contraparte del rol /Reader/, este rol se utiliza para otorgar permisos locales de modificación.                                                                                                                                                                                                                 |
+| .                    |                                                                                                                                                                                                                                                                                                                                 |
+| *Contributor*        | Este rol se utiliza para delegar el permiso de agregar elementos de contenido a las carpetas.                                                                                                                                                                                                                                   |
+
+\clearpage 
+
+Adicionalmente /Zope/ define tres (3) roles automáticamente asignables: 
+
+#+Caption: Roles de Zope
+#+LABEL: tbl:roles_zope
+#+ATTR_LaTeX: longtable align=m{4cm}p{9cm}
+
+
+|---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *Rol*         | *Propósito*                                                                                                                                                                      |
+|---------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| .             |                                                                                                                                                                                  |
+| *Owner*       | Este rol es asignado al dueño del contenido en cuestión. Normalmente es otorgado al usuario que ha creado el elemento.                                                           |
+| .             |                                                                                                                                                                                  |
+| *Authenticated* | Este rol es asignado a todos los usuarios que se han autenticado. Este rol es de más bajo privilegio que el rol /Member/ y no puede ser revocado o otorgado de manera explícita. |
+| .             |                                                                                                                                                                                  |
+| *Anonymous*   | Este rol es asignado a todos los usuarios que no se han autenticado. Existe un usuario especial llamado /Anonymous/ que siempre tiene este rol .                                 |
+
+**** Auditoría sobre los cambios en entidades de seguridad.
+
+Actualmente un cambio sobre las entidades de seguridad de Plone (usuarios,
+grupos, roles) no se registra en el /Log/ de eventos bajo ningún nivel de
+depuración. Es necesario modificar el código fuente de la interfaz desde donde
+se administran las entidades de seguridad de Plone. 
+
 ** Estrategia de Entornos Operativos
+
+*** Arquitectura.
+
+Se recomienda utilizar una arquitectura unificada de 64 Bits en los servidores
+que componen la solución.
+
+*** Sistema Operativo.
+
+El sistema operativo recomendado para los servidores que componen la solución
+es la versión estable para el momento de pase a producción de Debian
+GNU/Linux.
+
+*** Bases de Datos.
+
+Por favor deje de pensar en bases de datos relacionales por un momento, si por
+favor deje de pensar en tablas, tuplas, campos y el lenguaje SQL. Déjenos
+presentarle a /ZODB/.
+\\
+
+/ZODB/ es una base de datos orientada a objetos para almacenar objetos de
+=python= de manera persistente y transparente. Esta incluida como parte del
+proyecto /Zope/ pero puede ser usada de manera independiente fuera de /Zope/. 
+\\
+
+La razón para no usar un sistema de base de datos relacional para este
+proyecto es fácil de entender. Es más natural para un manejador de contenidos
+almacenar datos en objetos que dependen de una capa de abstracción que
+convertir el objeto que esta almacenando a campos en una tabla (o varios
+campos a través de varias tablas) y nuevamente el proceso inverso al traer los
+datos de un objeto que esta en la base de datos relacional. En todos los
+aspectos, es más fácil almacenar el objeto directamente y de manera
+transparente en la base de datos como un objeto.
+\\
+
+Plone almacena el contenido del portal, los componentes, las plantillas y todo
+el código necesario en /ZODB/. El contenido es guardado en la base de datos
+utilizando una estructura en árbol jerárquica desde la raíz del sitio de
+Plone. Cada elemento de contenido es un objeto y la meta-data asociada a este
+objeto como titulo, descripción, cuerpo, entre otros son los atributos del
+objeto. Para aplicaciones como un manejador de contenidos, es más eficiente
+almacenar el contenido en esta forma natural. 
+\\
+
+En la siguiente lista podemos ver las características principales de ZODB:
+
+ - Transacciones
+ - Historial / (undo)
+ - Almacenamiento adaptable a través de módulos. (/pluggable/)
+ - Sistema de cache integrado
+ - Control de concurrencia mediante versiones múltiples (MVCC)
+
+
+*** Servidor Web.
+
+Es técnicamente posible configurar una instancia de /Zope/ para que escuche en
+el puerto 80 =HTTP=, pero no es lo recomendado. Un servidor web dedicado va a
+hacer un mejor trabajo atendiendo un número mayor de peticiones de conexión,
+manejando los picos de tráfico, las peticiones inválidas y potencialmente
+maliciosas. Además, /Zope/ no tiene soporte /SSL/ nativo (/HTTPS/). Por lo
+tanto, un entorno de producción de Plone emplea un servidor web delante de
+/Zope/ como proxy reveso. 
+
+El servidor web recomendado para utilizar como proxy reverso con Plone es
+/Nginx/. Es muy rápido y fácil de configurar. Se utilizan los módulos de
+=proxy= y =rewrite= para hacer proxy reverso contra /Zope/ y reescrituras para
+el trabajo de /hosting/ virtual. 
+
+**** *¿Porque Nginx?*
+
+Para grandes entornos de producción, en servidores web nos enfrenamos al
+problema de escalabilidad y rendimiento. Para resolver este problema Igor
+Sysoev[fn:4] en el año 2002 comenzó a desarrollar un servidor web escrito en
+el lenguaje de programación C. 
+
+La implementación de /Nginx/ para atender las peticiones es muy diferente a la
+implementación convencional de los servidores web basada en el modelo de
+varios hilos de ejecución, por cada cliente que hace una petición hay un hilo
+de ejecución que esta completamente separado y esta dedicado para atender
+estas peticiones. Esto causa problemas de bloqueo de I/O cuando los procesos
+están esperando por terminar con la petición y liberar los recursos usados
+(memoria, CPU). Adicionalmente la creación de procesos separados consume más
+recursos.
+
+/Nginx/ soluciona este problema utilizando una técnica de programación
+conocida como /event-driven/[fn:5], logrando de esta manera un servidor web
+asíncrono, /non-blocking/, y una arquitectura basada en un solo hilo de
+ejecución trabajando con múltiples procesos asíncronos. Esto hace a /Nginx/ un
+servidor web mucho más rápido y escalable que el conocido /Apache/ para
+entornos de alto desempeño.
+
+*** Entorno 
+
+
 ** Dimensionamiento de la Plataforma Tecnológica 
 ** Definición de Estrategia de Transposición entre los Entornos Operativos
 ** Definición de Estrategia de Incorporación de Nuevas Funcionalidades. (desarrollos)
@@ -117,3 +337,9 @@ Migración de Portales CANTV.NET y CANTV.COM.VE a Software Libre.
 ** Estrategia Administración Técnica de Entornos Operativos
 ** Estrategia Certificación Técnica de la Plataforma
 ** Estrategia de Servicio y Soporte
+
+[fn:1] [[http://plone.org/products/ploneldap/][PloneLDAP]]
+[fn:2] [[http://www.dataflake.org/software/ldapmultiplugins/][LDAPMultiPlugins]]
+[fn:3] Se recomienda configurar el componente para que no se puedan crear ni eliminar usuarios, ya que estos son funciones de otras gerencias.
+[fn:4] http://en.wikipedia.org/wiki/Igor_Sysoev
+[fn:5] http://en.wikipedia.org/wiki/Event-driven_programming 

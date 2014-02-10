@@ -1,0 +1,54 @@
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+* :link, :visited {
+    text-decoration: none
+}
+
+* ul, ol {
+    list-style: none;
+}
+
+* li {
+    display: inline;
+}
+
+* h1, h2, h3, h4, h5, h6, pre, code {
+    font-size:1em;
+}
+
+* a img, :link img, :visited img {
+    border: none
+}
+
+a {
+    outline: none;
+}
+
+table {
+    border-spacing: 0;
+}
+
+img {
+    vertical-align: text-bottom;
+}
+
+iframe {
+    border-width: 0;
+    border-style: none;
+}
+
+#content #content-core a,
+#content #viewlet-below-content-title a,
+#content #viewlet-above-content-body a,
+#content #viewlet-above-content-body a,
+#content #viewlet-below-content-body a {
+    color: #990000;
+}
+
+div.portletCarouselWrapper a {
+        color: #990000;
+}

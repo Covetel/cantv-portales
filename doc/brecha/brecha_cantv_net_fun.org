@@ -1,0 +1,607 @@
+#+TITLE:     Análisis de brecha Portal cantv.net
+#+AUTHOR:    Carlos Paredes
+#+EMAIL:     cparedes@covete.com.ve
+#+DATE:      2014-1-16
+#+DESCRIPTION: Análisis de brecha Portal cantv.net
+#+KEYWORDS:
+#+LANGUAGE:  es
+#+OPTIONS:   H:3 num:t toc:t:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+#+XSLT:
+#+LATEX_CLASS: covetel
+#+LATEX_CLASS_OPTIONS: [11pt, letterpaper, oneside, spanish]
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \input{titulo-brecha-cantv-net}
+
+* Versiones del Documento
+#+BEGIN_DITAA images/versiones_brecha_cantv_com_ve.png -r -S
+/-------------------------------------------------+-----------\
+| cBLU                  Autor                     |  Versión  |
++-------------------------------------------------+-----------+
+|                 Carlos Paredes                  |     1     |
++-------------------------------------------------+-----------+
+|                 Carlos Paredes                  |     2     |
++-------------------------------------------------+-----------+
+|                                                 |           |
+\-------------------------------------------------+-----------/
+#+END_DITAA
+
+* cantv.net Requerimientos Funcionales
+
+** Funcionalidades:
+
+*** General
++ Nombre: Soporte JSON y JQUERY
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Descripción: CMS compatible con los navegadores de uso extendido y optimizar
+  la presentación del mismo en sistema operativos móviles
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Capacidad de visualización en dispositivos multiplataforma
+  (Smartphones, Tablets)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Soporte HTML 5
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Optimizar la visualización del sitio web para navegadores libres
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Soporte CSS3
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Sindicación de contenidos mediante el uso de RSS/Atom
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Contenidos
++ Nombre: Árbol de contenidos
++ Descripción: Permitirá la creación de navegación del sitio y de los
+  contenidos, habilitando una interfase que gestione el árbol de contenidos y
+  la edición del mismo.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Aplicaciones para gestión de contenidos de Cantv.net
++ Nombre: Editor WYSIWYG
++ Descripción: Editor de texto avanzado para la carga de contenido en el CMS,
+  que permite incorporar elementos multimedia, texto HTML, vídeos, enlaces,
+  elementos de diagramación o contenedores de datos como tablas, etc.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Breadcrumbs o guía de navegación aplicado en todo el portal
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: URL semánticas o amigables configurables a través del CMS
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Cumplimiento con las normas y validadores de la W3C
++ Descripción: Cumplimiento con las normas y validadores de la W3C
+  - HTML
+  - CSS
+  - Accesibilidad
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Servidores
++ Nombre: Se requiere gran capacidad de memoria para poder almacenar videos,
+  galerías fotográficas y textos
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Infraestructura Propuesta /
+  Virtualización
+
+*** General
++ Nombre: Diseño adaptativo y ajustable a diversos dispositivos (PC, Tablets,
+  Smartphones)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad existente en Plone, pero requiere configuración ya
+  parametrización
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Posibilidad de mostrar contenidos y secciones especiales según el
+  perfil del Usuario
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** General
++ Nombre: Sincronización automática de archivos y contenido entre la
+  plataforma los servidores en donde se encuentra ubicado el gestor de
+  contenido (CMS) de cara a Internet.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a 4
+  horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Diseño de una arquitectura de roles y perfiles de forma segura y robusta
++ Descripción: El CMS debe poseer la funcionalidad de definir diversos
+  perfiles y roles para la administración del sitio y su contenido.
+  - Los roles administrativos funcionales y roles técnicos deberán estar bien
+    diferenciados entre sí.
+  - Para cada canal se pueden definir la estructura de roles y permisos de
+    acuerdo a su ámbito.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** General
++ Nombre: Cumplir con el estándar de resolución de los equipos y dispositivos de
+navegación según la tendencia.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a  8 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Gestión de diversos contenidos y/o plantillas para el home y la
+  página principal de los mini sitios, canales y servicios inicialmente
+  existentes y/o por crear
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Creación de subdominios para los servicios de correo y foros
+  cantv.net.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Optimizar el CMS para el uso de la etiqueta META
++ Descripción: Optimizar el CMS para el uso de la etiqueta META, palabras
+  claves para describir el contenido, e incorporar módulos para la generación
+  de mapas de sitio en formato XML para optimizar el posicionamiento del
+  portal en los principales motores de búsqueda y aplicación de estrategias
+  SEO
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Integración con redes sociales mediante el uso de las API de redes
+  sociales u aplicando las recomendaciones correspondiente a cada red social
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: sc.social.like
+
+*** General
++ Nombre: Galerías de imágenes, podcast y videos
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Buscador sitio con capacidad de realizar búsquedas en el CMS según
+  la taxonomía del sitio, palabras claves o tipo de contenido cargado
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: collective.taxonomysupport
+
+*** General
++ Nombre: El CMS debe poseer la capacidad de integrarle una herramienta de
+  análisis de logs como Google Analytics y similares.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: collective.googleanalytics
+
+*** General
++ Nombre: Poseer una plataforma propia para la gestión de logs y análisis del
+  trafico Web
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: Logs del Sistema
+
+*** General
++ Nombre: Habilitar administración, carga de contenido y publicación del
+  portal Cantv.net a los usuarios administradores previamente autorizados por
+  la Gerencia General de Comunicaciones y Asuntos Públicos (GGCYAP).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: Roles
+
+*** Elementos obligatorios
++ Nombre: Elementos visibles en la Barra de Navegación del usuario
++ Descripción:
+  - URL amigable
+  - Favicon de Cantv
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Estructura base Cantv.net
++ Nombre: Estructura del home
++ Descripción:
+  - Home ó pagina principal
+  - Home de los Canales
+  - Subsecciones para los Canales con distribución visual estándar entre los
+    canales
+  - Home de los Servicios
+  - Subsecciones para los Servicios
+  - Foros
+  - Enlace al correo web Cantv.net
+  - Sección de Especiales, con página inicial con contenido multimedia, videos
+    y galería de imágenes
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Estructura de Menús
++ Nombre: Menú principal o superior
++ Descripción: El menú principal o superior poseerá enlaces de los canales y
+  servicios. La estructura de menú es la siguiente:
+  - Ciencia y tecnología
+  - Cultura
+  - Viajes y Turismo
+  - Gastronomía
+  - Salud y bienestar 
+  - Deportes
+  - Comunidad
+  - Canales
+  - Noticias
+  - Servicios
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Características de la página de inicio para usuarios sin autenti
++ Nombre: Este espacio contará con una página genérica de inicio para todos
+  sus usuarios, que contendrá información variada de interés general y
+  permitirá la autenticación de los usuarios a través de la cuenta de correo
+  Cantv.net.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Aplicaciones para el portal de cara al usuario / Búsqueda
++ Nombre: El CMS integrará o enlazará a:
++ Descripción:
+  - Aplicaciones:
+    - Cartelera de Cine
+    - Agenda cultural
+    - Buscador de Páginas Amarillas
+    - Buscador de Páginas Blancas
+    - Servicios:
+      - Clasificados
+      - Mensajería instantánea del Correo
+      - Correo electrónico Cantv.Net
+      - Foros
+  - Canales
+  - Plataforma de Autogestión en línea
+    - Recarga de saldo (Autogestión en línea cantv.com.ve),
+    - Pago de factura teléfono (Autogestión en línea cantv.com.ve),
+    - Compra de equipos y accesorios Cantv (Tienda Virtual cantv.com.ve)
+    - Tipo de contenido
+      - Videos, el resultado de la búsqueda de videos deberá visualizarse como
+        una galería de video
+      - La búsqueda por tipo de “Galerías de imágenes”, se visualizaran en
+        forma de galerías, mostrando el título de la misma y la imagen de
+        portada. El orden deberá jerarquizarse desde la última publicación.
+      - Podcast, deberá mostrar el resultado de la búsqueda como un listado de
+        los podcast organizados por el mes de publicación.
+      - La búsqueda por documentos, mostrará el listado de las secciones con los documentos creados cargados.
+   - Según clasificación (secciones - canales)
+   - Páginas Blancas, integración con el buscador de páginas blancas de Caveguías
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Publicaciones recientes
++ Nombre: Módulo que muestra de forma de cintillo de imágenes el contenido
+  publicado recientemente en el portal.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: Products.Carousel
+
+*** Móvil
++ Nombre: El nuevo portal Cantv.net debe poseerá un diseño adaptativo para
+  permitir la visualización del contenido de forma correcta en los diferentes
+  dispositivos móviles como tabletas, teléfonos inteligentes y otros.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, requiere desarrollo menor a
+  8 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Geolocalización (mapas)
++ Descripción: Módulo que muestra el contenido georeferenciado como, OAC, CDC,
+  Teléfonos públicos, PGC, Aliados Comerciales, sedes de Cantv, y el contenido
+  a definir por los administradores del sitio (servicios vinculados a los
+  distintos canales (Cultura, Turismo, Ciencia y Tecnología, Comunidad y
+  Salud), etc. Los elementos georeferenciados deberán poseer una ficha
+  resumen, que será mostrada de forma de tooltip, al hacerle clic se mostrará
+  información: ubicación, dirección, teléfono, servicios que presta, imagen
+  referencial (miniatura).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: collective.geolocationbehavior
+
+*** General
++ Nombre: Temporizar las imágenes de las cabeceras del portal, canales según
+  el horario actual (mañana, mediodía, tarde, noche).
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Products.Carousel
+
+*** Estructura base Cantv.net / Canales
++ Nombre: Estructura de Canales:
++ Descripción: Los canales deberán tener la estructura siguiente:
+  - Cabecera del sitio
+  - Menú principal
+  - Cada canal tendrá un color determinado definidos en el manual de estilo de
+    diseño de Cantv.net .  Módulo para las distintas secciones en los canales
+  - Módulo con la reseña destacada del día con imagen (es), título y sumario
+  - Módulo con el histórico de contenidos publicados en el portal y Ver más
+    que lleve a más histórico de contenidos del canal
+  - Módulo para sindicar contenidos noticiosos (titulares de otras fuentes)
+    vía RSS
+  - Módulo para destacar banners promocionales y publicitarios, cargados según
+    la orientación del canal mediante el uso de un adserver
+  - Módulo de enlaces a instituciones y/o medios aliados de comunicación
+  - Módulos para cuadros estadísticos (en deportes por ejemplo)
+  - Módulo para Foto galería
+  - Módulo para audio
+  - Módulo para destacar videos: contenidos institucionales, culturales y/o
+    deportivos . Página estándar en los canales para mostrar los contenidos
+    con los siguientes items:
+    - Imagen (es)
+    - Título
+    - Sumario
+  - Módulo para mostrar los contenidos más visitados
+  - Módulo que muestre las etiquetas relacionadas con las secciones más
+    visitadas y de mayor interés de los usuarios
+  - Módulo para destacar tablas estadísticas
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** Estructura base Cantv.net / Servicios
++ Nombre: Clasificados 
++ Descripción:
+  - Aplicación (add on o plugin) editable y configurable.
+  - Interface de edición y programación (API; application programing
+    interfaceinterfaz de programación de aplicaciones).
+  - Módulo que permitirá añadir, organizar y eliminar categorías mediante un
+    editor de texto enriquecido.
+  - Posibilidad de editar contenido prepublicado
+  - Características generales de edición (fuente, colores, estilos)
+  - Permitirá incorporar una imagen con tamaño y peso máximos definidos. En
+    caso de que el usuario incumpla las características de la imagen, no
+    permitir que ésta sea cargada.
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Buscador Internet
++ Descripción: Posibilidad de realizar búsquedas desde el CMS en Google u otro
+  buscador según el criterio de los administradores (incluir Buscadores de
+  Cantv: Páginas Amarillas y Blancas)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: LiveSearch
+
+*** General
++ Nombre: Capacidad para medir el tráfico (hits) en el contenido (visitas y
+  páginas vistas), número de veces que un contenido ha sido compartido en una
+  red social y generar reportes de las secciones, artículos y tipo de
+  contenido más visitados por los usuarios
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+*** General
++ Nombre: Para los de servicios de foro se requiere que los usuarios posean
+  una cuenta en el correo de Cantv.net
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: plone.app.ldap
+
+*** Migración del Histórico de Contenidos
++ Nombre: Migración del histórico de contenidos de cada canal existente
++ Descripción: Se requiere migración del histórico de contenidos de cada canal
+  existente: Ciencia y Tecnología, Noticias, Cultura, Turismo, Gastronomía,
+  Salud, Deportes, Comunidad, Economía
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Migración de Servicios Existentes
+
+*** Móvil
++ Nombre: Mensajería instantánea del Correo Cantv.net
++ Descripción: Servicio de comunicación instantánea y directa para los
+  usuarios del portal Cantv.net mediante la autenticación utilizando su cuenta
+  de correo Cantv.net. Se requerirá:
+  - Autenticación de los usuarios en correo Cantv.net                                                                            
+  - Visibilidad de estado del usuario o usuaria: Disponible, No Disponible,
+    Ocupado, Ausente
+  - Mostrar foto perfil del usuario o usuaria
+  - Posibilidad de chatear con cada cuenta de correo (Cantv.net) registrada en
+    la lista de direcciones del usuario
+    - Transferencia en tiempo real de archivos (imagen, documento, audio,
+      video)
+  - Uso de ecomoticones básicos                                                                                                        
+  - Bloqueo de contactos no deseados
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: collective.chat.xmpp 
+
+*** General
++ Nombre: Autenticación de usuarios para entrar al sistema de autogestión en
+  línea de cantv.com.ve y mostrar los servicios asociados según su perfil
+  mediante el uso del correo Cantv.net
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: plone.app.ldap
+
+*** General
++ Nombre: Gestión e integración de archivos multimedia (combinación de imagen,
+  texto y sonido) en diversos formatos (con énfasis en formatos basados en
+  estándares abiertos y de uso común (ogg, webm)
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: RedTurtle
+
+*** Características del Home de
++ Nombre: Características del home
++ Descripción:
+  - Módulo que a través de un carrusel presenta los contenidos a destacar
+    según los criterios de los administradores de contenido.
+  - Módulo para sindicar contenidos noticiosos (titulares de otras fuentes)
+    vía RSS.
+  - Módulo para destacar contenidos de los canales de acuerdo con los
+    criterios de los administradores de contenido.
+  - Módulo para destacar los Especiales del mes.
+  - Módulo para destacar banners promocionales y publicitarios.
+  - Módulo para mostrar los contenidos más visitados.
+  - Módulo para destacar servicios de Clasificados, Cartelera de cine y Agenda
+    cultural.
+  - Módulo para los contenidos publicados en la cuenta twitter.
+  - Módulo para destacar videos: contenidos institucionales, culturales y/o
+    deportivos.
+  - Módulo que muestre las etiquetas relacionadas con las secciones más
+    visitadas y de mayor interés de los usuarios.
+  - Botones de redes sociales (región superior)
+  - Funcionalidad para mostrar cintillo o marquesina que promocionen los 
+    contenidos especiales, noticiosos y/o institucionales
+  - Módulo para la autenticación de usuarios para entrar al sistema de 
+    autogestión en línea de cantv.com.ve (A discutir)             
++ Prioridad: Mandatorio
++ Esfuerzo: Funcionalidad no existente en Plone, se necesitan mas detalles o
+  requiere de un fuerte desarrollo mayor a 32 horas
++ Aplicación que cubrirá la funcionalidad: Plone built-in
+
+* Resultado de Análisis:
+** Funcionalidades:
+
+#+BEGIN_DITAA images/brecha_cantv_com_ve.png -r -S
++-----------------------------------------------+-----------+
+|cBLU              Característica               | Cantdidad |
++-----------------------------------------------+-----------+
+| Requieren conf y/o parametrización < 1 hora   |      9    |
++-----------------------------------------------+-----------+
+| Requieren conf y/o parametrización < 2 horas  |     10    |
++-----------------------------------------------+-----------+
+|       Requieren desarrollo < 4 horas          |      1    |
++-----------------------------------------------+-----------+
+|       Requieren desarrollo < 8 horas          |     19    |
++-----------------------------------------------+-----------+
+|       Requieren desarrollo > 32 horas         |     12    |
++-----------------------------------------------+-----------+
+|               No contempladas                 |      0    |
++-----------------------------------------------+-----------+
+#+END_DITAA
+
+
+#+CAPTION: Análisis de brecha portal cantv.com.ve
+#+NAME: Funcionalidades
+    [[./images/graph_brecha_cantv_net_req_fun.png]]
+\clearpage
+
+** Cantidad de funcionalidades cubiertas por características de Plone
+
+#+BEGIN_DITAA images/gap_plone_features_cantv_com_ve.png -r -S
++-----------------------------------------------+-----------+
+|cBLU              Característica               | Cantdidad |
++-----------------------------------------------+-----------+
+|          Plone collective.chat.xmpp           |      1    |
++-----------------------------------------------+-----------+
+|             Plone sc.social.like              |      1    |
++-----------------------------------------------+-----------+
+|     Plone collective.geolocationbehavior      |      1    |
++-----------------------------------------------+-----------+
+|                Plone RedTurtle                |      1    |
++-----------------------------------------------+-----------+
+|                  Plone Roles                  |      3    |
++-----------------------------------------------+-----------+
+|       Plone collective.googleanalytics        |      1    |
++-----------------------------------------------+-----------+
+|               Plone plone.app.ldap            |      2    |
++-----------------------------------------------+-----------+
+|   Infraestructura Propuesta / Virtualización  |      1    |
++-----------------------------------------------+-----------+
+|                  Plone built-in               |     34    |
++-----------------------------------------------+-----------+
+|                 Logs del Sistema              |      1    |
++-----------------------------------------------+-----------+
+|       Plone collective.taxonomysupport        |      1    |
++-----------------------------------------------+-----------+
+|                 Plone LiveSearch              |      1    |
++-----------------------------------------------+-----------+
+|         Migración de Servicios Existentes     |      1    |
++-----------------------------------------------+-----------+
+|             Plone Products.Carousel           |      2    |
++-----------------------------------------------+-----------+
+#+END_DITAA
