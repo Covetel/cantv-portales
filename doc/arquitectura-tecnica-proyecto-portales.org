@@ -17,9 +17,7 @@
 #+LATEX_HEADER: \input{titulo-arq-tecnica-proyecto-portales}
 
 * Introducción
-
-* Objeto y campo de aplicación
-  
+* Objeto y campo de aplicación  
 * Requerimientos técnicos de Arquitectura
 
 ** Análisis técnico del modelo funcional de la solución propuesta
@@ -35,7 +33,7 @@
 *** Necesidad de implementar nuevas interfaces en los sistemas corporativos existentes para intercambiar información con la solución propuesta
 
 *** Necesidad de intercambio de información síncrona y asíncrona entre la solución propuesta y los sistemas corporativos existentes
-
+    
 *** Necesidad de ejecutar procesos por lotes en los sistemas corporativos existentes que sirvan de insumo a la solución propuesta y viceversa
 
 *** Necesidad de emitir reportes directamente desde la solución propuesta
@@ -57,7 +55,7 @@
 ** Conceptualización de acceso al servicio desde el usuario final
 
 * Requerimientos de configuración de los nuevos productos propuestos para la implementación
-
+  
 ** Nuevos productos a implementar en la solución
 
 ** Protocolo de autenticación y autorización de los productos a los que se conectarán los usuarios finales
@@ -81,7 +79,7 @@
 ** Diagnóstico de la necesidad de entornos operativos para la construcción de los servicios, procesos en lote y reportes requeridos como parte de la solución
 
 * Arquitectura Técnica TI
-
+  
 ** Estrategia de Acceso (Autenticación, Autorización y Auditoría)
 
 *** Autenticación
@@ -261,8 +259,6 @@ En la siguiente lista podemos ver las características principales de ZODB:
  - Almacenamiento adaptable a través de módulos. (/pluggable/)
  - Sistema de cache integrado
  - Control de concurrencia mediante versiones múltiples (MVCC)
-
-
 *** Servidor Web.
 
 Es técnicamente posible configurar una instancia de /Zope/ para que escuche en
@@ -301,10 +297,253 @@ ejecución trabajando con múltiples procesos asíncronos. Esto hace a /Nginx/ u
 servidor web mucho más rápido y escalable que el conocido /Apache/ para
 entornos de alto desempeño.
 
-*** Entorno 
+*** Entornos Operativos
 
+Se requieren los siguientes entornos operativos para la solución propuesta: 
+
+ 1. Entorno de Desarrollo
+ 2. Entorno de Calidad
+ 3. Entorno de Producción
+
+Las condiciones para el entorno de calidad deben ser exactamente iguales a las
+condiciones establecidas en el entorno de producción. La cantidad de recursos
+para el entorno de desarrollo puede ser menor a la cantidad de recursos
+utilizada para aprovisionar los entornos de calidad y producción. 
+\\
+
+Se recomienda que estos entornos operativos esten aislados a nivel de red,
+incluso a nivel físico. No debe ser posible enrutar tráfico desde un entorno a
+otro, incluso el direccionamiento, rutas y reglas de tráfico TCP/IP del
+entorno de calidad y producción deben ser iguales.
 
 ** Dimensionamiento de la Plataforma Tecnológica 
+
+Acontinuación se describe en detalle el dimiensionamiento de la plataforma
+tecnológica para los entornos de calidad y producción. 
+
+** Servidores Web
+
+*** Software a implementar
+
+El componente nginx es el servidor web elegido para la tarea de servir
+el contenido en la modalidad de proxy reverso, de cara a los
+navegadores web en los computadores de los usuarios que visiten cada
+portal.
+
+Se prefiere nginx por encima de Apache Web Server, por su ligereza y
+alto nivel de optimización en las operaciones más frecuentes al servir
+contenido web en forma de HTML, Javascript, imágenes y video.
+
+El software nginx ha sido diseñado y escrito con una cantidad limitada
+de funcionalidades en mente, tomando en consideración la optimización,
+en vez de ofrecer una amplia gama de características.
+
+Esta capa es la encargada de ofercer la capacidad de que los usuarios
+se conecten al portal usando cifrado SSL para confidencialidad y
+protección de sus datos personales.
+
+*** Hardware recomendado
+
+#+CAPTION: Recomendaciones de Hardware Capa Servidores Web
+#+LABEL: tbl:tabla_webserver
+#+ATTR_LaTeX: longtable align=|l|l|
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 2 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 6                                         |
+|--------------+-------------------------------------------|
+
+
+** Servidores /Caché/
+
+*** Software a implementar
+
+Varnish es el software para /caching/ elegido para acelerar la entrega
+de contenido habitual en la arquitectura de portales propuesta.
+
+Varnish es una herramienta flexible, que permite almacenar contenido
+en estructuras de tipo clave/valor en donde usualmente las URLs son la
+clave.
+
+Su versatilidad esta fundamentada en que posee un lenguaje de
+configuración, llamado /Varnish Configuration Language/ con el cual se
+logra representar el diseño que tenga en mente el administrador.
+
+*** Hardware recomendado
+
+#+CAPTION: Recomendaciones de Hardware Capa Cache
+#+LABEL: tbl:tabla_cache
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 2 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 6                                         |
+|--------------+-------------------------------------------|
+
+
+** Balanceadores
+
+Esta es una capa que permite conectar las capas web de la plataforma
+con el servidor de aplicaciones de Plone, brindando alta
+disponibilidad a la arquitectura. La propuesta inicial, presenta un
+balanceador de carga implementado por software, como plan alternativo
+en caso de que no sea posible usar la plataforma de balanceo de
+tráfico por hardware de CANTV.
+
+*** Software a implementar
+
+/HAProxy/ es un programa diseñado bajo la filosofía de programación
+orientada a eventos que le permite manejar grandes cantidades de
+conexiones concurrentes a muy alta velocidad.
+
+Con una máquina de 64 bits, 1 GB de RAM y una configuración especial
+de Kernel, es capaz de manejar tanto como 200.000 conexiones
+concurrentes
+
+Es una alternativa muy útil a la hora de agregar la característica de
+"Alta Disponbilidad" a una plataforma de servicios.
+
+*** Hardware recomendado
+
+#+CAPTION: Recomendaciones de Hardware Capa Balanceador
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 1, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 2 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 1                                         |
+|--------------+-------------------------------------------|
+
+
+
+** /Clientes ZEO/ 
+
+*** Software a implementar
+
+Los clientes /ZEO/ (Zope Enterprise Objects) son la primera línea de
+servicios en una solución de alta disponibilidad para portales web con
+Plone.
+
+Los clientes /ZEO/ asumen el rol de ejecutar servicios HTTP, scripts,
+ejecución de código y /renderización/ de plantillas.
+
+Son además los que se encargan de conectarse con el servidor ZEO para
+extraer información de las diferentes instancias Zope (cada Portal)
+que está almacenado en nuestro /servidor ZEO - ZODB/
+
+*** Hardware recomendado
+
+#+CAPTION: Recomendaciones de Hardware para Capa Cliente Zeo 
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 8, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 16 GB                                     |
+|--------------+-------------------------------------------|
+| Disco Duro   | 20 GB                                     |
+|--------------+-------------------------------------------|
+| Servidores   | 6                                         |
+|--------------+-------------------------------------------|
+
+
+** /Servidor ZEO y ZODB/
+
+*** Software recomendado
+
+El Servidor ZEO es el núcleo central de la solución en términos de
+almacenamiento de datos para la solución de Portales. Por esta razón
+se recomienda que todos el contenido usado por este servidor, se
+encuentra almacenado en un dispositivo local de alta velocidad, como
+un disco SSD.
+
+Cada sitio portal de Plone es creado como un objeto que vive dentro de
+una instancia Zope cuyo contenido es entregado a los /clientes ZEO/
+por demanda, dependiendo de las peticiones de los usuarios que llegan
+a través de las capas de /Servidores Web/ y /Caché/.
+
+Considerando que este podría ser un punto de acumulación de falla
+(single point of failure), nuestra recomendación es que se implementen
+el servidor por duplicado en un esquema activo/pasivo y que cada una
+de esas instancias virtuales se aprovisionen en nodos UCS distintos,
+para garantizar el funcionamiento adecuado de la propuesta de alta
+disponibilidad.
+
+*** Hardware recomendado
+
+#+CAPTION: Recomendaciones de Hardware para Capa Zeo Server
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+------------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*                    |
+|--------------+------------------------------------------------|
+| Procesador   | *CPU Cores:* 20, *CPU Clock Freq:* 1.7 GHz     |
+|--------------+------------------------------------------------|
+| RAM          | 64 GB                                          |
+|--------------+------------------------------------------------|
+| Disco Duro   | 30 GB (almacenamiento local de alta velocidad) |
+|--------------+------------------------------------------------|
+| Servidores   | 2 (alta disponibilidad activo-pasivo)          |
+|--------------+------------------------------------------------|
+
+
+** /Blob Storage/
+
+*** Software recomendado
+
+Esta capa no es una capa de procesamiento, es solo una capa de
+almacenamiento. En términos del protocolo recomendado para usar, NFS
+sería la tecnología a implementar.
+
+NFS cumple los requerimientos mínimos de seguridad necesarios para
+compartir los volúmenes necesarios para almacenar y compartir los
+contenidos de /media/(documentos, imágenes, podcasts, video) que se
+van publicar en el Portal.
+
+*** Hardware recomendado
+
+#+CAPTION: Recomendaciones de Hardware para Capa Blob Storage
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|----------------+--------------------------------------------|
+| *Componente*   | *Requerimiento Recomendado*                |
+|----------------+--------------------------------------------|
+| Almacenamiento | 100 GB (espacio compartido por NFS en red) |
+|----------------+--------------------------------------------|
+    
+
+
 ** Definición de Estrategia de Transposición entre los Entornos Operativos
 ** Definición de Estrategia de Incorporación de Nuevas Funcionalidades. (desarrollos)
 ** Definición de Estrategia de Manejo de Trazas, Reportes, Indicadores y Alertas
