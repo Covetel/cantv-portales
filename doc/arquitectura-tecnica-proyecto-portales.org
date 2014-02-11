@@ -17,7 +17,11 @@
 #+LATEX_HEADER: \input{titulo-arq-tecnica-proyecto-portales}
 
 * Introducción
-* Objeto y campo de aplicación  
+
+* Objeto y campo de aplicación
+
+Migración de Portales CANTV.NET y CANTV.COM.VE a Software Libre.
+
 * Requerimientos técnicos de Arquitectura
 
 ** Análisis técnico del modelo funcional de la solución propuesta
@@ -42,11 +46,29 @@
 
 *** Sistemas a sustituir
 
+1. Portal cantv.com.ve 
+2. Portal cantv.net
+
 *** Sistemas a incorporar
+
+1. Portal cantv.com.ve en software libre
+2. Portal cantv.net en software libre
 
 *** Sistemas impactados
 
+1. Portal cantv.com.ve y sus servicios asociados
+2. Portal cantv.net y sus servicios asociados
+
 *** Sistemas relacionados
+
+1. *Buzón*, Aplicación que recibe las quejas de los clientes residenciales de
+   CANTV, envía correos a los clientes con el status de sus quejas.
+2. *0800*, Pone a la disposición de los Teleoperadores un conjunto de páginas
+   con información actualizada tal como Procesos de negocio, Productos y
+   Servicios, Promociones, Precios entre otras que permita apoyarlos en su
+   gestión de ventas.
+3. *Canales*, Páginas informativas que contiene el listado y direcciones de
+   los CDC y OACs.
 
 *** Diagnóstico de la necesidad de entornos operativos de los sistemas corporativos involucrados en la construcción de la solución propuesta
 
@@ -57,6 +79,9 @@
 * Requerimientos de configuración de los nuevos productos propuestos para la implementación
   
 ** Nuevos productos a implementar en la solución
+
+*** Aqui va lo de CFENGINE
+*** Aqui va lo de HA-PROXY
 
 ** Protocolo de autenticación y autorización de los productos a los que se conectarán los usuarios finales
 
@@ -80,6 +105,26 @@
 
 * Arquitectura Técnica TI
   
+La plataforma esta diseñada en función de cinco (5) capas: 
+
+ 1. *Servidores Web:* Esta capa atiende las conexiones bajo el
+    protocolo /HTTP/ que provienen de los clientes de la plataforma. Es
+    también responsable de manejar las conexiones /HTTPS/ usando certificados
+    /x.509/ proveidos por CANTV.
+
+ 2. *Aceleración Web:* Esta capa esta compuesta por servidores ejecutando un
+    componente conocido actualmente como /Web Application Accelerator/ o
+    acelerador de aplicaciones web, también conocidos como caché de proxy
+    /HTTP/ inversa. El objetivo de esta capa es aumentar el rendimiento de
+    Plone y mejorar la experiencia del usuario en términos de tiempo de respuesta.
+
+ 3. *Balanceadores:* Esta capa es responsable de distribuir la carga de
+    trabajo a través de los servidores /ZEO Clients/
+
+ 4. *Clientes ZEO:* /ZEO/ Es la tecnología de balanceo de carga usada con
+    /Zope/.
+
+
 ** Estrategia de Acceso (Autenticación, Autorización y Auditoría)
 
 *** Autenticación
@@ -212,7 +257,7 @@ se administran las entidades de seguridad de Plone.
 
 *** Arquitectura.
 
-Se recomienda utilizar una arquitectura unificada de 64 Bits en los servidores
+Se recomienda utilizar una arquitectura unificada de x86_64 Bits en los servidores
 que componen la solución.
 
 *** Sistema Operativo.
@@ -321,9 +366,9 @@ entorno de calidad y producción deben ser iguales.
 Acontinuación se describe en detalle el dimiensionamiento de la plataforma
 tecnológica para los entornos de calidad y producción. 
 
-** Servidores Web
+*** Servidores Web
 
-*** Software a implementar
+**** Software a implementar
 
 El componente nginx es el servidor web elegido para la tarea de servir
 el contenido en la modalidad de proxy reverso, de cara a los
@@ -342,7 +387,7 @@ Esta capa es la encargada de ofercer la capacidad de que los usuarios
 se conecten al portal usando cifrado SSL para confidencialidad y
 protección de sus datos personales.
 
-*** Hardware recomendado
+**** Hardware recomendado para producción
 
 #+CAPTION: Recomendaciones de Hardware Capa Servidores Web
 #+LABEL: tbl:tabla_webserver
@@ -360,10 +405,47 @@ protección de sus datos personales.
 | Servidores   | 6                                         |
 |--------------+-------------------------------------------|
 
+**** Hardware recomendado para calidad
 
-** Servidores /Caché/
+#+CAPTION: Recomendaciones de Hardware Capa Servidores Web
+#+LABEL: tbl:tabla_webserver
+#+ATTR_LaTeX: longtable align=|l|l|
 
-*** Software a implementar
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 2 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 6                                         |
+|--------------+-------------------------------------------|
+
+**** Hardware recomendado para desarrollo
+
+#+CAPTION: Recomendaciones de Hardware Capa Servidores Web
+#+LABEL: tbl:tabla_webserver
+#+ATTR_LaTeX: longtable align=|l|l|
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 1 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 1                                         |
+|--------------+-------------------------------------------|
+
+
+
+*** Servidores /Caché/
+
+**** Software a implementar
 
 Varnish es el software para /caching/ elegido para acelerar la entrega
 de contenido habitual en la arquitectura de portales propuesta.
@@ -376,7 +458,7 @@ Su versatilidad esta fundamentada en que posee un lenguaje de
 configuración, llamado /Varnish Configuration Language/ con el cual se
 logra representar el diseño que tenga en mente el administrador.
 
-*** Hardware recomendado
+**** Hardware recomendado para producción
 
 #+CAPTION: Recomendaciones de Hardware Capa Cache
 #+LABEL: tbl:tabla_cache
@@ -395,8 +477,47 @@ logra representar el diseño que tenga en mente el administrador.
 | Servidores   | 6                                         |
 |--------------+-------------------------------------------|
 
+**** Hardware recomendado para calidad
 
-** Balanceadores
+#+CAPTION: Recomendaciones de Hardware Capa Cache
+#+LABEL: tbl:tabla_cache
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 2 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 6                                         |
+|--------------+-------------------------------------------|
+
+**** Hardware recomendado para desarrollo
+
+#+CAPTION: Recomendaciones de Hardware Capa Cache
+#+LABEL: tbl:tabla_cache
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 2, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 1 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 1                                         |
+|--------------+-------------------------------------------|
+
+
+
+*** Balanceadores
 
 Esta es una capa que permite conectar las capas web de la plataforma
 con el servidor de aplicaciones de Plone, brindando alta
@@ -405,7 +526,7 @@ balanceador de carga implementado por software, como plan alternativo
 en caso de que no sea posible usar la plataforma de balanceo de
 tráfico por hardware de CANTV.
 
-*** Software a implementar
+**** Software a implementar
 
 /HAProxy/ es un programa diseñado bajo la filosofía de programación
 orientada a eventos que le permite manejar grandes cantidades de
@@ -418,7 +539,7 @@ concurrentes
 Es una alternativa muy útil a la hora de agregar la característica de
 "Alta Disponbilidad" a una plataforma de servicios.
 
-*** Hardware recomendado
+**** Hardware recomendado para producción
 
 #+CAPTION: Recomendaciones de Hardware Capa Balanceador
 #+LABEL: tbl:tabla_balanceador
@@ -434,14 +555,52 @@ Es una alternativa muy útil a la hora de agregar la característica de
 |--------------+-------------------------------------------|
 | Disco Duro   | 4 GB                                      |
 |--------------+-------------------------------------------|
+| Servidores   | 3                                         |
+|--------------+-------------------------------------------|
+
+**** Hardware recomendado para calidad
+
+#+CAPTION: Recomendaciones de Hardware Capa Balanceador
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 1, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 2 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
+| Servidores   | 3                                         |
+|--------------+-------------------------------------------|
+        
+**** Hardware recomendado para desarrollo
+
+#+CAPTION: Recomendaciones de Hardware Capa Balanceador
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 1, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 1 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 4 GB                                      |
+|--------------+-------------------------------------------|
 | Servidores   | 1                                         |
 |--------------+-------------------------------------------|
 
 
 
-** /Clientes ZEO/ 
 
-*** Software a implementar
+*** /Clientes ZEO/ 
+
+**** Software a implementar
 
 Los clientes /ZEO/ (Zope Enterprise Objects) son la primera línea de
 servicios en una solución de alta disponibilidad para portales web con
@@ -454,7 +613,7 @@ Son además los que se encargan de conectarse con el servidor ZEO para
 extraer información de las diferentes instancias Zope (cada Portal)
 que está almacenado en nuestro /servidor ZEO - ZODB/
 
-*** Hardware recomendado
+**** Hardware recomendado para producción
 
 #+CAPTION: Recomendaciones de Hardware para Capa Cliente Zeo 
 #+LABEL: tbl:tabla_balanceador
@@ -473,10 +632,49 @@ que está almacenado en nuestro /servidor ZEO - ZODB/
 | Servidores   | 6                                         |
 |--------------+-------------------------------------------|
 
+**** Hardware recomendado para calidad
 
-** /Servidor ZEO y ZODB/
+#+CAPTION: Recomendaciones de Hardware para Capa Cliente Zeo 
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
 
-*** Software recomendado
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 8, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 16 GB                                     |
+|--------------+-------------------------------------------|
+| Disco Duro   | 20 GB                                     |
+|--------------+-------------------------------------------|
+| Servidores   | 6                                         |
+|--------------+-------------------------------------------|
+
+**** Hardware recomendado para desarrollo
+
+#+CAPTION: Recomendaciones de Hardware para Capa Cliente Zeo 
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+-------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*               |
+|--------------+-------------------------------------------|
+| Procesador   | *CPU Cores:* 4, *CPU Clock Freq:* 2.3 GHz |
+|--------------+-------------------------------------------|
+| RAM          | 8 GB                                      |
+|--------------+-------------------------------------------|
+| Disco Duro   | 10 GB                                     |
+|--------------+-------------------------------------------|
+| Servidores   | 2                                         |
+|--------------+-------------------------------------------|
+
+
+
+*** /Servidor ZEO y ZODB/
+
+**** Software recomendado
 
 El Servidor ZEO es el núcleo central de la solución en términos de
 almacenamiento de datos para la solución de Portales. Por esta razón
@@ -496,7 +694,7 @@ de esas instancias virtuales se aprovisionen en nodos UCS distintos,
 para garantizar el funcionamiento adecuado de la propuesta de alta
 disponibilidad.
 
-*** Hardware recomendado
+**** Hardware recomendado para producción
 
 #+CAPTION: Recomendaciones de Hardware para Capa Zeo Server
 #+LABEL: tbl:tabla_balanceador
@@ -515,10 +713,49 @@ disponibilidad.
 | Servidores   | 2 (alta disponibilidad activo-pasivo)          |
 |--------------+------------------------------------------------|
 
+**** Hardware recomendado para calidad
 
-** /Blob Storage/
+#+CAPTION: Recomendaciones de Hardware para Capa Zeo Server
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
 
-*** Software recomendado
+
+|--------------+------------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*                    |
+|--------------+------------------------------------------------|
+| Procesador   | *CPU Cores:* 20, *CPU Clock Freq:* 1.7 GHz     |
+|--------------+------------------------------------------------|
+| RAM          | 64 GB                                          |
+|--------------+------------------------------------------------|
+| Disco Duro   | 30 GB (almacenamiento local de alta velocidad) |
+|--------------+------------------------------------------------|
+| Servidores   | 2 (alta disponibilidad activo-pasivo)          |
+|--------------+------------------------------------------------|
+
+**** Hardware recomendado para desarrollo
+
+#+CAPTION: Recomendaciones de Hardware para Capa Zeo Server
+#+LABEL: tbl:tabla_balanceador
+#+ATTR_LaTeX: longtable align=|l|l|
+
+
+|--------------+------------------------------------------------|
+| *Componente* | *Requerimiento Recomendado*                    |
+|--------------+------------------------------------------------|
+| Procesador   | *CPU Cores:* 20, *CPU Clock Freq:* 1.7 GHz     |
+|--------------+------------------------------------------------|
+| RAM          | 16 GB                                          |
+|--------------+------------------------------------------------|
+| Disco Duro   | 15 GB                                          |
+|--------------+------------------------------------------------|
+| Servidores   | 1                                              |
+|--------------+------------------------------------------------|
+
+
+
+*** /Blob Storage/
+
+**** Software recomendado
 
 Esta capa no es una capa de procesamiento, es solo una capa de
 almacenamiento. En términos del protocolo recomendado para usar, NFS
@@ -529,7 +766,7 @@ compartir los volúmenes necesarios para almacenar y compartir los
 contenidos de /media/(documentos, imágenes, podcasts, video) que se
 van publicar en el Portal.
 
-*** Hardware recomendado
+**** Hardware recomendado
 
 #+CAPTION: Recomendaciones de Hardware para Capa Blob Storage
 #+LABEL: tbl:tabla_balanceador
@@ -543,11 +780,13 @@ van publicar en el Portal.
 |----------------+--------------------------------------------|
     
 
+[fn:4] [[https://www.owasp.org/index.php/Category:OWASP_Best_Practices:_Use_of_Web_Application_Firewalls]] 
+
 
 ** Definición de Estrategia de Transposición entre los Entornos Operativos
 ** Definición de Estrategia de Incorporación de Nuevas Funcionalidades. (desarrollos)
 ** Definición de Estrategia de Manejo de Trazas, Reportes, Indicadores y Alertas
-
+   
 * Definición Estrategias de Configuración Técnica de la Plataforma TI
 
 ** Estrategia Adecuación Técnica de Entornos Operativos
