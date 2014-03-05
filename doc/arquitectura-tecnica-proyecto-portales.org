@@ -17,6 +17,13 @@
 #+LATEX_HEADER: \usepackage{float}
 #+LATEX_HEADER: \input{titulo-arq-tecnica-proyecto-portales}
 
+* Introducción
+
+Este documento define la arquitectura técnica de TI para los siguientes productos: 
+
+ 1. Portales Web: /cantv.com.ve/ y /cantv.net/
+ 2. Portal de Autogestión
+
 * Requerimientos de configuración de los nuevos productos propuestos para la implementación
   
 ** Nuevos productos a implementar en la solución
@@ -90,7 +97,22 @@ de su ciclo de vida y que será abandonado por el proveedor en menos de tres
 años.
 
 ** Protocolo de autenticación y autorización de los productos a los que se conectarán los usuarios finales
-** Factibilidad de transposición de objetos programáticos
+
+Los usuarios finales se van a conectar a una interfaz /web/, implementada como
+un componente de /Plone/, desarrollado utilizando el marco de trabajo
+/Zope/. Se recomienda utilizar el mecanismo nativo de /Plone/ integrado a
+/LDAP/ para autenticar el acceso al servicio por parte de los usuarios
+finales.
+\\
+
+Se recomienda usar como /Back-End/ de los usuarios finales, los servidores
+/LDAP/ que ya posee la organización y que actualmente es el /Back-End/ de
+usuarios para la plataforma de correo de /CANTV.NET/.
+\\
+
+Dentro de los productos, además de los portales de CANTV, se encuentra el
+/Portal de Autogestión/, en donde de igualmanera recomendamos utilizar el
+mecanismo nativo de /Plone/ integrado a /LDAP/ para autenticar los usuarios.
 
 * Arquitectura Técnica TI
   
@@ -795,32 +817,54 @@ van publicar en el Portal.
 
 *** Estrategia de Transposición de la Configuración.
 
-#+BEGIN_QUOTE
-(Trabajo en progreso...)
-#+END_QUOTE
-
-*** Estrategia de Transposición de los Datos.
-
-#+BEGIN_QUOTE
-(Trabajo en progreso...)
-#+END_QUOTE
-
+Para el transporte de la configuración recomendamos utilizar el marco de
+trabajo de automatiación de configuraciones /CFEngine/. Ver la sección
+[[Automatización de configuraciones]] para más información.
 
 ** Definición de Estrategia de Incorporación de Nuevas Funcionalidades.
-#+BEGIN_QUOTE
-(Trabajo en progreso...)
-#+END_QUOTE
 
-
-** Definición de Estrategia de Manejo de Trazas, Reportes, Indicadores y Alertas
+Para incluir nuevas funcionalidades se recomienda utilizar en entorno de
+desarrollo, recomendamos desarrollar las funcionalidades nuevas como
+componentes de /Plone/ escritos en el lenguaje de programación /Python/
+utilizando el marco de trabajo /Zope/.
    
-#+BEGIN_QUOTE
-(Trabajo en progreso...)
-#+END_QUOTE
+** Definición de Estrategia de Manejo de Trazas, Reportes, Indicadores y Alertas
 
+Recomendamos almacenar los /logs/ de forma centralizada en un servidor de
+/logs/ que posea tecnología adecuada para el análisis y la correlación de
+/logs/. OSSIM (/Open Source Security Information Management/) puede ser una
+herramienta de mucha ayuda en este punto.
+
+Recomendamos utilizar una herramienta com /Pentaho/ para la creación de
+tableros, reportes y análisis más especializados sobre los /logs/ de la
+plataforma.
+   
 * Definición Estrategias de Configuración Técnica de la Plataforma TI
 
 ** Estrategia Adecuación Técnica de Entornos Operativos
+
+Para garantizar la adecuación técnica de los entornos operativos de manera
+programática y automatizada, recomendamos combinar dos componentes de
+tecnología que nos permitiran obtener en muy poco tiempo y con la mínima
+interveción humana los entornos operativo de desarrollo, calidad o producción
+requeridos para este proyecto. 
+
+El primer componente al que hacemos referencia es a /CFEngine/, por favor ver
+la sección [[Automatización de configuraciones]] para más información.
+
+El segundo componente al que hacemos referencia tiene que ver con el paradigma
+de computación en la nube que recibe el nombre de /Infraestructura como
+servicio/ del ingles /Infrastructure as a Service (IaaS)/, es un medio para
+entregar almacenamiento básico y capacidades de computo como servicios
+estandarizados en la red, tales como: servidores, maquinas virtuales,
+almacenamiento, balanceadores de carga, enrutadores, todo esto a través de de
+la tecnología de virtualización. Actualmente CANTV posee un conjunto de
+recursos de computo orquestados mediante /OpenStack/, recomendamos orquestar
+los recursos de computo para este proyecto con /OpenStack/, con el objetivo de
+combinar las carácteristicas de ambos proyectos /CFEngine/ y /OpenStack/ para
+lograr el despliegue automático y libre de fallas de los entornos operativos
+requeridos.
+
 ** Estrategia Administración Técnica de Entornos Operativos
 ** Estrategia Certificación Técnica de la Plataforma
 ** Estrategia de Servicio y Soporte
