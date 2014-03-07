@@ -31,7 +31,7 @@
         <after css:content="#portaltab-telco-publicas" css:theme-children="#menu-left" />
         <after css:content="#portaltab-operadores-telco" css:theme-children="#menu-left" />
         <after css:content="#portaltab-imagenes" css:theme-children="#menu-right" />
-        <after css:content="#portaltab-Members" css:theme-children="#menu-right" />
+        <!--<after css:content="#portaltab-Members" css:theme-children="#menu-right" />-->
         <after css:content="#portaltab-somos-cantv" css:theme-children="#menu-right" />
         <after css:content="#portaltab-jubilados" css:theme-children="#menu-right" />
         <after css:content="#portaltab-contactenos" css:theme-children="#menu-right" />
