@@ -56,7 +56,8 @@
         <!-- Reemplazo la etiqueta mapa por el breadcrumbs -->
         <after css:content="#portal-breadcrumbs" css:theme-children="#map" />
 
-        <after css:content="#portal-sitemap" css:theme-children="#bottom" />
+        <!--<after css:content="#portal-sitemap" css:theme-children="#bottom" />-->
+        <after css:content="#portal-footer-wrapper" css:theme-children="#bottom" />
     </rules>
 
 </rules>
