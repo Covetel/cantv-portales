@@ -175,13 +175,16 @@ body {
 }
 
 #cont-top div.portletCarouselWrapper {
-    width: 65%;
+    width: 67%;
     position: relative;
     float: left;
 }
 
 #cont-top div.portletStaticText {
-    width: 30%;
+    border: outset;
+    margin: 2px;
+    text-align: center;
+    width: 32%;
     position: relative;
     float: left;
 }
@@ -206,7 +209,6 @@ body {
 div#cont-top div.portletStaticText.portlet-static-cintillo {
     width: 99%;
     font-weight:bold;
-    border: none;
     text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 }
 
@@ -216,7 +218,6 @@ div#cont-top div.portletStaticText.portlet-static-cintillo {
 
 #cont-med {
     text-align: justify;
-    padding: 10px;
 }
 
 div#cont-med div#portal-column-content {
@@ -227,11 +228,10 @@ div#cont-med div#portal-column-content {
     text-align: justify;
 }
 
-#cont-med div#portlets-below div.cell,
-#cont-top div.portletStaticText {
+#cont-med div#portlets-below div.cell {
     border: outset;
     min-width: 32%;
-    margin: 2px;
+    margin: 3.79px;
     text-align: center;
 }
 
@@ -256,7 +256,7 @@ div#cont-med div#portal-column-content {
 }
 
 .btn {
-	border:1px solid #dcdcdc;
+    border:1px solid #dcdcdc;
 	display:inline-block;
 	font-size:10px;
 	font-weight:bold;
