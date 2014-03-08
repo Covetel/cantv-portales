@@ -65,26 +65,6 @@ div.width-15 {
     width: 91.5%
 }
 
-div.width-16 {
-    width: 100%;
-}
-
-div.width-1\3a 2 {
-    width: 100%;
-}
-
-div.width-1\3a 4 {
-    width: 100%;
-}
-
-div.width-3\3a 4 {
-    width: 100%;
-}
-
-div.width-full {
-    width: 100%;
-}
-
 div.width-1\3a 3 {
     width: 31.08%;
 }
@@ -93,65 +73,69 @@ div.width-2\3a 3 {
     width: 64.42%;
 }
 
-div.position-0 {
+div.width-16,
+div.width-1\3a 2,
+div.width-1\3a 4,
+div.width-3\3a 4,
+div.width-full {
+    width: 100%;
 }
 
-div.position-1 {
-}
-
-div.position-2 {
-}
-
-div.position-3 {
-}
-
-div.position-4 {
-}
-
-div.position-5 {
-}
-
-div.position-6 {
-}
-
-div.position-7 {
-}
-
-div.position-8 {
-}
-
-div.position-9 {
-}
-
-div.position-10 {
-}
-
-div.position-11 {
-}
-
-div.position-12 {
-}
-
-div.position-13 {
-}
-
-div.position-14 {
-}
-
-div.position-15 {
-}
-
-div.position-1\3a 4 {
-}
-
-div.position-1\3a 2 {
-}
-
-div.position-3\3a 4 {
-}
-
-div.position-1\3a 3 {
-}
-
+div.position-0,
+div.position-1,
+div.position-2,
+div.position-3,
+div.position-4,
+div.position-5,
+div.position-6,
+div.position-7,
+div.position-8,
+div.position-9,
+div.position-10,
+div.position-11,
+div.position-12,
+div.position-13,
+div.position-14,
+div.position-15,
+div.position-1\3a 4,
+div.position-1\3a 2,
+div.position-3\3a 4,
+div.position-1\3a 3,
 div.position-2\3a 3 {
+    
+}
+
+div#cont-med div.width-1\3a 1,
+div#cont-med div.width-1\3a 2,
+div#cont-med div.width-1\3a 3,
+div#cont-med div.width-1\3a 4,
+div#cont-med div.width-1\3a 5,
+div#cont-med div.width-1\3a 6 {
+    width: auto;
+}
+
+div#cont-med div.position-1\3a 2,
+div#cont-med div.position-1\3a 4,
+div#cont-med div.position-1\3a 5,
+div#cont-med div.position-2\3a 5,
+div#cont-med div.position-3\3a 4,
+div#cont-med div.position-3\3a 5,
+div#cont-med div.position-4\3a 5 {
+    float: left;
+}
+
+div#cont-med div.position-0,
+div#cont-med div.position-1\3a 3,
+div#cont-med div.position-1\3a 5,
+div#cont-med div.position-2\3a 5,
+div#cont-med div.position-1\3a 6 {
+    float: left;
+    min-height: 260px;
+}
+
+div#cont-med div.position-2\3a 3,
+div#cont-med div.position-5\3a 6 {
+    float: left;
+    width: 48.5%;
+    min-height: 315px;
 }

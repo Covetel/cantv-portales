@@ -20,7 +20,7 @@ body {
 
 #menu #menu-left {
     margin: 0px;
-    width: 70%;
+    width: 62%;
     float: left;
 }
 
@@ -47,7 +47,7 @@ body {
 
 #menu #menu-right {
     margin: 0px;
-    width: 30%;
+    width: 38%;
     float: right;
     text-align: right;
 }
@@ -116,6 +116,7 @@ body {
 #submenu-left {
     padding-top: 12px;
     float: left;
+    width: 75%;
 }
 
 #map {
@@ -168,16 +169,55 @@ body {
     text-align: center;
 }
 
-#cont-med {
-    text-align: center;
+#cont-top div.portletWrapper {
+    display: block;
+    position: relative;
+}
+
+#cont-top div.portletCarouselWrapper {
+    width: 65%;
+    position: relative;
+    float: left;
+}
+
+#cont-top div.portletStaticText {
+    width: 30%;
+    position: relative;
+    float: left;
+}
+
+#cont-top div.managePortletsLink {
+    width: 98%;
+    position: relative;
+    float: left;
 }
 
 #cont-med div.documentEditable {
     text-align: center;
 }
 
+#cont-med {
+    text-align: justify;
+    padding: 10px;
+}
+
 #cont-med li {
     text-align: justify;
+}
+
+#cont-med div#portlets-below div.cell,
+#cont-top div.portletStaticText {
+    border: outset;
+    min-width: 32%;
+    margin: 2px;
+    text-align: center;
+}
+
+#cont-top div.portletStaticText h1,
+#cont-med div.portletStaticText h1 {
+    font-size: 14px;
+    background-color: #ede9e3;
+    margin: 0px;
 }
 
 #cont-bottom {
@@ -185,11 +225,12 @@ body {
     text-align: center;
 }
 
-#bottom {
-    width: 100%;
-    clear: both;
+#bottom,
+#bottom a,
+#bottom #portal-footer{
     text-align: center;
-    font-size: 24px;
+    color: #990000;
+    background-color: #ede9e3;
 }
 
 .btn {

@@ -48,6 +48,7 @@
         <drop css:content="#portal-column-content #viewlet-above-content" />
         <!-- Reemplazo la etiqueta med por el contenido del sitio -->
         <after css:content="#portal-column-one" css:theme-children="#cont-top" />
+        <drop css:content="#portal-column-content #parent-fieldname-title" />
         <after css:content="#portal-column-content" css:theme-children="#cont-med" />
         <after css:content="#portal-column-two" css:theme-children="#cont-bottom" />
 
@@ -56,7 +57,6 @@
         <!-- Reemplazo la etiqueta mapa por el breadcrumbs -->
         <after css:content="#portal-breadcrumbs" css:theme-children="#map" />
 
-        <!--<after css:content="#portal-sitemap" css:theme-children="#bottom" />-->
         <after css:content="#portal-footer-wrapper" css:theme-children="#bottom" />
     </rules>
 
