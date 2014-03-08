@@ -192,6 +192,24 @@ body {
     float: left;
 }
 
+#cont-top ul.configlets {
+  width: 100%;  /* room for 3 columns */
+  text-align: left;
+}
+
+#cont-top ul.configlets li{
+  float: left;
+  width: 30%;  /* accommodate the widest item */
+  text-align: left;
+}
+
+div#cont-top div.portletStaticText.portlet-static-cintillo {
+    width: 99%;
+    font-weight:bold;
+    border: none;
+    text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
 #cont-med div.documentEditable {
     text-align: center;
 }
@@ -199,6 +217,10 @@ body {
 #cont-med {
     text-align: justify;
     padding: 10px;
+}
+
+div#cont-med div#portal-column-content {
+    width: 100%;
 }
 
 #cont-med li {
