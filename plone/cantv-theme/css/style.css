@@ -336,3 +336,7 @@ div#cont-med div#portal-column-content {
 #viewlet-social-like * {
     float: left;
 }
+
+div.flowPlaylistHidden object {
+    min-height: 270px;
+}
