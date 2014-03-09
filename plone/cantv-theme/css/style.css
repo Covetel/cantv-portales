@@ -247,6 +247,32 @@ div#cont-med div#portal-column-content {
     text-align: center;
 }
 
+#cont-bottom div.portletWrapper {
+    display: block;
+    position: relative;
+}
+
+#cont-bottom div.portletCarouselWrapper {
+    width: 67%;
+    position: relative;
+    float: left;
+}
+
+#cont-bottom div.portletStaticText {
+    border: outset;
+    margin: 2px;
+    text-align: center;
+    width: 32%;
+    position: relative;
+    float: left;
+}
+
+#cont-bottom div.managePortletsLink {
+    width: 98%;
+    position: relative;
+    float: left;
+}
+
 #bottom,
 #bottom a,
 #bottom #portal-footer{
@@ -301,4 +327,8 @@ div#cont-med div#portal-column-content {
 
 .btn:link, .btn:visited {
     color: #000;
+}
+
+#viewlet-social-like * {
+    float: left;
 }
