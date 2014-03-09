@@ -340,3 +340,12 @@ div#cont-med div#portal-column-content {
 div.flowPlaylistHidden object {
     min-height: 270px;
 }
+
+div#cont-bottom .portletNavigationTree .portletHeader {
+    background-color: #ede9e3;
+}
+
+div#cont-bottom .portletNavigationTree span {
+    text-align: justify;
+    color: #990000;
+}
