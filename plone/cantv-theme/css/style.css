@@ -245,11 +245,7 @@ div#cont-med div#portal-column-content {
 #cont-bottom {
     width: 100%;
     text-align: center;
-}
-
-#cont-bottom div.portletWrapper {
-    display: block;
-    position: relative;
+    float: left;
 }
 
 #cont-bottom div.portletCarouselWrapper {
@@ -260,6 +256,14 @@ div#cont-med div#portal-column-content {
 
 #cont-bottom div.portletStaticText {
     border: outset;
+    margin: 2px;
+    text-align: center;
+    width: 32%;
+    position: relative;
+    float: left;
+}
+
+#cont-bottom .portletNews {
     margin: 2px;
     text-align: center;
     width: 32%;
@@ -283,7 +287,7 @@ div#cont-med div#portal-column-content {
 
 .btn {
     border:1px solid #dcdcdc;
-	display:inline-block;
+    display:inline-block;
 	font-size:10px;
 	font-weight:bold;
 	height:18px;
