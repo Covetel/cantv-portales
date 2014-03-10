@@ -1,0 +1,77 @@
+#+TITLE:     Administración de Plone
+#+AUTHOR:    Carlos Paredes
+#+EMAIL:     cparedes@covetel.com.ve
+#+DATE:      2014-2-25
+#+DESCRIPTION: Manual de aministración de Plone
+#+KEYWORDS:
+#+LANGUAGE:  es
+#+OPTIONS:   H:3 num:t toc:t:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:
+#+LINK_HOME:
+#+XSLT:
+#+LATEX_CLASS: covetel
+#+LATEX_CLASS_OPTIONS: [11pt, letterpaper, oneside, spanish]
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \input{titulo-manual-administracion-plone}
+
+* Instalar temas en Plone desde archivo ZIP
+
+  - Ingresar en Plone.
+  - Hacer click en [entrar] y logearse con el usuario admin (password: 123321...
+  - Ir a [admin]->[configuración del sitio].
+  - Hacer click en Temas.
+  - Hacer click en el boton "Subir archivo Zip".
+  - Hacer click en el boton "Seleccionar archivo", seleccionar el archivo ZIP que contiene el tema y a hacer click en el boton abrir.
+  - Marcar la casilla "Habilitar nuevo tema de forma inmediata".
+  - Hacer click en el boton "Importar".
+
+* Instalar Portlets en instancia de Plone
+  - Ingresar al servidor ZEO Client
+  - Ir al directorio de la instancia en la cual desea instalar los portlets.
+  - Editar el archivo buildout.cfg.
+  - Añadir a la variable *eggs* de la sección buildout el nombre de los portlets que desea agregar, ejemplo:
+    #+BEGIN_SRC bash
+      eggs =
+        Plone
+        Pillow
+        collective.carousel
+        plone.app.jquerytools
+        collective.mediaelementjs
+        Products.ContentWellPortlets
+        collective.portlet.embed
+        sc.social.like==2.0b1
+        collective.flowplayer
+    #+END_SRC
+  - Correr el buildout de la instancia para que los portlets sean descargados e instalados, ejecutando:
+    #+BEGIN_SRC bash
+      # bin/buildout -c buildout.cfg
+    #+END_SRC
+  - Reiniciar la instancia de Plone, ejecutando:
+    #+BEGIN_SRC bash
+      # bin/plonectl restart
+    #+END_SRC
+
+* Importar contenido de Plone usan la Interfaz de Administración ZOPE (ZMI)
+  - Copiar el archivo con el contenido exportado a través del ZMI (Plone.zexp)
+    en el directorio *var/import/* ubicado en la raíz de su instancia de Plone.
+  - Reiniciar la instancia de Plone, ejecutando:
+    
+#+BEGIN_SRC bash
+      # bin/plonectl restart
+    #+END_SRC
+  - Ingresar a la Interfaz de Administración de ZOPE usando el explorador, ingresando a la URL *http://nginx.cantv.com.ve/manage_main*.
+  - Hacer click en el botón *Import/Export* ubicado en la parte inferior de la ventana.
+    #+CAPTION: Importar/Exportar contenido
+    #+NAME: Importar/Exportar contenido
+    [[./images/import_export_content.png]]
+  - Hacer click en el botón *import*.
+    #+CAPTION: Importar contenido
+    #+NAME: Importar contenido
+    [[./images/import_content.png]]
+        
+    
+
