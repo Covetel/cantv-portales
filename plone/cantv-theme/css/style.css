@@ -164,6 +164,16 @@ body {
     color: #990000;
 }
 
+#cont #cont-top .configlets a,
+#cont .configlets a,
+#cont #content a {
+    color: #990000;
+}
+
+#cont .portletHeader {
+    background-color: #ede9e3;
+}
+
 #cont-top {
     width: 100%;
     text-align: center;
@@ -242,6 +252,40 @@ div#cont-med div#portal-column-content {
     margin: 0px;
 }
 
+div#cont-med ul.formTabs {
+    background-color: #ede9e3;
+    border: 0.3em solid #ede9e3;
+}
+
+div#cont-med table.listing {
+    width: 100%;
+    border-left: 1px solid #ede9e3;
+    border-bottom: 1px solid #ede9e3;
+    background: #ede9e3;
+}
+
+div#cont-med table.listing th,
+div#cont-med table.listing td.draggable {
+    background: #ede9e3 !important; 
+}
+
+div#cont-med table.listing td.state-published,
+div#cont-med table.listing span,
+div#cont-med table.listing span.state-published,
+div#cont-med table.listing a {
+    color: #990000 !important;
+}
+
+div#cont-med #content-core table.listing td {
+    background: #ede9e3;
+    color: #990000;
+}
+
+div#cont-med #content-core table.listing tr.odd td {
+    background: white;
+    color: #990000;
+}
+
 #cont-bottom {
     width: 100%;
     text-align: center;
@@ -263,18 +307,32 @@ div#cont-med div#portal-column-content {
     float: left;
 }
 
-#cont-bottom .portletNews {
-    margin: 2px;
-    text-align: center;
-    width: 32%;
-    position: relative;
-    float: left;
-}
-
 #cont-bottom div.managePortletsLink {
     width: 98%;
     position: relative;
     float: left;
+}
+
+#cont-bottom .portletNews {
+    margin: 2px;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    float: left;
+}
+
+div#cont-bottom .portletNews .portletHeader {
+    background-color: #ede9e3;
+}
+
+div#cont-bottom .portletNews span {
+    text-align: center;
+    color: #990000;
+}
+
+div#cont-bottom .portletNews a {
+    text-align: justify;
+    color: #990000;
 }
 
 #bottom,
@@ -341,11 +399,15 @@ div.flowPlaylistHidden object {
     min-height: 270px;
 }
 
-div#cont-bottom .portletNavigationTree .portletHeader {
-    background-color: #ede9e3;
+.portletNavigationTre {
+    width: 100%;
 }
 
-div#cont-bottom .portletNavigationTree span {
+.portletNavigationTree span {
     text-align: justify;
     color: #990000;
+}
+
+div#content-core * {
+    text-align: justify;
 }
