@@ -1,3 +1,4 @@
+
 #+TITLE:     Administración de Plone
 #+AUTHOR:    Carlos Paredes
 #+EMAIL:     cparedes@covetel.com.ve
@@ -67,11 +68,11 @@
       # /etc/init.d/plone restart
     #+END_SRC
   - Ingresar a la Interfaz de Administración de ZOPE usando el explorador, ingresando a la URL *http://nginx.cantv.com.ve/manage_main*.
+\clearpage
   - Hacer click en el botón *Import/Export* ubicado en la parte inferior de la ventana.
     #+CAPTION: Importar/Exportar contenido
     #+NAME: Importar/Exportar contenido
     [[./images/import_export_content.png]]
-\clearpage
   - Hacer click en el botón *import*.
     #+CAPTION: Importar contenido
     #+NAME: Importar contenido
