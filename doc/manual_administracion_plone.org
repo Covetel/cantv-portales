@@ -48,7 +48,7 @@
     #+END_SRC
   - Correr el buildout de la instancia para que los componentes sean descargados e instalados, ejecutando:
     #+BEGIN_SRC bash
-      # /usr/local/Plone/cantv/bin/buildout -c buildout.cfg
+      # su plone_buildout -s /bin/bash -c "/usr/local/Plone/cantv/bin/buildout -c buildout.cfg"
     #+END_SRC
   - Reiniciar la instancia de Plone, ejecutando:
     #+BEGIN_SRC bash
@@ -57,8 +57,11 @@
 
 * Importar contenido de Plone usando la Interfaz de Administración ZOPE (ZMI)
   - Ingresar al servidor ZEO Client (zc1.cantv.com.ve o zc2.cantv.com.ve) por ssh.
-  - Copiar el archivo *Plone.zexp* exportando a traves de la ZMI en el directorio *var/import/*, ubicado en
+  - Copiar el archivo *Plone.zexp* exportando a traves de la ZMI en el directorio *var/client1/import/*, ubicado en
     la raíz de su instancia de Plone */usr/local/Plone/cantv/*.
+    #+BEGIN_SRC bash
+      # cp Plone.zexp var/client1/import/
+    #+END_SRC
   - Reiniciar la instancia de Plone, ejecutando:
     #+BEGIN_SRC bash
       # /etc/init.d/plone restart
